@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DeltaEcore Feature Importer/Exporter Eclipse Integration
+Bundle-SymbolicName: org.deltaecore.integration.ie.feature.eclipse;singleton:=true
+Bundle-Version: 0.8.2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.deltaecore.feature.eclipse,
+ org.deltaecore.integration.ie.feature.splot,
+ org.deltaecore.integration.ie.feature.featureide,
+ de.christophseidl.util.eclipse.ui;visibility:=reexport

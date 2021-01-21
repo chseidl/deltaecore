@@ -1,0 +1,17 @@
+evolution delta "EvolutionIteration2"
+	dialect <http://deltaecore.org/feature/1.0>
+	requires <EvolutionIteration1.decore>
+	modifies <../core/TurtleBotDriver.defeaturemodel>
+{
+	createVersion("1.1", <Engine@1.0>);
+
+	createVersion("1.1", <Movement@1.0>);
+	createVersion("1.1", <Autonomous@1.0>);
+	createFeature("Gamepad", 0, <Movement:0>, "1.0");
+
+	createVersion("1.1", <Detection@1.0>);
+	createVersion("2.0", <Infrared@1.0>);
+	createFeature("Ultrasound", 0, <Detection:0>, "0.8");
+	
+	createVersion("1.1", <Webservice@1.0>);
+}

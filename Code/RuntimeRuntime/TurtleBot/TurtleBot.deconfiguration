@@ -1,0 +1,8 @@
+configuration <TurtleBotDriver.defeaturemodel> {
+	TurtleBot, TurtleBot@"2.0",
+	Engine, Engine@"Kobuki 1.0",
+	Movement, Movement@"1.1",
+	Autonomous, Autonomous@"1.1",
+	Detection, Detection@"1.0",
+	Bump, Bump@"1.0"
+}

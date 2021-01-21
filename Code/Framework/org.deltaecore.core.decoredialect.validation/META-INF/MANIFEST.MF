@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DeltaEcore Delta Dialect Language Validation
+Bundle-SymbolicName: org.deltaecore.core.decoredialect.validation;singleton:=true
+Bundle-Version: 0.8.2
+Bundle-Vendor: www.deltaecore.org
+Require-Bundle: org.deltaecore.core.decoredialect;visibility:=reexport,
+ org.deltaecore.core.decorebase.validation;visibility:=reexport
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.deltaecore.core.decoredialect.validation

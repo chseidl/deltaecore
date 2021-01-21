@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="ASCII"?>
+<feature:DEFeatureModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:feature="http://deltaecore.org/feature/1.0">
+  <rootFeature minCardinality="1" maxCardinality="1" name="RMLFeatureModel">
+    <versions number="2014_05_30" supersedingVersions="//@rootFeature/@versions.1"/>
+    <versions number="2014_06_16" supersedingVersions="//@rootFeature/@versions.2" supersededVersion="//@rootFeature/@versions.0"/>
+    <versions number="2014_06_17" supersedingVersions="//@rootFeature/@versions.3" supersededVersion="//@rootFeature/@versions.1"/>
+    <versions number="2014_07_14" supersededVersion="//@rootFeature/@versions.2"/>
+    <groups minCardinality="1" maxCardinality="3">
+      <features minCardinality="1" maxCardinality="1" name="RoleTypes">
+        <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@versions.1"/>
+        <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@versions.0"/>
+        <groups minCardinality="2" maxCardinality="5">
+          <features maxCardinality="1" name="RoleStructure">
+            <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@versions.1"/>
+            <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@versions.0"/>
+            <groups minCardinality="1" maxCardinality="3">
+              <features maxCardinality="1" name="RoleProperties">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.0/@versions.1"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.0/@versions.0"/>
+              </features>
+              <features maxCardinality="1" name="RoleBehavior">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.1/@versions.1"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.1/@versions.0"/>
+              </features>
+              <features maxCardinality="1" name="RoleInheritance">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.2/@versions.1"/>
+                <versions number="2014_06_17" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.2/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.2/@versions.0"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.2/@versions.1"/>
+              </features>
+            </groups>
+          </features>
+          <features minCardinality="1" maxCardinality="1" name="Playable">
+            <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@versions.1"/>
+            <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@versions.0"/>
+            <groups minCardinality="1" maxCardinality="6">
+              <features minCardinality="1" maxCardinality="1" name="Players">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.0/@versions.1"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.0/@versions.0"/>
+                <groups minCardinality="1" maxCardinality="3">
+                  <features minCardinality="1" maxCardinality="1" name="Objects">
+                    <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.0/@versions.1"/>
+                    <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.0/@versions.0"/>
+                  </features>
+                  <features maxCardinality="1" name="Roles">
+                    <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.1/@versions.1"/>
+                    <versions number="2014_06_17" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.1/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.1/@versions.0"/>
+                    <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.1/@versions.1"/>
+                  </features>
+                  <features maxCardinality="1" name="Compartments">
+                    <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.2/@versions.1"/>
+                    <versions number="2014_06_17" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.2/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.2/@versions.0"/>
+                    <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.2/@versions.1"/>
+                  </features>
+                </groups>
+              </features>
+              <features maxCardinality="1" name="RoleDependentPlayerFeatures">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.1/@versions.1"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.1/@versions.0"/>
+              </features>
+              <features maxCardinality="1" name="DifferentRolesSimultaneously">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.2/@versions.1"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.2/@versions.0"/>
+              </features>
+              <features maxCardinality="1" name="SameRoleTypeSeveralTimes">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.3/@versions.1"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.3/@versions.0"/>
+              </features>
+              <features maxCardinality="1" name="ByUnrelatedPlayers">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.4/@versions.1"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.4/@versions.0"/>
+              </features>
+              <features maxCardinality="1" name="Dynamically">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.5/@versions.1"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.5/@versions.0"/>
+                <groups maxCardinality="3">
+                  <features maxCardinality="1" name="TransferableBetweenPlayers">
+                    <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.5/@groups.0/@features.0/@versions.1"/>
+                    <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.5/@groups.0/@features.0/@versions.0"/>
+                  </features>
+                  <features maxCardinality="1" name="RoleDependentPlayerState">
+                    <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.5/@groups.0/@features.1/@versions.1"/>
+                    <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.5/@groups.0/@features.1/@versions.0"/>
+                  </features>
+                  <features maxCardinality="1" name="RestrictAccess">
+                    <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.5/@groups.0/@features.2/@versions.1"/>
+                    <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.5/@groups.0/@features.2/@versions.0"/>
+                  </features>
+                </groups>
+              </features>
+            </groups>
+          </features>
+          <features maxCardinality="1" name="Dependent">
+            <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@versions.1"/>
+            <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@versions.0"/>
+            <groups minCardinality="1" maxCardinality="2">
+              <features maxCardinality="1" name="OnCompartments">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.0/@versions.1"/>
+                <versions number="2014_06_16" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.0/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.0/@versions.0"/>
+                <versions number="2014_06_17" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.0/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.0/@versions.1"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.0/@versions.2"/>
+              </features>
+              <features maxCardinality="1" name="OnRelationships">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.1/@versions.1"/>
+                <versions number="2014_06_16" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.1/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.1/@versions.0"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.1/@versions.1"/>
+              </features>
+            </groups>
+          </features>
+          <features maxCardinality="1" name="RoleConstraints">
+            <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@versions.1"/>
+            <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@versions.0"/>
+            <groups minCardinality="1" maxCardinality="4">
+              <features maxCardinality="1" name="RoleImplication">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.0/@versions.1"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.0/@versions.0"/>
+              </features>
+              <features maxCardinality="1" name="RoleProhibition">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.1/@versions.1"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.1/@versions.0"/>
+              </features>
+              <features maxCardinality="1" name="RoleEquivalence">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.2/@versions.1"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.2/@versions.0"/>
+              </features>
+              <features maxCardinality="1" name="GroupConstraints">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.3/@versions.1"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.3/@versions.0"/>
+              </features>
+            </groups>
+          </features>
+          <features minCardinality="1" maxCardinality="1" name="RoleIdentity">
+            <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.4/@versions.1"/>
+            <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.4/@versions.0"/>
+            <groups minCardinality="1" maxCardinality="1">
+              <features maxCardinality="1" name="SharedIdentity">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.4/@groups.0/@features.0/@versions.1"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.4/@groups.0/@features.0/@versions.0"/>
+              </features>
+              <features maxCardinality="1" name="OwnedRoleIdentity">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.4/@groups.0/@features.1/@versions.1"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.4/@groups.0/@features.1/@versions.0"/>
+              </features>
+            </groups>
+          </features>
+        </groups>
+      </features>
+      <features maxCardinality="1" name="Relationships">
+        <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.1/@versions.1"/>
+        <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.1/@versions.0"/>
+        <groups maxCardinality="1">
+          <features maxCardinality="1" name="RelationshipConstraints">
+            <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@versions.1"/>
+            <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@versions.0"/>
+            <groups minCardinality="1" maxCardinality="3">
+              <features maxCardinality="1" name="RelationshipCardinality">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.0/@versions.1"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.0/@versions.0"/>
+              </features>
+              <features maxCardinality="1" name="IntraRelationshipConstraints">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.1/@versions.1"/>
+                <versions number="2014_06_16" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.1/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.1/@versions.0"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.1/@versions.1"/>
+              </features>
+              <features maxCardinality="1" name="InterRelationshipConstraints">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.2/@versions.1"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.2/@versions.0"/>
+              </features>
+            </groups>
+          </features>
+        </groups>
+      </features>
+      <features maxCardinality="1" name="CompartmentTypes">
+        <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.2/@versions.1"/>
+        <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.2/@versions.0"/>
+        <groups minCardinality="2" maxCardinality="3">
+          <features maxCardinality="1" name="CompartmentStructure">
+            <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.0/@versions.1"/>
+            <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.0/@versions.0"/>
+            <groups minCardinality="1" maxCardinality="3">
+              <features maxCardinality="1" name="CompartmentProperties">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.0/@groups.0/@features.0/@versions.1"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.0/@groups.0/@features.0/@versions.0"/>
+              </features>
+              <features maxCardinality="1" name="CompartmentBehavior">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.0/@groups.0/@features.1/@versions.1"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.0/@groups.0/@features.1/@versions.0"/>
+              </features>
+              <features maxCardinality="1" name="CompartmentInheritance">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.0/@groups.0/@features.2/@versions.1"/>
+                <versions number="2014_06_17" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.0/@groups.0/@features.2/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.0/@groups.0/@features.2/@versions.0"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.0/@groups.0/@features.2/@versions.1"/>
+              </features>
+            </groups>
+          </features>
+          <features minCardinality="1" maxCardinality="1" name="Participants">
+            <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@versions.1"/>
+            <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@versions.0"/>
+            <groups minCardinality="1" maxCardinality="4">
+              <features minCardinality="1" maxCardinality="1" name="ContainsRoles">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@groups.0/@features.0/@versions.1"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@groups.0/@features.0/@versions.0"/>
+              </features>
+              <features maxCardinality="1" name="ContainsCompartments">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@groups.0/@features.1/@versions.1"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@groups.0/@features.1/@versions.0"/>
+              </features>
+              <features maxCardinality="1" name="CanBelongToManyCompartments">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@groups.0/@features.2/@versions.1"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@groups.0/@features.2/@versions.0"/>
+              </features>
+              <features maxCardinality="1" name="PlayableByDefiningCompartment">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@groups.0/@features.3/@versions.1"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@groups.0/@features.3/@versions.0"/>
+              </features>
+            </groups>
+          </features>
+          <features minCardinality="1" maxCardinality="1" name="CompartmentIdentity">
+            <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.2/@versions.1"/>
+            <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.2/@versions.0"/>
+            <groups minCardinality="1" maxCardinality="1">
+              <features maxCardinality="1" name="CompositeIdentity">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.2/@groups.0/@features.0/@versions.1"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.2/@groups.0/@features.0/@versions.0"/>
+              </features>
+              <features maxCardinality="1" name="OwnCompartmentIdentity">
+                <versions number="2014_05_30" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.2/@groups.0/@features.1/@versions.1"/>
+                <versions number="2014_07_14" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.2/@groups.0/@features.1/@versions.0"/>
+              </features>
+            </groups>
+          </features>
+        </groups>
+      </features>
+    </groups>
+  </rootFeature>
+</feature:DEFeatureModel>

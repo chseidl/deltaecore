@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature:DEFeatureModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:feature="http://deltaecore.org/feature/1.0">
+  <rootFeature minCardinality="1" maxCardinality="1" name="MM_ECU">
+    <groups>
+      <features minCardinality="1" maxCardinality="1" name="Product">
+        <groups>
+          <features name="HardwareAndDrivers">
+            <groups minCardinality="1" maxCardinality="5">
+              <features maxCardinality="1" name="HLF_0101_AntennasManagement">
+                <versions number="1.00.1" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.0/@versions.1"/>
+                <versions number="1.00.2" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.0/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.0/@versions.0"/>
+                <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.0/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.0/@versions.1"/>
+                <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.0/@versions.4" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.0/@versions.2"/>
+                <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.0/@versions.5" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.0/@versions.3"/>
+                <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.0/@versions.4"/>
+              </features>
+              <features maxCardinality="1" name="HLF_0102_AudioInput">
+                <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.1/@versions.1"/>
+                <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.1/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.1/@versions.0"/>
+                <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.1/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.1/@versions.1"/>
+                <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.1/@versions.2"/>
+              </features>
+              <features maxCardinality="1" name="HLF_0103_PowerManagement">
+                <versions number="1.00.1" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.2/@versions.1"/>
+                <versions number="1.00.2" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.2/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.2/@versions.0"/>
+                <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.2/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.2/@versions.1"/>
+                <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.2/@versions.4" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.2/@versions.2"/>
+                <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.2/@versions.5" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.2/@versions.3"/>
+                <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.2/@versions.4"/>
+              </features>
+              <features maxCardinality="1" name="HLF_0104_WiFiComponent">
+                <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.3/@versions.1"/>
+                <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.3/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.3/@versions.0"/>
+                <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.3/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.3/@versions.1"/>
+                <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.3/@versions.2"/>
+              </features>
+              <features maxCardinality="1" name="HLF_0105_USBConnectivity">
+                <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.4/@versions.1"/>
+                <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.4/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.4/@versions.0"/>
+                <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.4/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.4/@versions.1"/>
+                <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.0/@groups.0/@features.4/@versions.2"/>
+              </features>
+            </groups>
+          </features>
+          <features maxCardinality="1" name="ProductPerformances">
+            <groups minCardinality="1" maxCardinality="2">
+              <features maxCardinality="1" name="HLF_0106_BootTime">
+                <versions number="1.00.6"/>
+              </features>
+              <features maxCardinality="1" name="HLF_0107_FlashManagement">
+                <versions number="1.00.1" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.1/@versions.1"/>
+                <versions number="1.00.2" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.1/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.1/@versions.0"/>
+                <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.1/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.1/@versions.1"/>
+                <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.1/@versions.4" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.1/@versions.2"/>
+                <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.1/@versions.5" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.1/@versions.3"/>
+                <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.1/@versions.4"/>
+              </features>
+            </groups>
+          </features>
+          <features maxCardinality="1" name="ElectricalPerformances">
+            <groups minCardinality="1" maxCardinality="2">
+              <features maxCardinality="1" name="HLF_0108_CurrentConsumption">
+                <versions number="1.00.1" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.0/@versions.1"/>
+                <versions number="1.00.2" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.0/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.0/@versions.0"/>
+                <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.0/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.0/@versions.1"/>
+                <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.0/@versions.4" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.0/@versions.2"/>
+                <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.0/@versions.5" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.0/@versions.3"/>
+                <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.0/@versions.4"/>
+              </features>
+              <features maxCardinality="1" name="HLF_0109_CurrentVariation">
+                <versions number="1.00.1" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.1/@versions.1"/>
+                <versions number="1.00.2" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.1/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.1/@versions.0"/>
+                <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.1/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.1/@versions.1"/>
+                <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.1/@versions.4" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.1/@versions.2"/>
+                <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.1/@versions.5" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.1/@versions.3"/>
+                <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.2/@groups.0/@features.1/@versions.4"/>
+              </features>
+            </groups>
+          </features>
+          <features maxCardinality="1" name="SwitchOnAndShutdown">
+            <groups minCardinality="1" maxCardinality="2">
+              <features maxCardinality="1" name="SwitchOn">
+                <groups minCardinality="1" maxCardinality="2">
+                  <features maxCardinality="1" name="HLF_0110_WithMainBattery">
+                    <versions number="1.00.1" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.0/@versions.1"/>
+                    <versions number="1.00.2" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.0/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.0/@versions.0"/>
+                    <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.0/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.0/@versions.1"/>
+                    <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.0/@versions.4" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.0/@versions.2"/>
+                    <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.0/@versions.5" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.0/@versions.3"/>
+                    <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.0/@versions.4"/>
+                  </features>
+                  <features maxCardinality="1" name="HLF_0111_WithBackUpBattery">
+                    <versions number="1.00.2" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.1/@versions.1"/>
+                    <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.1/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.1/@versions.0"/>
+                    <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.1/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.1/@versions.1"/>
+                    <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.1/@versions.4" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.1/@versions.2"/>
+                    <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.1/@versions.3"/>
+                  </features>
+                </groups>
+              </features>
+              <features maxCardinality="1" name="HLF_0112_KeepProductAliveAndFunctional">
+                <versions number="1.00.1" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.1/@versions.1"/>
+                <versions number="1.00.2" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.1/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.1/@versions.0"/>
+                <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.1/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.1/@versions.1"/>
+                <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.1/@versions.4" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.1/@versions.2"/>
+                <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.1/@versions.5" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.1/@versions.3"/>
+                <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.1/@versions.4"/>
+              </features>
+              <features maxCardinality="1" name="Shutdown">
+                <groups minCardinality="1" maxCardinality="2">
+                  <features maxCardinality="1" name="HLF_0113_WithMainBattery">
+                    <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.2/@groups.0/@features.0/@versions.1"/>
+                    <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.2/@groups.0/@features.0/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.2/@groups.0/@features.0/@versions.0"/>
+                    <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.2/@groups.0/@features.0/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.2/@groups.0/@features.0/@versions.1"/>
+                    <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.2/@groups.0/@features.0/@versions.2"/>
+                  </features>
+                  <features maxCardinality="1" name="HLF_0114_WithBackupBattery">
+                    <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.2/@groups.0/@features.1/@versions.1"/>
+                    <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.2/@groups.0/@features.1/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.2/@groups.0/@features.1/@versions.0"/>
+                    <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.2/@groups.0/@features.1/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.2/@groups.0/@features.1/@versions.1"/>
+                    <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.0/@groups.0/@features.3/@groups.0/@features.2/@groups.0/@features.1/@versions.2"/>
+                  </features>
+                </groups>
+              </features>
+            </groups>
+          </features>
+        </groups>
+      </features>
+      <features minCardinality="1" maxCardinality="1" name="E_CALL">
+        <groups minCardinality="1" maxCardinality="1">
+          <features maxCardinality="1" name="Localized">
+            <groups minCardinality="1" maxCardinality="1">
+              <features maxCardinality="1" name="HLF_0201_Manual">
+                <versions number="1.00.2" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.0/@versions.1"/>
+                <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.0/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.0/@versions.0"/>
+                <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.0/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.0/@versions.1"/>
+                <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.0/@versions.4" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.0/@versions.2"/>
+                <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.0/@versions.3"/>
+              </features>
+              <features maxCardinality="1" name="Automatic">
+                <groups minCardinality="1" maxCardinality="1">
+                  <features maxCardinality="1" name="HLF_0203_ByCANSignal">
+                    <versions number="1.00.2" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.0/@versions.1"/>
+                    <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.0/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.0/@versions.0"/>
+                    <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.0/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.0/@versions.1"/>
+                    <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.0/@versions.4" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.0/@versions.2"/>
+                    <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.0/@versions.3"/>
+                  </features>
+                  <features maxCardinality="1" name="HLF_0205_ByDirectAirbagSignal">
+                    <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.1/@versions.1"/>
+                    <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.1/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.1/@versions.0"/>
+                    <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.1/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.1/@versions.1"/>
+                    <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.0/@features.1/@groups.0/@features.1/@versions.2"/>
+                  </features>
+                </groups>
+              </features>
+            </groups>
+            <groups maxCardinality="1">
+              <features maxCardinality="1" name="HLF_0207_Cancellation">
+                <versions number="1.00.2" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.1/@features.0/@versions.1"/>
+                <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.1/@features.0/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.1/@features.0/@versions.0"/>
+                <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.1/@features.0/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.1/@features.0/@versions.1"/>
+                <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.1/@features.0/@versions.4" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.1/@features.0/@versions.2"/>
+                <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@groups.1/@features.0/@versions.3"/>
+              </features>
+            </groups>
+          </features>
+          <features maxCardinality="1" name="Unlocalized">
+            <groups minCardinality="1" maxCardinality="1">
+              <features maxCardinality="1" name="HLF_0202_Manual">
+                <versions number="1.00.2" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.0/@versions.1"/>
+                <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.0/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.0/@versions.0"/>
+                <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.0/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.0/@versions.1"/>
+                <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.0/@versions.4" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.0/@versions.2"/>
+                <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.0/@versions.3"/>
+              </features>
+              <features maxCardinality="1" name="Automatic">
+                <groups minCardinality="1" maxCardinality="1">
+                  <features maxCardinality="1" name="HLF_0204_ByCANSignal">
+                    <versions number="1.00.2" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.0/@versions.1"/>
+                    <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.0/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.0/@versions.0"/>
+                    <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.0/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.0/@versions.1"/>
+                    <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.0/@versions.4" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.0/@versions.2"/>
+                    <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.0/@versions.3"/>
+                  </features>
+                  <features maxCardinality="1" name="HLF_0206_ByDirectAirbagSignal">
+                    <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.1/@versions.1"/>
+                    <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.1/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.1/@versions.0"/>
+                    <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.1/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.1/@versions.1"/>
+                    <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.1/@groups.0/@features.1/@versions.2"/>
+                  </features>
+                </groups>
+              </features>
+            </groups>
+            <groups maxCardinality="1">
+              <features maxCardinality="1" name="HLF_0208_Cancellation">
+                <versions number="1.00.2" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.1/@features.0/@versions.1"/>
+                <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.1/@features.0/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.1/@features.0/@versions.0"/>
+                <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.1/@features.0/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.1/@features.0/@versions.1"/>
+                <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.1/@features.0/@versions.4" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.1/@features.0/@versions.2"/>
+                <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.1/@groups.1/@features.0/@versions.3"/>
+              </features>
+            </groups>
+          </features>
+        </groups>
+      </features>
+      <features maxCardinality="1" name="B_CALL">
+        <groups minCardinality="1" maxCardinality="1">
+          <features maxCardinality="1" name="Localized">
+            <groups minCardinality="1" maxCardinality="2">
+              <features maxCardinality="1" name="HLF_0301_WithATB2Speaker">
+                <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.0/@groups.0/@features.0/@versions.1"/>
+                <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.0/@groups.0/@features.0/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.0/@groups.0/@features.0/@versions.0"/>
+                <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.0/@groups.0/@features.0/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.0/@groups.0/@features.0/@versions.1"/>
+                <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.0/@groups.0/@features.0/@versions.2"/>
+              </features>
+              <features maxCardinality="1" name="HLF_0302_WithVehicleSpeaker">
+                <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.0/@groups.0/@features.1/@versions.1"/>
+                <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.0/@groups.0/@features.1/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.0/@groups.0/@features.1/@versions.0"/>
+                <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.0/@groups.0/@features.1/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.0/@groups.0/@features.1/@versions.1"/>
+                <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.0/@groups.0/@features.1/@versions.2"/>
+              </features>
+            </groups>
+            <groups maxCardinality="1">
+              <features maxCardinality="1" name="HLF_0305_Cancellation">
+                <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.0/@groups.1/@features.0/@versions.1"/>
+                <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.0/@groups.1/@features.0/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.0/@groups.1/@features.0/@versions.0"/>
+                <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.0/@groups.1/@features.0/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.0/@groups.1/@features.0/@versions.1"/>
+                <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.0/@groups.1/@features.0/@versions.2"/>
+              </features>
+            </groups>
+          </features>
+          <features maxCardinality="1" name="Unlocalized">
+            <groups minCardinality="1" maxCardinality="2">
+              <features maxCardinality="1" name="HLF_0303_WithATB2Speaker">
+                <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@groups.0/@features.0/@versions.1"/>
+                <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@groups.0/@features.0/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@groups.0/@features.0/@versions.0"/>
+                <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@groups.0/@features.0/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@groups.0/@features.0/@versions.1"/>
+                <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@groups.0/@features.0/@versions.2"/>
+              </features>
+              <features maxCardinality="1" name="HLF_0304_WithVehicleSpeaker">
+                <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@groups.0/@features.1/@versions.1"/>
+                <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@groups.0/@features.1/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@groups.0/@features.1/@versions.0"/>
+                <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@groups.0/@features.1/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@groups.0/@features.1/@versions.1"/>
+                <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@groups.0/@features.1/@versions.2"/>
+              </features>
+            </groups>
+            <groups maxCardinality="1">
+              <features maxCardinality="1" name="HLF_0306_Cancellation">
+                <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@groups.1/@features.0/@versions.1"/>
+                <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@groups.1/@features.0/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@groups.1/@features.0/@versions.0"/>
+                <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@groups.1/@features.0/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@groups.1/@features.0/@versions.1"/>
+                <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@groups.1/@features.0/@versions.2"/>
+              </features>
+            </groups>
+          </features>
+        </groups>
+      </features>
+      <features maxCardinality="1" name="OTA">
+        <groups minCardinality="1" maxCardinality="2">
+          <features maxCardinality="1" name="RemoteConfiguration">
+            <groups minCardinality="1" maxCardinality="10">
+              <features maxCardinality="1" name="HLF_0501_GeneralConfig">
+                <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.0/@versions.1"/>
+                <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.0/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.0/@versions.0"/>
+                <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.0/@versions.1"/>
+              </features>
+              <features maxCardinality="1" name="HLF_0502_AudioConfig">
+                <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.1/@versions.1"/>
+                <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.1/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.1/@versions.0"/>
+                <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.1/@versions.1"/>
+              </features>
+              <features maxCardinality="1" name="HLF_0503_GNSSConfig">
+                <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.2/@versions.1"/>
+                <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.2/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.2/@versions.0"/>
+                <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.2/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.2/@versions.1"/>
+                <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.2/@versions.2"/>
+              </features>
+              <features maxCardinality="1" name="HLF_0504_EnableDisableServiceConfig">
+                <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.3/@versions.1"/>
+                <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.3/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.3/@versions.0"/>
+                <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.3/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.3/@versions.1"/>
+                <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.3/@versions.2"/>
+              </features>
+              <features maxCardinality="1" name="HLF_0505_EcallConfig">
+                <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.4/@versions.1"/>
+                <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.4/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.4/@versions.0"/>
+                <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.4/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.4/@versions.1"/>
+                <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.4/@versions.2"/>
+              </features>
+              <features maxCardinality="1" name="HLF_0506_BcallConfig">
+                <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.5/@versions.1"/>
+                <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.5/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.5/@versions.0"/>
+                <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.5/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.5/@versions.1"/>
+                <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.5/@versions.2"/>
+              </features>
+              <features maxCardinality="1" name="HLF_0508_DataMiningManageConfig">
+                <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.6/@versions.1"/>
+                <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.6/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.6/@versions.0"/>
+                <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.6/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.6/@versions.1"/>
+                <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.3/@groups.0/@features.0/@groups.0/@features.6/@versions.2"/>
+              </features>
+              <features maxCardinality="1" name="HLF_0509_StolenVehicleTrackingConfig">
+                <versions number="1.00.6"/>
+              </features>
+              <features maxCardinality="1" name="HLF_0510_WiFiConfig">
+                <versions number="1.00.6"/>
+              </features>
+              <features maxCardinality="1" name="HLF_0512_ConfigurationUploading">
+                <versions number="1.00.6"/>
+              </features>
+            </groups>
+          </features>
+          <features maxCardinality="1" name="Upgrade">
+            <groups minCardinality="1" maxCardinality="4">
+              <features maxCardinality="1" name="HLF_0601_OTADownload">
+                <versions number="1.00.5"/>
+              </features>
+              <features maxCardinality="1" name="HLF_0602_OTAInstall">
+                <versions number="1.00.6"/>
+              </features>
+              <features maxCardinality="1" name="HLF_0603_OTAInterruption">
+                <versions number="1.00.6"/>
+              </features>
+              <features maxCardinality="1" name="HLF_0604_OTARestore">
+                <versions number="1.00.6"/>
+              </features>
+            </groups>
+          </features>
+        </groups>
+      </features>
+      <features maxCardinality="1" name="3GModemManagement">
+        <groups minCardinality="1" maxCardinality="4">
+          <features maxCardinality="1" name="HLF_0701_InitiateVoiceCommunicationWhenPowerOn">
+            <versions number="1.00.2" supersedingVersions="//@rootFeature/@groups.0/@features.4/@groups.0/@features.0/@versions.1"/>
+            <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.4/@groups.0/@features.0/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.4/@groups.0/@features.0/@versions.0"/>
+            <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.4/@groups.0/@features.0/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.4/@groups.0/@features.0/@versions.1"/>
+            <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.4/@groups.0/@features.0/@versions.4" supersededVersion="//@rootFeature/@groups.0/@features.4/@groups.0/@features.0/@versions.2"/>
+            <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.4/@groups.0/@features.0/@versions.3"/>
+          </features>
+          <features maxCardinality="1" name="HLF_0702_InitiateDataCommunicationByEndUser">
+            <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.4/@groups.0/@features.1/@versions.1"/>
+            <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.4/@groups.0/@features.1/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.4/@groups.0/@features.1/@versions.0"/>
+            <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.4/@groups.0/@features.1/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.4/@groups.0/@features.1/@versions.1"/>
+            <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.4/@groups.0/@features.1/@versions.2"/>
+          </features>
+          <features maxCardinality="1" name="HLF_0703_InitiateDataCommunicationByServer">
+            <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.4/@groups.0/@features.2/@versions.1"/>
+            <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.4/@groups.0/@features.2/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.4/@groups.0/@features.2/@versions.0"/>
+            <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.4/@groups.0/@features.2/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.4/@groups.0/@features.2/@versions.1"/>
+            <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.4/@groups.0/@features.2/@versions.2"/>
+          </features>
+          <features maxCardinality="1" name="HLF_0704_3GModemToWiFi">
+            <versions number="1.00.5"/>
+          </features>
+        </groups>
+      </features>
+      <features maxCardinality="1" name="USB">
+        <groups minCardinality="1" maxCardinality="2">
+          <features maxCardinality="1" name="HLF_0801_USBCDCConnect">
+            <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.5/@groups.0/@features.0/@versions.1"/>
+            <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.5/@groups.0/@features.0/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.5/@groups.0/@features.0/@versions.0"/>
+            <versions number="1.00.5" supersededVersion="//@rootFeature/@groups.0/@features.5/@groups.0/@features.0/@versions.1"/>
+          </features>
+          <features maxCardinality="1" name="HLF_0803_USBStatusDiagnostic">
+            <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.5/@groups.0/@features.1/@versions.1"/>
+            <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.5/@groups.0/@features.1/@versions.0"/>
+          </features>
+        </groups>
+      </features>
+      <features maxCardinality="1" name="HMI">
+        <groups minCardinality="1" maxCardinality="1">
+          <features maxCardinality="1" name="HLF_0902_XcallTextPrompt">
+            <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.6/@groups.0/@features.0/@versions.1"/>
+            <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.6/@groups.0/@features.0/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.6/@groups.0/@features.0/@versions.0"/>
+            <versions number="1.00.5" supersededVersion="//@rootFeature/@groups.0/@features.6/@groups.0/@features.0/@versions.1"/>
+          </features>
+        </groups>
+      </features>
+      <features maxCardinality="1" name="VehicleNetworkAndDiagnostic">
+        <groups minCardinality="1" maxCardinality="3">
+          <features maxCardinality="1" name="HLF_1001_CANLSLowLayers">
+            <versions number="1.00.1" supersedingVersions="//@rootFeature/@groups.0/@features.7/@groups.0/@features.0/@versions.1"/>
+            <versions number="1.00.2" supersedingVersions="//@rootFeature/@groups.0/@features.7/@groups.0/@features.0/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.7/@groups.0/@features.0/@versions.0"/>
+            <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.7/@groups.0/@features.0/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.7/@groups.0/@features.0/@versions.1"/>
+            <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.7/@groups.0/@features.0/@versions.4" supersededVersion="//@rootFeature/@groups.0/@features.7/@groups.0/@features.0/@versions.2"/>
+            <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.7/@groups.0/@features.0/@versions.5" supersededVersion="//@rootFeature/@groups.0/@features.7/@groups.0/@features.0/@versions.3"/>
+            <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.7/@groups.0/@features.0/@versions.4"/>
+          </features>
+          <features maxCardinality="1" name="HLF_1002_CANLifeMangement">
+            <versions number="1.00.2" supersedingVersions="//@rootFeature/@groups.0/@features.7/@groups.0/@features.1/@versions.1"/>
+            <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.7/@groups.0/@features.1/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.7/@groups.0/@features.1/@versions.0"/>
+            <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.7/@groups.0/@features.1/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.7/@groups.0/@features.1/@versions.1"/>
+            <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.7/@groups.0/@features.1/@versions.4" supersededVersion="//@rootFeature/@groups.0/@features.7/@groups.0/@features.1/@versions.2"/>
+            <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.7/@groups.0/@features.1/@versions.3"/>
+          </features>
+          <features maxCardinality="1" name="HLF_1003_CANApplicativeMessage">
+            <versions number="1.00.2" supersedingVersions="//@rootFeature/@groups.0/@features.7/@groups.0/@features.2/@versions.1"/>
+            <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.7/@groups.0/@features.2/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.7/@groups.0/@features.2/@versions.0"/>
+            <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.7/@groups.0/@features.2/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.7/@groups.0/@features.2/@versions.1"/>
+            <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.7/@groups.0/@features.2/@versions.4" supersededVersion="//@rootFeature/@groups.0/@features.7/@groups.0/@features.2/@versions.2"/>
+            <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.7/@groups.0/@features.2/@versions.3"/>
+          </features>
+        </groups>
+      </features>
+      <features maxCardinality="1" name="DiagnosticKWP2000">
+        <groups>
+          <features maxCardinality="1" name="HLF_1101_SecurityCoding">
+            <versions number="1.00.2" supersedingVersions="//@rootFeature/@groups.0/@features.8/@groups.0/@features.0/@versions.1"/>
+            <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.8/@groups.0/@features.0/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.8/@groups.0/@features.0/@versions.0"/>
+            <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.8/@groups.0/@features.0/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.8/@groups.0/@features.0/@versions.1"/>
+            <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.8/@groups.0/@features.0/@versions.4" supersededVersion="//@rootFeature/@groups.0/@features.8/@groups.0/@features.0/@versions.2"/>
+            <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.8/@groups.0/@features.0/@versions.3"/>
+          </features>
+          <features maxCardinality="1" name="HLF_1102_DownloadCompanionSW">
+            <versions number="1.00.2" supersedingVersions="//@rootFeature/@groups.0/@features.8/@groups.0/@features.1/@versions.1"/>
+            <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.8/@groups.0/@features.1/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.8/@groups.0/@features.1/@versions.0"/>
+            <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.8/@groups.0/@features.1/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.8/@groups.0/@features.1/@versions.1"/>
+            <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.8/@groups.0/@features.1/@versions.4" supersededVersion="//@rootFeature/@groups.0/@features.8/@groups.0/@features.1/@versions.2"/>
+            <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.8/@groups.0/@features.1/@versions.3"/>
+          </features>
+          <features maxCardinality="1" name="DiagnosisServices">
+            <groups maxCardinality="2">
+              <features maxCardinality="1" name="HLF_1103_Configuration">
+                <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.8/@groups.0/@features.2/@groups.0/@features.0/@versions.1"/>
+                <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.8/@groups.0/@features.2/@groups.0/@features.0/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.8/@groups.0/@features.2/@groups.0/@features.0/@versions.0"/>
+                <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.8/@groups.0/@features.2/@groups.0/@features.0/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.8/@groups.0/@features.2/@groups.0/@features.0/@versions.1"/>
+                <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.8/@groups.0/@features.2/@groups.0/@features.0/@versions.2"/>
+              </features>
+              <features maxCardinality="1" name="HLF_1104_Reading">
+                <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.8/@groups.0/@features.2/@groups.0/@features.1/@versions.1"/>
+                <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.8/@groups.0/@features.2/@groups.0/@features.1/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.8/@groups.0/@features.2/@groups.0/@features.1/@versions.0"/>
+                <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.8/@groups.0/@features.2/@groups.0/@features.1/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.8/@groups.0/@features.2/@groups.0/@features.1/@versions.1"/>
+                <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.8/@groups.0/@features.2/@groups.0/@features.1/@versions.2"/>
+              </features>
+            </groups>
+          </features>
+          <features maxCardinality="1" name="HLF_1105_DTCDetection">
+            <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.8/@groups.0/@features.3/@versions.1"/>
+            <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.8/@groups.0/@features.3/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.8/@groups.0/@features.3/@versions.0"/>
+            <versions number="1.00.5" supersedingVersions="//@rootFeature/@groups.0/@features.8/@groups.0/@features.3/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.8/@groups.0/@features.3/@versions.1"/>
+            <versions number="1.00.6" supersededVersion="//@rootFeature/@groups.0/@features.8/@groups.0/@features.3/@versions.2"/>
+          </features>
+        </groups>
+      </features>
+      <features maxCardinality="1" name="DataMining">
+        <groups minCardinality="1" maxCardinality="4">
+          <features maxCardinality="1" name="HLF_1201_TemporalTrigger">
+            <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.9/@groups.0/@features.0/@versions.1"/>
+            <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.9/@groups.0/@features.0/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.9/@groups.0/@features.0/@versions.0"/>
+            <versions number="1.00.5" supersededVersion="//@rootFeature/@groups.0/@features.9/@groups.0/@features.0/@versions.1"/>
+          </features>
+          <features maxCardinality="1" name="HLF_1202_MileageTrigger">
+            <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.9/@groups.0/@features.1/@versions.1"/>
+            <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.9/@groups.0/@features.1/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.9/@groups.0/@features.1/@versions.0"/>
+            <versions number="1.00.5" supersededVersion="//@rootFeature/@groups.0/@features.9/@groups.0/@features.1/@versions.1"/>
+          </features>
+          <features maxCardinality="1" name="HLF_1203_LocationTrigger">
+            <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.9/@groups.0/@features.2/@versions.1"/>
+            <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.9/@groups.0/@features.2/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.9/@groups.0/@features.2/@versions.0"/>
+            <versions number="1.00.5" supersededVersion="//@rootFeature/@groups.0/@features.9/@groups.0/@features.2/@versions.1"/>
+          </features>
+          <features maxCardinality="1" name="HLF_1204_EventTrigger">
+            <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.9/@groups.0/@features.3/@versions.1"/>
+            <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.9/@groups.0/@features.3/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.9/@groups.0/@features.3/@versions.0"/>
+            <versions number="1.00.5" supersededVersion="//@rootFeature/@groups.0/@features.9/@groups.0/@features.3/@versions.1"/>
+          </features>
+        </groups>
+      </features>
+      <features maxCardinality="1" name="StolenVehicleTracking">
+        <groups minCardinality="1" maxCardinality="2">
+          <features maxCardinality="1" name="HLF_1301_Monitoring">
+            <versions number="1.00.5"/>
+          </features>
+          <features maxCardinality="1" name="Tracking">
+            <groups minCardinality="1" maxCardinality="2">
+              <features maxCardinality="1" name="HLF_1302_TrackingWithCarBattery">
+                <versions number="1.00.6"/>
+              </features>
+              <features maxCardinality="1" name="HLF_1303_TrackingWithBackUpBattery">
+                <versions number="1.00.6"/>
+              </features>
+            </groups>
+          </features>
+        </groups>
+      </features>
+      <features maxCardinality="1" name="WiFi">
+        <groups maxCardinality="2">
+          <features maxCardinality="1" name="HLF_1401_Firewall">
+            <versions number="1.00.1" supersedingVersions="//@rootFeature/@groups.0/@features.11/@groups.0/@features.0/@versions.1"/>
+            <versions number="1.00.2" supersedingVersions="//@rootFeature/@groups.0/@features.11/@groups.0/@features.0/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.11/@groups.0/@features.0/@versions.0"/>
+            <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.11/@groups.0/@features.0/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.11/@groups.0/@features.0/@versions.1"/>
+            <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.11/@groups.0/@features.0/@versions.4" supersededVersion="//@rootFeature/@groups.0/@features.11/@groups.0/@features.0/@versions.2"/>
+            <versions number="1.00.5" supersededVersion="//@rootFeature/@groups.0/@features.11/@groups.0/@features.0/@versions.3"/>
+          </features>
+          <features maxCardinality="1" name="HLF_1402_HotSpot">
+            <versions number="1.00.1" supersedingVersions="//@rootFeature/@groups.0/@features.11/@groups.0/@features.1/@versions.1"/>
+            <versions number="1.00.2" supersedingVersions="//@rootFeature/@groups.0/@features.11/@groups.0/@features.1/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.11/@groups.0/@features.1/@versions.0"/>
+            <versions number="1.00.3" supersedingVersions="//@rootFeature/@groups.0/@features.11/@groups.0/@features.1/@versions.3" supersededVersion="//@rootFeature/@groups.0/@features.11/@groups.0/@features.1/@versions.1"/>
+            <versions number="1.00.4" supersedingVersions="//@rootFeature/@groups.0/@features.11/@groups.0/@features.1/@versions.4" supersededVersion="//@rootFeature/@groups.0/@features.11/@groups.0/@features.1/@versions.2"/>
+            <versions number="1.00.5" supersededVersion="//@rootFeature/@groups.0/@features.11/@groups.0/@features.1/@versions.3"/>
+          </features>
+        </groups>
+      </features>
+    </groups>
+  </rootFeature>
+</feature:DEFeatureModel>

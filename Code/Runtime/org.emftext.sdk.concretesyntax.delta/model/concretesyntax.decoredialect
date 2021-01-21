@@ -1,0 +1,11 @@
+deltaDialect
+{
+	configuration:
+		metaModel: <http://www.emftext.org/sdk/concretesyntax>;
+		
+		identifierResolver: org.emftext.sdk.concretesyntax.delta.resolver.ConcreteSyntaxIDResolver;
+
+	deltaOperations:
+		customOperation addRule(String ruleText, ConcreteSyntax concreteSyntax);
+		detachOperation removeRule(Rule rule);
+}

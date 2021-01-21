@@ -1,0 +1,13 @@
+delta "Strategy_Strategy"
+	dialect <http://www.eclipse.org/uml2/5.0.0/UML>
+	requires <../core/Base.uml>
+{
+	Model model = <model::>;
+	
+	//Package
+	createPackage("org.example", model);
+
+	//Strategy
+	createInterface("Strategy", <package::org.example>);
+	createOperationInInterface("strategyOperation", <interface::org.example.Strategy>);
+}

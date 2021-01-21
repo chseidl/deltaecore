@@ -1,0 +1,21 @@
+delta "Composite_Component"
+	dialect <http://www.eclipse.org/uml2/5.0.0/UML>
+	requires <../core/Base.uml>
+{
+	Model model = <model::>;
+	
+	//Package
+	createPackage("org.example", model);
+
+	//Component
+	createInterface("Component", <package::org.example>);
+	createOperationInInterface("getChildren", <interface::org.example.Component>);
+	
+	createOperationInInterface("addChild", <interface::org.example.Component>);
+	createParameter("child", <interface::org.example.Component>, 1, 1, <operation::org.example.Component#addChild>);
+
+	createOperationInInterface("removeChild", <interface::org.example.Component>);
+	createParameter("child", <interface::org.example.Component>, 1, 1, <operation::org.example.Component#removeChild>);
+
+	createOperationInInterface("operation", <interface::org.example.Component>);
+}

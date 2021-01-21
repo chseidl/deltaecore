@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://vicci.eu/cfd/1.0"
+            class="eu.vicci.ecosystem.componentfaultdiagram.cfd.CFDPackage"
+            genModel="model/CFD.genmodel"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.factory_override">
+      <factory
+            class="eu.vicci.ecosystem.componentfaultdiagram.cfd.impl.custom.CFDFactoryImplCustom"
+            uri="http://vicci.eu/cfd/1.0">
+      </factory>
+   </extension>
+</plugin>

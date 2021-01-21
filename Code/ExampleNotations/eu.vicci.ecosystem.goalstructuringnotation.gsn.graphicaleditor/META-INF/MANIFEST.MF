@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Graphical GSN Editor
+Bundle-SymbolicName: eu.vicci.ecosystem.goalstructuringnotation.gsn.graphicaleditor;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.gef,
+ org.eclipse.ui.ide,
+ org.eclipse.core.resources,
+ eu.vicci.ecosystem.goalstructuringnotation.gsn

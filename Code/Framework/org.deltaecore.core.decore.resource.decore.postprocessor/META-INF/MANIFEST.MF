@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DeltaEcore Delta Module Language Post Processor
+Bundle-SymbolicName: org.deltaecore.core.decore.resource.decore.postprocessor;singleton:=true
+Bundle-Version: 0.8.2
+Bundle-Vendor: www.deltaecore.org
+Require-Bundle: org.deltaecore.core.decore.resource.decore,
+ org.deltaecore.core.decore
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.deltaecore.core.decore.resource.decore.postprocessor

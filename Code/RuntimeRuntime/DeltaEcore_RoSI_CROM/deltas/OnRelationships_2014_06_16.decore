@@ -1,0 +1,13 @@
+evolution delta "OnRelationships_2014_06_16"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>,
+			 <OnRelationships.decore>
+{
+	EEnumLiteral literal = <CompartmentRoleObjectModel.Parthood.InseperablePart>;
+	
+	//NOTE: Careful here! Changing the name of the literal changes its identifier string,
+	//which is re-evaluated once the "literal" variable is invoked! (Order important here!) 
+	setEEnumLiteralLiteral("InseparablePart", literal);
+	setEEnumLiteralName("InseparablePart", literal);
+}

@@ -1,0 +1,11 @@
+configuration delta "RelationshipConstraints"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>,
+			 <Constraints.decore>
+{
+	EClass relationshipConstraintEClass = new EClass(name : "RelationshipConstraint");
+	addEClass(relationshipConstraintEClass, <CompartmentRoleObjectModel>);
+	
+	addESuperType(<CompartmentRoleObjectModel.Constraint>, relationshipConstraintEClass);
+}

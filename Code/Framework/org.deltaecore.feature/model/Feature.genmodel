@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.deltaecore.feature/src-gen" editDirectory="/org.deltaecore.feature.edit/src-gen"
+    editorDirectory="/org.deltaecore.feature.editor/src-gen" modelPluginID="org.deltaecore.feature"
+    modelName="DeltaEcore Feature Model" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    testsDirectory="/org.deltaecore.feature.tests/src-gen" importerID="org.eclipse.emf.importer.ecore"
+    bundleManifest="false" complianceLevel="7.0" copyrightFields="false" operationReflection="true"
+    importOrganizing="true">
+  <foreignModel>Feature.ecore</foreignModel>
+  <genPackages prefix="DEFeature" basePackage="org.deltaecore" disposableProviderFactory="true"
+      fileExtensions="defeaturemodel,feature" ecorePackage="Feature.ecore#/">
+    <genClasses ecoreClass="Feature.ecore#//DEFeatureModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Feature.ecore#//DEFeatureModel/rootFeature"/>
+    </genClasses>
+    <genClasses ecoreClass="Feature.ecore#//DEFeature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Feature.ecore#//DEFeature/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Feature.ecore#//DEFeature/versions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Feature.ecore#//DEFeature/groups"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Feature.ecore#//DEFeature/parentOfFeature"/>
+      <genOperations ecoreOperation="Feature.ecore#//DEFeature/isOptional"/>
+      <genOperations ecoreOperation="Feature.ecore#//DEFeature/isMandatory"/>
+    </genClasses>
+    <genClasses ecoreClass="Feature.ecore#//DEGroup">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Feature.ecore#//DEGroup/features"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Feature.ecore#//DEGroup/parentOfGroup"/>
+      <genOperations ecoreOperation="Feature.ecore#//DEGroup/isAlternative"/>
+      <genOperations ecoreOperation="Feature.ecore#//DEGroup/isOr"/>
+      <genOperations ecoreOperation="Feature.ecore#//DEGroup/isAnd"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Feature.ecore#//DECardinalityBasedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Feature.ecore#//DECardinalityBasedElement/minCardinality"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Feature.ecore#//DECardinalityBasedElement/maxCardinality"/>
+    </genClasses>
+    <genClasses ecoreClass="Feature.ecore#//DEVersion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Feature.ecore#//DEVersion/number"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Feature.ecore#//DEVersion/feature"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Feature.ecore#//DEVersion/supersedingVersions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Feature.ecore#//DEVersion/supersededVersion"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

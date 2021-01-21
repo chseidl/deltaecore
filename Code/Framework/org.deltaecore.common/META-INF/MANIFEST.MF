@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DeltaEcore Common
+Bundle-SymbolicName: org.deltaecore.common
+Bundle-Version: 0.8.2
+Bundle-Vendor: www.deltaecore.org
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.deltaecore.debug,
+ org.deltaecore.util
+Require-Bundle: org.eclipse.core.resources;bundle-version="3.0.0";visibility:=reexport,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ de.christophseidl.util.eclipse,
+ de.christophseidl.util.ecore,
+ de.christophseidl.util.eclipse.ui;resolution:=optional

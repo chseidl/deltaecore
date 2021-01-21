@@ -1,0 +1,61 @@
+[
+	//0
+	<deltas/AlternativeGroups.decore>,
+	<deltas/Attributes.decore>,
+	<deltas/BindingTimes.decore>,
+	<deltas/ConfigurableAndNotVersionBranching.decore>,
+	<deltas/Continuous.decore>,
+	<deltas/DomainType.decore>,
+	<deltas/EraseAlternativeGroups.decore>,
+	<deltas/EraseMandatoryFeatures.decore>,
+	<deltas/EraseOptionalFeatures.decore>,
+	<deltas/EraseOrGroups.decore>,
+	<deltas/External.decore>,
+	<deltas/FeatureVariationType.decore>,
+	<deltas/Finite.decore>,
+	<deltas/GroupVariationType.decore>,
+	<deltas/Infinite.decore>,
+	<deltas/MandatoryFeatures.decore>,
+	<deltas/NonConfigurableVersions.decore>,
+	<deltas/NotConfigurable.decore>,
+	<deltas/NotDomainTypeOrContinuous.decore>,
+	<deltas/NotDomainTypeOrDiscrete.decore>,
+	<deltas/NotDomainTypeOrInfinite.decore>,
+	<deltas/NotMultipleGroups.decore>,
+	<deltas/OptionalFeatures.decore>,
+	<deltas/OrGroups.decore>,
+	<deltas/Resources.decore>
+	
+]
+[
+	<deltas/NotUnlimited.decore>,
+	<deltas/NotFeatureCardinality.decore>,
+	<deltas/NotGroupCardinality.decore>
+]
+[
+	<deltas/NotCardinalities.decore>
+]
+
+// the first removes an attribute, the second the containing class
+[
+	<deltas/NotConditionalVersionRestrictions.decore>
+]
+[
+	<deltas/NotVersionRestrictions.decore>
+]
+
+[
+	//2
+	<deltas/FeatureModelingFamily_2.decore>,
+	<deltas/GroupVariationType_2.decore>
+]
+[
+	//3
+	<deltas/BindingTimes_3.decore>,
+	<deltas/Resources_3.decore>,
+	<deltas/NotDomainTypeOrDiscrete_3.decore>
+]
+//[
+	//4
+	//TODO: Configuration delta modules for constraints?
+//]

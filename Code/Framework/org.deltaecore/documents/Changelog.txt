@@ -1,0 +1,47 @@
+7 November 2014
+===============
+- Support for application order constraints in an *.aoc file.
+- Enhanced performance for live preview.
+
+0.8.1 (18 June 2014)
+====================
+- Support for multiple delta dialects in one delta module file.
+- Experimental support for concrete syntax fragments of EMFText languages in delta module files.
+- Support for variant derivation using (hyper) feature models.
+- Support for mapping expressions over features and feature version to sets of delta modules for variant derivation.
+
+
+0.8.2 (09 April 2015)
+=====================
+- Support for resolving identifiers of newly created elements.
+- Support for application order constraints.
+
+TODO: 0.8.3 (??)
+=====================
+- Support for customization delta modules.
+  - New type of delta module intended to allow individualized end-user customization of SPL products.
+  - Customization delta modules are automatically applied after all other types of delta modules.
+
+in between ??? 
+  
+11 May 2016
+===========
+- Tentative support for dynamic delta dialects. (Load dialects temporarily in current Eclipse instance for development purposes).
+- (Delta Recording coming up)
+- Support in delta dialect for indirectly referenced metamodel elements (e.g., delta dialect is defined for a metamodel A, which references another metamodel B then the types of metamodel B can be used seamlessly now).
+
+
+January 2017
+============
+- Added support for a dedicated modifies directive to incorporate models to be modified.
+- Removed support for non-delta modules in the requires directive of a delta module. 
+
+
+February 2017
+=============
+- Changed variant creation process to be entirely based on resources.
+- Improved performance of variant creation procedure.
+- Streamlined creating of partial variants as part of editor preview.
+- Added tentative support for creation of resources in delta modules.
+- Importer for FeatureIDE feature models.
+- Importer/exporter for SPLOT feature models.

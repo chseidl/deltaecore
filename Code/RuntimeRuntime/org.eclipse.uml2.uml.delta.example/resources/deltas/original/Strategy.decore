@@ -1,0 +1,31 @@
+delta "Strategy"
+	dialect <http://www.eclipse.org/uml2/5.0.0/UML>
+	requires <../core/Base.uml>
+{
+	//TODO: Might need different delta modules depending on variability
+	
+	Model model = <model::>;
+	
+	//Packages
+	createPackage("org.example", model);
+	//...
+	
+
+	//Strategy
+	createInterface("Strategy", <package::org.example>);
+	createOperationInInterface("strategyOperation", <interface::org.example.Strategy>);
+	
+	
+	//Concrete Strategy
+	createClass("ConcreteStrategy", <package::org.example>, false);
+	createInterfaceRealization(<class::org.example.ConcreteStrategy>, <interface::org.example.Strategy>);
+	createOperationInClass("strategyOperation", <class::org.example.ConcreteStrategy>);
+	
+	
+	//Client
+	createClass("Client", <package::org.example>, false);
+	createGeneralization(<class::org.example.ConcreteHook>, <class::org.example.Template>);
+	createProperty("strategy", <interface::org.example.Strategy>, 0, 1, <class::org.example.Client>);
+	createOperationInClass("strategyCall", <class::org.example.Client>);
+	createCommentInOperation("strategy.strategyOperation()", <operation::org.example.Client#strategyCall>);
+}

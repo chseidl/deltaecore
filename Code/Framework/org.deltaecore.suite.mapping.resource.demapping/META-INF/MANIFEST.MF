@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EMFText Parser Plugin: demapping
+Bundle-SymbolicName: org.deltaecore.suite.mapping.resource.demapping;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Vendor: Software Technology Group - TU Dresden Germany
+Require-Bundle: org.eclipse.core.runtime;resolution:=optional,
+  org.eclipse.core.resources;resolution:=optional,
+  org.eclipse.emf.ecore,
+  org.eclipse.emf.ecore.change,
+  org.eclipse.emf.validation;resolution:=optional,
+  org.emftext.access;resolution:=optional,
+  org.emftext.commons.antlr3_4_0,
+  org.deltaecore.suite.mapping,
+  org.deltaecore.core.decore,
+  org.deltaecore.core.decorebase,
+  org.deltaecore.core.decoredialect,
+  org.deltaecore.feature.expression,
+  org.deltaecore.feature,
+  org.deltaecore.feature.expression.resource.expression
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.deltaecore.suite.mapping.resource.demapping,
+  org.deltaecore.suite.mapping.resource.demapping.analysis,
+  org.deltaecore.suite.mapping.resource.demapping.mopp,
+  org.deltaecore.suite.mapping.resource.demapping.debug,
+  org.deltaecore.suite.mapping.resource.demapping.launch,
+  org.deltaecore.suite.mapping.resource.demapping.grammar,
+  org.deltaecore.suite.mapping.resource.demapping.util
+Bundle-Activator: org.deltaecore.suite.mapping.resource.demapping.mopp.DemappingPlugin

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ASCII"?>
+<feature:DEFeatureModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:feature="http://deltaecore.org/feature/1.0">
+  <rootFeature minCardinality="1" maxCardinality="1" name="TurtleBot">
+    <versions number="1.0" supersedingVersions="//@rootFeature/@versions.1"/>
+    <versions number="2.0" supersededVersion="//@rootFeature/@versions.0"/>
+    <groups minCardinality="2" maxCardinality="4">
+      <features minCardinality="1" maxCardinality="1" name="Engine">
+        <versions number="1.0" supersedingVersions="//@rootFeature/@groups.0/@features.0/@versions.1"/>
+        <versions number="1.1" supersedingVersions="//@rootFeature/@groups.0/@features.0/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.0/@versions.0"/>
+        <versions number="Kobuki 1.0" supersededVersion="//@rootFeature/@groups.0/@features.0/@versions.1"/>
+      </features>
+      <features minCardinality="1" maxCardinality="1" name="Movement">
+        <versions number="1.0" supersedingVersions="//@rootFeature/@groups.0/@features.1/@versions.1"/>
+        <versions number="1.1" supersedingVersions="//@rootFeature/@groups.0/@features.1/@versions.2" supersededVersion="//@rootFeature/@groups.0/@features.1/@versions.0"/>
+        <versions number="1.2" supersededVersion="//@rootFeature/@groups.0/@features.1/@versions.1"/>
+        <groups minCardinality="1" maxCardinality="1">
+          <features maxCardinality="1" name="Autonomous">
+            <versions number="1.0" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@versions.1"/>
+            <versions number="1.1" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.0/@versions.0"/>
+          </features>
+          <features maxCardinality="1" name="Keyboard">
+            <versions number="1.0"/>
+          </features>
+          <features maxCardinality="1" name="Gamepad">
+            <versions number="1.0" supersedingVersions="//@rootFeature/@groups.0/@features.1/@groups.0/@features.2/@versions.1"/>
+            <versions number="2.0" supersededVersion="//@rootFeature/@groups.0/@features.1/@groups.0/@features.2/@versions.0"/>
+          </features>
+        </groups>
+      </features>
+      <features maxCardinality="1" name="Detection">
+        <versions number="1.0" supersedingVersions="//@rootFeature/@groups.0/@features.2/@versions.1"/>
+        <versions number="1.1" supersededVersion="//@rootFeature/@groups.0/@features.2/@versions.0"/>
+        <groups minCardinality="1" maxCardinality="3">
+          <features maxCardinality="1" name="Bump">
+            <versions number="1.0"/>
+          </features>
+          <features maxCardinality="1" name="Infrared">
+            <versions number="1.0" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@versions.1"/>
+            <versions number="2.0" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.1/@versions.0"/>
+          </features>
+          <features maxCardinality="1" name="Ultrasound">
+            <versions number="0.8" supersedingVersions="//@rootFeature/@groups.0/@features.2/@groups.0/@features.2/@versions.1"/>
+            <versions number="0.9" supersededVersion="//@rootFeature/@groups.0/@features.2/@groups.0/@features.2/@versions.0"/>
+          </features>
+        </groups>
+      </features>
+      <features maxCardinality="1" name="Webservice">
+        <versions number="1.0" supersedingVersions="//@rootFeature/@groups.0/@features.3/@versions.1"/>
+        <versions number="1.1" supersededVersion="//@rootFeature/@groups.0/@features.3/@versions.0"/>
+      </features>
+    </groups>
+  </rootFeature>
+</feature:DEFeatureModel>

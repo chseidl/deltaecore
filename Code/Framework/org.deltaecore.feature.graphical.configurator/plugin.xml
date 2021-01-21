@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            class="org.deltaecore.feature.graphical.configurator.editor.DEConfiguratorGraphicalEditor"
+            default="false"
+            extensions="defeaturemodel,feature"
+            icon="icons/Editor.png"
+            id="org.deltaecore.feature.graphical.configurator.editorID"
+            name="Feature Model Configurator (DeltaEcore)">            
+      </editor>
+   </extension>
+</plugin>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mapping -->
+      <package
+            uri="http://deltaecore.org/feature/mapping/1.0"
+            class="org.deltaecore.suite.mapping.DEMappingPackage"
+            genModel="model/Mapping.genmodel"/>
+   </extension>
+   <extension
+         point="org.deltaecore.core.decore.resource.decore.postprocessor">
+      <postprocessor
+            class="org.deltaecore.suite.mapping.DEDeltaModuleImplicitRequirementsCompleter"
+            id="org.deltaecore.suite.mapping.DEDeltaModuleImplicitRequirementsCompleter">
+      </postprocessor>
+   </extension>
+</plugin>

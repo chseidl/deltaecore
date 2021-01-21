@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DeltaEcore Dleta Dialect Code Generation
+Bundle-SymbolicName: org.deltaecore.core.generation
+Bundle-Version: 0.8.2
+Bundle-Vendor: www.deltaecore.org
+Require-Bundle: org.deltaecore.core.decore,
+ org.deltaecore.core.decorebase.resource.decorebase,
+ org.deltaecore.core.decoredialect.registry
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.deltaecore.core.generation,
+ org.deltaecore.core.generation.dialect,
+ org.deltaecore.core.generation.extension,
+ org.deltaecore.core.generation.general,
+ org.deltaecore.core.generation.interpreter

@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EMFText Parser Plugin: deconfiguration
+Bundle-SymbolicName: org.deltaecore.feature.configuration.resource.deconfiguration;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Vendor: Software Technology Group - TU Dresden Germany
+Require-Bundle: org.eclipse.core.runtime;resolution:=optional,
+  org.eclipse.core.resources;resolution:=optional,
+  org.eclipse.emf.ecore,
+  org.eclipse.emf.ecore.change,
+  org.eclipse.emf.validation;resolution:=optional,
+  org.emftext.access;resolution:=optional,
+  org.eclipse.debug.core;resolution:=optional,
+  org.emftext.commons.antlr3_4_0,
+  org.deltaecore.feature.configuration,
+  org.deltaecore.feature
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.deltaecore.feature.configuration.resource.deconfiguration,
+  org.deltaecore.feature.configuration.resource.deconfiguration.analysis,
+  org.deltaecore.feature.configuration.resource.deconfiguration.mopp,
+  org.deltaecore.feature.configuration.resource.deconfiguration.debug,
+  org.deltaecore.feature.configuration.resource.deconfiguration.launch,
+  org.deltaecore.feature.configuration.resource.deconfiguration.grammar,
+  org.deltaecore.feature.configuration.resource.deconfiguration.util
+Bundle-Activator: org.deltaecore.feature.configuration.resource.deconfiguration.mopp.DeconfigurationPlugin

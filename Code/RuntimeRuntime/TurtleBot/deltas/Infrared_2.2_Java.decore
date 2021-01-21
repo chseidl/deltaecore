@@ -1,0 +1,6 @@
+evolution delta "Infrared_2.2_Java"
+	dialect <http://www.emftext.org/java>
+	modifies <../src/eu/vicci/turtlebot/Infrared.java>
+{
+	//...
+}

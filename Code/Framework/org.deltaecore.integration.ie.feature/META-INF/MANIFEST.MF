@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DeltaEcore Feature Import/Export
+Bundle-SymbolicName: org.deltaecore.integration.ie.feature
+Bundle-Version: 0.8.2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.deltaecore.feature;visibility:=reexport,
+ org.deltaecore.feature.constraint;visibility:=reexport
+Export-Package: org.deltaecore.integration.ie.feature,
+ org.deltaecore.integration.ie.feature.data

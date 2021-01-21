@@ -1,0 +1,12 @@
+configuration delta "AlternativeGroups"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <GroupVariationType.decore>
+	modifies <../model/Feature.ecore>
+{
+	EEnumLiteral alternativeEEnumLiteral = new EEnumLiteral(name : "ALTERNATIVE", literal : "ALTERNATIVE", value : 1);
+	addEEnumLiteral(alternativeEEnumLiteral, <SGroupVariationType>);
+	
+	String implementation = "return (getVariationType() == SGroupVariationType.ALTERNATIVE);";
+	setEOperationImplementation(<SGroup.isAlternative>, implementation);
+}

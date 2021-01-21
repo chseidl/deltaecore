@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="decorebase" nsURI="http://deltaecore.org/decorebase/1.0" nsPrefix="decorebase">
+  <eClassifiers xsi:type="ecore:EClass" name="DEType" abstract="true" interface="true">
+    <eOperations name="getValueType" lowerBound="1">
+      <eGenericType eClassifier="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EJavaClass">
+        <eTypeArguments/>
+      </eGenericType>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DEBuiltInType" abstract="true" interface="true"
+      eSuperTypes="#//DEType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DEBoolean" eSuperTypes="#//DEBuiltInType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DEInteger" eSuperTypes="#//DEBuiltInType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DEDouble" eSuperTypes="#//DEBuiltInType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DEString" eSuperTypes="#//DEBuiltInType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DEMetaModelClassifierReference" eSuperTypes="#//DEType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifier" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DEElementWithDomainPackage" abstract="true"
+      interface="true">
+    <eOperations name="getDomainPackage" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EPackage"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DEJavaClassReference">
+    <eOperations name="getReferencedJavaClass" lowerBound="1">
+      <eGenericType eClassifier="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EJavaClass">
+        <eTypeArguments/>
+      </eGenericType>
+    </eOperations>
+    <eOperations name="getQualifiedNameOfReferencedJavaClass" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="packageNameFragments" upperBound="-1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="classNameFragment" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DEModificationType">
+    <eLiterals name="CONFIGURATION"/>
+    <eLiterals name="EVOLUTION" value="1"/>
+    <eLiterals name="CUSTOMIZATION" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DERelativeFilePath">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rawRelativeFilePath" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

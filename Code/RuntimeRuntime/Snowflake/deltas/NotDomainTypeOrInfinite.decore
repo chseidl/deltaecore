@@ -1,0 +1,23 @@
+configuration delta "NotDomainTypeOrInfinite"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <Attributes.decore>,
+			 <NotDomainTypeOrDiscrete.decore>
+	modifies <../model/Feature.ecore>
+{
+	//Only a super type if used as infinite type (and not just as part of a subrange type) or untyped.
+	addESuperType(<SAttributeValue>, <SIntegerValue>);
+	
+	EClass stringValueEClass = new EClass(name: "SStringValue");
+	addESuperType(<SAttributeValue>, stringValueEClass);
+	addEClass(stringValueEClass, <feature>);
+
+	EAttribute rawValueEAttribute = new EAttribute(name : "rawValue", eType: <EString>, lowerBound : 1, upperBound : 1);
+	addEAttribute(rawValueEAttribute, stringValueEClass);
+}
+
+dialect <http://www.emftext.org/sdk/concretesyntax>
+	modifies <../model/Constraint.cs>
+{
+	addRule("SStringValue ::= rawValue['\"','\"'];", <ConcreteSyntax:constraints>);
+}

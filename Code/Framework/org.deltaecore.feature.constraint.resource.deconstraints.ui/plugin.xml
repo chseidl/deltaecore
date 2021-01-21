@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<extension point="org.emftext.access.syntax.ui">
+		<metaInformationProvider class="org.deltaecore.feature.constraint.resource.deconstraints.ui.DeconstraintsUIMetaInformation" id="org.deltaecore.feature.constraint.resource.deconstraints.ui.DeconstraintsUIMetaInformation">
+		</metaInformationProvider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors">
+		<editor class="org.deltaecore.feature.constraint.resource.deconstraints.ui.DeconstraintsEditor" contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor" extensions="deconstraints,constraints" icon="icons/editor_icon.gif" id="org.deltaecore.feature.constraint.resource.deconstraints.ui.DeconstraintsEditor" name="Constraints Editor (DeltaEcore)">
+			<contentTypeBinding contentTypeId="org.deltaecore.feature.constraint.resource.deconstraints">
+			</contentTypeBinding>
+		</editor>
+	</extension>
+	
+	<extension point="org.eclipse.core.runtime.preferences">
+		<initializer class="org.deltaecore.feature.constraint.resource.deconstraints.ui.DeconstraintsPreferenceInitializer">
+		</initializer>
+	</extension>
+	
+	<extension point="org.eclipse.ui.preferencePages">
+		<page name="Constraints Editor (DeltaEcore)" id="org.deltaecore.feature.constraint.resource.deconstraints.ui.DeconstraintsPreferencePage" class="org.deltaecore.feature.constraint.resource.deconstraints.ui.DeconstraintsPreferencePage" category="org.eclipse.ui.preferencePages.GeneralTextEditor">
+		</page>
+		<page name="Syntax Coloring" id="org.deltaecore.feature.constraint.resource.deconstraints.ui.DeconstraintsSyntaxColoringPreferencePage" class="org.deltaecore.feature.constraint.resource.deconstraints.ui.DeconstraintsSyntaxColoringPreferencePage" category="org.deltaecore.feature.constraint.resource.deconstraints.ui.DeconstraintsPreferencePage">
+		</page>
+		<page name="Brackets" id="org.deltaecore.feature.constraint.resource.deconstraints.ui.DeconstraintsBracketPreferencePage" class="org.deltaecore.feature.constraint.resource.deconstraints.ui.DeconstraintsBracketPreferencePage" category="org.deltaecore.feature.constraint.resource.deconstraints.ui.DeconstraintsPreferencePage">
+		</page>
+		<page name="Content Assist" id="org.deltaecore.feature.constraint.resource.deconstraints.ui.DeconstraintsContentAssistPreferencePage" class="org.deltaecore.feature.constraint.resource.deconstraints.ui.DeconstraintsContentAssistPreferencePage" category="org.deltaecore.feature.constraint.resource.deconstraints.ui.DeconstraintsPreferencePage">
+		</page>
+	</extension>
+	
+	<extension point="org.eclipse.ui.newWizards">
+		<wizard category="org.deltaecore.newwizards.Category" icon="/icons/default_new_icon.gif" class="org.deltaecore.feature.constraint.resource.deconstraints.ui.DeconstraintsNewFileWizard" id="org.deltaecore.feature.constraint.resource.deconstraints.ui.DeconstraintsNewFileWizard" name="DeltaEcore Feature Model Constraints (*.deconstraints)">
+		</wizard>
+	</extension>
+	
+	<extension point="org.eclipse.ui.ide.markerResolution">
+		<markerResolutionGenerator class="org.deltaecore.feature.constraint.resource.deconstraints.ui.DeconstraintsMarkerResolutionGenerator" markerType="org.deltaecore.feature.constraint.resource.deconstraints.problem">
+		</markerResolutionGenerator>
+	</extension>
+	
+	<extension point="org.eclipse.core.filebuffers.annotationModelCreation">
+		<factory class="org.deltaecore.feature.constraint.resource.deconstraints.ui.DeconstraintsAnnotationModelFactory" extensions="deconstraints,constraints">
+		</factory>
+	</extension>
+	
+	<extension point="org.eclipse.core.contenttype.contentTypes">
+		<content-type id="org.deltaecore.feature.constraint.resource.deconstraints" name=".deconstraints File" base-type="org.eclipse.core.runtime.text" file-extensions="deconstraints,constraints">
+		</content-type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.documentProviders">
+		<provider class="org.eclipse.ui.editors.text.TextFileDocumentProvider" extensions="deconstraints,constraints" id="org.deltaecore.feature.constraint.resource.deconstraints.ui.provider">
+		</provider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.annotationTypes">
+		<type name="org.deltaecore.feature.constraint.resource.deconstraints.ui.occurences">
+		</type>
+		<type name="org.deltaecore.feature.constraint.resource.deconstraints.ui.occurences.declaration" super="org.deltaecore.feature.constraint.resource.deconstraints.ui.occurences">
+		</type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
+		<specification annotationType="org.deltaecore.feature.constraint.resource.deconstraints.ui.occurences" label="Occurrences (in .deconstraints files)" icon="/icons/occurrence_icon.gif" textPreferenceKey="deconstraints.occurrenceIndication" textPreferenceValue="false" highlightPreferenceKey="deconstraints.occurrenceHighlighting" highlightPreferenceValue="true" contributesToHeader="false" overviewRulerPreferenceKey="deconstraints.occurrenceIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="deconstraints.occurrenceIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="deconstraints.occurrenceIndicationColor" colorPreferenceValue="212,212,212" presentationLayer="4" showInNextPrevDropdownToolbarActionKey="deconstraints.showOccurrenceInNextPrevDropdownToolbarAction" showInNextPrevDropdownToolbarAction="true" isGoToNextNavigationTargetKey="deconstraints.isOccurrenceGoToNextNavigationTarget" isGoToNextNavigationTarget="false" isGoToPreviousNavigationTargetKey="deconstraints.isOccurrenceGoToPreviousNavigationTarget" isGoToPreviousNavigationTarget="false" textStylePreferenceKey="deconstraints.occurrenceTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+		<specification annotationType="org.deltaecore.feature.constraint.resource.deconstraints.ui.occurences.declaration" label="Declarations (in .deconstraints files)" textPreferenceKey="deconstraints.declarationIndication" textPreferenceValue="false" highlightPreferenceKey="deconstraints.declarationHighlighting" highlightPreferenceValue="true" overviewRulerPreferenceKey="deconstraints.declarationIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="deconstraints.declarationIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="deconstraints.declarationIndicationColor" colorPreferenceValue="240,216,168" presentationLayer="4" textStylePreferenceKey="deconstraints.declarationTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+	</extension>
+	
+	<extension point="org.eclipse.ui.commands">
+		<category description="All commands belonging to Deconstraints" id="org.deltaecore.feature.constraint.resource.deconstraints.ui.command.category" name="Deconstraints">
+		</category>
+		<command categoryId="org.deltaecore.feature.constraint.resource.deconstraints.ui.command.category" description="Toggle comment of the selected lines" id="org.deltaecore.feature.constraint.resource.deconstraints.ui.command.togglecomment" name="Toggle Comment">
+		</command>
+	</extension>
+	
+	<extension point="org.eclipse.ui.handlers">
+		<handler class="org.deltaecore.feature.constraint.resource.deconstraints.ui.DeconstraintsToggleCommentHandler" commandId="org.deltaecore.feature.constraint.resource.deconstraints.ui.command.togglecomment">
+		</handler>
+	</extension>
+	
+	<extension point="org.eclipse.ui.contexts">
+		<context name="Editing Deconstraints Files" description="Editing Deconstraints Files Context" parentId="org.eclipse.ui.textEditorScope" id="org.deltaecore.feature.constraint.resource.deconstraints.EditorScope">
+		</context>
+	</extension>
+	
+	<extension point="org.eclipse.ui.bindings">
+		<key sequence="M1+7" commandId="org.deltaecore.feature.constraint.resource.deconstraints.ui.command.togglecomment" schemeId="org.eclipse.ui.defaultAcceleratorConfiguration" contextId="org.deltaecore.feature.constraint.resource.deconstraints.EditorScope">
+		</key>
+	</extension>
+	
+</plugin>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.emftext.language.umlid/src-gen" editDirectory="/org.emftext.language.umlid.edit/src-gen"
+    editorDirectory="/org.emftext.language.umlid.editor/src-gen" modelPluginID="org.emftext.language.umlid"
+    modelName="UmlID" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    testsDirectory="/org.emftext.language.umlid.tests/src-gen" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="7.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>UmlID.ecore</foreignModel>
+  <genPackages prefix="UmlID" basePackage="org.emftext.language" disposableProviderFactory="true"
+      ecorePackage="UmlID.ecore#/">
+    <genClasses image="false" ecoreClass="UmlID.ecore#//UmlID"/>
+    <genClasses ecoreClass="UmlID.ecore#//UmlPackageID"/>
+    <genClasses image="false" ecoreClass="UmlID.ecore#//UmlClassifierIDBase">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlID.ecore#//UmlClassifierIDBase/classifierName"/>
+    </genClasses>
+    <genClasses ecoreClass="UmlID.ecore#//UmlOperationID"/>
+    <genClasses ecoreClass="UmlID.ecore#//UmlPropertyID"/>
+    <genClasses image="false" ecoreClass="UmlID.ecore#//UmlMemberID">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlID.ecore#//UmlMemberID/memberName"/>
+    </genClasses>
+    <genClasses ecoreClass="UmlID.ecore#//UmlIDList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UmlID.ecore#//UmlIDList/ids"/>
+    </genClasses>
+    <genClasses ecoreClass="UmlID.ecore#//UmlClassID"/>
+    <genClasses ecoreClass="UmlID.ecore#//UmlInterfaceID"/>
+    <genClasses image="false" ecoreClass="UmlID.ecore#//UmlPackageIDBase">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlID.ecore#//UmlPackageIDBase/packageNames"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="UmlID.ecore#//UmlClassifierID"/>
+    <genClasses ecoreClass="UmlID.ecore#//UmlModelID"/>
+  </genPackages>
+</genmodel:GenModel>

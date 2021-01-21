@@ -1,0 +1,11 @@
+configuration delta "RoleEquivalence"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>,
+			 <RoleConstraints.decore>
+{
+	EClass roleEquivalentEClass = new EClass(name: "RoleEquivalence");
+	addEClass(roleEquivalentEClass, <CompartmentRoleObjectModel>);
+
+	addESuperType(<CompartmentRoleObjectModel.RoleConstraint>, roleEquivalentEClass);
+}

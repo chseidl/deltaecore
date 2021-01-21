@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gsn:GSNModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gsn="http://vicci.eu/gsn/1.0">
+  <elements xsi:type="gsn:GSNConcreteElement" outgoingConnections="//@connections.0" constraints="298,44,100,70" id="G1" type="GOAL" description="C/S Logic is fault free"/>
+  <elements xsi:type="gsn:GSNConcreteElement" outgoingConnections="//@connections.1 //@connections.7" incomingConnections="//@connections.0" constraints="55,152,157,78" id="S1" type="STRATEGY" description="Argument by satisfaction of all C/S safety requirements"/>
+  <elements xsi:type="gsn:GSNConcreteElement" outgoingConnections="//@connections.2 //@connections.3" incomingConnections="//@connections.1" constraints="60,312,140,76" id="G2" type="GOAL" description="Press controls being 'jammed on' will cause press to halt"/>
+  <elements xsi:type="gsn:GSNConcreteElement" incomingConnections="//@connections.2" constraints="43,446,93,85" id="Sn1" type="SOLUTION" description="Black Box Test Results"/>
+  <elements xsi:type="gsn:GSNConcreteElement" outgoingConnections="//@connections.4" incomingConnections="//@connections.3" constraints="194,440,151,70" id="G5" type="GOAL" description="'Failure 1' transition of PLC state machine includes BUTTON_IN remaining true"/>
+  <elements xsi:type="gsn:GSNConcreteElement" outgoingConnections="//@connections.5" incomingConnections="//@connections.6" constraints="401,439,135,70" id="G7" type="GOAL" description="'Abort' transition of PLC state machine includes BUTTON_IN going FALSE"/>
+  <elements xsi:type="gsn:GSNConcreteElement" outgoingConnections="//@connections.6 //@connections.8" incomingConnections="//@connections.7" constraints="398,309,143,84" id="G3" type="GOAL" description="Release of controls prior to press passing physical PoNR will cause press operation to abort"/>
+  <elements xsi:type="gsn:GSNConcreteElement" incomingConnections="//@connections.4 //@connections.5" constraints="344,550,90,90" id="Sn2" type="SOLUTION" description="C/S State Machine"/>
+  <elements xsi:type="gsn:GSNConcreteElement" incomingConnections="//@connections.8" constraints="649,318,146,74" id="C1" description="Identified software hazards"/>
+  <connections sourceElement="//@elements.0" targetElement="//@elements.1"/>
+  <connections sourceElement="//@elements.1" targetElement="//@elements.2"/>
+  <connections sourceElement="//@elements.2" targetElement="//@elements.3"/>
+  <connections sourceElement="//@elements.2" targetElement="//@elements.4"/>
+  <connections sourceElement="//@elements.4" targetElement="//@elements.7"/>
+  <connections sourceElement="//@elements.5" targetElement="//@elements.7"/>
+  <connections sourceElement="//@elements.6" targetElement="//@elements.5"/>
+  <connections sourceElement="//@elements.1" targetElement="//@elements.6"/>
+  <connections sourceElement="//@elements.6" type="IN_CONTEXT_OF" targetElement="//@elements.8"/>
+</gsn:GSNModel>

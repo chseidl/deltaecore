@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DocBook Delta Dialect
+Bundle-SymbolicName: org.emftext.language.docbook.delta;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.deltaecore;visibility:=reexport,
+ org.emftext.language.docbook;visibility:=reexport,
+ org.emftext.language.docbook.resource.xml,
+ org.deltaecore.core;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.emftext.language.docbook.delta,
+ org.emftext.language.docbook.delta.resolver

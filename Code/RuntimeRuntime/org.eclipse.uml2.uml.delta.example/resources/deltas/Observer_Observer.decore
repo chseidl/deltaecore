@@ -1,0 +1,13 @@
+delta "Observer_Observer"
+	dialect <http://www.eclipse.org/uml2/5.0.0/UML>
+	requires <../core/Base.uml>
+{
+	Model model = <model::>;
+	
+	//Package
+	createPackage("org.example", model);
+	
+	//Observer
+	createInterface("Observer", <package::org.example>);
+	createOperationInInterface("update", <interface::org.example.Observer>);
+}

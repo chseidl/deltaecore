@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: 
+Bundle-SymbolicName: org.deltaecore.feature.delta;singleton:=true
+Bundle-Version: 1.0.0
+Require-Bundle: org.deltaecore;visibility:=reexport,
+ org.deltaecore.feature;visibility:=reexport,
+ org.deltaecore.core;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6, JavaSE-1.7
+Export-Package: org.deltaecore.feature.delta,
+ org.deltaecore.feature.delta.resolver

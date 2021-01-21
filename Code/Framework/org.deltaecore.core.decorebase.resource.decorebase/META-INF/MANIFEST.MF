@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EMFText Parser Plugin: decorebase
+Bundle-SymbolicName: org.deltaecore.core.decorebase.resource.decorebase;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Vendor: Software Technology Group - TU Dresden Germany
+Require-Bundle: org.eclipse.core.runtime;resolution:=optional,
+  org.eclipse.core.resources;resolution:=optional,
+  org.eclipse.emf.ecore,
+  org.eclipse.emf.ecore.change,
+  org.eclipse.emf.validation;resolution:=optional,
+  org.emftext.access;resolution:=optional,
+  org.eclipse.debug.core;resolution:=optional,
+  org.emftext.commons.antlr3_4_0,
+  org.deltaecore.core.decorebase
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.deltaecore.core.decorebase.resource.decorebase,
+  org.deltaecore.core.decorebase.resource.decorebase.analysis,
+  org.deltaecore.core.decorebase.resource.decorebase.mopp,
+  org.deltaecore.core.decorebase.resource.decorebase.debug,
+  org.deltaecore.core.decorebase.resource.decorebase.launch,
+  org.deltaecore.core.decorebase.resource.decorebase.grammar,
+  org.deltaecore.core.decorebase.resource.decorebase.util
+Bundle-Activator: org.deltaecore.core.decorebase.resource.decorebase.mopp.DecorebasePlugin

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DeltaEcore FeatureIDE Importer/Exporter
+Bundle-SymbolicName: org.deltaecore.integration.ie.feature.featureide
+Bundle-Version: 0.8.2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.deltaecore.integration.ie.feature;visibility:=reexport,
+ de.ovgu.featureide.fm.core;visibility:=reexport
+Export-Package: org.deltaecore.integration.ie.feature.featureide,
+ org.deltaecore.integration.ie.feature.featureide.data

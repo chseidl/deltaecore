@@ -1,0 +1,21 @@
+deltaDialect
+{
+	configuration:
+		metaModel: <http://www.emftext.org/DocBook>;
+		identifierResolver: org.emftext.language.docbook.delta.resolver.DocbookModelElementIdentifierResolver;
+		
+	deltaOperations:
+		customOperation createChapter(String id, String title, String chapterText, BookNode parent);
+		addOperation addChapter(ChapterNode chapter, BookNode[childNodes] parent);
+		detachOperation removeChapter(ChapterNode chapter);
+
+		customOperation createSection(String id, String title, String sectionText, ChapterNode parent);
+		addOperation addSection(SectionNode section, ChapterNode[childNodes] parent);
+		detachOperation removeSection(SectionNode section);
+		
+		customOperation createParagraph(String id, String paragraphText, ParagraphParentNode parent);
+		customOperation addParagraph(ParagraphNode paragraph, ParagraphParentNode parent);
+		detachOperation removeParagraph(ParagraphNode paragraph);
+		
+		evolution customOperation changeId(String id, Node node);
+}

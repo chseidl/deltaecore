@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.deltaecore.eclipse.feature.framework.shell"
+      label="DeltaEcore Shell (optional)"
+      version="0.8.2"
+      provider-name="www.deltaecore.org">
+
+   <description>
+      The shell of DeltaEcore. Can be used to interactively derive variants using a command prompt or to incorporate DeltaEcore into a batch process by starting the shell with a parameter for one-time use.
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <requires>
+      <import feature="org.deltaecore.eclipse.feature.framework.core" version="0.8.2"/>
+      <import feature="org.deltaecore.eclipse.feature.framework.feature" version="0.8.2"/>
+   </requires>
+
+   <plugin
+         id="org.deltaecore.shell"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.deltaecore.shellscript"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.deltaecore.shellscript.interpretation"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.deltaecore.shellscript.resource.deshellscript"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.deltaecore.shellscript.resource.deshellscript.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+</feature>

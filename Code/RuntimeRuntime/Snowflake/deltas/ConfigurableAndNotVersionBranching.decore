@@ -1,0 +1,8 @@
+configuration delta "ConfigurableAndNotVersionBranching"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	modifies <../model/Feature.ecore>
+{
+	//TODO: This makes all implementations no longer be a list!
+	setEReferenceUpperBound(1, <SVersion.supersedingVersions>);
+}

@@ -1,0 +1,29 @@
+configuration delta "Attributes"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	modifies <../model/Feature.ecore>
+{
+	EClass attributeEClass = new EClass(name: "SAttribute");
+	addEClass(attributeEClass, <feature>);
+	
+	EAttribute attributeEAttribute = new EAttribute(name : "name", eType: <EString>, lowerBound : 1, upperBound : 1);
+	addEAttribute(attributeEAttribute, attributeEClass);
+
+	EClass attributeValueEClass = new EClass(name: "SAttributeValue");
+	setEClassAbstract(true, attributeValueEClass);
+	addEClass(attributeValueEClass, <feature>);
+
+	EClass attributeValueAssignmentEClass = new EClass(name: "SAttributeValueAssignment");
+	addESuperType(<SConfigurationArtifact>, attributeValueAssignmentEClass);
+	addEClass(attributeValueAssignmentEClass, <feature>);
+	
+	EReference attributeEReference = new EReference(eType : attributeEClass, name : "attribute", lowerBound : 1, upperBound : 1, containment : false);
+	addEReference(attributeEReference, attributeValueAssignmentEClass);
+
+	EReference attributeValueEReference = new EReference(eType : attributeEClass, name : "attributeValue", lowerBound : 1, upperBound : 1, containment : true);
+	addEReference(attributeValueEReference, attributeValueAssignmentEClass);
+	
+	//attributes: SFeature <>->* SAttribute
+	EReference attributesEReference = new EReference(eType : attributeEClass, name : "attributes", lowerBound : 1, upperBound : -1, containment : true);
+	addEReference(attributesEReference, <SFeature>);
+}

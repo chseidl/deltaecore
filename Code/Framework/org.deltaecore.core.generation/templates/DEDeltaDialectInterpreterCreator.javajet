@@ -1,0 +1,51 @@
+<%@	jet
+	package="org.deltaecore.core.generation.interpreter"
+	class="DEDeltaDialectInterpreterCreator"
+	imports="java.util.List org.deltaecore.core.generation.general.DENameGenerator org.deltaecore.core.decoredialect.*"
+%>
+<%
+	DEDeltaDialectInterpreterCreatorSetup setup = (DEDeltaDialectInterpreterCreatorSetup) argument;
+	DENameGenerator nameGenerator = setup.getNameGenerator();
+	DEDeltaDialect dialect = setup.getDialect();
+	
+	List<DEDeltaOperationDefinition> deltaOperationDefinitions = dialect.getDeltaOperationDefinitions();
+%>
+package <%= nameGenerator.getDeltaDialectBasePackage() %>;
+
+<%
+	List<String> importStatements = DEDeltaDialectInterpreterCreatorUtil.createImportStatements(deltaOperationDefinitions, true);
+		
+	for (String importStatement : importStatements) {
+%>
+<%= importStatement %>
+<%
+	}
+%>
+
+//This class is generated only once and will NOT be overwritten. Changed abstract methods of the base class have to be implemented manually.
+public class <%= nameGenerator.getDeltaDialectInterpreterSimpleClassName() %> extends <%= nameGenerator.getAbstractDeltaDialectInterpreterSimpleClassName() %> {
+<%
+	for (DEDeltaOperationDefinition deltaOperationDefinition : deltaOperationDefinitions) {
+	String methodName = DEDeltaDialectInterpreterCreatorUtil.createDeltaOperationMethodName(deltaOperationDefinition);
+
+	//Methods that had no implementation generated now need to be overwritten or manual implementation.
+	if (DEDeltaDialectInterpreterCreatorUtil.needsManualImplementation(deltaOperationDefinition)) {
+%>
+
+	@Override
+	<%= DEDeltaDialectInterpreterCreatorUtil.createInterpreterMethodSignature(deltaOperationDefinition) %> {
+<%
+			
+			if (deltaOperationDefinition instanceof DECustomDeltaOperationDefinition) {
+%>
+		//TODO: Implement <%= methodName %>()
+		return false;
+<%
+			}
+%>
+	}
+<%
+		}
+	}
+%>
+}

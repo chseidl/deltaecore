@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://deltaecore.org/decoredialect/1.0"
+            class="org.deltaecore.core.decoredialect.DEcoreDialectPackage"
+            genModel="model/DEcoreDialect.genmodel"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.factory_override">
+      <factory
+            class="org.deltaecore.core.decoredialect.impl.custom.DEcoreDialectFactoryImplCustom"
+            uri="http://deltaecore.org/decoredialect/1.0">
+      </factory>
+   </extension>
+   
+</plugin>

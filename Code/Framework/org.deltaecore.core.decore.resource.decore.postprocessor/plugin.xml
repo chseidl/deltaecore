@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="org.deltaecore.core.decore.resource.decore.postprocessor" name="DeltaEcore Delta Module Post Processor" schema="schema/org.deltaecore.core.decore.resource.decore.postprocessor.exsd"/>
+   <extension point="org.deltaecore.core.decore.resource.decore.default_load_options"> 
+	  <provider 
+	    class="org.deltaecore.core.decore.resource.decore.postprocessor.DEDEcorePostProcessorDistributor" 
+	    id="org.deltaecore.core.decore.resource.decore.postprocessor.DEDEcorePartialVariantPostProcessor"> 
+	  </provider> 
+	</extension>
+   <extension
+         point="org.deltaecore.core.decore.resource.decore.postprocessor">
+      <postprocessor
+            class="org.deltaecore.core.decore.resource.decore.postprocessor.DEDecoreDoubleTokenFixer"
+            id="org.deltaecore.core.decore.resource.decore.postprocessor.DEDecoreDoubleTokenFixer">
+      </postprocessor>
+   </extension>
+</plugin>

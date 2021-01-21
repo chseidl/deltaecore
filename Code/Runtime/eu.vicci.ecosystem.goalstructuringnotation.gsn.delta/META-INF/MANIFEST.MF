@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: GSN Delta
+Bundle-SymbolicName: eu.vicci.ecosystem.goalstructuringnotation.gsn.delta;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.deltaecore;visibility:=reexport,
+ eu.vicci.ecosystem.goalstructuringnotation.gsn;visibility:=reexport,
+ org.eclipse.draw2d,
+ org.deltaecore.core;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6, JavaSE-1.7
+Export-Package: eu.vicci.ecosystem.goalstructuringnotation.gsn.delta.resolver

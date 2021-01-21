@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<extension point="org.emftext.access.syntax.ui">
+		<metaInformationProvider class="org.deltaecore.core.decoredialect.resource.decoredialect.ui.DecoredialectUIMetaInformation" id="org.deltaecore.core.decoredialect.resource.decoredialect.ui.DecoredialectUIMetaInformation">
+		</metaInformationProvider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors">
+		<editor class="org.deltaecore.core.decoredialect.resource.decoredialect.ui.DecoredialectEditor" contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor" extensions="decoredialect" icon="icons/editor_icon.gif" id="org.deltaecore.core.decoredialect.resource.decoredialect.ui.DecoredialectEditor" name="Delta Dialect Editor (DeltaEcore)">
+			<contentTypeBinding contentTypeId="org.deltaecore.core.decoredialect.resource.decoredialect">
+			</contentTypeBinding>
+		</editor>
+	</extension>
+	
+	<extension point="org.eclipse.core.runtime.preferences">
+		<initializer class="org.deltaecore.core.decoredialect.resource.decoredialect.ui.DecoredialectPreferenceInitializer">
+		</initializer>
+	</extension>
+	
+	<extension point="org.eclipse.ui.preferencePages">
+		<page name="Delta Dialect Editor (DeltaEcore)" id="org.deltaecore.core.decoredialect.resource.decoredialect.ui.DecoredialectPreferencePage" class="org.deltaecore.core.decoredialect.resource.decoredialect.ui.DecoredialectPreferencePage" category="org.eclipse.ui.preferencePages.GeneralTextEditor">
+		</page>
+		<page name="Syntax Coloring" id="org.deltaecore.core.decoredialect.resource.decoredialect.ui.DecoredialectSyntaxColoringPreferencePage" class="org.deltaecore.core.decoredialect.resource.decoredialect.ui.DecoredialectSyntaxColoringPreferencePage" category="org.deltaecore.core.decoredialect.resource.decoredialect.ui.DecoredialectPreferencePage">
+		</page>
+		<page name="Brackets" id="org.deltaecore.core.decoredialect.resource.decoredialect.ui.DecoredialectBracketPreferencePage" class="org.deltaecore.core.decoredialect.resource.decoredialect.ui.DecoredialectBracketPreferencePage" category="org.deltaecore.core.decoredialect.resource.decoredialect.ui.DecoredialectPreferencePage">
+		</page>
+		<page name="Content Assist" id="org.deltaecore.core.decoredialect.resource.decoredialect.ui.DecoredialectContentAssistPreferencePage" class="org.deltaecore.core.decoredialect.resource.decoredialect.ui.DecoredialectContentAssistPreferencePage" category="org.deltaecore.core.decoredialect.resource.decoredialect.ui.DecoredialectPreferencePage">
+		</page>
+	</extension>
+	
+	<extension point="org.eclipse.ui.newWizards">
+		<wizard category="org.deltaecore.newwizards.Category" icon="/icons/default_new_icon.gif" class="org.deltaecore.core.decoredialect.resource.decoredialect.ui.DecoredialectNewFileWizard" id="org.deltaecore.core.decoredialect.resource.decoredialect.ui.DecoredialectNewFileWizard" name="DeltaEcore Delta Dialect (*.decoredialect)">
+		</wizard>
+	</extension>
+	
+	<extension point="org.eclipse.ui.ide.markerResolution">
+		<markerResolutionGenerator class="org.deltaecore.core.decoredialect.resource.decoredialect.ui.DecoredialectMarkerResolutionGenerator" markerType="org.deltaecore.core.decoredialect.resource.decoredialect.problem">
+		</markerResolutionGenerator>
+	</extension>
+	
+	<extension point="org.eclipse.core.filebuffers.annotationModelCreation">
+		<factory class="org.deltaecore.core.decoredialect.resource.decoredialect.ui.DecoredialectAnnotationModelFactory" extensions="decoredialect">
+		</factory>
+	</extension>
+	
+	<extension point="org.eclipse.core.contenttype.contentTypes">
+		<content-type id="org.deltaecore.core.decoredialect.resource.decoredialect" name=".decoredialect File" base-type="org.eclipse.core.runtime.text" file-extensions="decoredialect">
+		</content-type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.documentProviders">
+		<provider class="org.eclipse.ui.editors.text.TextFileDocumentProvider" extensions="decoredialect" id="org.deltaecore.core.decoredialect.resource.decoredialect.ui.provider">
+		</provider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.annotationTypes">
+		<type name="org.deltaecore.core.decoredialect.resource.decoredialect.ui.occurences">
+		</type>
+		<type name="org.deltaecore.core.decoredialect.resource.decoredialect.ui.occurences.declaration" super="org.deltaecore.core.decoredialect.resource.decoredialect.ui.occurences">
+		</type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
+		<specification annotationType="org.deltaecore.core.decoredialect.resource.decoredialect.ui.occurences" label="Occurrences (in .decoredialect files)" icon="/icons/occurrence_icon.gif" textPreferenceKey="decoredialect.occurrenceIndication" textPreferenceValue="false" highlightPreferenceKey="decoredialect.occurrenceHighlighting" highlightPreferenceValue="true" contributesToHeader="false" overviewRulerPreferenceKey="decoredialect.occurrenceIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="decoredialect.occurrenceIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="decoredialect.occurrenceIndicationColor" colorPreferenceValue="212,212,212" presentationLayer="4" showInNextPrevDropdownToolbarActionKey="decoredialect.showOccurrenceInNextPrevDropdownToolbarAction" showInNextPrevDropdownToolbarAction="true" isGoToNextNavigationTargetKey="decoredialect.isOccurrenceGoToNextNavigationTarget" isGoToNextNavigationTarget="false" isGoToPreviousNavigationTargetKey="decoredialect.isOccurrenceGoToPreviousNavigationTarget" isGoToPreviousNavigationTarget="false" textStylePreferenceKey="decoredialect.occurrenceTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+		<specification annotationType="org.deltaecore.core.decoredialect.resource.decoredialect.ui.occurences.declaration" label="Declarations (in .decoredialect files)" textPreferenceKey="decoredialect.declarationIndication" textPreferenceValue="false" highlightPreferenceKey="decoredialect.declarationHighlighting" highlightPreferenceValue="true" overviewRulerPreferenceKey="decoredialect.declarationIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="decoredialect.declarationIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="decoredialect.declarationIndicationColor" colorPreferenceValue="240,216,168" presentationLayer="4" textStylePreferenceKey="decoredialect.declarationTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+	</extension>
+	
+	<extension point="org.eclipse.ui.commands">
+		<category description="All commands belonging to Decoredialect" id="org.deltaecore.core.decoredialect.resource.decoredialect.ui.command.category" name="Decoredialect">
+		</category>
+		<command categoryId="org.deltaecore.core.decoredialect.resource.decoredialect.ui.command.category" description="Toggle comment of the selected lines" id="org.deltaecore.core.decoredialect.resource.decoredialect.ui.command.togglecomment" name="Toggle Comment">
+		</command>
+	</extension>
+	
+	<extension point="org.eclipse.ui.handlers">
+		<handler class="org.deltaecore.core.decoredialect.resource.decoredialect.ui.DecoredialectToggleCommentHandler" commandId="org.deltaecore.core.decoredialect.resource.decoredialect.ui.command.togglecomment">
+		</handler>
+	</extension>
+	
+	<extension point="org.eclipse.ui.contexts">
+		<context name="Editing Decoredialect Files" description="Editing Decoredialect Files Context" parentId="org.eclipse.ui.textEditorScope" id="org.deltaecore.core.decoredialect.resource.decoredialect.EditorScope">
+		</context>
+	</extension>
+	
+	<extension point="org.eclipse.ui.bindings">
+		<key sequence="M1+7" commandId="org.deltaecore.core.decoredialect.resource.decoredialect.ui.command.togglecomment" schemeId="org.eclipse.ui.defaultAcceleratorConfiguration" contextId="org.deltaecore.core.decoredialect.resource.decoredialect.EditorScope">
+		</key>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+		<launchConfigurationTypeImage icon="/icons/launch_type_icon.gif" configTypeID="org.deltaecore.core.decoredialect.resource.decoredialect.ui.launchConfigurationType" id="org.deltaecore.core.decoredialect.launchImage">
+		</launchConfigurationTypeImage>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+		<launchConfigurationTabGroup type="org.deltaecore.core.decoredialect.resource.decoredialect.ui.launchConfigurationType" class="org.deltaecore.core.decoredialect.resource.decoredialect.ui.launch.DecoredialectLaunchConfigurationTabGroup" id="org.deltaecore.core.decoredialect.launchConfigurationTabGroup" helpContextId="org.deltaecore.core.decoredialect.launchConfigHelpContext">
+			<launchMode mode="debug" perspective="org.eclipse.debug.ui.DebugPerspective" description="Debug decoredialect model.">
+			</launchMode>
+			<launchMode mode="run" description="Run decoredialect model.">
+			</launchMode>
+		</launchConfigurationTabGroup>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.launchShortcuts">
+		<shortcut label="decoredialect Application" icon="/icons/launch_shortcut_icon.gif" helpContextId="org.deltaecore.core.decoredialect.launch" modes="run,debug" class="org.deltaecore.core.decoredialect.resource.decoredialect.ui.launch.DecoredialectLaunchShortcut" description="Launch a decoredialect model" id="org.deltaecore.core.decoredialect.launchShortcut">
+			<description description="Run decoredialect model" mode="run">
+			</description>
+			<description description="Debug decoredialect model" mode="debug">
+			</description>
+			<contextualLaunch>
+				<enablement>
+					<with variable="selection">
+						<count value="1">
+						</count>
+						<iterate>
+							<adapt type="org.eclipse.core.resources.IResource">
+								<test property="org.eclipse.core.resources.extension" value="decoredialect">
+								</test>
+							</adapt>
+						</iterate>
+					</with>
+				</enablement>
+			</contextualLaunch>
+			<configurationType id="org.deltaecore.core.decoredialect.resource.decoredialect.ui.launchConfigurationType">
+			</configurationType>
+		</shortcut>
+	</extension>
+	
+	<extension point="org.eclipse.core.expressions.propertyTesters">
+		<propertyTester id="org.deltaecore.core.decoredialect.PropertyTester" type="java.lang.Object" namespace="org.deltaecore.core.decoredialect" properties="isLaunchable" class="org.deltaecore.core.decoredialect.resource.decoredialect.ui.DecoredialectPropertyTester">
+		</propertyTester>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.annotationTypes">
+		<type name="org.deltaecore.core.decoredialect.resource.decoredialect.ui.debug.lineBreakpoint" markerType="org.deltaecore.core.decoredialect.resource.decoredialect.debug.lineBreakpoint.marker" super="org.eclipse.debug.core.breakpoint">
+		</type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
+		<specification annotationType="org.deltaecore.core.decoredialect.resource.decoredialect.ui.debug.lineBreakpoint" label="Breakpoints (in .decoredialect files)" icon="/icons/breakpoint_icon.gif" textPreferenceKey="org.deltaecore.core.decoredialect.resource.decoredialect.ui.lineBreakpoint" textPreferenceValue="false" highlightPreferenceKey="org.deltaecore.core.decoredialect.resource.decoredialect.ui.lineBreakpointHighlighting" highlightPreferenceValue="true" contributesToHeader="false" overviewRulerPreferenceKey="org.deltaecore.core.decoredialect.resource.decoredialect.ui.lineBreakpointIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="org.deltaecore.core.decoredialect.resource.decoredialect.ui.lineBreakpointIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="org.deltaecore.core.decoredialect.resource.decoredialect.ui.lineBreakpointColor" colorPreferenceValue="212,212,212" presentationLayer="4" showInNextPrevDropdownToolbarActionKey="org.deltaecore.core.decoredialect.resource.decoredialect.ui.showLineBreakpointInNextPrevDropdownToolbarAction" showInNextPrevDropdownToolbarAction="true" isGoToNextNavigationTargetKey="org.deltaecore.core.decoredialect.resource.decoredialect.ui.isLineBreakpointGoToNextNavigationTarget" isGoToNextNavigationTarget="false" isGoToPreviousNavigationTargetKey="org.deltaecore.core.decoredialect.resource.decoredialect.ui.isLineBreakpointGoToPreviousNavigationTarget" isGoToPreviousNavigationTarget="false" textStylePreferenceKey="org.deltaecore.core.decoredialect.resource.decoredialect.ui.lineBreakpointTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+	</extension>
+	
+	<extension point="org.eclipse.core.runtime.adapters">
+		<factory adaptableType="org.deltaecore.core.decoredialect.resource.decoredialect.ui.DecoredialectEditor" class="org.deltaecore.core.decoredialect.resource.decoredialect.ui.debug.DecoredialectAdapterFactory">
+			<adapter type="org.eclipse.debug.ui.actions.IToggleBreakpointsTarget">
+			</adapter>
+		</factory>
+		<factory adaptableType="org.deltaecore.core.decoredialect.resource.decoredialect.debug.DecoredialectDebugVariable" class="org.deltaecore.core.decoredialect.resource.decoredialect.ui.debug.DecoredialectAdapterFactory">
+			<adapter type="org.eclipse.debug.internal.ui.viewers.model.provisional.IElementLabelProvider">
+			</adapter>
+		</factory>
+		<factory adaptableType="org.deltaecore.core.decoredialect.resource.decoredialect.debug.DecoredialectDebugVariable" class="org.deltaecore.core.decoredialect.resource.decoredialect.ui.debug.DecoredialectAdapterFactory">
+			<adapter type="org.eclipse.debug.internal.ui.viewers.model.provisional.IElementContentProvider">
+			</adapter>
+		</factory>
+	</extension>
+	
+	<extension point="org.eclipse.ui.popupMenus">
+		<viewerContribution id="org.deltaecore.core.decoredialect.resource.decoredialect.ui.RulerPopupActions" targetID="org.deltaecore.core.decoredialect.resource.decoredialect.EditorRuler">
+			<action id="org.deltaecore.core.decoredialect.resource.decoredialect.ui.toggleBreakpointAction" icon="icons/breakpoint_icon.gif" label="Toggle Breakpoint" class="org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate" menubarPath="debug">
+			</action>
+		</viewerContribution>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editorActions">
+		<editorContribution targetID="org.deltaecore.core.decoredialect.resource.decoredialect.ui.DecoredialectEditor" id="org.deltaecore.core.decoredialect.resource.decoredialect.ui.BreakpointRulerActions">
+			<action id="org.deltaecore.core.decoredialect.resource.decoredialect.ui.debug.RulerToggleBreakpointAction" label="Add breakpoint" class="org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate" actionID="RulerDoubleClick">
+			</action>
+		</editorContribution>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.debugModelPresentations">
+		<debugModelPresentation id="org.deltaecore.core.decoredialect.resource.decoredialect.debugModel" class="org.deltaecore.core.decoredialect.resource.decoredialect.ui.debug.DecoredialectDebugModelPresentation">
+		</debugModelPresentation>
+	</extension>
+	
+</plugin>

@@ -1,0 +1,7 @@
+delta "BumpAndInfraredLargerThanOrEqualTo2.0_Java"
+	dialect <http://www.emftext.org/java>
+	modifies <../src/eu/vicci/turtlebot/Bump.java>,
+			 <../src/eu/vicci/turtlebot/Infrared.java>
+{
+	//...
+}

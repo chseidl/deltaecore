@@ -1,0 +1,12 @@
+UnlimitedFeatures -> ClonedFeatures
+VersionBranching -> Configurable
+
+EFDashedBox <-> External
+ARepresentation <-> Attributes
+!(ADashedBox && EFDashedBox)
+GroupVariationType -> !GCardinalities
+GAdaptorTypes -> !MultipleGroups
+
+AttributeRestrictions -> Attributes
+VersionRestrictions -> Configurable
+Graphical -> (!Or && !And && !Xor && !Equivalent && !Not)

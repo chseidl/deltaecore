@@ -1,0 +1,8 @@
+configuration delta "EraseOrGroups"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	modifies <../model/Feature.ecore>
+{
+	//Maybe just have this return false to ease implementation
+	removeEOperation(<SGroup.isOr>);
+}

@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DeltaEcore Delta Module Language
+Bundle-SymbolicName: org.deltaecore.core.decore;singleton:=true
+Bundle-Version: 0.8.2
+Bundle-Vendor: www.deltaecore.org
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.deltaecore.core.decoredialect;visibility:=reexport,
+ org.deltaecore.core.decorebase;visibility:=reexport,
+ org.emftext.language.ecoreid;visibility:=reexport,
+ org.emftext.language.ecoreid.resource.ecoreid,
+ org.deltaecore.common;visibility:=reexport,
+ de.christophseidl.util.ecore;visibility:=reexport
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.deltaecore.core.decore,
+ org.deltaecore.core.decore.impl,
+ org.deltaecore.core.decore.impl.custom,
+ org.deltaecore.core.decore.util
+Bundle-ClassPath: .

@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DeltaEcore Core
+Bundle-SymbolicName: org.deltaecore.core
+Bundle-Version: 0.8.2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.deltaecore.core.applicationorderconstraint;visibility:=reexport,
+ org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints;visibility:=reexport,
+ org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui;visibility:=reexport,
+ org.deltaecore.core.applicationorderconstraint.validation;visibility:=reexport,
+ org.deltaecore.core.decore;visibility:=reexport,
+ org.deltaecore.core.decore.resource.decore;visibility:=reexport,
+ org.deltaecore.core.decore.resource.decore.postprocessor;visibility:=reexport,
+ org.deltaecore.core.decore.resource.decore.ui;visibility:=reexport,
+ org.deltaecore.core.decore.validation;visibility:=reexport,
+ org.deltaecore.core.decorebase;visibility:=reexport,
+ org.deltaecore.core.decorebase.resource.decorebase;visibility:=reexport,
+ org.deltaecore.core.decorebase.resource.decorebase.ui;visibility:=reexport,
+ org.deltaecore.core.decorebase.validation;visibility:=reexport,
+ org.deltaecore.core.decoredialect;visibility:=reexport,
+ org.deltaecore.core.decoredialect.registry;visibility:=reexport,
+ org.deltaecore.core.decoredialect.resource.decoredialect;visibility:=reexport,
+ org.deltaecore.core.decoredialect.resource.decoredialect.ui;visibility:=reexport,
+ org.deltaecore.core.decoredialect.validation;visibility:=reexport,
+ org.deltaecore.core.eclipse;visibility:=reexport,
+ org.deltaecore.core.variant;visibility:=reexport

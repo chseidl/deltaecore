@@ -1,0 +1,19 @@
+configuration delta "GroupVariationType"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	modifies <../model/Feature.ecore>
+{
+	EEnum groupVariationTypeEEnum = new EEnum(name : "SGroupVariationType");
+	addEEnum(groupVariationTypeEEnum, <feature>);
+	
+	EAttribute variationTypeAttribute = new EAttribute(name : "variationType", eType : groupVariationTypeEEnum, lowerBound : 0, upperBound : 1);
+	addEAttribute(variationTypeAttribute, <SGroup>);
+	
+	//Always provide and groups
+	String implementation = "return (getVariationType() == SGroupVariationType.AND);";
+
+	setEOperationImplementation(<SGroup.isAnd>, implementation);
+	
+	EEnumLiteral orEEnumLiteral = new EEnumLiteral(name : "AND", literal : "AND", value : 0);
+	addEEnumLiteral(orEEnumLiteral, groupVariationTypeEEnum);
+}

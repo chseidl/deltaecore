@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DeltaEcore Application Order Constraint Language Validation
+Bundle-SymbolicName: org.deltaecore.core.applicationorderconstraint.validation;singleton:=true
+Bundle-Version: 0.8.2
+Bundle-Vendor: www.deltaecore.org
+Require-Bundle: org.deltaecore.core.decorebase.validation;visibility:=reexport,
+ org.deltaecore.core.applicationorderconstraint
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7

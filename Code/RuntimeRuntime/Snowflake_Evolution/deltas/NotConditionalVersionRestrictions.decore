@@ -1,0 +1,7 @@
+configuration delta "NotConditionalVersionRestrictions"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	modifies <../model/Constraint.ecore>
+{
+	removeEAttribute(<SVersionRestriction.conditional>);
+}

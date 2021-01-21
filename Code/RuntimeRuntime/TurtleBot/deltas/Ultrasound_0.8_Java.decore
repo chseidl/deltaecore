@@ -1,0 +1,6 @@
+evolution delta "Ultrasound_0.8_Java"
+	dialect <http://www.emftext.org/java>
+	modifies <../src/eu/vicci/turtlebot/Ultrasound.java>
+{
+	//...
+}

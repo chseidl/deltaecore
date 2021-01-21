@@ -1,0 +1,26 @@
+deltaDialect
+{
+	configuration:
+		metaModel: <http://www.eclipse.org/uml2/5.0.0/UML>;
+		identifierResolver: org.eclipse.uml2.uml.delta.resolver.UmlIDResolver;
+		
+	deltaOperations:
+		//TODO: Actually have to analyze what _delta modules_ before this one do
+		//to support reactive development.
+		 
+		//TODO: This WILL be a problem for subsequent delta modules, also
+		//for placing in the variant folder
+//		customOperation createModel(String filename);
+		customOperation createPackage(String qualifiedPackageName, Model model);
+		customOperation createInterface(String simpleInterfaceName, Package package_);
+		customOperation createClass(String simpleClassName, Package package_, Boolean abstract_);
+
+		customOperation createProperty(String name, Type type, Integer lowerBound, Integer upperBound, Class containingClass);
+		customOperation createOperationInInterface(String name, Interface containingInterface);
+		customOperation createOperationInClass(String name, Class containingClass);
+		customOperation createParameter(String name, Type type, Integer lowerBound, Integer upperBound, Operation containingOperation);
+		
+		customOperation createGeneralization(Class class_, Class superClass);
+		customOperation createInterfaceRealization(Class realizingClass, Interface realizedInterface);
+		customOperation createCommentInOperation(String text, Operation operation);
+}

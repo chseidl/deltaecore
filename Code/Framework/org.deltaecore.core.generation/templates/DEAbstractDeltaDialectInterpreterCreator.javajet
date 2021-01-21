@@ -1,0 +1,211 @@
+<%@	jet
+	package="org.deltaecore.core.generation.interpreter"
+	class="DEAbstractDeltaDialectInterpreterCreator"
+	imports="java.util.List org.eclipse.emf.ecore.EReference org.eclipse.emf.ecore.EAttribute org.deltaecore.core.generation.general.DENameGenerator org.deltaecore.core.decoredialect.*"
+%>
+<%
+	DEDeltaDialectInterpreterCreatorSetup setup = (DEDeltaDialectInterpreterCreatorSetup) argument;
+	DENameGenerator nameGenerator = setup.getNameGenerator();
+	DEDeltaDialect dialect = setup.getDialect();
+	
+	List<DEDeltaOperationDefinition> deltaOperationDefinitions = dialect.getDeltaOperationDefinitions();
+%>
+package <%= nameGenerator.getDeltaDialectBasePackage() %>;
+
+import java.util.List;
+
+import org.deltaecore.core.decore.DEArgument;
+import org.deltaecore.core.decore.DEDeltaOperationCall;
+import org.deltaecore.core.decoredialect.DEDeltaOperationDefinition;
+import org.deltaecore.core.variant.interpretation.DEDeltaDialectInterpreter;
+
+<%
+		List<String> importStatements = DEDeltaDialectInterpreterCreatorUtil.createImportStatements(deltaOperationDefinitions, false);
+		
+		for (String importStatement : importStatements) {
+%>
+<%= importStatement %>
+<%
+		}
+%>
+
+public abstract class <%= nameGenerator.getAbstractDeltaDialectInterpreterSimpleClassName() %> implements DEDeltaDialectInterpreter {
+	
+	@Override
+	public boolean interpretDeltaOperationCall(DEDeltaOperationCall deltaOperationCall, DEModelWriter modelWriter) {
+		DEDeltaOperationDefinition deltaOperationDefinition = deltaOperationCall.getOperationDefinition();
+		String deltaOperationName = deltaOperationDefinition.getName();
+		
+		List<DEArgument> arguments = deltaOperationCall.getArguments();
+		
+<%
+
+
+
+	//Unwrap delta operation definitions
+	for (DEDeltaOperationDefinition deltaOperationDefinition : deltaOperationDefinitions) {
+%>	
+		if (deltaOperationName.equals("<%= deltaOperationDefinition.getName() %>")) {
+<%
+		List<String> interpreterMethodArgumentDeclarations = DEDeltaDialectInterpreterCreatorUtil.createInterpreterMethodArgumentDeclarations(deltaOperationDefinition);
+		
+		for (String interpreterMethodArgumentDeclaration : interpreterMethodArgumentDeclarations) {
+%>
+			<%= interpreterMethodArgumentDeclaration %>
+<%
+		}
+%>			
+
+			return <%= DEDeltaDialectInterpreterCreatorUtil.createInterpreterMethodCall(deltaOperationDefinition) %>;
+		}
+		
+<%
+	}
+%>
+		return false;
+	}
+
+<%
+
+
+
+	//Create implementations for interpretation methods as far as possible.
+	for (DEDeltaOperationDefinition deltaOperationDefinition : deltaOperationDefinitions) {
+		
+		if (DEDeltaDialectInterpreterCreatorUtil.needsManualImplementation(deltaOperationDefinition)) {
+			//Create abstract declaration and have stub in concrete interpreter.
+%>
+
+	<%= DEDeltaDialectInterpreterCreatorUtil.createInterpreterMethodAbstractDeclaration(deltaOperationDefinition) %>
+<%
+		} else {
+%>
+
+	<%= DEDeltaDialectInterpreterCreatorUtil.createInterpreterMethodSignature(deltaOperationDefinition) %> {
+<%
+			if (deltaOperationDefinition instanceof DESingleValuedReferenceDeltaOperationDefinition || deltaOperationDefinition instanceof DEMultiValuedReferenceDeltaOperationDefinition) {
+				DEStandardDeltaOperationDefinition standardDeltaOperationDefinition = (DEStandardDeltaOperationDefinition) deltaOperationDefinition;
+				DEModelElementWithReferenceParameter elementParameter = (DEModelElementWithReferenceParameter) standardDeltaOperationDefinition.getElement();
+				String elementParameterName = elementParameter.getName();
+			
+				EReference reference = elementParameter.getReference();
+				String referencePackageConstant = DEDeltaDialectInterpreterCreatorUtil.createPackageConstantForStructuralFeature(reference);
+				
+				
+
+				if (deltaOperationDefinition instanceof DESingleValuedReferenceDeltaOperationDefinition) {
+				
+				
+					if (deltaOperationDefinition instanceof DESetDeltaOperationDefinition) {
+						DESetDeltaOperationDefinition setDeltaOperationDefinition = (DESetDeltaOperationDefinition) deltaOperationDefinition;
+					
+						DENamedParameter valueParameter = setDeltaOperationDefinition.getValue();
+						String valueParameterName = valueParameter.getName();
+%>
+		//Set the value of <%= elementParameterName %>.<%= reference.getName() %> to <%= valueParameterName %>
+		modelWriter.setValue(<%= elementParameterName %>, <%= referencePackageConstant %>, <%= valueParameterName %>);
+		return true;	
+<%					
+					}
+			
+			
+					if (deltaOperationDefinition instanceof DEUnsetDeltaOperationDefinition) {
+%>
+		//Unset the value of <%= elementParameterName %>.<%= reference.getName() %>
+		modelWriter.unsetValue(<%= elementParameterName %>, <%= referencePackageConstant %>);
+		return true;	
+<%	
+					}
+				}
+			
+			
+			
+				if (deltaOperationDefinition instanceof DEMultiValuedReferenceDeltaOperationDefinition) {
+					DEMultiValuedReferenceDeltaOperationDefinition multiValuedReferenceDeltaOperationDefinition = (DEMultiValuedReferenceDeltaOperationDefinition) deltaOperationDefinition;
+					
+					DENamedParameter valueParameter = multiValuedReferenceDeltaOperationDefinition.getValue();
+					String valueParameterName = valueParameter.getName();
+				
+				
+					if (deltaOperationDefinition instanceof DEAddDeltaOperationDefinition) {
+%>
+		//Add <%= valueParameterName %> to <%= elementParameterName %>.<%= reference.getName() %>
+		modelWriter.addValue(<%= elementParameterName %>, <%= referencePackageConstant %>, <%= valueParameterName %>);
+		return true;
+<%
+					}
+					
+					
+					if (deltaOperationDefinition instanceof DEInsertDeltaOperationDefinition) {
+						DEInsertDeltaOperationDefinition insertDeltaOperationDefinition = (DEInsertDeltaOperationDefinition) deltaOperationDefinition;
+						
+						DENamedParameter indexParameter = insertDeltaOperationDefinition.getIndex();
+						String indexParameterName = indexParameter.getName();
+%>
+		//Insert <%= valueParameterName %> into <%= elementParameterName %>.<%= reference.getName() %> at position <%= indexParameterName %>
+		modelWriter.insertValue(<%= elementParameterName %>, <%= referencePackageConstant %>, <%= valueParameterName %>, <%= indexParameterName %>);
+		
+		return true;
+<%
+					}
+					
+					
+					if (deltaOperationDefinition instanceof DERemoveDeltaOperationDefinition) {
+%>
+		//Remove <%= valueParameterName %> from <%= elementParameterName %>.<%= reference.getName() %>
+		modelWriter.removeValue(<%= elementParameterName %>, <%= referencePackageConstant %>, <%= valueParameterName %>);
+		return true;
+<%
+					}	
+					
+				}
+			}
+		
+		
+		
+			if (deltaOperationDefinition instanceof DEAttributeDeltaOperationDefinition) {
+				DEAttributeDeltaOperationDefinition attributeDeltaOperationDefinition = (DEAttributeDeltaOperationDefinition) deltaOperationDefinition;
+				
+				DENamedParameter valueParameter = attributeDeltaOperationDefinition.getValue();
+				String valueParameterName = valueParameter.getName();
+
+				DEModelElementWithAttributeParameter elementParameter = attributeDeltaOperationDefinition.getElement();
+				String elementParameterName = elementParameter.getName();
+		
+				EAttribute attribute = elementParameter.getAttribute();
+				String attributePackageConstant = DEDeltaDialectInterpreterCreatorUtil.createPackageConstantForStructuralFeature(attribute);
+					
+				if (deltaOperationDefinition instanceof DEModifyDeltaOperationDefinition) {
+%>
+		//Modify the value of <%= elementParameterName %>.<%= attribute.getName() %> to have the value of <%= valueParameterName %>
+		modelWriter.setValue(<%= elementParameterName %>, <%= attributePackageConstant %>, <%= valueParameterName %>);
+		return true;
+<%
+				}	
+			}
+		
+
+
+
+			if (deltaOperationDefinition instanceof DEModelElementDeltaOperationDefinition) {
+				DEModelElementDeltaOperationDefinition modelElementDeltaOperationDefinition = (DEModelElementDeltaOperationDefinition) deltaOperationDefinition;
+		
+				DEModelElementParameter elementParameter = modelElementDeltaOperationDefinition.getElement();
+				String elementParameterName = elementParameter.getName();
+			
+				if (deltaOperationDefinition instanceof DEDetachDeltaOperationDefinition) {
+%>
+		//Detach <%= elementParameterName %> from its containing reference
+		modelWriter.detach(<%= elementParameterName %>);
+		return true;
+<%
+				}	
+			}
+%>
+	}
+<%
+		}	
+	
+	}
+%>
+}

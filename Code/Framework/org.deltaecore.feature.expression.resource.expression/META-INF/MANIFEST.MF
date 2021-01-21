@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EMFText Parser Plugin: expression
+Bundle-SymbolicName: org.deltaecore.feature.expression.resource.expression;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Vendor: Software Technology Group - TU Dresden Germany
+Require-Bundle: org.eclipse.core.runtime;resolution:=optional,
+  org.eclipse.core.resources;resolution:=optional,
+  org.eclipse.emf.ecore,
+  org.eclipse.emf.ecore.change,
+  org.eclipse.emf.validation;resolution:=optional,
+  org.emftext.access;resolution:=optional,
+  org.emftext.commons.antlr3_4_0,
+  org.deltaecore.feature.expression,
+  org.deltaecore.feature
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.deltaecore.feature.expression.resource.expression,
+  org.deltaecore.feature.expression.resource.expression.analysis,
+  org.deltaecore.feature.expression.resource.expression.mopp,
+  org.deltaecore.feature.expression.resource.expression.debug,
+  org.deltaecore.feature.expression.resource.expression.launch,
+  org.deltaecore.feature.expression.resource.expression.grammar,
+  org.deltaecore.feature.expression.resource.expression.util
+Bundle-Activator: org.deltaecore.feature.expression.resource.expression.mopp.ExpressionPlugin

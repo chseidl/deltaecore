@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="eu/vicci/ecosystem/softwarefaulttree/gef/editor/SFTGraphicalEditorPalette.java|eu/vicci/ecosystem/softwarefaulttree/gef/commands/|eu/vicci/ecosystem/softwarefaulttree/gef/policies/|eu/vicci/ecosystem/softwarefaulttree/gef/utils/" kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="lib" path="lib/log4j-api-2.0-beta7.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-core-2.0-beta7.jar"/>
+	<classpathentry kind="lib" path="lib/org.abego.treelayout.core.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

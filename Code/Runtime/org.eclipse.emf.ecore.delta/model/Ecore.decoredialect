@@ -1,0 +1,68 @@
+deltaDialect
+{
+	configuration:
+		metaModel: <http://www.eclipse.org/emf/2002/Ecore>;
+		identifierResolver: org.eclipse.emf.ecore.delta.resolver.EcoreIDResolver;
+		
+	deltaOperations:
+		//customOperation setUniqueMetaModelURI(EPackage p);
+
+		//EAttribute
+		addOperation addEAttribute(EAttribute eAttribute, EClass [eStructuralFeatures] eClass);
+		//id: EBoolean, changeable, volatile, transient, defaultValueLiteral, defaultValue, unsettable : EBoolean, derive : EBoolean, ordered : EBoolean, unique : EBoolean, lowerBound, upperBound, many, required, name
+		detachOperation removeEAttribute(EAttribute eAttribute);
+
+
+		//EClassifier
+//		evolution setOperation setEClassifierPackage(EPackage ePackage, EClassifier [ePackage] eClassifier);
+		evolution customOperation setEClassifierPackage(EPackage ePackage, EClassifier eClassifier);
+		
+		//EClass
+		addOperation addEClass(EClass eClass, EPackage [eClassifiers] ePackage);
+		evolution modifyOperation setEClassName(String newName, EClass [name] eClass);
+		modifyOperation setEClassAbstract(Boolean isAbstract, EClass [abstract] eClass);
+		modifyOperation setEClassInterface(Boolean isInterface, EClass [interface] eClass);
+		addOperation addESuperType(EClass superTypeEClass, EClass [eSuperTypes] eClass);
+		removeOperation removeESuperType(EClass eClass, EClass [eSuperTypes] eSuperClass);
+		detachOperation removeEClass(EClass eClass);
+		
+		//EDataType
+		addOperation addEDataType(EDataType eDataType, EPackage [eClassifiers] ePackage);
+		detachOperation removeEDataType(EDataType eDataType);
+		
+		//EEnum
+		addOperation addEEnum(EEnum eEnum, EPackage [eClassifiers] ePackage);
+		detachOperation removeEEnum(EEnum eEnum);
+		
+		//EEnumLiteral
+		addOperation addEEnumLiteral(EEnumLiteral eEnumLiteral, EEnum [eLiterals] eEnum);
+		evolution modifyOperation setEEnumLiteralName(String name, EEnumLiteral [name] eEnumLiteral);
+		evolution modifyOperation setEEnumLiteralLiteral(String literal, EEnumLiteral [literal] eEnumLiteral);
+		detachOperation removeEEnumLiteral(EEnumLiteral eEnumLiteral);
+		
+		//(EGenericType)
+
+		//EOperation
+		addOperation addEOperation(EOperation eOperation, EClass [eOperations] eClass);
+		customOperation setEOperationImplementation(EOperation eOperation, String implementation);
+		detachOperation removeEOperation(EOperation eOperation);
+
+		//EPackage
+		addOperation addEPackage(EPackage eSubPackage, EPackage [eSubpackages] ePackage);
+		evolution detachOperation removeEPackage(EPackage ePackage);
+		 
+		//EParameter
+		addOperation addEParameter(EParameter eParameter, EOperation [eParameters] eOperation);
+		detachOperation removeEParameter(EParameter eParameter);
+
+		//EReference
+		addOperation addEReference(EReference eReference, EClass [eStructuralFeatures] eClass);
+		customOperation makeEReferencesOpposite(EReference reference1, EReference reference2);
+		evolution modifyOperation setEReferenceName(String name, EReference [name] eReference);
+		modifyOperation setEReferenceLowerBound(Integer lowerBound, EReference [lowerBound] eReference);
+		modifyOperation setEReferenceUpperBound(Integer upperBound, EReference [upperBound] eReference);
+		detachOperation removeEReference(EReference eReference);
+		
+		//(EStringToStringMapEntry)
+		//(ETypeParameter)
+}

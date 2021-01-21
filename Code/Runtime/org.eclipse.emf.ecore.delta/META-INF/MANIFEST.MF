@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ecore Delta Language
+Bundle-SymbolicName: org.eclipse.emf.ecore.delta;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore,
+ org.emftext.language.ecoreid;visibility:=reexport,
+ org.emftext.language.ecoreid.resource.ecoreid;visibility:=reexport,
+ org.deltaecore.core;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6, JavaSE-1.7
+Export-Package: org.eclipse.emf.ecore.delta.resolver

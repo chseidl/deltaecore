@@ -1,0 +1,52 @@
+evolution delta "FeatureModelingFamily_2"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	modifies <../model/Feature.ecore>
+{
+	//Extract group artifacts
+	
+	//Remove features : SGroup <>->* SFeature
+	EReference featuresEReference = <SGroup.features>;
+	removeEReference(featuresEReference);
+	
+	//Create SGroupArtifact interface
+	EClass groupArtifactEClass = new EClass(name: "SGroupArtifact");
+	setEClassInterface(true, groupArtifactEClass);
+	setEClassAbstract(true, groupArtifactEClass);
+	addEClass(groupArtifactEClass, <feature>);
+	
+	//Make SGroupArtifact super class of SFeature
+	addESuperType(groupArtifactEClass, <SFeature>);
+	
+	//Add groupArtifacts: SGroup <>->* SGroupArtifact
+	EReference groupArtifactsReference = new EReference(eType : groupArtifactEClass, name : "groupArtifacts", lowerBound : 0, upperBound : -1, containment : true);
+	addEReference(groupArtifactsReference, <SGroup>);
+	
+	//Change default implementation of SGroup.isOr()
+	String implementation = "return (getMinCardinality() == 1 && getMaxCardinality() == getArtifacts().size());";
+	setEOperationImplementation(<SGroup.isOr>, implementation);
+	
+	
+	//Add And Groups
+	
+	//Add SGroup.isAnd()
+	EOperation isAndEOperation = new EOperation(eType : <EBoolean>, name : "isAnd", lowerBound : 1, upperBound : 1);
+	addEOperation(isAndEOperation, <SGroup>);
+	
+	String implementation2 = "int optionalFeatures = 0;
+		int mandatoryFeatures = 0;
+				
+		for (SGroupArtifact artifact : getArtifacts()) {
+			if (artifact instanceof SFeature) {
+				SFeature feature = (SFeature) artifact;
+				if (feature.isOptional()) {
+					optionalFeatures++;
+				} else if (feature.isMandatory()) {
+					mandatoryFeatures++;
+				}
+			}
+		}
+				
+		return (getMinCardinality() <= mandatoryFeatures && getMaxCardinality() >= (mandatoryFeatures + optionalFeatures));";
+	setEOperationImplementation(isAndEOperation, implementation2);
+}

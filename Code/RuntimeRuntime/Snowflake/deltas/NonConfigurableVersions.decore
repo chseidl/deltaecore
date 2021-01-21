@@ -1,0 +1,11 @@
+configuration delta "NonConfigurableVersions"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	modifies <../model/Feature.ecore>
+{
+	EAttribute featureLogicalVersionEAttribute = new EAttribute(name : "featureLogicalVersion", eType: <EString>, lowerBound : 1, upperBound : 1);
+	addEAttribute(featureLogicalVersionEAttribute, <SFeature>);
+	
+	EAttribute featureContainerVersionEAttribute = new EAttribute(name : "featureContainerVersion", eType: <EString>, lowerBound : 1, upperBound : 1);
+	addEAttribute(featureContainerVersionEAttribute, <SFeature>);
+}

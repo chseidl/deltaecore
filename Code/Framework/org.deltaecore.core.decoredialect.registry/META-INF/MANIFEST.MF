@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DeltaEcore Delta Dialect Registry
+Bundle-SymbolicName: org.deltaecore.core.decoredialect.registry;singleton:=true
+Bundle-Version: 0.8.2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-Vendor: www.deltaecore.org
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.deltaecore.core.decorebase;visibility:=reexport,
+ org.deltaecore.core.decore;visibility:=reexport,
+ org.deltaecore.core.decoredialect;visibility:=reexport,
+ org.emftext.language.ecoreid;visibility:=reexport,
+ org.emftext.language.ecoreid.resource.ecoreid,
+ org.deltaecore.common;visibility:=reexport,
+ de.christophseidl.util.ecore;visibility:=reexport
+Bundle-ActivationPolicy: lazy
+Export-Package: org.deltaecore.core.extension,
+ org.deltaecore.core.extension.resolution,
+ org.deltaecore.core.variant.interpretation,
+ org.deltaecore.core.variant.interpretation.locking

@@ -1,0 +1,12 @@
+configuration delta "NotConfigurable"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	modifies <../model/Feature.ecore>
+{
+	removeEReference(<SVersionSelection.version>);
+	removeEClass(<SVersionSelection>);
+	
+	removeEReference(<SFeature.versions>);
+	removeEReference(<SVersion.feature>);
+	removeEClass(<SVersion>);
+}

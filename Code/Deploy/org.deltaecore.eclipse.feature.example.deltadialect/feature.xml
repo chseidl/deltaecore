@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.deltaecore.eclipse.feature.example.deltadialect"
+      label="DeltaEcore Delta Dialect Examples (optional)"
+      version="1.0.0"
+      provider-name="www.deltaecore.org">
+
+   <description>
+      Example delta dialects for the provided example source languages including a delta dialect for Ecore meta models.
+   </description>
+
+   <license>
+      The MIT License (MIT)
+
+Copyright (c) 2014 www.deltaecore.org (Christoph Seidl, Christoph.Seidl@tu-dresden.de)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+   </license>
+
+   <requires>
+      <import feature="org.deltaecore.eclipse.feature.example.sourcelanguage" version="1.0.0"/>
+      <import feature="org.deltaecore.eclipse.feature.framework.core" version="0.8.2"/>
+   </requires>
+
+   <plugin
+         id="eu.vicci.ecosystem.cl.delta"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="eu.vicci.ecosystem.sft.delta"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.emf.ecore.delta"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="eu.vicci.ecosystem.goalstructuringnotation.gsn.delta"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="eu.vicci.eclipseproject.delta"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="eu.vicci.ecosystem.componentfaultdiagram.cfd.delta"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.deltaecore.feature.delta"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+</feature>

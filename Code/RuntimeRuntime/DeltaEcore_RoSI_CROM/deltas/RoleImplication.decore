@@ -1,0 +1,10 @@
+configuration delta "RoleImplication"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>,
+			 <RoleConstraints.decore>
+{
+	EClass roleImplicationEClass = new EClass(name : "RoleImplication");
+	addEClass(roleImplicationEClass, <CompartmentRoleObjectModel>);
+	addESuperType(<CompartmentRoleObjectModel.RoleConstraint>, roleImplicationEClass);
+}

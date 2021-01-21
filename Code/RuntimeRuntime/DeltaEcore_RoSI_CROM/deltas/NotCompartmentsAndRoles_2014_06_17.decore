@@ -1,0 +1,18 @@
+evolution delta "NotCompartmentsAndRoles_2014_06_17"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>,
+			 <NotCompartmentsAndRoles.decore>
+{
+	//TODO: What was the original state?
+	
+	EClass playerEClass = new EClass(name: "Player", interface : true);
+	setEClassAbstract(true, playerEClass);
+	addEClass(playerEClass, <CompartmentRoleObjectModel>);
+	
+	EReference fillerEReference = new EReference(eType: playerEClass, name : "filler", lowerBound: 1, upperBound : 1, containment : false);
+	addEReference(fillerEReference, <CompartmentRoleObjectModel.Fulfillment>);
+	
+	addESuperType(playerEClass, <CompartmentRoleObjectModel.NaturalType>);
+	addESuperType(playerEClass, <CompartmentRoleObjectModel.RoleType>);
+}

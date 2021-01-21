@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Analysis
+Bundle-SymbolicName: org.deltaecore.feature.analysis;singleton:=true
+Bundle-Version: 0.8.2
+Bundle-Vendor: www.deltaecore.org
+Require-Bundle: org.deltaecore.feature;visibility:=reexport,
+ org.deltaecore.feature.constraint;visibility:=reexport,
+ org.deltaecore.feature.libraries.choco;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.deltaecore.feature.analysis,
+ org.deltaecore.feature.analysis.util

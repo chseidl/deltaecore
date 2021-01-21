@@ -1,0 +1,30 @@
+//Perform project setup before modifications of Java source code
+//to reduce problems. 
+[
+	<deltas/Gamepad_Project.decore>,
+	<deltas/Infrared_Project.decore>,
+	<deltas/Ultrasound_Project.decore>,
+	<deltas/Webservice_Project.decore>
+]
+[
+	<deltas/Gamepad_Java.decore>,
+	<deltas/Infrared_Java.decore>,
+	<deltas/Ultrasound_Java.decore>,
+	<deltas/Webservice_Java.decore>
+]
+
+//Ensure that modification for Bump && Infrared [>= "2.0"] is
+//performed using the right basis.
+[
+	<deltas/Bump_Java.decore>,
+	<deltas/Infrared_Project.decore>,
+	<deltas/Infrared_Java.decore>,
+	<deltas/Infrared_1.0_Java.decore>,
+	<deltas/Infrared_2.0_Java.decore>	
+]
+[
+	<deltas/BumpAndInfraredLargerThanOrEqualTo2.0_Java.decore>
+]
+[
+	<deltas/Infrared_2.2_Java.decore>
+]

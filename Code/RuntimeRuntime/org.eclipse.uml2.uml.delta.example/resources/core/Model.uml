@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_p6ECsKfjEeW5PfgATwfdew">
+  <packagedElement xmi:type="uml:Package" xmi:id="_p6ECsafjEeW5PfgATwfdew" name="org.example">
+    <packagedElement xmi:type="uml:Interface" xmi:id="_p6FQ0KfjEeW5PfgATwfdew" name="Observer">
+      <ownedComment xmi:id="_p6F34afjEeW5PfgATwfdew">
+        <body>Feature: BaseFeatureAmp</body>
+      </ownedComment>
+      <ownedOperation xmi:id="_p6F34KfjEeW5PfgATwfdew" name="update"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_p6F34qfjEeW5PfgATwfdew" name="Observable" isAbstract="true">
+      <ownedComment xmi:id="_p6Ge_6fjEeW5PfgATwfdew">
+        <body>Feature: BaseFeatureAmp</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_p6Ge8KfjEeW5PfgATwfdew" name="observers" type="_p6FQ0KfjEeW5PfgATwfdew">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_p6Ge8afjEeW5PfgATwfdew"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_p6Ge8qfjEeW5PfgATwfdew" value="*"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_p6Ge86fjEeW5PfgATwfdew" name="addObserver">
+        <ownedComment xmi:id="_p6Ge9KfjEeW5PfgATwfdew">
+          <body>observers.add(observer)</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_p6Ge9afjEeW5PfgATwfdew" name="observer" type="_p6FQ0KfjEeW5PfgATwfdew">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_p6Ge9qfjEeW5PfgATwfdew" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_p6Ge96fjEeW5PfgATwfdew" value="1"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_p6Ge-KfjEeW5PfgATwfdew" name="removeObserver">
+        <ownedComment xmi:id="_p6Ge-afjEeW5PfgATwfdew">
+          <body>observers.remove(observer)</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_p6Ge-qfjEeW5PfgATwfdew" name="observer" type="_p6FQ0KfjEeW5PfgATwfdew">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_p6Ge-6fjEeW5PfgATwfdew" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_p6Ge_KfjEeW5PfgATwfdew" value="1"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_p6Ge_afjEeW5PfgATwfdew" name="notifyObservers">
+        <ownedComment xmi:id="_p6Ge_qfjEeW5PfgATwfdew">
+          <body>for(Observer observer : observers) {
+	observer.update();
+}</body>
+        </ownedComment>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_p6GfAKfjEeW5PfgATwfdew" name="Subject">
+      <ownedComment xmi:id="_p6GfAqfjEeW5PfgATwfdew">
+        <body>Feature: FileSupport</body>
+      </ownedComment>
+      <generalization xmi:id="_p6GfAafjEeW5PfgATwfdew" general="_p6F34qfjEeW5PfgATwfdew"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_p6GfA6fjEeW5PfgATwfdew" name="ConcreteObserver">
+      <ownedComment xmi:id="_p6MlkqfjEeW5PfgATwfdew">
+        <body>Feature: PlayerBar</body>
+      </ownedComment>
+      <interfaceRealization xmi:id="_p6MlkKfjEeW5PfgATwfdew" client="_p6GfA6fjEeW5PfgATwfdew" supplier="_p6FQ0KfjEeW5PfgATwfdew" contract="_p6FQ0KfjEeW5PfgATwfdew"/>
+      <ownedOperation xmi:id="_p6MlkafjEeW5PfgATwfdew" name="update"/>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

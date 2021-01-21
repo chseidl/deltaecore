@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Component Fault Diagrams (CFD) Delta
+Bundle-SymbolicName: eu.vicci.ecosystem.componentfaultdiagram.cfd.delta;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: eu.vicci.ecosystem.componentfaultdiagram.cfd,
+ org.deltaecore;visibility:=reexport,
+ org.deltaecore.core;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6, JavaSE-1.7
+Export-Package: eu.vicci.ecosystem.componentfaultdiagram.cfd.delta.resolver

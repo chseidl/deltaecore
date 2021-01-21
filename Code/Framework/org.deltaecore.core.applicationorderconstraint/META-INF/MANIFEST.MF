@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DeltaEcore Application Order Constraint Model
+Bundle-SymbolicName: org.deltaecore.core.applicationorderconstraint;singleton:=true
+Bundle-Version: 0.8.2
+Bundle-Vendor: www.deltaecore.org
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.deltaecore.core.decore;visibility:=reexport,
+ org.deltaecore.core.decorebase;visibility:=reexport,
+ org.deltaecore.core.decoredialect;visibility:=reexport,
+ org.deltaecore.common;visibility:=reexport
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.deltaecore.core.applicationorderconstraint,
+ org.deltaecore.core.applicationorderconstraint.impl,
+ org.deltaecore.core.applicationorderconstraint.util
+Bundle-ClassPath: .,
+ .

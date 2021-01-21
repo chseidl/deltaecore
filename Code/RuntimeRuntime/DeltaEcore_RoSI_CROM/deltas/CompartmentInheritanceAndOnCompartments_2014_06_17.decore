@@ -1,0 +1,20 @@
+evolution delta "CompartmentInheritanceAndOnCompartments_2014_06_17"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>,
+			 <CompartmentInheritanceAndOnCompartments.decore>
+{
+	//Reverse references by removing existing and then adding new references.
+	removeEReference(<CompartmentRoleObjectModel.CompartmentType.super>);
+	removeEReference(<CompartmentRoleObjectModel.CompartmentType.sub>);
+	
+	
+	EClass compartmentTypeEClass = <CompartmentRoleObjectModel.CompartmentType>;
+	EClass compartmentInheritance = <CompartmentRoleObjectModel.CompartmentInheritance>;
+	
+	EReference superEReference = new EReference(eType : compartmentTypeEClass, name : "super", lowerBound : 1, upperBound : 1, containment : false);
+	addEReference(superEReference, compartmentInheritance);
+
+	EReference subEReference = new EReference(eType : compartmentTypeEClass, name : "sub", lowerBound : 1, upperBound : 1, containment : false);
+	addEReference(subEReference, compartmentInheritance);
+}

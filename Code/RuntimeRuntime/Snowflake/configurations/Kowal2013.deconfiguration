@@ -1,0 +1,22 @@
+configuration <../Snowflake.defeaturemodel> {
+	AlternativeGroups,
+	FBox,
+	FCircle,
+	FContent,
+	FMRepresentation,
+	FMandatoryCircle,
+	FRepresentation,
+	FType,
+	FeatureModel,
+	FeatureModelingFamily,
+	FeatureVariationType,
+	Features,
+	GArcs,
+	GRepresentation,
+	GroupVariationType,
+	Groups,
+	MandatoryFeatures,
+	OptionalFeatures,
+	OrGroups,
+	Resources
+}

@@ -1,0 +1,40 @@
+evolution delta "Engine_Kobuki 1.0_Java"
+	dialect <http://www.emftext.org/java>
+	modifies <../src/eu/vicci/turtlebot/Engine.java>
+{
+	//TODO: Careful: There is an Engine and a CreateEngine class, but none for Kobuki right now - fix!
+	Package p = <package::eu.vicci.turtlebot>;
+	createClass("public class KobukiEngine {
+					//...
+				 }", p);
+	setSuperClassForClass(<class::eu.vicci.turtlebot.KobukiEngine>, <class::eu.vicci.turtlebot.Engine>);
+	
+	//Kobuki engine communicates over different serial port.
+	Field serialPortField = <field::eu.vicci.turtlebot.Engine#SERIAL_PORT>;
+	removeField(serialPortField);
+	createField("private static final int SERIAL_PORT = 1000;", <class::eu.vicci.turtlebot.Engine>);
+	
+	//Replace method to create listener by not calling "original();"
+	ClassMethod createListenerMethod = <method::eu.vicci.turtlebot.Engine#createSerialPortEventListener()>;
+	implementMethod(createListenerMethod, "return new SerialPortEventListener() {
+							                @Override
+							                public void serialEvent(SerialPortEvent event) {
+						                        if (event.getEventType() == SerialPortEvent.DATA_AVAILABLE) {
+					                                try {
+				                                        List<Byte> data = new ArrayList<Byte>();
+				                                       
+				                                        while(input.available() > 0) {
+				                                                data.add((byte) input.read());
+				                                        }                               
+				                                       
+				                                        //... (interpreting data)
+					                                       
+					                                } catch(Exception e){
+														e.printStackTrace();
+					                                }
+						                        }
+											}
+								        };");
+	
+	//...
+}

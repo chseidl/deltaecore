@@ -1,0 +1,1 @@
+This is a dummy meta model for the Eclipse project files. A delta dialect exists as well, but we do not need a meta model for this (only for technical reasons).

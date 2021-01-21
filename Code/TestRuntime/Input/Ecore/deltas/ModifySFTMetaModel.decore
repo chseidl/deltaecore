@@ -1,0 +1,13 @@
+delta "ModifySFTMetaModel"
+	dialect <http://www.eclipse.org/emf/2002/Ecore>
+	modifies <../core/SFT.ecore>
+{
+	EClass aNewEClass = new EClass(name : "ANewEClass");
+	addEClass(aNewEClass, <sft>);	
+	
+	EAttribute aNewEAttribute = new EAttribute(name: "aNewEAttribute", lowerBound: 1, upperBound: 1, unique: true);
+	addEAttribute(aNewEAttribute, <sft.ANewEClass>);
+	
+	EOperation aNewEOperation = new EOperation(name: "aNewEOperation", lowerBound: 1, upperBound: -1);
+	addEOperation(aNewEOperation, <sft.ANewEClass>);
+}

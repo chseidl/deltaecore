@@ -1,0 +1,8 @@
+evolution delta "RMLFeatureModel_2014_06_16"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>
+{
+	EReference reference = <CompartmentRoleObjectModel.RelationTarget.outcoming>;
+	setEReferenceName("outgoing", reference);
+}

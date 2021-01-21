@@ -1,0 +1,13 @@
+evolution delta "GroupVariationType_2"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <GroupVariationType.decore>,
+			 <FeatureModelingFamily_2.decore>
+	modifies <../model/Feature.ecore>
+{
+	EEnumLiteral andEEnumLiteral = new EEnumLiteral(name : "AND", literal : "AND", value : 0);
+	addEEnumLiteral(andEEnumLiteral, <SGroupVariationType>);
+
+	String implementation = "return (getVariationType() == SGroupVariationType.AND);";
+	setEOperationImplementation(<SGroup.isAnd>, implementation);
+}

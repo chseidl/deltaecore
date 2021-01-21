@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sft:SFTSoftwareFaultTree xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sft="http://vicci.eu/sft/1.0" name="Example">
+  <rootFault xsi:type="sft:SFTIntermediateFault" id="IF1" name="Intermediate Fault 1">
+    <gate id="G1" gateType="OR">
+      <faults xsi:type="sft:SFTBasicFault" id="BF1" name="Basic Fault 1" probability="4.0E-4"/>
+      <faults xsi:type="sft:SFTIntermediateFault" id="IF2" name="Intermediate Fault 2" description="Some description">
+        <gate id="G2">
+          <faults xsi:type="sft:SFTBasicFault" id="BF3" name="Basic Fault 3" probability="0.005"/>
+          <faults xsi:type="sft:SFTBasicFault" id="BF4" name="Basic Fault 4" probability="3.0E-5"/>
+        </gate>
+      </faults>
+    </gate>
+  </rootFault>
+</sft:SFTSoftwareFaultTree>

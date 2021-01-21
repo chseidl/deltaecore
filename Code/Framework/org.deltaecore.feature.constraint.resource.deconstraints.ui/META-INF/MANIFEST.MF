@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EMFText UI Plugin: deconstraints
+Bundle-SymbolicName: org.deltaecore.feature.constraint.resource.deconstraints.ui;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Vendor: Software Technology Group - TU Dresden Germany
+Require-Bundle: org.eclipse.core.runtime,
+  org.eclipse.core.resources,
+  org.emftext.access;resolution:=optional,
+  org.eclipse.emf,
+  org.eclipse.emf.codegen.ecore,
+  org.eclipse.emf.ecore,
+  org.eclipse.emf.ecore.edit,
+  org.eclipse.emf.edit.ui,
+  org.eclipse.jface,
+  org.eclipse.jface.text,
+  org.eclipse.ui,
+  org.eclipse.ui.editors,
+  org.eclipse.ui.ide,
+  org.eclipse.ui.views,
+  org.deltaecore.feature.constraint.resource.deconstraints,
+  org.emftext.commons.antlr3_4_0,
+  org.deltaecore.feature.constraint,
+  org.deltaecore.feature.expression,
+  org.deltaecore.feature,
+  org.deltaecore.feature.expression.resource.expression
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.deltaecore.feature.constraint.resource.deconstraints.ui
+Bundle-Activator: org.deltaecore.feature.constraint.resource.deconstraints.ui.DeconstraintsUIPlugin
+Import-Package: org.eclipse.ui.texteditor.spelling

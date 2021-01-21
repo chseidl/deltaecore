@@ -1,0 +1,14 @@
+delta "SFT_Delta2"
+	dialect <http://vicci.eu/sft/1.0>
+	requires <SFT_Delta1.decore>
+	modifies <../core/Example.sft>
+{
+	SFTIntermediateFault intermediateFault2 = new SFTIntermediateFault(id: "IF2", name: "Intermediate Fault 2", description: "Some description");
+	addFaultToFaultsOfGate(intermediateFault2, <G1>);
+	
+	SFTGate gate2 = new SFTGate(id: "G2", gateType: SFTGateType.AND);
+	setGateOfIntermediateFault(gate2, intermediateFault2);
+	
+	addFaultToFaultsOfGate(new SFTBasicFault(id: "BF3", name: "Basic Fault 3", probability: 0.005), gate2);
+	addFaultToFaultsOfGate(new SFTBasicFault(id: "BF4", name: "Basic Fault 4", probability: 0.00003), gate2);
+}

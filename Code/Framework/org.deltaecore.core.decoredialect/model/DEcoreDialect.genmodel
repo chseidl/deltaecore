@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.deltaecore.core.decoredialect/src-gen" editDirectory="/org.deltaecore.core.decoredialect.edit/src-gen"
+    editorDirectory="/org.deltaecore.core.decoredialect.editor/src-gen" modelPluginID="org.deltaecore.core.decoredialect"
+    modelName="DeltaEcore Delta Dialect Language" testsDirectory="/org.deltaecore.core.decoredialect.tests/src-gen"
+    importerID="de.christophseidl.emf.ggimporter" bundleManifest="false" complianceLevel="7.0"
+    copyrightFields="false" usedGenPackages="../../org.deltaecore.core.decorebase/model/DEcoreBase.genmodel#//decorebase platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore">
+  <foreignModel>DEcoreDialect.ecore</foreignModel>
+  <genPackages prefix="DEcoreDialect" basePackage="org.deltaecore.core" disposableProviderFactory="true"
+      ecorePackage="DEcoreDialect.ecore#/">
+    <genClasses ecoreClass="DEcoreDialect.ecore#//DEDeltaDialect">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DEcoreDialect.ecore#//DEDeltaDialect/deltaOperationDefinitions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DEcoreDialect.ecore#//DEDeltaDialect/domainPackage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DEcoreDialect.ecore#//DEDeltaDialect/domainModelElementIdentifierResolverClassReference"/>
+      <genOperations ecoreOperation="DEcoreDialect.ecore#//DEDeltaDialect/getDomainFactory"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DEcoreDialect.ecore#//DEDeltaOperationDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DEcoreDialect.ecore#//DEDeltaOperationDefinition/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DEcoreDialect.ecore#//DEDeltaOperationDefinition/modificationType"/>
+      <genOperations ecoreOperation="DEcoreDialect.ecore#//DEDeltaOperationDefinition/getParameters"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DEcoreDialect.ecore#//DEParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DEcoreDialect.ecore#//DEParameter/name"/>
+      <genOperations ecoreOperation="DEcoreDialect.ecore#//DEParameter/getType"/>
+    </genClasses>
+    <genClasses ecoreClass="DEcoreDialect.ecore#//DEAddDeltaOperationDefinition"/>
+    <genClasses ecoreClass="DEcoreDialect.ecore#//DERemoveDeltaOperationDefinition"/>
+    <genClasses ecoreClass="DEcoreDialect.ecore#//DEModifyDeltaOperationDefinition"/>
+    <genClasses ecoreClass="DEcoreDialect.ecore#//DECustomDeltaOperationDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DEcoreDialect.ecore#//DECustomDeltaOperationDefinition/declaredParameters"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DEcoreDialect.ecore#//DEStandardDeltaOperationDefinition">
+      <genOperations ecoreOperation="DEcoreDialect.ecore#//DEStandardDeltaOperationDefinition/getElement"/>
+    </genClasses>
+    <genClasses ecoreClass="DEcoreDialect.ecore#//DENamedParameter">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DEcoreDialect.ecore#//DENamedParameter/type"/>
+    </genClasses>
+    <genClasses ecoreClass="DEcoreDialect.ecore#//DEModelElementWithReferenceParameter">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DEcoreDialect.ecore#//DEModelElementWithReferenceParameter/reference"/>
+    </genClasses>
+    <genClasses ecoreClass="DEcoreDialect.ecore#//DEInsertDeltaOperationDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DEcoreDialect.ecore#//DEInsertDeltaOperationDefinition/index"/>
+    </genClasses>
+    <genClasses ecoreClass="DEcoreDialect.ecore#//DESetDeltaOperationDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DEcoreDialect.ecore#//DESetDeltaOperationDefinition/value"/>
+    </genClasses>
+    <genClasses ecoreClass="DEcoreDialect.ecore#//DEUnsetDeltaOperationDefinition"/>
+    <genClasses image="false" ecoreClass="DEcoreDialect.ecore#//DESingleValuedReferenceDeltaOperationDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DEcoreDialect.ecore#//DESingleValuedReferenceDeltaOperationDefinition/element"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DEcoreDialect.ecore#//DEMultiValuedReferenceDeltaOperationDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DEcoreDialect.ecore#//DEMultiValuedReferenceDeltaOperationDefinition/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DEcoreDialect.ecore#//DEMultiValuedReferenceDeltaOperationDefinition/element"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DEcoreDialect.ecore#//DEAttributeDeltaOperationDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DEcoreDialect.ecore#//DEAttributeDeltaOperationDefinition/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DEcoreDialect.ecore#//DEAttributeDeltaOperationDefinition/element"/>
+    </genClasses>
+    <genClasses ecoreClass="DEcoreDialect.ecore#//DEDetachDeltaOperationDefinition"/>
+    <genClasses image="false" ecoreClass="DEcoreDialect.ecore#//DEModelElementDeltaOperationDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DEcoreDialect.ecore#//DEModelElementDeltaOperationDefinition/element"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DEcoreDialect.ecore#//DEAbstractModelElementParameter">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DEcoreDialect.ecore#//DEAbstractModelElementParameter/type"/>
+    </genClasses>
+    <genClasses ecoreClass="DEcoreDialect.ecore#//DEModelElementWithAttributeParameter">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DEcoreDialect.ecore#//DEModelElementWithAttributeParameter/attribute"/>
+    </genClasses>
+    <genClasses ecoreClass="DEcoreDialect.ecore#//DEModelElementParameter"/>
+  </genPackages>
+</genmodel:GenModel>

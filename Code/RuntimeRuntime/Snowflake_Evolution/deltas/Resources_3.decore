@@ -1,0 +1,17 @@
+evolution delta "Resources_3"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <Resources.decore>
+	modifies <../model/Feature.ecore>
+{
+	//Should be possible to _not_ map resources.
+	setEReferenceLowerBound(0, <SFeature.resources>);
+	
+	//Need a reference to external resources.
+	//resource: SExternalResourceReference --> EObject
+	EReference resourceReference = new EReference(eType : <EObject>, name : "resource", lowerBound : 1, upperBound : 1, containment : false);
+	addEReference(resourceReference, <SExternalResourceReference>);
+	
+	//Reference to external resource should be possible.
+	setEClassAbstract(false, <SExternalResourceReference>);
+}

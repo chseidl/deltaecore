@@ -1,0 +1,90 @@
+module org.deltaecore.installer.Install 
+
+import org.eclipse.emf.mwe.utils.StandaloneSetup
+import org.eclipse.emf.mwe2.ecore.EcoreGenerator
+
+//NOTE: This is still in development an cannot be used right now!
+
+Workflow {
+    bean = StandaloneSetup {
+	    scanClassPath = true
+		platformUri = "../"
+		
+		//TODO: need to register runtime
+//		registerGenModelFile = "platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel"
+		registerGenModelFile = "platform:/resource/org.eclipse.emf.ecore/model/Ecore.genmodel"
+	}
+	
+	//Working Set "DeltaEcore"
+//	component = EcoreGenerator {
+//		genModel = "platform:/resource/org.deltaecore.core.applicationorderconstraint/model/ApplicationOrderConstraint.genmodel"
+//		srcPath = "src-gen"   
+//	}
+//	
+//	component = EcoreGenerator {
+//		genModel = "platform:/resource/org.deltaecore.core.decore/model/DEcore.genmodel"
+//        srcPath = "src-gen"   
+//	}
+	
+//	component = EcoreGenerator {
+//		genModel = "platform:/resource/org.deltaecore.core.decorebase/model/DEcoreBase.genmodel"
+//		srcPath = "src-gen"
+//	}
+	
+//	component = EcoreGenerator {
+//		genModel = "platform:/resource/org.deltaecore.core.decoredialect/model/DEcoreDialect.genmodel"
+//        srcPath = "src-gen"   
+//	}
+//	
+//	component = EcoreGenerator {
+//		genModel = "platform:/resource/org.deltaecore.shellscript/model/ShellScript.genmodel"
+//        srcPath = "src-gen"   
+//		generateCustomClasses = false
+//	}
+	
+	//Working Set "DeltaECore/Feature"	
+
+	
+//	component = EcoreGenerator {
+//		genModel = "platform:/resource/org.deltaecore.feature.configuration/model/Configuration.genmodel"
+//		srcPath = "src-gen"   
+//	}
+
+	component = EMFTextGenerator {
+		concreteSyntax = "platform:/resource/org.deltaecore.feature.configuration/model/Configuration.cs"
+	}
+	
+//	component = EcoreGenerator2 {
+//		genModel = "platform:/resource/org.deltaecore.feature/model/Feature.genmodel"
+//		generateEdit = true
+//		generateEditor = true
+//	}
+//	
+//	component = EcoreGenerator {
+//		genModel = "platform:/resource/org.deltaecore.feature.configuration.migration/model/ConfigurationMigration.genmodel"
+//		srcPath = "src-gen"   
+//	}
+//
+//	component = EcoreGenerator {
+//		genModel = "platform:/resource/org.deltaecore.feature.constraint/model/Constraint.genmodel"
+//		srcPath = "src-gen"   
+//	}
+//
+//	component = EcoreGenerator {
+//		genModel = "platform:/resource/org.deltaecore.feature.expression/model/Expression.genmodel"
+//      	srcPath = "src-gen"   
+//	}
+//
+////	component = EcoreGenerator {
+////		genModel = "platform:/resource/org.deltaecore.feature.mapping/model/Mapping.genmodel"
+////		srcPath = "src-gen"
+////	}
+//
+//	//Working Set "DeltaEcore/Auxiliary"
+//	component = EcoreGenerator {
+//		genModel = "platform:/resource/org.emftext.language.ecoreid/model/EcoreID.genmodel"
+//      	srcPath = "src-gen"
+//	}
+
+	//TODO: Complete
+}

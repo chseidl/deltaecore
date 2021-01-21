@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension point="org.deltaecore.deltadialect">
+      <dialect domainModelElementIdentifierResolver="eu.vicci.ecosystem.componentfaultdiagram.cfd.delta.resolver.CfdDomainModelElementIdentifierResolver" interpreter="eu.vicci.ecosystem.componentfaultdiagram.cfd.delta.CfdDeltaDialectInterpreter" model="model/CFD.decoredialect"/>
+   </extension>
+</plugin>

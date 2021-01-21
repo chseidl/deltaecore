@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<extension point="org.emftext.access.syntax.ui">
+		<metaInformationProvider class="org.deltaecore.shellscript.resource.deshellscript.ui.DeshellscriptUIMetaInformation" id="org.deltaecore.shellscript.resource.deshellscript.ui.DeshellscriptUIMetaInformation">
+		</metaInformationProvider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors">
+		<editor class="org.deltaecore.shellscript.resource.deshellscript.ui.DeshellscriptEditor" contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor" extensions="deshellscript" icon="icons/editor_icon.gif" id="org.deltaecore.shellscript.resource.deshellscript.ui.DeshellscriptEditor" name="Shell Script Editor (DeltaEcore)">
+			<contentTypeBinding contentTypeId="org.deltaecore.shellscript.resource.deshellscript">
+			</contentTypeBinding>
+		</editor>
+	</extension>
+	
+	<extension point="org.eclipse.core.runtime.preferences">
+		<initializer class="org.deltaecore.shellscript.resource.deshellscript.ui.DeshellscriptPreferenceInitializer">
+		</initializer>
+	</extension>
+	
+	<extension point="org.eclipse.ui.preferencePages">
+		<page name="Shell Script Editor (DeltaEcore)" id="org.deltaecore.shellscript.resource.deshellscript.ui.DeshellscriptPreferencePage" class="org.deltaecore.shellscript.resource.deshellscript.ui.DeshellscriptPreferencePage" category="org.eclipse.ui.preferencePages.GeneralTextEditor">
+		</page>
+		<page name="Syntax Coloring" id="org.deltaecore.shellscript.resource.deshellscript.ui.DeshellscriptSyntaxColoringPreferencePage" class="org.deltaecore.shellscript.resource.deshellscript.ui.DeshellscriptSyntaxColoringPreferencePage" category="org.deltaecore.shellscript.resource.deshellscript.ui.DeshellscriptPreferencePage">
+		</page>
+		<page name="Brackets" id="org.deltaecore.shellscript.resource.deshellscript.ui.DeshellscriptBracketPreferencePage" class="org.deltaecore.shellscript.resource.deshellscript.ui.DeshellscriptBracketPreferencePage" category="org.deltaecore.shellscript.resource.deshellscript.ui.DeshellscriptPreferencePage">
+		</page>
+		<page name="Content Assist" id="org.deltaecore.shellscript.resource.deshellscript.ui.DeshellscriptContentAssistPreferencePage" class="org.deltaecore.shellscript.resource.deshellscript.ui.DeshellscriptContentAssistPreferencePage" category="org.deltaecore.shellscript.resource.deshellscript.ui.DeshellscriptPreferencePage">
+		</page>
+	</extension>
+	
+	<extension point="org.eclipse.ui.newWizards">
+		<wizard category="org.deltaecore.newwizards.Category" icon="/icons/default_new_icon.gif" class="org.deltaecore.shellscript.resource.deshellscript.ui.DeshellscriptNewFileWizard" id="org.deltaecore.shellscript.resource.deshellscript.ui.DeshellscriptNewFileWizard" name="DeltaEcore Shell Script (*.deshellscript)">
+		</wizard>
+	</extension>
+	
+	<extension point="org.eclipse.ui.ide.markerResolution">
+		<markerResolutionGenerator class="org.deltaecore.shellscript.resource.deshellscript.ui.DeshellscriptMarkerResolutionGenerator" markerType="org.deltaecore.shellscript.resource.deshellscript.problem">
+		</markerResolutionGenerator>
+	</extension>
+	
+	<extension point="org.eclipse.core.filebuffers.annotationModelCreation">
+		<factory class="org.deltaecore.shellscript.resource.deshellscript.ui.DeshellscriptAnnotationModelFactory" extensions="deshellscript">
+		</factory>
+	</extension>
+	
+	<extension point="org.eclipse.core.contenttype.contentTypes">
+		<content-type id="org.deltaecore.shellscript.resource.deshellscript" name=".deshellscript File" base-type="org.eclipse.core.runtime.text" file-extensions="deshellscript">
+		</content-type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.documentProviders">
+		<provider class="org.eclipse.ui.editors.text.TextFileDocumentProvider" extensions="deshellscript" id="org.deltaecore.shellscript.resource.deshellscript.ui.provider">
+		</provider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.annotationTypes">
+		<type name="org.deltaecore.shellscript.resource.deshellscript.ui.occurences">
+		</type>
+		<type name="org.deltaecore.shellscript.resource.deshellscript.ui.occurences.declaration" super="org.deltaecore.shellscript.resource.deshellscript.ui.occurences">
+		</type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
+		<specification annotationType="org.deltaecore.shellscript.resource.deshellscript.ui.occurences" label="Occurrences (in .deshellscript files)" icon="/icons/occurrence_icon.gif" textPreferenceKey="deshellscript.occurrenceIndication" textPreferenceValue="false" highlightPreferenceKey="deshellscript.occurrenceHighlighting" highlightPreferenceValue="true" contributesToHeader="false" overviewRulerPreferenceKey="deshellscript.occurrenceIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="deshellscript.occurrenceIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="deshellscript.occurrenceIndicationColor" colorPreferenceValue="212,212,212" presentationLayer="4" showInNextPrevDropdownToolbarActionKey="deshellscript.showOccurrenceInNextPrevDropdownToolbarAction" showInNextPrevDropdownToolbarAction="true" isGoToNextNavigationTargetKey="deshellscript.isOccurrenceGoToNextNavigationTarget" isGoToNextNavigationTarget="false" isGoToPreviousNavigationTargetKey="deshellscript.isOccurrenceGoToPreviousNavigationTarget" isGoToPreviousNavigationTarget="false" textStylePreferenceKey="deshellscript.occurrenceTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+		<specification annotationType="org.deltaecore.shellscript.resource.deshellscript.ui.occurences.declaration" label="Declarations (in .deshellscript files)" textPreferenceKey="deshellscript.declarationIndication" textPreferenceValue="false" highlightPreferenceKey="deshellscript.declarationHighlighting" highlightPreferenceValue="true" overviewRulerPreferenceKey="deshellscript.declarationIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="deshellscript.declarationIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="deshellscript.declarationIndicationColor" colorPreferenceValue="240,216,168" presentationLayer="4" textStylePreferenceKey="deshellscript.declarationTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+	</extension>
+	
+	<extension point="org.eclipse.ui.commands">
+		<category description="All commands belonging to Deshellscript" id="org.deltaecore.shellscript.resource.deshellscript.ui.command.category" name="Deshellscript">
+		</category>
+		<command categoryId="org.deltaecore.shellscript.resource.deshellscript.ui.command.category" description="Toggle comment of the selected lines" id="org.deltaecore.shellscript.resource.deshellscript.ui.command.togglecomment" name="Toggle Comment">
+		</command>
+	</extension>
+	
+	<extension point="org.eclipse.ui.handlers">
+		<handler class="org.deltaecore.shellscript.resource.deshellscript.ui.DeshellscriptToggleCommentHandler" commandId="org.deltaecore.shellscript.resource.deshellscript.ui.command.togglecomment">
+		</handler>
+	</extension>
+	
+	<extension point="org.eclipse.ui.contexts">
+		<context name="Editing Deshellscript Files" description="Editing Deshellscript Files Context" parentId="org.eclipse.ui.textEditorScope" id="org.deltaecore.shellscript.resource.deshellscript.EditorScope">
+		</context>
+	</extension>
+	
+	<extension point="org.eclipse.ui.bindings">
+		<key sequence="M1+7" commandId="org.deltaecore.shellscript.resource.deshellscript.ui.command.togglecomment" schemeId="org.eclipse.ui.defaultAcceleratorConfiguration" contextId="org.deltaecore.shellscript.resource.deshellscript.EditorScope">
+		</key>
+	</extension>
+	
+</plugin>

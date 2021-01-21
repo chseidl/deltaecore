@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.deltaecore.core.decore" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appinfo>
+         <meta.schema plugin="org.deltaecore.core.decore" id="org.deltaecore.deltadialect" name="Delta Dialect"/>
+      </appinfo>
+      <documentation>
+         [Enter description of this extension point.]
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appinfo>
+            <meta.element />
+         </appinfo>
+      </annotation>
+      <complexType>
+         <choice>
+            <element ref="dialect"/>
+         </choice>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="dialect">
+      <complexType>
+         <attribute name="model" type="string" use="required">
+            <annotation>
+               <documentation>
+                  A relative path to the *.decoredialect file defining the delta dialect.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="interpreter" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The interpreter class for the delta dialect.
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":org.deltaecore.core.decore.interpretation.DEDeltaDialectInterpreter"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="domainModelElementIdentifierResolver" type="string">
+            <annotation>
+               <documentation>
+                  Specifies a domain model element identifier resolver, which is used to transform the identifiers of a domain model into their respective reference elements. For example, some domain models may use a qualified name notation such as &quot;[package]::[package]::[class]&quot; to reference model elements. This extension can be used to allow resolution of such identifiers to the respective elements in the domain model. The default resolution strategy checks the EObject attribute marked as &quot;id&quot; for equality with the supplied identifier. Extend DEDefaultDomainModelElementIdentifierResolver and override its matches(...) method for easier implementation.
+
+NOTE: Make sure the package of this class is exported by your plugin&apos;s MANIFEST.MF
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":org.deltaecore.core.decorebase.resolution.DEDomainModelElementIdentifierResolver"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="since"/>
+      </appinfo>
+      <documentation>
+         [Enter the first release in which this extension point appears.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="examples"/>
+      </appinfo>
+      <documentation>
+         [Enter extension point usage example here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="apiinfo"/>
+      </appinfo>
+      <documentation>
+         [Enter API information here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="implementation"/>
+      </appinfo>
+      <documentation>
+         [Enter information about supplied implementation of this extension point.]
+      </documentation>
+   </annotation>
+
+
+</schema>

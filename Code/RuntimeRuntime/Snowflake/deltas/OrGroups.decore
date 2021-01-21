@@ -1,0 +1,13 @@
+configuration delta "OrGroups"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <GroupVariationType.decore>
+	modifies <../model/Feature.ecore>
+{
+	String implementation = "return (getVariationType() == SGroupVariationType.OR);";
+
+	setEOperationImplementation(<SGroup.isOr>, implementation);
+	
+	EEnumLiteral orEEnumLiteral = new EEnumLiteral(name : "OR", literal : "OR", value : 2);
+	addEEnumLiteral(orEEnumLiteral, <SGroupVariationType>);
+}

@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EMFText Parser Plugin: decoredialect
+Bundle-SymbolicName: org.deltaecore.core.decoredialect.resource.decoredialect;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Vendor: Software Technology Group - TU Dresden Germany
+Require-Bundle: org.eclipse.core.runtime;resolution:=optional,
+  org.eclipse.core.resources;resolution:=optional,
+  org.eclipse.emf.ecore,
+  org.eclipse.emf.ecore.change,
+  org.eclipse.emf.validation;resolution:=optional,
+  org.emftext.access;resolution:=optional,
+  org.eclipse.debug.core;resolution:=optional,
+  org.deltaecore.core.generation;visibility:=reexport,
+   de.christophseidl.util.swt;visibility:=reexport,
+   de.christophseidl.util.eclipse.ui;visibility:=reexport,
+  org.emftext.commons.antlr3_4_0,
+  org.deltaecore.core.decoredialect,
+  org.deltaecore.core.decorebase,
+  org.deltaecore.core.decorebase.resource.decorebase
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.deltaecore.core.decoredialect.resource.decoredialect,
+  org.deltaecore.core.decoredialect.resource.decoredialect.analysis,
+  org.deltaecore.core.decoredialect.resource.decoredialect.mopp,
+  org.deltaecore.core.decoredialect.resource.decoredialect.debug,
+  org.deltaecore.core.decoredialect.resource.decoredialect.launch,
+  org.deltaecore.core.decoredialect.resource.decoredialect.grammar,
+  org.deltaecore.core.decoredialect.resource.decoredialect.util
+Bundle-Activator: org.deltaecore.core.decoredialect.resource.decoredialect.mopp.DecoredialectPlugin

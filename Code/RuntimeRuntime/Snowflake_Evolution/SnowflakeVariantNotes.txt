@@ -1,0 +1,5 @@
+Errors in Variant:
+- Version restriction enum should not be in there
+- integer value has no attribute for raw value
+- SDeclaredType reference is erronously called typeDeclarations (should be singular)
+- SFeature.attributes shouldn't be 1..* but *

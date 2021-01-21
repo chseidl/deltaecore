@@ -1,0 +1,67 @@
+[
+	//Configuration
+	<deltas/CompartmentBehaviorOrCompartmentProperties.decore>,
+	<deltas/CompartmentInheritance.decore>,
+	<deltas/CompartmentInheritanceAndOnCompartments.decore>,
+	<deltas/CompartmentsAndNotRoles.decore>,
+	<deltas/CompartmentsAndRoles.decore>,
+	<deltas/Constraints.decore>,
+	<deltas/ConstraintsAndOnCompartments.decore>,
+	<deltas/ContainsCompartmentsAndOnCompartments.decore>,
+	<deltas/GroupConstraints.decore>,
+	<deltas/InterRelationshipConstraints.decore>,
+	<deltas/IntraRelationshipConstraints.decore>,
+	<deltas/NotCompartmentBehaviorAndNotCompartmentProperties.decore>,
+	<deltas/NotCompartmentsAndNotRoles.decore>,
+	<deltas/NotCompartmentsAndRoles.decore>,
+	<deltas/NotOnCompartments.decore>,
+	<deltas/NotRoleProperties.decore>,
+	<deltas/OnCompartments.decore>,
+	<deltas/OnCompartmentsAndOnRelationships.decore>,
+	<deltas/OnRelationships.decore>,
+	<deltas/RelationshipConstraints.decore>,
+	<deltas/RoleBehaviorAndRoleProperties.decore>,
+	<deltas/RoleConstraints.decore>,
+	<deltas/RoleEquivalence.decore>,
+	<deltas/RoleImplication.decore>,
+	<deltas/RoleInheritance.decore>,
+	<deltas/RoleProhibition.decore>,
+	<deltas/RoleProperties.decore>
+]
+[
+	//2014_06_16
+	<deltas/IntraRelationshipConstraints_2014_06_16.decore>,
+	<deltas/OnRelationships_2014_06_16.decore>,
+	<deltas/RMLFeatureModel_2014_06_16.decore>
+]
+[
+	//2014_06_17
+	<deltas/CompartmentInheritanceAndOnCompartments_2014_06_17.decore>,
+	<deltas/NotCompartmentsAndRoles_2014_06_17.decore>,
+	<deltas/RMLFeatureModel_2014_06_17.decore>,
+	<deltas/RoleInheritance_2014_06_17.decore>
+]
+[
+	//2014_07_14
+	<deltas/CompartmentInheritance_2014_07_14.decore>,
+	<deltas/Constraints_2014_07_14.decore>,
+	<deltas/ConstraintsAndOnCompartments_2014_07_14.decore>,
+	<deltas/ContainsCompartmentsAndOnCompartments_2014_07_14.decore>,
+	<deltas/GroupConstraints_2014_07_14.decore>,
+	<deltas/InterRelationshipConstraints_2014_07_14.decore>,
+	<deltas/IntraRelationshipConstraints_2014_07_14.decore>,
+	<deltas/NotCompartmentsAndRoles_2014_07_14.decore>,
+	<deltas/OnCompartments_2014_07_14.decore>,
+	<deltas/OnRelationships_2014_07_14.decore>,
+	<deltas/RelationshipConstraints_2014_07_14.decore>,
+	<deltas/RoleBehaviorAndRoleProperties_2014_07_14.decore>,
+	<deltas/RoleConstraints_2014_07_14.decore>,
+	<deltas/RoleEquivalence_2014_07_14.decore>,
+	<deltas/RoleImplication_2014_07_14.decore>,
+	<deltas/RoleInheritance_2014_07_14.decore>,
+	<deltas/RoleProhibition_2014_07_14.decore>
+]
+[
+	//Ensure that this is the last of all delta modules of 2014_07_14 (as it removes the sub-package)
+	<deltas/RMLFeatureModel_2014_07_14.decore>
+]

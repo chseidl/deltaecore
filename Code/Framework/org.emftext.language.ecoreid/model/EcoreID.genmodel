@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.emftext.language.ecoreid/src-gen" editDirectory="/org.emftext.language.ecoreid.edit/src-gen"
+    editorDirectory="/org.emftext.language.ecoreid.editor/src-gen" modelPluginID="org.emftext.language.ecoreid"
+    modelName="EcoreID" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    testsDirectory="/org.emftext.language.ecoreid.tests/src-gen" importerID="de.christophseidl.emf.ggimporter"
+    bundleManifest="false" complianceLevel="7.0" copyrightFields="false" operationReflection="true"
+    importOrganizing="true">
+  <foreignModel>EcoreID.ecore</foreignModel>
+  <genPackages prefix="EcoreID" basePackage="org.emftext.language" disposableProviderFactory="true"
+      ecorePackage="EcoreID.ecore#/">
+    <genClasses ecoreClass="EcoreID.ecore#//EcoreID">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EcoreID.ecore#//EcoreID/names"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EcoreID.ecore#//EcoreID/parameterTypeNames"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EcoreID.ecore#//EcoreID/explicitlyNoParametersSpecified"/>
+      <genOperations ecoreOperation="EcoreID.ecore#//EcoreID/getEModelElement">
+        <genParameters ecoreParameter="EcoreID.ecore#//EcoreID/getEModelElement/ePackage"/>
+      </genOperations>
+      <genOperations ecoreOperation="EcoreID.ecore#//EcoreID/isQualified"/>
+    </genClasses>
+    <genClasses ecoreClass="EcoreID.ecore#//EcoreIDList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EcoreID.ecore#//EcoreIDList/ecoreIDs"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

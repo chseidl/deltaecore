@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="docbook" nsURI="http://www.emftext.org/DocBook" nsPrefix="docbook">
+  <eClassifiers xsi:type="ecore:EClass" name="RootNode" abstract="true" interface="true"
+      eSuperTypes="#//Node"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true" interface="true">
+    <eOperations name="setId">
+      <eParameters name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeContainer" abstract="true"
+      interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ComplexNode" abstract="true" interface="true"
+      eSuperTypes="#//Node #//AttributeContainer">
+    <eOperations name="setTitle">
+      <eParameters name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getTitle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BookNode" eSuperTypes="#//RootNode #//ComplexNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="#//BookAttribute" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="childNodes" lowerBound="1"
+        upperBound="-1" eType="#//BookChildNode" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ChapterNode" eSuperTypes="#//ComplexNode #//BookChildNode #//ParagraphParentNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="#//ChapterAttribute" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="childNodes" lowerBound="1"
+        upperBound="-1" eType="#//ChapterChildNode" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SectionNode" eSuperTypes="#//ComplexNode #//ChapterChildNode #//ParagraphParentNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="#//SectionAttribute" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="childNodes" lowerBound="1"
+        upperBound="-1" eType="#//SectionChildNode" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParentNode" abstract="true" interface="true"
+      eSuperTypes="#//Node"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ParagraphParentNode" abstract="true"
+      interface="true" eSuperTypes="#//ParentNode">
+    <eOperations name="addParagraphNode">
+      <eParameters name="paragraph" eType="#//ParagraphNode"/>
+    </eOperations>
+    <eOperations name="removeParagraphNode">
+      <eParameters name="paragraph" eType="#//ParagraphNode"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ChildNode" abstract="true" interface="true"
+      eSuperTypes="#//Node"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BookChildNode" abstract="true" interface="true"
+      eSuperTypes="#//ChildNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ChapterChildNode" abstract="true" interface="true"
+      eSuperTypes="#//ChildNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SectionChildNode" abstract="true" interface="true"
+      eSuperTypes="#//ChildNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleNode" abstract="true" eSuperTypes="#//Node">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TitleNode" eSuperTypes="#//SimpleNode #//BookChildNode #//ChapterChildNode #//SectionChildNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ParagraphNode" eSuperTypes="#//SimpleNode #//ChapterChildNode #//SectionChildNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BookAttribute" abstract="true" eSuperTypes="#//Attribute"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ChapterAttribute" abstract="true" eSuperTypes="#//Attribute"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SectionAttribute" abstract="true" eSuperTypes="#//Attribute"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IDAttribute" eSuperTypes="#//BookAttribute #//ChapterAttribute #//SectionAttribute"/>
+</ecore:EPackage>

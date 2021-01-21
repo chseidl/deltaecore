@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="org.deltaecore.feature.variant.generator" name="DeltaEcore Variant Generator" schema="schema/org.deltaecore.feature.variant.generator.exsd"/>
+
+</plugin>

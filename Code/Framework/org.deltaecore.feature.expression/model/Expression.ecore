@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="expression" nsURI="http://deltaecore.org/feature/expression/1.0"
+    nsPrefix="expression">
+  <eClassifiers xsi:type="ecore:EClass" name="DEAndExpression" eSuperTypes="#//DEBinaryExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DEOrExpression" eSuperTypes="#//DEBinaryExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DENotExpression" eSuperTypes="#//DEUnaryExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DEEquivalenceExpression" eSuperTypes="#//DEBinaryExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DEImpliesExpression" eSuperTypes="#//DEBinaryExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DEExpression" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DEBinaryExpression" abstract="true"
+      eSuperTypes="#//DEExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operand1" lowerBound="1"
+        eType="#//DEExpression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operand2" lowerBound="1"
+        eType="#//DEExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DEUnaryExpression" abstract="true" eSuperTypes="#//DEExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operand" lowerBound="1"
+        eType="#//DEExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DEAtomicExpression" abstract="true"
+      eSuperTypes="#//DEExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DENestedExpression" eSuperTypes="#//DEUnaryExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DEFeatureReferenceExpression" eSuperTypes="#//DEAbstractFeatureReferenceExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DEVersionRestriction" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="restrictedFeatureReferenceExpression"
+        lowerBound="1" eType="#//DEAbstractFeatureReferenceExpression" eOpposite="#//DEAbstractFeatureReferenceExpression/versionRestriction"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DEVersionRangeRestriction" eSuperTypes="#//DEVersionRestriction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowerIncluded" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperIncluded" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lowerVersion" lowerBound="1"
+        eType="ecore:EClass ../../org.deltaecore.feature/model/Feature.ecore#//DEVersion"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="upperVersion" lowerBound="1"
+        eType="ecore:EClass ../../org.deltaecore.feature/model/Feature.ecore#//DEVersion"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DERelativeVersionRestriction" eSuperTypes="#//DEVersionRestriction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
+        eType="#//DERelativeVersionRestrictionOperator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="version" lowerBound="1"
+        eType="ecore:EClass ../../org.deltaecore.feature/model/Feature.ecore#//DEVersion"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DERelativeVersionRestrictionOperator">
+    <eLiterals name="lessThan" value="-2"/>
+    <eLiterals name="lessThanOrEqual" value="-1" literal="lessThanOrEqual"/>
+    <eLiterals name="equal"/>
+    <eLiterals name="implicitEqual" value="3"/>
+    <eLiterals name="greaterThanOrEqual" value="1"/>
+    <eLiterals name="greaterThan" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DEBooleanValueExpression" eSuperTypes="#//DEAtomicExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DEConditionalFeatureReferenceExpression"
+      eSuperTypes="#//DEAbstractFeatureReferenceExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DEAbstractFeatureReferenceExpression"
+      abstract="true" eSuperTypes="#//DEAtomicExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="versionRestriction" eType="#//DEVersionRestriction"
+        containment="true" eOpposite="#//DEVersionRestriction/restrictedFeatureReferenceExpression"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
+        eType="ecore:EClass ../../org.deltaecore.feature/model/Feature.ecore#//DEFeature"/>
+  </eClassifiers>
+</ecore:EPackage>

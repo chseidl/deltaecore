@@ -1,0 +1,16 @@
+configuration delta "CompartmentInheritanceAndOnCompartments"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>,
+			 <CompartmentInheritance.decore>,
+			 <OnCompartments.decore>
+{
+	EClass compartmentTypeEClass = <CompartmentRoleObjectModel.CompartmentType>;
+	EClass compartmentInheritance = <CompartmentRoleObjectModel.CompartmentInheritance>;
+	
+	EReference superEReference = new EReference(eType : compartmentInheritance, name : "super", lowerBound : 1, upperBound : 1, containment : false);
+	addEReference(superEReference, compartmentTypeEClass);
+
+	EReference subEReference = new EReference(eType : compartmentInheritance, name : "sub", lowerBound : 1, upperBound : 1, containment : false);
+	addEReference(subEReference, compartmentTypeEClass);
+}

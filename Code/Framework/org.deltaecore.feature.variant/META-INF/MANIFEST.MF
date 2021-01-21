@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DeltaEcore Feature Variant Creation
+Bundle-SymbolicName: org.deltaecore.feature.variant;singleton:=true
+Bundle-Version: 0.8.2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.deltaecore.feature.variant,
+ org.deltaecore.feature.variant.extension
+Require-Bundle: org.deltaecore.feature.configuration;visibility:=reexport

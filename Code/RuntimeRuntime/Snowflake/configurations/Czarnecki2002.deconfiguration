@@ -1,0 +1,28 @@
+configuration <../Snowflake.defeaturemodel> {
+	AClassBased,
+//	AFeatureLike,	// which one is it?
+	ARepresentation,
+	Attributes,
+	ClonedFeatures,
+	Continuous,
+	Discrete,
+	DomainType,
+	FBox,
+	FCircle,
+	FContent,
+	FMRepresentation,
+	FMandatoryCircle,
+	FRepresentation,
+	FType,
+	FeatureCardinality,
+	FeatureModel,
+	FeatureModelingFamily,
+	Features,
+	Finite,
+	GArcs,
+	GRepresentation,
+	GroupCardinality,
+	Groups,
+	Infinite,
+	UnlimitedFeatures
+}

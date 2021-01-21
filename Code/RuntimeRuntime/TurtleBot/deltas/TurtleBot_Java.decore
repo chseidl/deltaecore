@@ -1,0 +1,6 @@
+configuration delta "TurtleBot"
+	dialect <http://www.emftext.org/java>
+	modifies <../src/eu/vicci/turtlebot/TurtleBot.java>
+{
+	//...
+}

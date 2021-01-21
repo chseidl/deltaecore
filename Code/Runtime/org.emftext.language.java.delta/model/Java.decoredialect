@@ -1,0 +1,111 @@
+deltaDialect
+{
+	configuration:
+		metaModel: <http://www.emftext.org/java>;
+		identifierResolver: org.emftext.language.java.delta.resolver.JavaDomainModelElementIdentifierResolver;
+	
+	deltaOperations:
+		//Annotations
+		addOperation addAnnotation(AnnotationInstance ai, Annotable[annotations] an);
+		customOperation createAnnotation(String aText, Annotable an);
+		detachOperation removeAnnotation(Annotation annotation);
+		
+		//Imports
+		addOperation addImport(Import i, ImportingElement[imports] ie);
+		customOperation createImport(String iText, ImportingElement ie);
+		detachOperation removeImport(Import i);
+		
+		//NamedElements
+		evolution modifyOperation renameNamedElement(String newName, NamedElement[name] ne);
+		
+		//Classes
+		addOperation addClass(Class c, CompilationUnit[classifiers] cu);
+		customOperation createClass(String cText, Package p);
+		customOperation removeClass(Class c);
+		
+		customOperation setSuperClassForClass(Class sc, Class c);
+		setOperation setSuperClassReferenceForClass(ClassifierReference cr, Class[extends] c);
+		unsetOperation unsetSuperClassReferenceForClass(Class[extends] c);
+		
+		customOperation addSuperInterfaceForClass(Interface i, Class c);
+		addOperation addSuperInterfaceReferenceForClass(ClassifierReference cr, Class[implements] c);
+		customOperation removeSuperInterfaceForClass(Interface i, Class c);
+		detachOperation removeSuperInterfaceReferenceForClass(ClassifierReference cr);
+		
+		addOperation addInternalClass(Class c, Class[members] cc);
+		customOperation createInternalClass(String cText, Class cc);
+		detachOperation removeInternalClass(Class c);
+
+		addOperation addInternalInterface(Interface i, Class[members] cc);
+		customOperation createInternalInterface(String iText, Class cc);
+		detachOperation removeInternalInterface(Interface i);
+		
+		addOperation addInternalEnumeration(Enumeration e, Class[members] cc);
+		customOperation createInternalEnumeration(String eText, Class cc);
+		detachOperation removeInternalEnumeration(Enumeration e);
+		
+		//Interfaces
+		addOperation addInterface(Interface i, CompilationUnit[classifiers] cu);
+		customOperation createInterface(String iText, Package p);
+		customOperation removeInterface(Interface i);
+		
+		customOperation addSuperInterfaceForInterface(Interface si, Interface i);
+		addOperation addSuperInterfaceReferenceForInterface(ClassifierReference cr, Interface[extends] i);
+		customOperation removeSuperInterfaceForInterface(Interface si, Interface i);
+		detachOperation removeSuperInterfaceReferenceForInterface(ClassifierReference cr);
+		
+		//Enumerations
+		addOperation addEnumeration(Enumeration e, CompilationUnit[classifiers] cu);
+		customOperation createEnumeration(String eText, Package p);
+		customOperation removeEnumeration(Enumeration e);
+		
+		customOperation addSuperInterfaceForEnumeration(Interface i, Enumeration e);
+		addOperation addSuperInterfaceReferenceForEnumeration(ClassifierReference cr, Enumeration[implements] e);
+		customOperation removeSuperInterfaceForEnumeration(Interface i, Enumeration e);
+		removeOperation removeSuperInterfaceReferenceForEnumeration(ClassifierReference cr, Enumeration[implements] e);
+		
+		addOperation addEnumConstant(EnumConstant ec, Enumeration[constants] e);
+		customOperation createEnumConstant(String ecText, Enumeration e);
+		detachOperation removeEnumConstant(EnumConstant ec);
+		
+		//Modifiers
+		addOperation addModifier(Modifier m, AnnotableAndModifiable[annotationsAndModifiers] aam);
+		customOperation createModifier(String mText, AnnotableAndModifiable aam);
+		detachOperation removeModifier(Modifier m);
+		
+		customOperation setAbstractModifier(Boolean abstractValue, AnnotableAndModifiable aam);
+		customOperation setStaticModifier(Boolean staticValue, AnnotableAndModifiable aam);
+		
+		customOperation setPublicVisbility(AnnotableAndModifiable aam);
+		customOperation setProtectedVisibility(AnnotableAndModifiable aam);
+		customOperation setPrivateVisibility(AnnotableAndModifiable aam);
+		customOperation setPackageVisibility(AnnotableAndModifiable aam);
+		
+		//Fields
+		addOperation addField(Field f, MemberContainer[members] mc);
+		customOperation createField(String fText, MemberContainer mc);
+		detachOperation removeField(Field f);
+		
+		//Constructors
+		addOperation addConstructor(Constructor constructor, MemberContainer[members] mc);
+		customOperation createConstructor(String cText, MemberContainer mc);
+		customOperation implementConstructor(Constructor c, String implementationText);
+		detachOperation removeConstructor(Constructor c);
+		
+		//Methods
+		addOperation addMethod(Method m, MemberContainer[members] mc);
+		customOperation createMethod(String mText, MemberContainer mc);
+		customOperation implementMethod(ClassMethod cm, String implementationText);
+		detachOperation removeMethod(Method m);
+		
+		//Parameters
+		addOperation addParameter(Parameter p, Parametrizable[parameters] pt);
+		insertOperation insertParameter(Parameter p, Parametrizable[parameters] pt, Integer index);
+		customOperation createParameter(String pText, Parametrizable pt, Integer index);
+		detachOperation removeParameter(Parameter p);
+
+		//Refactorings
+		evolution customOperation extractMethod(String newMethodName, ClassMethod containingMethod, Integer startStatementIndex, Integer endStatementIndex);
+		evolution customOperation extractSuperInterface(String newInterfaceName, ConcreteClassifier containingClassOrInterface, /*List<Member>*/ Member fieldsAndMethods);
+		evolution customOperation extractSuperClass(String newClassName, ConcreteClassifier containingClassOrInterface, /*List<Member>*/ Member fieldsAndMethods);
+}

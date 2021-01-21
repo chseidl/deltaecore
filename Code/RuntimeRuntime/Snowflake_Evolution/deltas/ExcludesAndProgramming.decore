@@ -1,0 +1,10 @@
+configuration delta "ExcludesAndProgramming"
+
+dialect <http://www.emftext.org/sdk/concretesyntax>
+	modifies <../model/Constraint.cs>
+{
+	//TODO: Find symbol!
+	String ruleText = "@Operator(type=\"binary_left_associative\", weight=\"3\", superclass=\"SExpression\")
+					   SExcludesExpression ::= operand1 \"excludes\" operand2;";
+	addRule(ruleText, <ConcreteSyntax:constraints>);
+}

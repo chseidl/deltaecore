@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.deltaecore.eclipse.feature.integration.featureide_1.0.0.jar" id="org.deltaecore.eclipse.feature.integration.featureide" version="1.0.0">
+      <category name="org.deltaecore.eclipse.feature.integration"/>
+   </feature>
+   <feature url="features/org.deltaecore.eclipse.feature.example.deltadialect_1.0.0.jar" id="org.deltaecore.eclipse.feature.example.deltadialect" version="1.0.0">
+      <category name="org.deltaecore.eclipse.feature.example"/>
+   </feature>
+   <feature url="features/org.deltaecore.eclipse.feature.example.deltamodule_1.0.0.jar" id="org.deltaecore.eclipse.feature.example.deltamodule" version="1.0.0">
+      <category name="org.deltaecore.eclipse.feature.example"/>
+   </feature>
+   <feature url="features/org.deltaecore.eclipse.feature.example.sourcelanguage_1.0.0.jar" id="org.deltaecore.eclipse.feature.example.sourcelanguage" version="1.0.0">
+      <category name="org.deltaecore.eclipse.feature.example"/>
+   </feature>
+   <feature url="features/org.deltaecore.eclipse.feature.framework.core_0.8.2.jar" id="org.deltaecore.eclipse.feature.framework.core" version="0.8.2">
+      <category name="org.deltaecore.eclipse.feature.framework"/>
+   </feature>
+   <feature url="features/org.deltaecore.eclipse.feature.framework.feature_0.8.2.jar" id="org.deltaecore.eclipse.feature.framework.feature" version="0.8.2">
+      <category name="org.deltaecore.eclipse.feature.framework"/>
+   </feature>
+   <feature url="features/org.deltaecore.eclipse.feature.framework.shell_0.8.2.jar" id="org.deltaecore.eclipse.feature.framework.shell" version="0.8.2">
+      <category name="org.deltaecore.eclipse.feature.framework"/>
+   </feature>
+   <category-def name="org.deltaecore.eclipse.feature.framework" label="Framework"/>
+   <category-def name="org.deltaecore.eclipse.feature.integration" label="Integration (optional)"/>
+   <category-def name="org.deltaecore.eclipse.feature.example" label="Examples (optional)"/>
+</site>

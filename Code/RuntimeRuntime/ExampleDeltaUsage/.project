@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>ExampleDeltaUsage</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.deltaecore.core.decore.resource.decore.builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>eu.vicci.ecosystem.sft.resource.sft_text.builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.emftext.language.java.resource.java.builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.deltaecore.feature.resource.feature_text.builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>eu.vicci.ecosystem.cl.resource.cl_text.builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.deltaecore.core.decore.resource.decore.nature</nature>
+		<nature>eu.vicci.ecosystem.sft.resource.sft_text.nature</nature>
+		<nature>org.emftext.language.java.resource.java.nature</nature>
+		<nature>org.deltaecore.feature.resource.feature_text.nature</nature>
+		<nature>eu.vicci.ecosystem.cl.resource.cl_text.nature</nature>
+	</natures>
+</projectDescription>

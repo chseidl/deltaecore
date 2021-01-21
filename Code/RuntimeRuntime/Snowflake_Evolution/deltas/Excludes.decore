@@ -1,0 +1,9 @@
+configuration delta "Excludes"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	modifies <../model/Constraint.ecore>
+{
+	EClass excludesExpressionEClass = new EClass(name: "SExcludesExpression");
+	addESuperType(<SBinaryExpression>, excludesExpressionEClass);
+	addEClass(excludesExpressionEClass, <constraint>);
+}

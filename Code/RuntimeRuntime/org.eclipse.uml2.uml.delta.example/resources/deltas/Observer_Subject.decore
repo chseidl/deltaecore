@@ -1,0 +1,13 @@
+delta "Observer_Subject"
+	dialect <http://www.eclipse.org/uml2/5.0.0/UML>
+	requires <../core/Base.uml>, <Observer_Observable.decore>
+{
+	Model model = <model::>;
+	
+	//Package
+	createPackage("org.example", model);
+	
+	//Subject
+	createClass("Subject", <package::org.example>, false);
+	createGeneralization(<class::org.example.Subject>, <class::org.example.Observable>);
+}

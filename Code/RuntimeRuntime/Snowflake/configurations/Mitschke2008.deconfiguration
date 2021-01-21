@@ -1,0 +1,18 @@
+configuration <../Snowflake.defeaturemodel> {
+	FBox,
+	FCardinalities,
+	FContent,
+	FMRepresentation,
+	FRepresentation,
+	FType,
+	FeatureCardinality,
+	FeatureModel,
+	FeatureModelingFamily,
+	Features,
+	GCardinalities,
+	GRepresentation,
+	GroupCardinality,
+	Groups,
+	MultipleGroups,
+	Versions
+}

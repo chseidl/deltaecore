@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<extension point="org.emftext.access.syntax">
+		<metaInformationProvider class="org.deltaecore.core.decoredialect.resource.decoredialect.mopp.DecoredialectMetaInformation" id="org.deltaecore.core.decoredialect.resource.decoredialect.mopp.DecoredialectMetaInformation">
+		</metaInformationProvider>
+	</extension>
+	
+	<extension id="org.deltaecore.core.decoredialect.resource.decoredialect.problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="org.eclipse.core.resources.problemmarker">
+		</super>
+		<super type="org.eclipse.core.resources.textmarker">
+		</super>
+		<super type="org.eclipse.emf.ecore.diagnostic">
+		</super>
+	</extension>
+	
+	<extension id="org.deltaecore.core.decoredialect.resource.decoredialect.problem.syntax_error" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="org.deltaecore.core.decoredialect.resource.decoredialect.problem">
+		</super>
+	</extension>
+	
+	<extension id="org.deltaecore.core.decoredialect.resource.decoredialect.problem.print_problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="org.deltaecore.core.decoredialect.resource.decoredialect.problem">
+		</super>
+	</extension>
+	
+	<extension id="org.deltaecore.core.decoredialect.resource.decoredialect.problem.unresolved_reference" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="org.deltaecore.core.decoredialect.resource.decoredialect.problem">
+		</super>
+	</extension>
+	
+	<extension id="org.deltaecore.core.decoredialect.resource.decoredialect.problem.analysis_problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="org.deltaecore.core.decoredialect.resource.decoredialect.problem">
+		</super>
+	</extension>
+	
+	<extension id="org.deltaecore.core.decoredialect.resource.decoredialect.problem.batch_constraint_problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="org.deltaecore.core.decoredialect.resource.decoredialect.problem">
+		</super>
+	</extension>
+	
+	<extension id="org.deltaecore.core.decoredialect.resource.decoredialect.problem.live_constraint_problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="org.deltaecore.core.decoredialect.resource.decoredialect.problem">
+		</super>
+	</extension>
+	
+	<extension id="org.deltaecore.core.decoredialect.resource.decoredialect.problem.builder_error" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="org.deltaecore.core.decoredialect.resource.decoredialect.problem">
+		</super>
+	</extension>
+	
+	<extension id="org.deltaecore.core.decoredialect.resource.decoredialect.nature" name="decoredialect nature" point="org.eclipse.core.resources.natures">
+		<runtime>
+			<run class="org.deltaecore.core.decoredialect.resource.decoredialect.mopp.DecoredialectNature">
+			</run>
+		</runtime>
+		<builder id="org.deltaecore.core.decoredialect.resource.decoredialect.builder">
+		</builder>
+	</extension>
+	
+	<extension point="org.eclipse.core.resources.builders" id="org.deltaecore.core.decoredialect.resource.decoredialect.builder" name="decoredialect Builder">
+		<builder hasNature="true">
+			<run class="org.deltaecore.core.decoredialect.resource.decoredialect.mopp.DecoredialectBuilderAdapter">
+			</run>
+		</builder>
+	</extension>
+	
+	<extension-point id="org.deltaecore.core.decoredialect.resource.decoredialect.default_load_options" name="Default Load Options" schema="schema/default_load_options.exsd">
+	</extension-point>
+	
+	<extension point="org.eclipse.emf.ecore.extension_parser">
+		<parser class="org.deltaecore.core.decoredialect.resource.decoredialect.mopp.DecoredialectResourceFactoryDelegator" type="decoredialect">
+		</parser>
+	</extension>
+	
+	<extension-point id="org.deltaecore.core.decoredialect.resource.decoredialect.additional_extension_parser" name="Additional Extension Parser" schema="schema/additional_extension_parser.exsd">
+	</extension-point>
+	
+	<extension point="org.eclipse.debug.core.breakpoints">
+		<breakpoint class="org.deltaecore.core.decoredialect.resource.decoredialect.debug.DecoredialectLineBreakpoint" id="org.deltaecore.core.decoredialect.resource.decoredialect.debug.breakpoint" markerType="org.deltaecore.core.decoredialect.resource.decoredialect.debug.lineBreakpoint.marker" name="decoredialect Breakpoint">
+		</breakpoint>
+	</extension>
+	
+	<extension id="org.deltaecore.core.decoredialect.resource.decoredialect.debug.lineBreakpoint.marker" point="org.eclipse.core.resources.markers">
+		<super type="org.eclipse.debug.core.lineBreakpointMarker">
+		</super>
+		<super type="org.eclipse.core.resources.textmarker">
+		</super>
+		<persistent value="true">
+		</persistent>
+	</extension>
+	
+	<extension point="org.eclipse.debug.core.launchConfigurationTypes">
+		<launchConfigurationType id="org.deltaecore.core.decoredialect.resource.decoredialect.ui.launchConfigurationType" delegate="org.deltaecore.core.decoredialect.resource.decoredialect.launch.DecoredialectLaunchConfigurationDelegate" modes="run,debug" name="decoredialect Application" sourceLocatorId="org.deltaecore.core.decoredialect.resource.decoredialect.ui.sourceLocator" sourcePathComputerId="org.deltaecore.core.decoredialect.resource.decoredialect.ui.sourcePathComputer" delegateName="decoredialect Launch Tooling" delegateDescription="This will run or debug .decoredialect files.">
+		</launchConfigurationType>
+	</extension>
+	
+	<extension point="org.eclipse.debug.core.sourcePathComputers">
+		<sourcePathComputer class="org.deltaecore.core.decoredialect.resource.decoredialect.debug.DecoredialectSourcePathComputerDelegate" id="org.deltaecore.core.decoredialect.resource.decoredialect.ui.sourcePathComputer">
+		</sourcePathComputer>
+	</extension>
+	
+	<extension point="org.eclipse.debug.core.sourceLocators">
+		<sourceLocator id="org.deltaecore.core.decoredialect.resource.decoredialect.ui.sourceLocator" class="org.deltaecore.core.decoredialect.resource.decoredialect.debug.DecoredialectSourceLocator" name="decoredialect Source Locator">
+		</sourceLocator>
+	</extension>
+	
+</plugin>

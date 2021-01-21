@@ -1,0 +1,32 @@
+evolution delta "RMLFeatureModel_2014_07_14"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>
+			 
+{
+	//Move all classifiers
+	EPackage ePackage = <crom_l1>;
+	
+	setEClassifierPackage(ePackage, <CompartmentRoleObjectModel.NamedElement>);
+	setEClassifierPackage(ePackage, <CompartmentRoleObjectModel.ModelElement>);
+	setEClassifierPackage(ePackage, <CompartmentRoleObjectModel.Model>);
+	setEClassifierPackage(ePackage, <CompartmentRoleObjectModel.RigidType>);
+	setEClassifierPackage(ePackage, <CompartmentRoleObjectModel.Group>);
+	setEClassifierPackage(ePackage, <CompartmentRoleObjectModel.Relation>);
+	setEClassifierPackage(ePackage, <CompartmentRoleObjectModel.Parameter>);
+	setEClassifierPackage(ePackage, <CompartmentRoleObjectModel.Operation>);
+	setEClassifierPackage(ePackage, <CompartmentRoleObjectModel.Attribute>);
+	setEClassifierPackage(ePackage, <CompartmentRoleObjectModel.Type>);
+	setEClassifierPackage(ePackage, <CompartmentRoleObjectModel.NaturalType>);
+	setEClassifierPackage(ePackage, <CompartmentRoleObjectModel.RoleType>);
+	setEClassifierPackage(ePackage, <CompartmentRoleObjectModel.Fulfillment>);
+	setEClassifierPackage(ePackage, <CompartmentRoleObjectModel.Inheritance>);
+	setEClassifierPackage(ePackage, <CompartmentRoleObjectModel.NaturalInheritance>);
+	setEClassifierPackage(ePackage, <CompartmentRoleObjectModel.RelationTarget>);
+	setEClassifierPackage(ePackage, <CompartmentRoleObjectModel.AbstractRole>);
+	setEClassifierPackage(ePackage, <CompartmentRoleObjectModel.RoleModel>);
+	setEClassifierPackage(ePackage, <CompartmentRoleObjectModel.TypedElement>);
+	
+	//Remove the (now empty) subpackage
+	removeEPackage(<CompartmentRoleObjectModel>);
+}

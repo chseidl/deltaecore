@@ -1,0 +1,5 @@
+Look into org.deltaecore.feature.analysis for a Choco exporter
+Look into org.deltaecore.feature.configuration.autoconfigurer for another Choco exporter/encoder
+
+
+org.deltaecore.feature.configure.example for generator

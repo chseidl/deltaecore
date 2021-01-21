@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.validation.constraintProviders">
+      <category
+            id="org.deltaecore.feature"
+            mandatory="true"
+            name="DEFeature">
+      </category>
+      <constraintProvider
+            cache="true">
+         <package
+               namespaceUri="http://deltaecore.org/feature/1.0">
+         </package>
+         <constraints
+               categories="org.deltaecore.feature">
+            <constraint
+                  class="org.deltaecore.feature.validation.DEPlausibleCardinalitiesConstraint"
+                  id="org.deltaecore.feature.validation.DEPlausibleCardinalitiesConstraint"
+                  lang="Java"
+                  mode="Live"
+                  name="DEPlausibleCardinalitiesConstraint"
+                  severity="ERROR"
+                  statusCode="1">
+               <message>
+                  message body text
+               </message>
+               <target
+                     class="DECardinalityBasedElement">
+               </target>
+            </constraint>
+            <constraint
+                  class="org.deltaecore.feature.validation.DEStructuralWellformednessConstraint"
+                  id="org.deltaecore.feature.validation.DEStructuralWellformednessConstraint"
+                  lang="Java"
+                  mode="Live"
+                  name="DEStructuralWellformednessConstraint"
+                  severity="ERROR"
+                  statusCode="1">
+               <message>
+                  message body text
+               </message>
+               <target
+                     class="DECardinalityBasedElement">
+               </target>
+            </constraint>
+         </constraints>
+      </constraintProvider>
+   </extension>
+   <extension
+         point="org.eclipse.emf.validation.constraintBindings">
+      <clientContext
+            default="false"
+            id="org.deltaecore.feature.clientContext">
+         <enablement></enablement>
+      </clientContext>
+      <binding
+            category="org.deltaecore.feature"
+            context="org.deltaecore.feature.clientContext">
+      </binding>
+   </extension>
+</plugin>

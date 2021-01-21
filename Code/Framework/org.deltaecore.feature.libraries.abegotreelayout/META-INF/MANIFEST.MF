@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Abego Tree Layout
+Bundle-SymbolicName: org.deltaecore.feature.libraries.abegotreelayout
+Bundle-Version: 1.0.1
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.abego.treelayout,
+ org.abego.treelayout.internal.util,
+ org.abego.treelayout.internal.util.java.lang,
+ org.abego.treelayout.internal.util.java.lang.string,
+ org.abego.treelayout.internal.util.java.util,
+ org.abego.treelayout.util
+Bundle-ClassPath: libs/org.abego.treelayout.core.jar

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.emftext.language.docbook/src-gen" editDirectory="/org.emftext.language.docbook.edit/src-gen"
+    editorDirectory="/org.emftext.language.docbook.editor/src-gen" modelPluginID="org.emftext.language.docbook"
+    modelName="DocBook" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    testsDirectory="/org.emftext.language.docbook.tests/src-gen" importerID="de.christophseidl.emf.ggimporter"
+    complianceLevel="7.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>DocBook.ecore</foreignModel>
+  <genPackages prefix="DocBook" basePackage="org.emftext.language" disposableProviderFactory="true"
+      ecorePackage="DocBook.ecore#/">
+    <genClasses image="false" ecoreClass="DocBook.ecore#//RootNode"/>
+    <genClasses image="false" ecoreClass="DocBook.ecore#//Node">
+      <genOperations ecoreOperation="DocBook.ecore#//Node/setId">
+        <genParameters ecoreParameter="DocBook.ecore#//Node/setId/id"/>
+      </genOperations>
+      <genOperations ecoreOperation="DocBook.ecore#//Node/getId"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DocBook.ecore#//AttributeContainer"/>
+    <genClasses image="false" ecoreClass="DocBook.ecore#//ComplexNode">
+      <genOperations ecoreOperation="DocBook.ecore#//ComplexNode/setTitle">
+        <genParameters ecoreParameter="DocBook.ecore#//ComplexNode/setTitle/title"/>
+      </genOperations>
+      <genOperations ecoreOperation="DocBook.ecore#//ComplexNode/getTitle"/>
+    </genClasses>
+    <genClasses ecoreClass="DocBook.ecore#//BookNode">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DocBook.ecore#//BookNode/attributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DocBook.ecore#//BookNode/childNodes"/>
+    </genClasses>
+    <genClasses ecoreClass="DocBook.ecore#//ChapterNode">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DocBook.ecore#//ChapterNode/attributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DocBook.ecore#//ChapterNode/childNodes"/>
+    </genClasses>
+    <genClasses ecoreClass="DocBook.ecore#//SectionNode">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DocBook.ecore#//SectionNode/attributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DocBook.ecore#//SectionNode/childNodes"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DocBook.ecore#//ParentNode"/>
+    <genClasses image="false" ecoreClass="DocBook.ecore#//ParagraphParentNode">
+      <genOperations ecoreOperation="DocBook.ecore#//ParagraphParentNode/addParagraphNode">
+        <genParameters ecoreParameter="DocBook.ecore#//ParagraphParentNode/addParagraphNode/paragraph"/>
+      </genOperations>
+      <genOperations ecoreOperation="DocBook.ecore#//ParagraphParentNode/removeParagraphNode">
+        <genParameters ecoreParameter="DocBook.ecore#//ParagraphParentNode/removeParagraphNode/paragraph"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DocBook.ecore#//ChildNode"/>
+    <genClasses image="false" ecoreClass="DocBook.ecore#//BookChildNode"/>
+    <genClasses image="false" ecoreClass="DocBook.ecore#//ChapterChildNode"/>
+    <genClasses image="false" ecoreClass="DocBook.ecore#//SectionChildNode"/>
+    <genClasses image="false" ecoreClass="DocBook.ecore#//SimpleNode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DocBook.ecore#//SimpleNode/value"/>
+    </genClasses>
+    <genClasses ecoreClass="DocBook.ecore#//TitleNode"/>
+    <genClasses ecoreClass="DocBook.ecore#//ParagraphNode"/>
+    <genClasses image="false" ecoreClass="DocBook.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DocBook.ecore#//Attribute/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DocBook.ecore#//BookAttribute"/>
+    <genClasses image="false" ecoreClass="DocBook.ecore#//ChapterAttribute"/>
+    <genClasses image="false" ecoreClass="DocBook.ecore#//SectionAttribute"/>
+    <genClasses ecoreClass="DocBook.ecore#//IDAttribute"/>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,27 @@
+configuration delta "Resources"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	modifies <../model/Feature.ecore>
+{
+	EClass resourceEClass = new EClass(name: "SResource");
+	setEClassInterface(true, resourceEClass);
+	setEClassAbstract(true, resourceEClass);
+	addEClass(resourceEClass, <feature>);
+	
+	EClass externalResourceReferenceEClass = new EClass(name: "SExternalResourceReference");
+	//Modified 2014_11_21
+//	setEClassAbstract(true, externalResourceReferenceEClass);
+	addESuperType(resourceEClass, externalResourceReferenceEClass);
+	addEClass(externalResourceReferenceEClass, <feature>);
+	
+	//Modified 2014_11_21
+	//resource: SExternalResourceReference --> EObject
+	EReference resourceReference = new EReference(eType : <EObject>, name : "resource", lowerBound : 1, upperBound : 1, containment : false);
+	addEReference(resourceReference, <SExternalResourceReference>);	
+	
+	//Modified 2014_11_21
+	//resources: SFeature <>->* SResource
+//	EReference resourcesReference = new EReference(eType : resourceEClass, name : "resources", lowerBound : 1, upperBound : -1, containment : true);
+	EReference resourcesReference = new EReference(eType : resourceEClass, name : "resources", lowerBound : 0, upperBound : -1, containment : true);
+	addEReference(resourcesReference, <SFeature>);
+}

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<extension point="org.emftext.access.syntax.ui">
+		<metaInformationProvider class="org.deltaecore.core.decore.resource.decore.ui.DecoreUIMetaInformation" id="org.deltaecore.core.decore.resource.decore.ui.DecoreUIMetaInformation">
+		</metaInformationProvider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors">
+		<editor class="org.deltaecore.core.decore.resource.decore.ui.DecoreEditorCustom" contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor" extensions="decore" icon="icons/editor_icon.gif" id="org.deltaecore.core.decore.resource.decore.ui.DecoreEditor" name="Delta Module Editor (DeltaEcore)">
+			<contentTypeBinding contentTypeId="org.deltaecore.core.decore.resource.decore">
+			</contentTypeBinding>
+		</editor>
+	</extension>
+	
+	<extension point="org.eclipse.core.runtime.preferences">
+		<initializer class="org.deltaecore.core.decore.resource.decore.ui.DecorePreferenceInitializer">
+		</initializer>
+	</extension>
+	
+	<extension point="org.eclipse.ui.preferencePages">
+		<page name="Delta Module Editor (DeltaEcore)" id="org.deltaecore.core.decore.resource.decore.ui.DecorePreferencePage" class="org.deltaecore.core.decore.resource.decore.ui.DecorePreferencePage" category="org.eclipse.ui.preferencePages.GeneralTextEditor">
+		</page>
+		<page name="Syntax Coloring" id="org.deltaecore.core.decore.resource.decore.ui.DecoreSyntaxColoringPreferencePage" class="org.deltaecore.core.decore.resource.decore.ui.DecoreSyntaxColoringPreferencePage" category="org.deltaecore.core.decore.resource.decore.ui.DecorePreferencePage">
+		</page>
+		<page name="Brackets" id="org.deltaecore.core.decore.resource.decore.ui.DecoreBracketPreferencePage" class="org.deltaecore.core.decore.resource.decore.ui.DecoreBracketPreferencePage" category="org.deltaecore.core.decore.resource.decore.ui.DecorePreferencePage">
+		</page>
+		<page name="Content Assist" id="org.deltaecore.core.decore.resource.decore.ui.DecoreContentAssistPreferencePage" class="org.deltaecore.core.decore.resource.decore.ui.DecoreContentAssistPreferencePage" category="org.deltaecore.core.decore.resource.decore.ui.DecorePreferencePage">
+		</page>
+	</extension>
+	
+	<extension point="org.eclipse.ui.newWizards">
+		<wizard category="org.deltaecore.newwizards.Category" icon="/icons/default_new_icon.gif" class="org.deltaecore.core.decore.resource.decore.ui.DecoreNewFileWizard" id="org.deltaecore.core.decore.resource.decore.ui.DecoreNewFileWizard" name="DeltaEcore Delta Module (*.decore)">
+		</wizard>
+	</extension>
+	
+	<extension point="org.eclipse.ui.ide.markerResolution">
+		<markerResolutionGenerator class="org.deltaecore.core.decore.resource.decore.ui.DecoreMarkerResolutionGenerator" markerType="org.deltaecore.core.decore.resource.decore.problem">
+		</markerResolutionGenerator>
+	</extension>
+	
+	<extension point="org.eclipse.core.filebuffers.annotationModelCreation">
+		<factory class="org.deltaecore.core.decore.resource.decore.ui.DecoreAnnotationModelFactory" extensions="decore">
+		</factory>
+	</extension>
+	
+	<extension point="org.eclipse.core.contenttype.contentTypes">
+		<content-type id="org.deltaecore.core.decore.resource.decore" name=".decore File" base-type="org.eclipse.core.runtime.text" file-extensions="decore">
+		</content-type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.documentProviders">
+		<provider class="org.eclipse.ui.editors.text.TextFileDocumentProvider" extensions="decore" id="org.deltaecore.core.decore.resource.decore.ui.provider">
+		</provider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.annotationTypes">
+		<type name="org.deltaecore.core.decore.resource.decore.ui.occurences">
+		</type>
+		<type name="org.deltaecore.core.decore.resource.decore.ui.occurences.declaration" super="org.deltaecore.core.decore.resource.decore.ui.occurences">
+		</type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
+		<specification annotationType="org.deltaecore.core.decore.resource.decore.ui.occurences" label="Occurrences (in .decore files)" icon="/icons/occurrence_icon.gif" textPreferenceKey="decore.occurrenceIndication" textPreferenceValue="false" highlightPreferenceKey="decore.occurrenceHighlighting" highlightPreferenceValue="true" contributesToHeader="false" overviewRulerPreferenceKey="decore.occurrenceIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="decore.occurrenceIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="decore.occurrenceIndicationColor" colorPreferenceValue="212,212,212" presentationLayer="4" showInNextPrevDropdownToolbarActionKey="decore.showOccurrenceInNextPrevDropdownToolbarAction" showInNextPrevDropdownToolbarAction="true" isGoToNextNavigationTargetKey="decore.isOccurrenceGoToNextNavigationTarget" isGoToNextNavigationTarget="false" isGoToPreviousNavigationTargetKey="decore.isOccurrenceGoToPreviousNavigationTarget" isGoToPreviousNavigationTarget="false" textStylePreferenceKey="decore.occurrenceTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+		<specification annotationType="org.deltaecore.core.decore.resource.decore.ui.occurences.declaration" label="Declarations (in .decore files)" textPreferenceKey="decore.declarationIndication" textPreferenceValue="false" highlightPreferenceKey="decore.declarationHighlighting" highlightPreferenceValue="true" overviewRulerPreferenceKey="decore.declarationIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="decore.declarationIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="decore.declarationIndicationColor" colorPreferenceValue="240,216,168" presentationLayer="4" textStylePreferenceKey="decore.declarationTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+	</extension>
+	
+	<extension point="org.eclipse.ui.commands">
+		<category description="All commands belonging to Decore" id="org.deltaecore.core.decore.resource.decore.ui.command.category" name="Decore">
+		</category>
+		<command categoryId="org.deltaecore.core.decore.resource.decore.ui.command.category" description="Toggle comment of the selected lines" id="org.deltaecore.core.decore.resource.decore.ui.command.togglecomment" name="Toggle Comment">
+		</command>
+	</extension>
+	
+	<extension point="org.eclipse.ui.handlers">
+		<handler class="org.deltaecore.core.decore.resource.decore.ui.DecoreToggleCommentHandler" commandId="org.deltaecore.core.decore.resource.decore.ui.command.togglecomment">
+		</handler>
+	</extension>
+	
+	<extension point="org.eclipse.ui.contexts">
+		<context name="Editing Decore Files" description="Editing Decore Files Context" parentId="org.eclipse.ui.textEditorScope" id="org.deltaecore.core.decore.resource.decore.EditorScope">
+		</context>
+	</extension>
+	
+	<extension point="org.eclipse.ui.bindings">
+		<key sequence="M1+7" commandId="org.deltaecore.core.decore.resource.decore.ui.command.togglecomment" schemeId="org.eclipse.ui.defaultAcceleratorConfiguration" contextId="org.deltaecore.core.decore.resource.decore.EditorScope">
+		</key>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.annotationTypes">
+		<type name="org.deltaecore.core.decore.resource.decore.ui.debug.lineBreakpoint" markerType="org.deltaecore.core.decore.resource.decore.debug.lineBreakpoint.marker" super="org.eclipse.debug.core.breakpoint">
+		</type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
+		<specification annotationType="org.deltaecore.core.decore.resource.decore.ui.debug.lineBreakpoint" label="Breakpoints (in .decore files)" icon="/icons/breakpoint_icon.gif" textPreferenceKey="org.deltaecore.core.decore.resource.decore.ui.lineBreakpoint" textPreferenceValue="false" highlightPreferenceKey="org.deltaecore.core.decore.resource.decore.ui.lineBreakpointHighlighting" highlightPreferenceValue="true" contributesToHeader="false" overviewRulerPreferenceKey="org.deltaecore.core.decore.resource.decore.ui.lineBreakpointIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="org.deltaecore.core.decore.resource.decore.ui.lineBreakpointIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="org.deltaecore.core.decore.resource.decore.ui.lineBreakpointColor" colorPreferenceValue="212,212,212" presentationLayer="4" showInNextPrevDropdownToolbarActionKey="org.deltaecore.core.decore.resource.decore.ui.showLineBreakpointInNextPrevDropdownToolbarAction" showInNextPrevDropdownToolbarAction="true" isGoToNextNavigationTargetKey="org.deltaecore.core.decore.resource.decore.ui.isLineBreakpointGoToNextNavigationTarget" isGoToNextNavigationTarget="false" isGoToPreviousNavigationTargetKey="org.deltaecore.core.decore.resource.decore.ui.isLineBreakpointGoToPreviousNavigationTarget" isGoToPreviousNavigationTarget="false" textStylePreferenceKey="org.deltaecore.core.decore.resource.decore.ui.lineBreakpointTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+	</extension>
+	
+	<extension point="org.eclipse.core.runtime.adapters">
+		<factory adaptableType="org.deltaecore.core.decore.resource.decore.ui.DecoreEditor" class="org.deltaecore.core.decore.resource.decore.ui.debug.DecoreAdapterFactory">
+			<adapter type="org.eclipse.debug.ui.actions.IToggleBreakpointsTarget">
+			</adapter>
+		</factory>
+		<factory adaptableType="org.deltaecore.core.decore.resource.decore.debug.DecoreDebugVariable" class="org.deltaecore.core.decore.resource.decore.ui.debug.DecoreAdapterFactory">
+			<adapter type="org.eclipse.debug.internal.ui.viewers.model.provisional.IElementLabelProvider">
+			</adapter>
+		</factory>
+		<factory adaptableType="org.deltaecore.core.decore.resource.decore.debug.DecoreDebugVariable" class="org.deltaecore.core.decore.resource.decore.ui.debug.DecoreAdapterFactory">
+			<adapter type="org.eclipse.debug.internal.ui.viewers.model.provisional.IElementContentProvider">
+			</adapter>
+		</factory>
+	</extension>
+	
+	<extension point="org.eclipse.ui.popupMenus">
+		<viewerContribution id="org.deltaecore.core.decore.resource.decore.ui.RulerPopupActions" targetID="org.deltaecore.core.decore.resource.decore.EditorRuler">
+			<action id="org.deltaecore.core.decore.resource.decore.ui.toggleBreakpointAction" icon="icons/breakpoint_icon.gif" label="Toggle Breakpoint" class="org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate" menubarPath="debug">
+			</action>
+		</viewerContribution>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editorActions">
+		<editorContribution targetID="org.deltaecore.core.decore.resource.decore.ui.DecoreEditor" id="org.deltaecore.core.decore.resource.decore.ui.BreakpointRulerActions">
+			<action id="org.deltaecore.core.decore.resource.decore.ui.debug.RulerToggleBreakpointAction" label="Add breakpoint" class="org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate" actionID="RulerDoubleClick">
+			</action>
+		</editorContribution>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.debugModelPresentations">
+		<debugModelPresentation id="org.deltaecore.core.decore.resource.decore.debugModel" class="org.deltaecore.core.decore.resource.decore.ui.debug.DecoreDebugModelPresentation">
+		</debugModelPresentation>
+	</extension>
+	
+</plugin>

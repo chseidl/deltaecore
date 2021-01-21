@@ -1,0 +1,7 @@
+configuration delta "NotCompartmentsAndRoles"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>
+{
+	//TODO: What was the original state?
+}

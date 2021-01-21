@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Constraint Validation
+Bundle-SymbolicName: org.deltaecore.feature.constraint.validation;singleton:=true
+Bundle-Version: 0.8.2
+Bundle-Vendor: www.deltaecore.org
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.deltaecore.feature.constraint;visibility:=reexport

@@ -1,0 +1,7 @@
+configuration delta "NotVersionRestrictions"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	modifies <../model/Constraint.ecore>
+{
+	removeEClass(<SVersionRestriction>);
+}

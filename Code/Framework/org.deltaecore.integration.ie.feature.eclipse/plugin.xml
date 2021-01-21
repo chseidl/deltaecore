@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="org.deltaecore.integration.ie.feature.eclipse.ImportFeatureIDEFeatureModelCommandHandler"
+            id="org.deltaecore.integration.ie.feature.splot.importFeatureIDEFeatureModelCommand"
+            name="Import FeatureIDE Feature Model">
+      </command>
+    <command
+          defaultHandler="org.deltaecore.integration.ie.feature.eclipse.ImportSPLOTFeatureModelCommandHandler"
+          id="org.deltaecore.integration.ie.feature.splot.importSPLOTFeatureModelCommand"
+          name="Import SPLOT Feature Model">
+    </command>
+    <command
+          defaultHandler="org.deltaecore.integration.ie.feature.eclipse.ExportSPLOTFeatureModelCommandHandler"
+          id="org.deltaecore.integration.ie.feature.splot.exportSPLOTFeatureModelCommand"
+          name="Export SPLOT Feature Model">
+    </command>
+ </extension>
+ <extension
+       point="org.eclipse.core.expressions.definitions">
+  <definition
+        id="org.deltaecore.eclipse.expressions.isSPLOTFeatureModelSelected">
+     <with
+           variable="selection">
+        <iterate
+              ifEmpty="false"
+              operator="or">
+           <adapt
+                 type="org.eclipse.core.resources.IResource">
+              <or>
+                 <test
+                       property="org.eclipse.core.resources.extension"
+                       value="xml">
+                 </test>
+              </or>
+           </adapt>
+        </iterate>
+     </with>
+  </definition>
+  <definition
+        id="org.deltaecore.eclipse.expressions.isFeatureIDEFeatureModelSelected">
+     <with
+           variable="selection">
+        <iterate
+              ifEmpty="false"
+              operator="or">
+           <adapt
+                 type="org.eclipse.core.resources.IResource">
+              <or>
+                 <test
+                       property="org.eclipse.core.resources.extension"
+                       value="xml">
+                 </test>
+              </or>
+           </adapt>
+        </iterate>
+     </with>
+  </definition>
+</extension>
+<extension
+   point="org.eclipse.ui.menus">
+    <menuContribution
+          allPopups="false"
+          locationURI="popup:org.deltaecore.eclipse.menu">
+       <menu
+             id="org.deltaecore.eclipse.menu.import"
+             label="Import">
+          <command
+                commandId="org.deltaecore.integration.ie.feature.splot.importSPLOTFeatureModelCommand"
+                label="Import SPLOT Feature Model"
+                style="push">
+             <visibleWhen
+                   checkEnabled="false">
+                <reference
+                      definitionId="org.deltaecore.eclipse.expressions.isSPLOTFeatureModelSelected">
+                </reference>
+             </visibleWhen>
+          </command>
+          <command
+                commandId="org.deltaecore.integration.ie.feature.splot.importFeatureIDEFeatureModelCommand"
+                label="Import FeatureIDE Feature Model"
+                style="push">
+             <visibleWhen
+                   checkEnabled="false">
+                <reference
+                      definitionId="org.deltaecore.eclipse.expressions.isFeatureIDEFeatureModelSelected">
+                </reference>
+             </visibleWhen>
+          </command>
+       </menu>
+       <menu
+             label="Export">
+          <command
+                commandId="org.deltaecore.integration.ie.feature.splot.exportSPLOTFeatureModelCommand"
+                label="Export SPLOT Feature Model"
+                style="push">
+             <visibleWhen
+                   checkEnabled="false">
+                <reference
+                      definitionId="org.deltaecore.eclipse.expressions.isFeatureModelSelected">
+                </reference>
+             </visibleWhen>
+          </command>
+       </menu>
+    </menuContribution>
+</extension>
+</plugin>

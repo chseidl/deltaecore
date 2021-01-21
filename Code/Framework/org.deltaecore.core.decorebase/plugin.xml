@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://deltaecore.org/decorebase/1.0"
+            class="org.deltaecore.core.decorebase.DEcoreBasePackage"
+            genModel="model/DEcoreBase.genmodel"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.factory_override">
+      <factory
+            class="org.deltaecore.core.decorebase.impl.custom.DEcoreBaseFactoryImplCustom"
+            uri="http://deltaecore.org/decorebase/1.0">
+      </factory>
+   </extension>
+</plugin>

@@ -1,0 +1,19 @@
+Notes: This has not been completed yet!
+
+- Some implementations in delta modules still missing (see TODOs)
+- Determine original state of NotCompartmentsAndRoles.decore before introduction of Player class
+
+
+- fix ecore diagram of base variant some time
+
+- what about order constraints with delta modules referencing elements in old package structure and the evolution delta modules moving elements
+	- might be that I need "before" and "after" application order constraints to ensure that some delta modules are applied before the core move in RMLFeatureModel_2014_07_14.decore
+	- create "bore" and " after AOCs:
+		- extend meta model (only to delta modules)
+		- extend delta sorter to add edges _if both delta modules are already present_ (declaring delta module and the one named in the AOC)
+
+		
+- NotCompartmentBehaviorAndNotCompartmentProperties.decore in 2014_07_14???
+- Need more mappings/constraints instead of empty delta modules
+- OnCompartments and NotOnCompartments in same configuration
+- OnCompartments_2014_07_14 not selected

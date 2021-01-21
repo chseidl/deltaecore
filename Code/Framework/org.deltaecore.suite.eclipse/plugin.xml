@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+    <command
+          defaultHandler="org.deltaecore.feature.eclipse.DEGenerateVariantFromConfigurationCommandHandler"
+          id="org.deltaecore.feature.analysis.generateVariantFromConfigurationCommand"
+          name="Generate Variant from Configuration">
+    </command>
+ </extension>
+<extension
+   point="org.eclipse.ui.menus">
+    <menuContribution
+          allPopups="false"
+          locationURI="popup:org.deltaecore.eclipse.menu">
+       <command
+             commandId="org.deltaecore.feature.analysis.generateVariantFromConfigurationCommand"
+             label="Generate Variant from Configuration"
+             style="push">
+          <visibleWhen
+                checkEnabled="false">
+             <reference
+                   definitionId="org.deltaecore.eclipse.expressions.isConfigurationSelected">
+             </reference>
+          </visibleWhen>
+       </command>
+    </menuContribution>
+</extension>
+</plugin>

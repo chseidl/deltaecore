@@ -1,0 +1,20 @@
+configuration delta "OnCompartments"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>
+{
+	EClass compartmentTypeEClass = new EClass(name : "CompartmentType");
+	addEClass(compartmentTypeEClass, <CompartmentRoleObjectModel>);
+	
+	addESuperType(<CompartmentRoleObjectModel.RigidType>, compartmentTypeEClass);
+	
+	EClass abstractRoleEClass = <CompartmentRoleObjectModel.AbstractRole>;
+	
+	EReference partsEReference = new EReference(eType: abstractRoleEClass, name : "parts", lowerBound : 0, upperBound : -1, containment : true);
+	addEReference(partsEReference, compartmentTypeEClass);
+	
+	EReference wholeEReference = new EReference(eType: compartmentTypeEClass, name : "whole", lowerBound : 1, upperBound : 1, containment : false);
+	addEReference(wholeEReference, abstractRoleEClass);
+
+	makeEReferencesOpposite(partsEReference, wholeEReference);
+}

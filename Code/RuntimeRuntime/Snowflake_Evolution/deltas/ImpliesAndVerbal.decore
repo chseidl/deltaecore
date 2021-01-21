@@ -1,0 +1,12 @@
+configuration delta "ImpliesAndVerbal"
+
+dialect <http://www.emftext.org/sdk/concretesyntax>
+	modifies <../model/Constraint.cs>
+{
+	removeRule(<Rule:SImpliesExpression>);
+	
+	String ruleText = "@SuppressWarnings(explicitSyntaxChoice)
+					   @Operator(type=\"binary_left_associative\", weight=\"2\", superclass=\"SExpression\")
+					   SImpliesExpression ::= operand1 (\"implies\" | \"requires\") operand2;";
+	addRule(ruleText, <ConcreteSyntax:constraints>);
+}

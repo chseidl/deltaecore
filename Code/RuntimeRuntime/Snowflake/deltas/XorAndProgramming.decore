@@ -1,0 +1,10 @@
+configuration delta "XorAndProgramming"
+
+dialect <http://www.emftext.org/sdk/concretesyntax>
+	modifies <../model/Constraint.cs>
+{
+	//TODO: Find symbol!
+	String ruleText = "@Operator(type=\"binary_left_associative\", weight=\"5\", superclass=\"SExpression\")
+					   SXorExpression ::= operand1 \"xor\" operand2;";
+	addRule(ruleText, <ConcreteSyntax:constraints>);
+}

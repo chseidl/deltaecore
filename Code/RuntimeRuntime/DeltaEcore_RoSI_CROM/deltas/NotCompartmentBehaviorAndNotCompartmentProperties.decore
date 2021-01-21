@@ -1,0 +1,9 @@
+configuration delta "NotCompartmentBehaviorAndNotCompartmentProperties"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>
+//			 <OnCompartments.decore> //TODO: This seems very unlikely
+{
+//	addESuperType(<CompartmentRoleObjectModel.RelationTarget>, <CompartmentRoleObjectModel.CompartmentType>);
+//	addESuperType(<CompartmentRoleObjectModel.ModelElement>, <CompartmentRoleObjectModel.CompartmentType>);
+}

@@ -1,0 +1,11 @@
+configuration delta "AndAndVerbal"
+
+dialect <http://www.emftext.org/sdk/concretesyntax>
+	modifies <../model/Constraint.cs>
+{
+	removeRule(<Rule:SAndExpression>);
+	
+	String ruleText = "@Operator(type=\"binary_left_associative\", weight=\"6\", superclass=\"SExpression\")
+					   SAndExpression ::= operand1 \"and\" operand2;";
+	addRule(ruleText, <ConcreteSyntax:constraints>);
+}

@@ -1,0 +1,18 @@
+configuration delta "GT"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <AttributeRestrictions.decore>
+	modifies <../model/Constraint.ecore>
+{
+	EClass greaterThanAttributeValueComparisonEClass = new EClass(name: "SGreaterThanAttributeValueComparison");
+	addESuperType(<SAttributeValueComparison>, greaterThanAttributeValueComparisonEClass);
+	addEClass(greaterThanAttributeValueComparisonEClass, <constraint>);
+}
+
+dialect <http://www.emftext.org/sdk/concretesyntax>
+	modifies <../model/Constraint.cs>
+{
+	String ruleText = "@Operator(type=\"primitive\", weight=\"8\", superclass=\"SExpression\")
+					   SGreaterThanAttributeValueComparison ::= operand1 \">\" operand2;";
+	addRule(ruleText, <ConcreteSyntax:constraints>);
+}

@@ -1,0 +1,12 @@
+evolution delta "IntraRelationshipConstraints_2014_06_16"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>,
+			 <IntraRelationshipConstraints.decore>
+{
+	EClass intraRelationshipConstraintEClass = <CompartmentRoleObjectModel.IntraRelationshipConstraints>;
+	setEClassName("IntraRelationshipConstraint", intraRelationshipConstraintEClass);
+	
+	EClass irreflexiveEClass = <CompartmentRoleObjectModel.Irreflexiv>;
+	setEClassName("Irreflexive", irreflexiveEClass);
+}

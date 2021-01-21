@@ -1,0 +1,91 @@
+(0) 16.11.2014
+==============
+- Initial Version
+
+
+(1a) 17.11.2014
+===============
+(- FMandatoryCircle)
+(- GDiamonds)
+(- GTriangle)
+- Resources introduced
+
+
+(1b) 18.11.2014
+===============
+- Refined "Versions" feature to have child "Configurable"
+  - Selecting "Configurable" implements versions as with Seidl et al. 2013
+  - Deselecting "Configurable" implements versions as with Mitschke et al. 2008 (with just 2 attributes in the feature)
+  - Constraints adapted to use "Configurable" where "Versions" was
+- Added setInterface() to DeltaEcore (language)
+
+
+(2) 19.11.2014
+==============
+- BindingTimes:
+  - Added feature (was forgotten before)
+- External added:
+  - Allows referencing of features located in other feature models
+  - Create SExternalFeatureReference
+  - Add feature: SExternalFeatureReference --> SFeature
+- FeatureModelingFamily modified:
+  - Remove features : SGroup <>->* SFeature
+  - Create SGroupArtifact interface
+  - Make SGroupArtifact super class of SFeature
+  - Add groupArtifacts: SGroup <>->* SGroupArtifact
+  - Changed default implementation of SGroup.isOr() from "return (getMinCardinality() == 1 && getMaxCardinality() == getFeatures().size());" to "return (getMinCardinality() == 1 && getMaxCardinality() == getElements().size());"
+  
+  - Add SGroup.isAnd()
+  - Add standard implementation for SGroup.isAnd()
+- GroupVariationType modified:
+  - <Requires FeatureModelingFamily_2014_11_19>
+  - Add SGroupVariationType.AND
+  - Add implementation for SGroup.isAnd() with explicit variation type
+- Attributes modified:
+  - Changed type of SAttributeValueAssignment.attributeValue from SAttribute to SAttributeValue (BUG)
+  - Old version should no longer be selected (added constraint "!Attributes [="2014_11_16"]")
+
+
+(3a) 20.11.2014
+===============
+- BindingTimes modified:
+  - Changed literal of EEnumliteral SFeatureBindingTime.RUN_TIME to "RUN_TIME" (from "COMPILE_TIME", bug)
+  - Old version should no longer be selected (added constraint "!BindingTimes [="2014_11_19"]")
+
+
+(3b) 21.11.2014
+===============
+- Resources modified:
+  - Changed SFeature.resources to 0..* (from 1..*) (bugfix/improvement)
+  - Made ExternalResourceReference concrete (from abstract) (bugfix)
+  - Added non-containment reference resource:EObject to ExternalResourceReference (bugfix)
+  - Old version should no longer be selected (added constraint "!Resources [="2014_11_16"]")
+- NotDomainTypeOrDiscrete.decore: added attribute rawValue:Eint to SIntegerValue (bugfix)
+  - GTK: Hard to devise version from this as the original expression for mapping is "(Attributes && !DomainType) || Discrete"
+    - Created versions for Attributes and Discrete
+    - Adapted mapping expression to "(Attributes [>="2014_11_21"] && !DomainType) || Discrete [>="2014_11_21"]"
+    - Old versions should no longer be selected (added constraint "!Attributes [="2014_11_19"] && !Discrete [>="2014_11_16"]")
+
+
+<GO ON HERE>
+
+
+(3c) 22.11.2014
+===============
+- not SEnumLiteral should be the SAttributeValue but a newly created class SEnumerationLiteralReference
+  - create EClass SEnumerationLiteralReference (with reference to SEnumerationLiteral)
+  - remove super type SAttributeValue from SEnumerationLiteral
+  - remove super type SAttributeValue to SEnumerationLiteralReference
+
+(4) 23.11.2014
+==============
+- added variability for constraints and their ConcreteSyntax
+- TODO: when non-textual representation of constraints is requested, the concrete syntax file should not be included at all
+
+
+
+TODOs
+=====
+- check default implementations of eOperations
+- declared type for enumerations only later on
+- evolution of SConfigurationArtifact with introduction of attributes and attribute value assignments

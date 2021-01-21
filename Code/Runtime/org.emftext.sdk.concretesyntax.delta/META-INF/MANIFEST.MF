@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Concrete Syntax Delta
+Bundle-SymbolicName: org.emftext.sdk.concretesyntax.delta;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.emftext.sdk.concretesyntax;visibility:=reexport,
+ org.deltaecore,
+ org.emftext.sdk.concretesyntax.resource.cs,
+ org.deltaecore.core;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6, JavaSE-1.7
+Export-Package: org.emftext.sdk.concretesyntax.delta,
+ org.emftext.sdk.concretesyntax.delta.resolver

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.validation.constraintBindings">
+      <clientContext
+            default="false"
+            id="org.deltaecore.feature.configuration.clientContext">
+         <enablement></enablement>
+      </clientContext>
+      <binding
+            category="org.deltaecore.feature.configuration"
+            context="org.deltaecore.feature.configuration.clientContext">
+      </binding>
+   </extension>
+
+   
+      <extension
+         point="org.eclipse.emf.validation.constraintProviders">
+      <category
+            id="org.deltaecore.feature.configuration"
+            mandatory="true"
+            name="DEConfiguration">
+      </category>
+      <constraintProvider
+            cache="true"
+            mode="Batch">
+         <package
+               namespaceUri="http://deltaecore.org/feature/configuration/1.0">
+         </package>
+         <constraints
+               categories="org.deltaecore.core.decoredialect">
+            <constraint
+                  class="org.deltaecore.feature.configuration.validation.DEValidConfigurationConstraint"
+                  id="org.deltaecore.feature.configuration.validation.DEValidConfigurationConstraint"
+                  lang="Java"
+                  mode="Batch"
+                  name="DEValidConfigurationConstraint"
+                  severity="ERROR"
+                  statusCode="1">
+               <message>
+                  message body text
+               </message>
+               <target
+                     class="DEConfiguration">
+               </target>
+            </constraint>
+            <constraint
+                  class="org.deltaecore.feature.configuration.validation.DEDeprecateFileExtensionConstraint"
+                  id="org.deltaecore.feature.configuration.validation.DEDeprecateFileExtensionConstraint"
+                  lang="Java"
+                  mode="Batch"
+                  name="DEDeprecateFileExtensionConstraint"
+                  severity="WARNING"
+                  statusCode="1">
+               <message>
+                  message body text
+               </message>
+               <target
+                     class="DEConfiguration">
+               </target>
+            </constraint>
+         </constraints>
+      </constraintProvider>
+   </extension>
+</plugin>

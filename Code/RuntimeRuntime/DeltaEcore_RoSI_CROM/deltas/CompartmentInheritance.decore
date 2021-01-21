@@ -1,0 +1,10 @@
+configuration delta "CompartmentInheritance"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>
+{
+	EClass compartmentInheritanceEClass = new EClass(name : "CompartmentInheritance");
+	addEClass(compartmentInheritanceEClass, <CompartmentRoleObjectModel>);
+	
+	addESuperType(<CompartmentRoleObjectModel.Inheritance>, compartmentInheritanceEClass);
+}

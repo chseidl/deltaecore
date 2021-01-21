@@ -1,0 +1,9 @@
+configuration delta "Gamepad_Project"
+	dialect <http://vicci.eu/eclipseproject/1.0>
+	modifies <../.classpath>
+{
+	//Add dependencies on gamepad driver class library
+	addRequiredLib("lib/lwjgl2.8.5/jar/lwjgl.jar");
+	addRequiredLib("lib/lwjgl2.8.5/jar/lwjgl_util.jar");
+	addRequiredLib("lib/lwjgl2.8.5/jar/jinput.jar");
+}

@@ -1,0 +1,9 @@
+evolution delta "OnCompartments_2014_07_14"
+	
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>,
+			 <OnCompartments.decore>
+{
+	EClass compartmentTypeEClass = <CompartmentRoleObjectModel.CompartmentType>;
+	setEClassifierPackage(<crom_l1>, compartmentTypeEClass);
+}

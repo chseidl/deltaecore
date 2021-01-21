@@ -1,0 +1,115 @@
+@namespace(
+	uri="http://www.emftext.org/DocBook",
+	prefix="docbook")
+package docbook;
+
+abstract interface RootNode extends Node {
+}
+
+abstract interface Node {
+	//TODO: Implement
+	op void setId(String ~id);
+	op String getId();
+	
+//	private static IDAttribute createIDAttribute(String id) {
+//		IDAttribute idAttribute = DocBookFactory.eINSTANCE.createIDAttribute();
+//		idAttribute.setValue(id);
+//		return idAttribute;
+//	}
+}
+
+abstract interface AttributeContainer {
+	//TODO: Need generics here
+	//op Attribute[*] getAttributes();
+}
+
+
+//Complex Nodes
+abstract interface ComplexNode extends Node, AttributeContainer {
+	//TODO: Need generics here
+	//op ChildNode[+] getChildNodes();
+	
+	//TODO: Implement
+	op void setTitle(String title);
+	op String getTitle();
+	
+//	private static TitleNode createTitleNode(String title) {
+//		TitleNode titleNode = DocBookFactory.eINSTANCE.createTitleNode();
+//		titleNode.setValue(title);
+//		return titleNode;
+//	}
+}
+
+class BookNode extends RootNode, ComplexNode {
+	val BookAttribute[*] attributes;
+	val BookChildNode[+] childNodes;
+}
+
+class ChapterNode extends ComplexNode, BookChildNode, ParagraphParentNode {
+	val ChapterAttribute[*] attributes;
+	val ChapterChildNode[+] childNodes;	
+}
+
+class SectionNode extends ComplexNode, ChapterChildNode, ParagraphParentNode {
+	val SectionAttribute[*] attributes;
+	val SectionChildNode[+] childNodes;	
+}
+
+
+//Parent Nodes
+
+abstract interface ParentNode extends Node {
+}
+
+abstract interface ParagraphParentNode extends ParentNode {
+	//TODO: Implement
+	op void addParagraphNode(ParagraphNode paragraph);
+	op void removeParagraphNode(ParagraphNode paragraph);
+}
+
+
+//Child Nodes
+
+abstract interface ChildNode extends Node {
+}
+
+abstract interface BookChildNode extends ChildNode {
+}
+
+abstract interface ChapterChildNode extends ChildNode {
+}
+
+abstract interface SectionChildNode extends ChildNode {
+}
+
+
+//Simple Nodes
+
+abstract class SimpleNode extends Node {
+	attr String[?] value = "";	
+}
+
+class TitleNode extends SimpleNode, BookChildNode, ChapterChildNode, SectionChildNode {
+}
+
+class ParagraphNode extends SimpleNode, ChapterChildNode, SectionChildNode {
+}
+
+
+//Attributes
+
+abstract class Attribute {
+	attr String[1] value;
+}
+
+abstract class BookAttribute extends Attribute {
+}
+
+abstract class ChapterAttribute extends Attribute {
+}
+
+abstract class SectionAttribute extends Attribute {
+}
+
+class IDAttribute extends BookAttribute, ChapterAttribute, SectionAttribute {
+}

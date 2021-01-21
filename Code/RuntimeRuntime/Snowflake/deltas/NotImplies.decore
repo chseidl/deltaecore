@@ -1,0 +1,13 @@
+configuration delta "NotImplies"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	modifies <../model/Constraint.ecore>
+{
+	removeEClass(<SImpliesExpression>);
+}
+
+dialect <http://www.emftext.org/sdk/concretesyntax>
+	modifies <../model/Constraint.cs>
+{
+	removeRule(<Rule:SImpliesExpression>);
+}

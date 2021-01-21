@@ -1,0 +1,15 @@
+delta "Observer_ConcreteObserver"
+	dialect <http://www.eclipse.org/uml2/5.0.0/UML>
+	requires <../core/Base.uml>, <Observer_Observer.decore>
+{
+	Model model = <model::>;
+	
+	//Package
+	createPackage("org.example", model);
+	
+	//Concrete Observer
+	createClass("ConcreteObserver", <package::org.example>, false);
+	createInterfaceRealization(<class::org.example.ConcreteObserver>, <interface::org.example.Observer>);
+	
+	createOperationInClass("update", <class::org.example.ConcreteObserver>);
+}

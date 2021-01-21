@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="ASCII"?>
+<feature:DEFeatureModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:feature="http://deltaecore.org/feature/1.0">
+  <rootFeature minCardinality="1" maxCardinality="1" name="FeatureModelingFamily">
+    <groups minCardinality="1" maxCardinality="2">
+      <features minCardinality="1" maxCardinality="1" name="FeatureModel">
+        <groups minCardinality="3" maxCardinality="5">
+          <features minCardinality="1" maxCardinality="1" name="Features">
+            <groups maxCardinality="1">
+              <features maxCardinality="1" name="External"/>
+            </groups>
+            <groups minCardinality="1" maxCardinality="1">
+              <features maxCardinality="1" name="FeatureCardinality">
+                <groups maxCardinality="2">
+                  <features maxCardinality="1" name="ClonedFeatures"/>
+                  <features maxCardinality="1" name="UnlimitedFeatures"/>
+                </groups>
+              </features>
+              <features maxCardinality="1" name="FeatureVariationType">
+                <groups minCardinality="1" maxCardinality="2">
+                  <features maxCardinality="1" name="OptionalFeatures"/>
+                  <features maxCardinality="1" name="MandatoryFeatures"/>
+                </groups>
+              </features>
+            </groups>
+            <groups maxCardinality="1">
+              <features maxCardinality="1" name="Resources"/>
+              <features maxCardinality="1" name="BindingTimes"/>
+            </groups>
+          </features>
+          <features maxCardinality="1" name="Attributes">
+            <groups maxCardinality="1">
+              <features maxCardinality="1" name="DomainType">
+                <groups minCardinality="1" maxCardinality="2">
+                  <features maxCardinality="1" name="Discrete">
+                    <groups minCardinality="1" maxCardinality="2">
+                      <features maxCardinality="1" name="Finite"/>
+                      <features maxCardinality="1" name="Infinite"/>
+                    </groups>
+                  </features>
+                  <features maxCardinality="1" name="Continuous"/>
+                </groups>
+              </features>
+            </groups>
+          </features>
+          <features maxCardinality="1" name="Versions">
+            <groups maxCardinality="2">
+              <features maxCardinality="1" name="Configurable"/>
+              <features maxCardinality="1" name="VersionBranching"/>
+            </groups>
+          </features>
+          <features minCardinality="1" maxCardinality="1" name="Groups">
+            <groups minCardinality="1" maxCardinality="1">
+              <features maxCardinality="1" name="GroupCardinality">
+                <groups maxCardinality="1">
+                  <features maxCardinality="1" name="UnlimitedGroups"/>
+                </groups>
+              </features>
+              <features maxCardinality="1" name="GroupVariationType">
+                <groups minCardinality="1" maxCardinality="2">
+                  <features maxCardinality="1" name="AlternativeGroups"/>
+                  <features maxCardinality="1" name="OrGroups"/>
+                </groups>
+              </features>
+            </groups>
+            <groups maxCardinality="1">
+              <features maxCardinality="1" name="MultipleGroups"/>
+            </groups>
+          </features>
+          <features minCardinality="1" maxCardinality="1" name="FMRepresentation">
+            <groups minCardinality="2" maxCardinality="3">
+              <features minCardinality="1" maxCardinality="1" name="FRepresentation">
+                <groups minCardinality="2" maxCardinality="3">
+                  <features minCardinality="1" maxCardinality="1" name="FContent">
+                    <groups minCardinality="1" maxCardinality="1">
+                      <features maxCardinality="1" name="FBox"/>
+                      <features maxCardinality="1" name="FText"/>
+                    </groups>
+                  </features>
+                  <features minCardinality="1" maxCardinality="1" name="FType">
+                    <groups minCardinality="1" maxCardinality="1">
+                      <features maxCardinality="1" name="FCircle">
+                        <groups maxCardinality="1">
+                          <features maxCardinality="1" name="FMandatoryCircle"/>
+                        </groups>
+                      </features>
+                      <features maxCardinality="1" name="FCardinalities"/>
+                    </groups>
+                  </features>
+                  <features maxCardinality="1" name="EFDashedBox"/>
+                </groups>
+              </features>
+              <features maxCardinality="1" name="ARepresentation">
+                <groups minCardinality="1" maxCardinality="1">
+                  <features maxCardinality="1" name="AClassBased"/>
+                  <features maxCardinality="1" name="AFeatureLike"/>
+                  <features maxCardinality="1" name="ADashedBox"/>
+                </groups>
+              </features>
+              <features minCardinality="1" maxCardinality="1" name="GRepresentation">
+                <groups minCardinality="1" maxCardinality="1">
+                  <features maxCardinality="1" name="GArcs"/>
+                  <features maxCardinality="1" name="GBars"/>
+                  <features maxCardinality="1" name="GDiamonds"/>
+                  <features maxCardinality="1" name="GTriangles"/>
+                  <features maxCardinality="1" name="GAdaptorTypes"/>
+                  <features maxCardinality="1" name="GCardinalities"/>
+                </groups>
+              </features>
+            </groups>
+          </features>
+        </groups>
+      </features>
+      <features maxCardinality="1" name="ConstraintLanguage">
+        <groups minCardinality="2" maxCardinality="4">
+          <features minCardinality="1" maxCardinality="1" name="AtomicConstructs">
+            <groups minCardinality="1" maxCardinality="3">
+              <features minCardinality="1" maxCardinality="1" name="FeaturePresence"/>
+              <features maxCardinality="1" name="AttributeRestrictions">
+                <groups minCardinality="1" maxCardinality="7">
+                  <features maxCardinality="1" name="LT"/>
+                  <features maxCardinality="1" name="LEQ"/>
+                  <features maxCardinality="1" name="EQ"/>
+                  <features maxCardinality="1" name="NEQ"/>
+                  <features maxCardinality="1" name="GEQ"/>
+                  <features maxCardinality="1" name="GT"/>
+                  <features maxCardinality="1" name="SUBS"/>
+                </groups>
+              </features>
+              <features maxCardinality="1" name="VersionRestrictions">
+                <groups minCardinality="1" maxCardinality="2">
+                  <features maxCardinality="1" name="VersionRangeRestrictions"/>
+                  <features maxCardinality="1" name="RelativeVersionRestrictions"/>
+                </groups>
+                <groups maxCardinality="1">
+                  <features maxCardinality="1" name="ConditionalVersionRestrictions"/>
+                </groups>
+              </features>
+            </groups>
+          </features>
+          <features maxCardinality="1" name="UnaryConstructs">
+            <groups maxCardinality="1">
+              <features maxCardinality="1" name="Not"/>
+            </groups>
+          </features>
+          <features maxCardinality="1" name="BinaryConstructs">
+            <groups minCardinality="1" maxCardinality="6">
+              <features maxCardinality="1" name="Or"/>
+              <features maxCardinality="1" name="And"/>
+              <features maxCardinality="1" name="Xor"/>
+              <features maxCardinality="1" name="Implies"/>
+              <features maxCardinality="1" name="Equivalent"/>
+              <features maxCardinality="1" name="Excludes"/>
+            </groups>
+          </features>
+          <features minCardinality="1" maxCardinality="1" name="CLRepresentations">
+            <groups minCardinality="1" maxCardinality="3">
+              <features maxCardinality="1" name="Verbal"/>
+              <features maxCardinality="1" name="Programming"/>
+              <features maxCardinality="1" name="Graphical"/>
+            </groups>
+          </features>
+        </groups>
+      </features>
+    </groups>
+  </rootFeature>
+</feature:DEFeatureModel>

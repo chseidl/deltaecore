@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DeltaEcore Feature Model Constraint Language
+Bundle-SymbolicName: org.deltaecore.feature.constraint;singleton:=true
+Bundle-Version: 0.8.2
+Bundle-Vendor: www.deltaecore.org
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.deltaecore.feature.expression;visibility:=reexport,
+ org.deltaecore.feature;visibility:=reexport,
+ org.deltaecore.common;visibility:=reexport
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.deltaecore.feature.constraint,
+ org.deltaecore.feature.constraint.impl,
+ org.deltaecore.feature.constraint.util
+Bundle-ClassPath: .,
+ .

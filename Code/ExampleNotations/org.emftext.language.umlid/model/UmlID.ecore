@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="umlid" nsURI="http://www.emftext.org/umlid/1.0" nsPrefix="umlid">
+  <eClassifiers xsi:type="ecore:EClass" name="UmlID" abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UmlPackageID" eSuperTypes="#//UmlPackageIDBase"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UmlClassifierIDBase" abstract="true"
+      eSuperTypes="#//UmlPackageIDBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="classifierName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UmlOperationID" eSuperTypes="#//UmlMemberID"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UmlPropertyID" eSuperTypes="#//UmlMemberID"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UmlMemberID" abstract="true" eSuperTypes="#//UmlClassifierIDBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="memberName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UmlIDList">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ids" lowerBound="1" upperBound="-1"
+        eType="#//UmlID" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UmlClassID" eSuperTypes="#//UmlClassifierID"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UmlInterfaceID" eSuperTypes="#//UmlClassifierID"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UmlPackageIDBase" abstract="true" eSuperTypes="#//UmlID">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="packageNames" lowerBound="1"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UmlClassifierID" abstract="true" eSuperTypes="#//UmlClassifierIDBase"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UmlModelID" eSuperTypes="#//UmlID"/>
+</ecore:EPackage>

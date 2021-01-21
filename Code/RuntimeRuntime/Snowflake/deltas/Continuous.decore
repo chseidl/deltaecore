@@ -1,0 +1,10 @@
+configuration delta "Continuous"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <DomainType.decore>
+	modifies <../model/Feature.ecore>
+{
+	EClass doubleTypeEClass = new EClass(name: "SDoubleType");
+	addESuperType(<SBuiltInType>, doubleTypeEClass);
+	addEClass(doubleTypeEClass, <feature>);
+}

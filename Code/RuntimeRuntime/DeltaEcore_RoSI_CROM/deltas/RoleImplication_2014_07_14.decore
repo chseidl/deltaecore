@@ -1,0 +1,9 @@
+evolution delta "RoleImplication_2014_07_14"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>,
+			 <RoleImplication.decore>
+{
+	EClass roleImplicationEClass = <CompartmentRoleObjectModel.RoleImplication>;
+	setEClassifierPackage(<crom_l1>, roleImplicationEClass);
+}

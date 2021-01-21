@@ -1,0 +1,61 @@
+configuration delta "OnRelationships"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>
+{
+	EPackage ePackage = <CompartmentRoleObjectModel>;
+	
+	//Create Relationship EClass
+	EClass relationshipEClass = new EClass(name: "Relationship");
+	addEClass(relationshipEClass, ePackage);
+	addESuperType(relationshipEClass, <CompartmentRoleObjectModel.Relation>);
+	
+	
+	//Create Parthood EEnum
+	EEnum parthoodEEnum = new EEnum(name: "Parthood");
+	addEEnum(parthoodEEnum, ePackage);
+	
+	EEnumLiteral unconstrainedEEnumLiteral = new EEnumLiteral(name: "Unconstrained", literal: "Unconstrained", value: 0);
+	addEEnumLiteral(unconstrainedEEnumLiteral, parthoodEEnum);
+	
+	EEnumLiteral exclusivePartEEnumLiteral = new EEnumLiteral(name: "ExclusivePart", literal: "ExclusivePart", value: 1);
+	addEEnumLiteral(exclusivePartEEnumLiteral, parthoodEEnum);
+	
+	EEnumLiteral essentialPartEEnumLiteral = new EEnumLiteral(name: "EssentialPart", literal: "EssentialPart", value: 2);
+	addEEnumLiteral(essentialPartEEnumLiteral, parthoodEEnum);
+	
+	EEnumLiteral mandatoryPartEEnumLiteral = new EEnumLiteral(name: "MandatoryPart", literal: "MandatoryPart", value: 3);
+	addEEnumLiteral(mandatoryPartEEnumLiteral, parthoodEEnum);
+	
+	EEnumLiteral inseperablePartEEnumLiteral = new EEnumLiteral(name: "InseperablePart", literal: "InseperablePart", value: 4);
+	addEEnumLiteral(inseperablePartEEnumLiteral, parthoodEEnum);
+	
+	EEnumLiteral shareablePartEEnumLiteral = new EEnumLiteral(name: "ShareablePart", literal: "ShareablePart", value: 5);
+	addEEnumLiteral(shareablePartEEnumLiteral, parthoodEEnum);
+
+
+	//Create Place EClass
+	EClass placeEClass = new EClass(name: "Place");
+	addEClass(placeEClass, ePackage);
+	
+	EAttribute lowerEAttribute = new EAttribute(name: "lower", eType: <EInt>, lowerBound: 1, upperBound: 1);
+	addEAttribute(lowerEAttribute, placeEClass);
+	
+	EAttribute upperEAttribute = new EAttribute(name: "upper", eType: <EInt>, lowerBound: 1, upperBound: 1);
+	addEAttribute(upperEAttribute, placeEClass);
+
+	EAttribute partEAttribute = new EAttribute(name: "part", eType: parthoodEEnum, lowerBound: 1, upperBound: 1);
+	addEAttribute(partEAttribute, placeEClass);
+
+
+	//Create EReferences
+	EReference firstEReference = new EReference(eType: placeEClass, name: "first", lowerBound: 1, upperBound: 1, containment: false);
+	addEReference(firstEReference, relationshipEClass);
+	
+	EReference secondEReference = new EReference(eType: placeEClass, name: "second", lowerBound: 1, upperBound: 1, containment: false);
+	addEReference(secondEReference, relationshipEClass);
+	
+
+	EReference holderEReference = new EReference(eType: <CompartmentRoleObjectModel.RoleType>, name: "holder", lowerBound: 1, upperBound: 1, containment: false);
+	addEReference(holderEReference, placeEClass);
+}

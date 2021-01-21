@@ -1,0 +1,9 @@
+configuration delta "Xor"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	modifies <../model/Constraint.ecore>
+{
+	EClass xorExpressionEClass = new EClass(name: "SXorExpression");
+	addESuperType(<SBinaryExpression>, xorExpressionEClass);
+	addEClass(xorExpressionEClass, <constraint>);
+}

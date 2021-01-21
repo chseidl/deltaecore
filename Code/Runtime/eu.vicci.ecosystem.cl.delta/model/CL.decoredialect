@@ -1,0 +1,25 @@
+deltaDialect
+{
+	configuration:
+		metaModel: <http://vicci.eu/cl/1.0>;
+
+	deltaOperations:
+		//Checklist
+		addOperation addChecklistItemGroupToGroupsOfChecklist(CLChecklistItemGroup value, CLChecklist [groups] element);
+		insertOperation insertChecklistItemGroupIntoGroupsOfChecklist(CLChecklistItemGroup value, CLChecklist [groups] element, Integer index);
+		removeOperation removeChecklistItemGroupFromGroupsOfChecklist(CLChecklistItemGroup value, CLChecklist [groups] element);
+
+		modifyOperation modifyNameOfChecklist(String value, CLChecklist [name] element);
+		
+		//Checklist Items
+		evolution modifyOperation modifyIdOfChecklist(String id, CLChecklistItem [id] element);
+		modifyOperation modifyTitleOfChecklistItem(String value, CLChecklistItem [title] element);
+		modifyOperation modifyCheckedOfChecklistItem(Boolean value, CLChecklistItem [checked] element);
+
+		//Checklist Item Groups
+		addOperation addChecklistItemToItemsOfChecklistItemGroup(CLChecklistItem value, CLChecklistItemGroup [items] element);
+		insertOperation insertChecklistItemIntoItemsOfChecklistItemGroup(CLChecklistItem value, CLChecklistItemGroup [items] element, Integer index);
+		removeOperation removeChecklistItemFromItemsOfChecklistItemGroup(CLChecklistItem value, CLChecklistItemGroup [items] element);
+
+		modifyOperation modifyTitleOfChecklistItemGroup(String value, CLChecklistItemGroup [title] element);
+}

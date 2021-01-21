@@ -1,0 +1,7 @@
+configuration delta "NotRoleProperties"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>
+{
+	addESuperType(<CompartmentRoleObjectModel.RelationTarget>, <CompartmentRoleObjectModel.RoleType>);
+}

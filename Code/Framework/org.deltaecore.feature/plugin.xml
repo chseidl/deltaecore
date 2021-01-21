@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated DEFeature -->
+      <package
+            uri="http://deltaecore.org/feature/1.0"
+            class="org.deltaecore.feature.DEFeaturePackage"
+            genModel="model/Feature.genmodel"/>
+   </extension>
+
+</plugin>

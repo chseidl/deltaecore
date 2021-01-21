@@ -1,0 +1,9 @@
+configuration delta "Equivalent"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	modifies <../model/Constraint.ecore>
+{
+	EClass equivalentExpressionEClass = new EClass(name: "SEquivalentExpression");
+	addESuperType(<SBinaryExpression>, equivalentExpressionEClass);
+	addEClass(equivalentExpressionEClass, <constraint>);
+}

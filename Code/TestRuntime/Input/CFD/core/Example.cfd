@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ASCII"?>
+<cfd:CFDDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cfd="http://vicci.eu/cfd/1.0">
+  <rootComponent id="RC" name="RobotCollision">
+    <outPorts name="Collision"/>
+    <outPorts name="HarmfulCollision"/>
+    <elements xsi:type="cfd:CFDGate" id="G1">
+      <inPorts name="In"/>
+      <outPorts name="Out"/>
+    </elements>
+    <elements xsi:type="cfd:CFDComponent" id="CD" name="CollisionDetector">
+      <inPorts name="Obstacle"/>
+      <inPorts name="Moving"/>
+      <outPorts name="Collision"/>
+      <elements xsi:type="cfd:CFDComponent" id="BuS" name="BumpSensor">
+        <inPorts name="Obstacle"/>
+        <inPorts name="Moving"/>
+        <outPorts name="CollisionDetected"/>
+      </elements>
+      <connections targetPort="//@rootComponent/@elements.1/@outPorts.0" sourcePort="//@rootComponent/@elements.1/@elements.0/@outPorts.0"/>
+      <connections targetPort="//@rootComponent/@elements.1/@elements.0/@inPorts.0" sourcePort="//@rootComponent/@elements.1/@inPorts.0"/>
+      <connections targetPort="//@rootComponent/@elements.1/@elements.0/@inPorts.1" sourcePort="//@rootComponent/@elements.1/@inPorts.1"/>
+    </elements>
+    <elements xsi:type="cfd:CFDComponent" id="BS" name="BrakingSystem">
+      <inPorts name="Moving"/>
+      <inPorts name="SpeedTooHigh"/>
+      <outPorts name="BrakingFails"/>
+      <elements xsi:type="cfd:CFDGate" id="Gate2">
+        <inPorts name="In"/>
+        <outPorts name="Out"/>
+      </elements>
+      <connections targetPort="//@rootComponent/@elements.2/@outPorts.0" sourcePort="//@rootComponent/@elements.2/@elements.0/@outPorts.0"/>
+      <connections targetPort="//@rootComponent/@elements.2/@elements.0/@inPorts.0" sourcePort="//@rootComponent/@elements.2/@inPorts.0"/>
+      <connections targetPort="//@rootComponent/@elements.2/@elements.0/@inPorts.0" sourcePort="//@rootComponent/@elements.2/@inPorts.1"/>
+    </elements>
+    <elements xsi:type="cfd:CFDBasicEvent" id="OIW" name="ObstacleInWay" probability="0.001">
+      <outPorts name="Out"/>
+    </elements>
+    <elements xsi:type="cfd:CFDBasicEvent" id="RIM" name="RobotIsMoving" probability="0.5">
+      <outPorts name="Out"/>
+    </elements>
+    <elements xsi:type="cfd:CFDBasicEvent" id="LFS" name="LowFrictionSurface" probability="0.05">
+      <outPorts name="Out"/>
+    </elements>
+    <connections targetPort="//@rootComponent/@outPorts.0" sourcePort="//@rootComponent/@elements.1/@outPorts.0"/>
+    <connections targetPort="//@rootComponent/@outPorts.1" sourcePort="//@rootComponent/@elements.0/@outPorts.0"/>
+    <connections targetPort="//@rootComponent/@elements.0/@inPorts.0" sourcePort="//@rootComponent/@elements.1/@outPorts.0"/>
+    <connections targetPort="//@rootComponent/@elements.0/@inPorts.0" sourcePort="//@rootComponent/@elements.2/@outPorts.0"/>
+    <connections targetPort="//@rootComponent/@elements.1/@inPorts.0" sourcePort="//@rootComponent/@elements.3/@outPorts.0"/>
+    <connections targetPort="//@rootComponent/@elements.1/@inPorts.1" sourcePort="//@rootComponent/@elements.4/@outPorts.0"/>
+    <connections targetPort="//@rootComponent/@elements.2/@inPorts.0" sourcePort="//@rootComponent/@elements.4/@outPorts.0"/>
+    <connections targetPort="//@rootComponent/@elements.2/@inPorts.1" sourcePort="//@rootComponent/@elements.5/@outPorts.0"/>
+  </rootComponent>
+</cfd:CFDDiagram>

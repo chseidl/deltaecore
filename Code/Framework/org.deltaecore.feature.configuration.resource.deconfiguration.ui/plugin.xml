@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<extension point="org.emftext.access.syntax.ui">
+		<metaInformationProvider class="org.deltaecore.feature.configuration.resource.deconfiguration.ui.DeconfigurationUIMetaInformation" id="org.deltaecore.feature.configuration.resource.deconfiguration.ui.DeconfigurationUIMetaInformation">
+		</metaInformationProvider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors">
+		<editor class="org.deltaecore.feature.configuration.resource.deconfiguration.ui.DeconfigurationEditor" contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor" extensions="deconfiguration,configuration" icon="icons/editor_icon.gif" id="org.deltaecore.feature.configuration.resource.deconfiguration.ui.DeconfigurationEditor" name="Configuration Editor (DeltaEcore)">
+			<contentTypeBinding contentTypeId="org.deltaecore.feature.configuration.resource.deconfiguration">
+			</contentTypeBinding>
+		</editor>
+	</extension>
+	
+	<extension point="org.eclipse.core.runtime.preferences">
+		<initializer class="org.deltaecore.feature.configuration.resource.deconfiguration.ui.DeconfigurationPreferenceInitializer">
+		</initializer>
+	</extension>
+	
+	<extension point="org.eclipse.ui.preferencePages">
+		<page name="Configuration Editor (DeltaEcore)" id="org.deltaecore.feature.configuration.resource.deconfiguration.ui.DeconfigurationPreferencePage" class="org.deltaecore.feature.configuration.resource.deconfiguration.ui.DeconfigurationPreferencePage" category="org.eclipse.ui.preferencePages.GeneralTextEditor">
+		</page>
+		<page name="Syntax Coloring" id="org.deltaecore.feature.configuration.resource.deconfiguration.ui.DeconfigurationSyntaxColoringPreferencePage" class="org.deltaecore.feature.configuration.resource.deconfiguration.ui.DeconfigurationSyntaxColoringPreferencePage" category="org.deltaecore.feature.configuration.resource.deconfiguration.ui.DeconfigurationPreferencePage">
+		</page>
+		<page name="Brackets" id="org.deltaecore.feature.configuration.resource.deconfiguration.ui.DeconfigurationBracketPreferencePage" class="org.deltaecore.feature.configuration.resource.deconfiguration.ui.DeconfigurationBracketPreferencePage" category="org.deltaecore.feature.configuration.resource.deconfiguration.ui.DeconfigurationPreferencePage">
+		</page>
+		<page name="Content Assist" id="org.deltaecore.feature.configuration.resource.deconfiguration.ui.DeconfigurationContentAssistPreferencePage" class="org.deltaecore.feature.configuration.resource.deconfiguration.ui.DeconfigurationContentAssistPreferencePage" category="org.deltaecore.feature.configuration.resource.deconfiguration.ui.DeconfigurationPreferencePage">
+		</page>
+	</extension>
+	
+	<extension point="org.eclipse.ui.newWizards">
+		<wizard category="org.deltaecore.newwizards.Category" icon="/icons/default_new_icon.gif" class="org.deltaecore.feature.configuration.resource.deconfiguration.ui.DeconfigurationNewFileWizard" id="org.deltaecore.feature.configuration.resource.deconfiguration.ui.DeconfigurationNewFileWizard" name="DeltaEcore Configuration (*.deconfiguration)">
+		</wizard>
+	</extension>
+	
+	<extension point="org.eclipse.ui.ide.markerResolution">
+		<markerResolutionGenerator class="org.deltaecore.feature.configuration.resource.deconfiguration.ui.DeconfigurationMarkerResolutionGenerator" markerType="org.deltaecore.feature.configuration.resource.deconfiguration.problem">
+		</markerResolutionGenerator>
+	</extension>
+	
+	<extension point="org.eclipse.core.filebuffers.annotationModelCreation">
+		<factory class="org.deltaecore.feature.configuration.resource.deconfiguration.ui.DeconfigurationAnnotationModelFactory" extensions="deconfiguration,configuration">
+		</factory>
+	</extension>
+	
+	<extension point="org.eclipse.core.contenttype.contentTypes">
+		<content-type id="org.deltaecore.feature.configuration.resource.deconfiguration" name=".deconfiguration File" base-type="org.eclipse.core.runtime.text" file-extensions="deconfiguration,configuration">
+		</content-type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.documentProviders">
+		<provider class="org.eclipse.ui.editors.text.TextFileDocumentProvider" extensions="deconfiguration,configuration" id="org.deltaecore.feature.configuration.resource.deconfiguration.ui.provider">
+		</provider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.annotationTypes">
+		<type name="org.deltaecore.feature.configuration.resource.deconfiguration.ui.occurences">
+		</type>
+		<type name="org.deltaecore.feature.configuration.resource.deconfiguration.ui.occurences.declaration" super="org.deltaecore.feature.configuration.resource.deconfiguration.ui.occurences">
+		</type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
+		<specification annotationType="org.deltaecore.feature.configuration.resource.deconfiguration.ui.occurences" label="Occurrences (in .deconfiguration files)" icon="/icons/occurrence_icon.gif" textPreferenceKey="deconfiguration.occurrenceIndication" textPreferenceValue="false" highlightPreferenceKey="deconfiguration.occurrenceHighlighting" highlightPreferenceValue="true" contributesToHeader="false" overviewRulerPreferenceKey="deconfiguration.occurrenceIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="deconfiguration.occurrenceIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="deconfiguration.occurrenceIndicationColor" colorPreferenceValue="212,212,212" presentationLayer="4" showInNextPrevDropdownToolbarActionKey="deconfiguration.showOccurrenceInNextPrevDropdownToolbarAction" showInNextPrevDropdownToolbarAction="true" isGoToNextNavigationTargetKey="deconfiguration.isOccurrenceGoToNextNavigationTarget" isGoToNextNavigationTarget="false" isGoToPreviousNavigationTargetKey="deconfiguration.isOccurrenceGoToPreviousNavigationTarget" isGoToPreviousNavigationTarget="false" textStylePreferenceKey="deconfiguration.occurrenceTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+		<specification annotationType="org.deltaecore.feature.configuration.resource.deconfiguration.ui.occurences.declaration" label="Declarations (in .deconfiguration files)" textPreferenceKey="deconfiguration.declarationIndication" textPreferenceValue="false" highlightPreferenceKey="deconfiguration.declarationHighlighting" highlightPreferenceValue="true" overviewRulerPreferenceKey="deconfiguration.declarationIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="deconfiguration.declarationIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="deconfiguration.declarationIndicationColor" colorPreferenceValue="240,216,168" presentationLayer="4" textStylePreferenceKey="deconfiguration.declarationTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+	</extension>
+	
+	<extension point="org.eclipse.ui.commands">
+		<category description="All commands belonging to Deconfiguration" id="org.deltaecore.feature.configuration.resource.deconfiguration.ui.command.category" name="Deconfiguration">
+		</category>
+		<command categoryId="org.deltaecore.feature.configuration.resource.deconfiguration.ui.command.category" description="Toggle comment of the selected lines" id="org.deltaecore.feature.configuration.resource.deconfiguration.ui.command.togglecomment" name="Toggle Comment">
+		</command>
+	</extension>
+	
+	<extension point="org.eclipse.ui.handlers">
+		<handler class="org.deltaecore.feature.configuration.resource.deconfiguration.ui.DeconfigurationToggleCommentHandler" commandId="org.deltaecore.feature.configuration.resource.deconfiguration.ui.command.togglecomment">
+		</handler>
+	</extension>
+	
+	<extension point="org.eclipse.ui.contexts">
+		<context name="Editing Deconfiguration Files" description="Editing Deconfiguration Files Context" parentId="org.eclipse.ui.textEditorScope" id="org.deltaecore.feature.configuration.resource.deconfiguration.EditorScope">
+		</context>
+	</extension>
+	
+	<extension point="org.eclipse.ui.bindings">
+		<key sequence="M1+7" commandId="org.deltaecore.feature.configuration.resource.deconfiguration.ui.command.togglecomment" schemeId="org.eclipse.ui.defaultAcceleratorConfiguration" contextId="org.deltaecore.feature.configuration.resource.deconfiguration.EditorScope">
+		</key>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.annotationTypes">
+		<type name="org.deltaecore.feature.configuration.resource.deconfiguration.ui.debug.lineBreakpoint" markerType="org.deltaecore.feature.configuration.resource.deconfiguration.debug.lineBreakpoint.marker" super="org.eclipse.debug.core.breakpoint">
+		</type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
+		<specification annotationType="org.deltaecore.feature.configuration.resource.deconfiguration.ui.debug.lineBreakpoint" label="Breakpoints (in .deconfiguration files)" icon="/icons/breakpoint_icon.gif" textPreferenceKey="org.deltaecore.feature.configuration.resource.deconfiguration.ui.lineBreakpoint" textPreferenceValue="false" highlightPreferenceKey="org.deltaecore.feature.configuration.resource.deconfiguration.ui.lineBreakpointHighlighting" highlightPreferenceValue="true" contributesToHeader="false" overviewRulerPreferenceKey="org.deltaecore.feature.configuration.resource.deconfiguration.ui.lineBreakpointIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="org.deltaecore.feature.configuration.resource.deconfiguration.ui.lineBreakpointIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="org.deltaecore.feature.configuration.resource.deconfiguration.ui.lineBreakpointColor" colorPreferenceValue="212,212,212" presentationLayer="4" showInNextPrevDropdownToolbarActionKey="org.deltaecore.feature.configuration.resource.deconfiguration.ui.showLineBreakpointInNextPrevDropdownToolbarAction" showInNextPrevDropdownToolbarAction="true" isGoToNextNavigationTargetKey="org.deltaecore.feature.configuration.resource.deconfiguration.ui.isLineBreakpointGoToNextNavigationTarget" isGoToNextNavigationTarget="false" isGoToPreviousNavigationTargetKey="org.deltaecore.feature.configuration.resource.deconfiguration.ui.isLineBreakpointGoToPreviousNavigationTarget" isGoToPreviousNavigationTarget="false" textStylePreferenceKey="org.deltaecore.feature.configuration.resource.deconfiguration.ui.lineBreakpointTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+	</extension>
+	
+	<extension point="org.eclipse.core.runtime.adapters">
+		<factory adaptableType="org.deltaecore.feature.configuration.resource.deconfiguration.ui.DeconfigurationEditor" class="org.deltaecore.feature.configuration.resource.deconfiguration.ui.debug.DeconfigurationAdapterFactory">
+			<adapter type="org.eclipse.debug.ui.actions.IToggleBreakpointsTarget">
+			</adapter>
+		</factory>
+		<factory adaptableType="org.deltaecore.feature.configuration.resource.deconfiguration.debug.DeconfigurationDebugVariable" class="org.deltaecore.feature.configuration.resource.deconfiguration.ui.debug.DeconfigurationAdapterFactory">
+			<adapter type="org.eclipse.debug.internal.ui.viewers.model.provisional.IElementLabelProvider">
+			</adapter>
+		</factory>
+		<factory adaptableType="org.deltaecore.feature.configuration.resource.deconfiguration.debug.DeconfigurationDebugVariable" class="org.deltaecore.feature.configuration.resource.deconfiguration.ui.debug.DeconfigurationAdapterFactory">
+			<adapter type="org.eclipse.debug.internal.ui.viewers.model.provisional.IElementContentProvider">
+			</adapter>
+		</factory>
+	</extension>
+	
+	<extension point="org.eclipse.ui.popupMenus">
+		<viewerContribution id="org.deltaecore.feature.configuration.resource.deconfiguration.ui.RulerPopupActions" targetID="org.deltaecore.feature.configuration.resource.deconfiguration.EditorRuler">
+			<action id="org.deltaecore.feature.configuration.resource.deconfiguration.ui.toggleBreakpointAction" icon="icons/breakpoint_icon.gif" label="Toggle Breakpoint" class="org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate" menubarPath="debug">
+			</action>
+		</viewerContribution>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editorActions">
+		<editorContribution targetID="org.deltaecore.feature.configuration.resource.deconfiguration.ui.DeconfigurationEditor" id="org.deltaecore.feature.configuration.resource.deconfiguration.ui.BreakpointRulerActions">
+			<action id="org.deltaecore.feature.configuration.resource.deconfiguration.ui.debug.RulerToggleBreakpointAction" label="Add breakpoint" class="org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate" actionID="RulerDoubleClick">
+			</action>
+		</editorContribution>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.debugModelPresentations">
+		<debugModelPresentation id="org.deltaecore.feature.configuration.resource.deconfiguration.debugModel" class="org.deltaecore.feature.configuration.resource.deconfiguration.ui.debug.DeconfigurationDebugModelPresentation">
+		</debugModelPresentation>
+	</extension>
+	
+</plugin>

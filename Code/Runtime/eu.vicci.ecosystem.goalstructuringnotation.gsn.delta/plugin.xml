@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension point="org.deltaecore.deltadialect">
+      <dialect domainModelElementIdentifierResolver="eu.vicci.ecosystem.goalstructuringnotation.gsn.delta.resolver.GsnDomainModelElementIdentifierResolver" interpreter="eu.vicci.ecosystem.goalstructuringnotation.gsn.delta.GsnDeltaDialectInterpreter" model="model/GSN.decoredialect"/>
+   </extension>
+</plugin>

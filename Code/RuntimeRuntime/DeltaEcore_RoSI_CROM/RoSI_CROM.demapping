@@ -1,0 +1,161 @@
+CompartmentBehavior || CompartmentProperties :
+	<deltas/CompartmentBehaviorOrCompartmentProperties.decore>
+
+//TODO: Is this necessary?
+CompartmentBehavior [>="2014_07_14"] || CompartmentProperties [>="2014_07_14"] :
+	<deltas/OnCompartments_2014_07_14.decore>
+	
+!CompartmentBehavior && !CompartmentProperties :
+	<deltas/NotCompartmentBehaviorAndNotCompartmentProperties.decore>
+
+Compartments && Roles :
+	<deltas/CompartmentsAndRoles.decore>
+
+Compartments && !Roles :
+	<deltas/CompartmentsAndNotRoles.decore>
+
+!Compartments && Roles :
+	<deltas/NotCompartmentsAndRoles.decore>
+
+!Compartments [>="2014_06_17"] && Roles [>="2014_06_17"] :
+	<deltas/NotCompartmentsAndRoles_2014_06_17.decore>
+
+!Compartments [>="2014_07_14"] && Roles [>="2014_07_14"] :
+	<deltas/NotCompartmentsAndRoles_2014_07_14.decore>
+
+!Compartments && !Roles :
+	<deltas/NotCompartmentsAndNotRoles.decore>
+
+CompartmentInheritance :
+	<deltas/CompartmentInheritance.decore>
+
+CompartmentInheritance [>="2014_07_14"] :
+	<deltas/CompartmentInheritance_2014_07_14.decore>
+
+CompartmentInheritance && OnCompartments :
+	<deltas/CompartmentInheritanceAndOnCompartments.decore>
+
+CompartmentInheritance [>="2014_06_17"] && OnCompartments [>="2014_06_17"] :
+	<deltas/CompartmentInheritanceAndOnCompartments_2014_06_17.decore>
+
+CompartmentInheritance [>="2014_07_14"] && OnCompartments [>="2014_07_14"] :
+	<deltas/CompartmentInheritance_2014_07_14.decore>,
+	<deltas/OnCompartments_2014_07_14.decore>
+
+ContainsCompartments && OnCompartments :
+	<deltas/ContainsCompartmentsAndOnCompartments.decore>
+
+ContainsCompartments [>="2014_07_14"] && OnCompartments [>="2014_07_14"] :
+	<deltas/ContainsCompartmentsAndOnCompartments_2014_07_14.decore>
+
+GroupConstraints :
+	<deltas/GroupConstraints.decore>
+
+GroupConstraints [>="2014_07_14"] :
+	<deltas/GroupConstraints_2014_07_14.decore>
+
+InterRelationshipConstraints :
+	<deltas/InterRelationshipConstraints.decore>
+
+InterRelationshipConstraints [>="2014_07_14"] :
+	<deltas/InterRelationshipConstraints_2014_07_14.decore>
+
+IntraRelationshipConstraints :
+	<deltas/IntraRelationshipConstraints.decore>
+
+IntraRelationshipConstraints [>="2014_07_14"] :
+	<deltas/IntraRelationshipConstraints_2014_07_14.decore>
+
+OnCompartments :
+	<deltas/OnCompartments.decore>
+
+OnCompartments [>="2014_07_14"] :
+	<deltas/OnCompartments_2014_07_14.decore>
+
+!OnCompartments :
+	<deltas/NotOnCompartments.decore>
+
+OnCompartments && OnRelationships :
+	<deltas/OnCompartmentsAndOnRelationships.decore>
+
+OnRelationships :
+	<deltas/OnRelationships.decore>
+
+OnRelationships [>="2014_06_16"] :
+	<deltas/OnRelationships_2014_06_16.decore>
+
+OnRelationships [>="2014_07_14"] :
+	<deltas/OnRelationships_2014_07_14.decore>
+	
+RelationshipConstraints :
+	<deltas/RelationshipConstraints.decore>
+
+RelationshipConstraints [>="2014_07_14"] :
+	<deltas/RelationshipConstraints_2014_07_14.decore>,
+	<deltas/Constraints_2014_07_14.decore>
+
+RelationshipConstraints || RoleConstraints :
+	<deltas/Constraints.decore>
+
+(RelationshipConstraints || RoleConstraints) && OnCompartments :
+	<deltas/ConstraintsAndOnCompartments.decore>
+
+(RelationshipConstraints [>="2014_07_14"] || RoleConstraints [>="2014_07_14"]) && OnCompartments [>="2014_07_14"] :
+	<deltas/ConstraintsAndOnCompartments_2014_07_14.decore>
+
+RMLFeatureModel [>="2014_06_16"] :
+	<deltas/RMLFeatureModel_2014_06_16.decore>
+
+RMLFeatureModel [>="2014_06_17"] :
+	<deltas/RMLFeatureModel_2014_06_17.decore>
+
+RMLFeatureModel [>="2014_07_14"] :
+	<deltas/RMLFeatureModel_2014_07_14.decore>
+
+RoleBehavior && RoleProperties :
+	<deltas/RoleBehaviorAndRoleProperties.decore>
+
+RoleBehavior [>="2014_07_14"] && RoleProperties [>="2014_07_14"] :
+	<deltas/RoleBehaviorAndRoleProperties_2014_07_14.decore>
+
+RoleConstraints :
+	<deltas/RoleConstraints.decore> 
+
+RoleConstraints [>="2014_07_14"] :
+	<deltas/RoleConstraints_2014_07_14.decore>,
+	<deltas/Constraints_2014_07_14.decore>
+	
+RoleEquivalence :
+	<deltas/RoleEquivalence.decore>
+
+RoleEquivalence [>="2014_07_14"] :
+	<deltas/RoleEquivalence_2014_07_14.decore>,
+	<deltas/RoleConstraints_2014_07_14.decore>
+
+RoleImplication :
+	<deltas/RoleImplication.decore>
+
+RoleImplication [>="2014_07_14"] :
+	<deltas/RoleImplication_2014_07_14.decore>
+
+RoleInheritance :
+	<deltas/RoleInheritance.decore>
+
+RoleInheritance [>="2014_06_17"]:
+	<deltas/RoleInheritance_2014_06_17.decore>
+
+RoleInheritance [>="2014_07_14"] :
+	<deltas/RoleInheritance_2014_07_14.decore>
+
+RoleProhibition :
+	<deltas/RoleProhibition.decore>
+
+RoleProhibition [>="2014_07_14"] :
+	<deltas/RoleProhibition_2014_07_14.decore>,
+	<deltas/RoleConstraints_2014_07_14.decore>
+
+RoleProperties :
+	<deltas/RoleProperties.decore>
+
+!RoleProperties :
+	<deltas/NotRoleProperties.decore>

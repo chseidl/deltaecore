@@ -1,0 +1,23 @@
+//Replace bump sensor
+delta "CFD_Delta3"
+	dialect <http://vicci.eu/cfd/1.0>
+	modifies <../core/Example.cfd>, <CFD_Delta1.decore>
+{
+	//Create distance sensor
+	CFDComponent distanceSensorComponent = new CFDComponent(id: "DS", name: "DistanceSensor");
+	CFDInPort distanceSensorObstacleInPort = new CFDInPort(name: "Obstacle");
+	CFDInPort distanceSensorMovingInPort = new CFDInPort(name: "Moving");
+	CFDOutPort distanceSensorObstacleTooCloseOutPort = new CFDOutPort(name: "ObstacleTooClose");
+	
+	addInPortToInPortsOfElement(distanceSensorObstacleInPort, distanceSensorComponent);
+	addInPortToInPortsOfElement(distanceSensorMovingInPort, distanceSensorComponent);
+	addOutPortToOutPortsOfElement(distanceSensorObstacleTooCloseOutPort, distanceSensorComponent);
+	
+	addComponentToElementsOfComponent(distanceSensorComponent, <CD>);
+
+	connect(<CD:Obstacle>, distanceSensorObstacleInPort);
+	connect(<CD:Moving>, distanceSensorMovingInPort);
+	
+	//Connect distance sensor
+	connect(distanceSensorObstacleTooCloseOutPort, <CD:Collision>);
+}

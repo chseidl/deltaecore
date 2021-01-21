@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.validation.constraintBindings">
+      <clientContext
+            default="false"
+            id="org.deltaecore.feature.constraint.clientContext">
+         <enablement></enablement>
+      </clientContext>
+      <binding
+            category="org.deltaecore.feature.constraint"
+            context="org.deltaecore.feature.constraint.clientContext">
+      </binding>
+   </extension>
+
+   
+      <extension
+         point="org.eclipse.emf.validation.constraintProviders">
+      <category
+            id="org.deltaecore.feature.constraint"
+            mandatory="true"
+            name="DEConstraint">
+      </category>
+      <constraintProvider
+            cache="true"
+            mode="Batch">
+         <package
+               namespaceUri="http://deltaecore.org/feature/constraint/1.0">
+         </package>
+         <constraints
+               categories="org.deltaecore.feature.constraint">
+            <constraint
+                  class="org.deltaecore.feature.constraint.validation.DEDeprecateFileExtensionConstraint"
+                  id="org.deltaecore.feature.constraint.validation.DEDeprecateFileExtensionConstraint"
+                  lang="Java"
+                  mode="Batch"
+                  name="DEDeprecateFileExtensionConstraint"
+                  severity="WARNING"
+                  statusCode="1">
+               <message>
+                  message body text
+               </message>
+               <target
+                     class="DEConstraintModel">
+               </target>
+            </constraint>
+         </constraints>
+      </constraintProvider>
+   </extension>
+</plugin>

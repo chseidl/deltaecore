@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<extension point="org.emftext.access.syntax.ui">
+		<metaInformationProvider class="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.DeapplicationorderconstraintsUIMetaInformation" id="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.DeapplicationorderconstraintsUIMetaInformation">
+		</metaInformationProvider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors">
+		<editor class="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.DeapplicationorderconstraintsEditor" contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor" extensions="deapplicationorderconstraints,aoc" icon="icons/editor_icon.gif" id="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.DeapplicationorderconstraintsEditor" name="Application-Order Constraints Editor (DeltaEcore)">
+			<contentTypeBinding contentTypeId="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints">
+			</contentTypeBinding>
+		</editor>
+	</extension>
+	
+	<extension point="org.eclipse.core.runtime.preferences">
+		<initializer class="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.DeapplicationorderconstraintsPreferenceInitializer">
+		</initializer>
+	</extension>
+	
+	<extension point="org.eclipse.ui.preferencePages">
+		<page name="Application-Order Constraints Editor (DeltaEcore)" id="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.DeapplicationorderconstraintsPreferencePage" class="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.DeapplicationorderconstraintsPreferencePage" category="org.eclipse.ui.preferencePages.GeneralTextEditor">
+		</page>
+		<page name="Syntax Coloring" id="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.DeapplicationorderconstraintsSyntaxColoringPreferencePage" class="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.DeapplicationorderconstraintsSyntaxColoringPreferencePage" category="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.DeapplicationorderconstraintsPreferencePage">
+		</page>
+		<page name="Brackets" id="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.DeapplicationorderconstraintsBracketPreferencePage" class="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.DeapplicationorderconstraintsBracketPreferencePage" category="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.DeapplicationorderconstraintsPreferencePage">
+		</page>
+		<page name="Content Assist" id="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.DeapplicationorderconstraintsContentAssistPreferencePage" class="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.DeapplicationorderconstraintsContentAssistPreferencePage" category="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.DeapplicationorderconstraintsPreferencePage">
+		</page>
+	</extension>
+	
+	<extension point="org.eclipse.ui.newWizards">
+		<wizard category="org.deltaecore.newwizards.Category" icon="/icons/default_new_icon.gif" class="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.DeapplicationorderconstraintsNewFileWizard" id="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.DeapplicationorderconstraintsNewFileWizard" name="DeltaEcore Application-Order Constraints (*.deapplicationorderconstraints)">
+		</wizard>
+	</extension>
+	
+	<extension point="org.eclipse.ui.ide.markerResolution">
+		<markerResolutionGenerator class="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.DeapplicationorderconstraintsMarkerResolutionGenerator" markerType="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.problem">
+		</markerResolutionGenerator>
+	</extension>
+	
+	<extension point="org.eclipse.core.filebuffers.annotationModelCreation">
+		<factory class="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.DeapplicationorderconstraintsAnnotationModelFactory" extensions="deapplicationorderconstraints,aoc">
+		</factory>
+	</extension>
+	
+	<extension point="org.eclipse.core.contenttype.contentTypes">
+		<content-type id="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints" name=".deapplicationorderconstraints File" base-type="org.eclipse.core.runtime.text" file-extensions="deapplicationorderconstraints,aoc">
+		</content-type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.documentProviders">
+		<provider class="org.eclipse.ui.editors.text.TextFileDocumentProvider" extensions="deapplicationorderconstraints,aoc" id="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.provider">
+		</provider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.annotationTypes">
+		<type name="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.occurences">
+		</type>
+		<type name="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.occurences.declaration" super="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.occurences">
+		</type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
+		<specification annotationType="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.occurences" label="Occurrences (in .deapplicationorderconstraints files)" icon="/icons/occurrence_icon.gif" textPreferenceKey="deapplicationorderconstraints.occurrenceIndication" textPreferenceValue="false" highlightPreferenceKey="deapplicationorderconstraints.occurrenceHighlighting" highlightPreferenceValue="true" contributesToHeader="false" overviewRulerPreferenceKey="deapplicationorderconstraints.occurrenceIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="deapplicationorderconstraints.occurrenceIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="deapplicationorderconstraints.occurrenceIndicationColor" colorPreferenceValue="212,212,212" presentationLayer="4" showInNextPrevDropdownToolbarActionKey="deapplicationorderconstraints.showOccurrenceInNextPrevDropdownToolbarAction" showInNextPrevDropdownToolbarAction="true" isGoToNextNavigationTargetKey="deapplicationorderconstraints.isOccurrenceGoToNextNavigationTarget" isGoToNextNavigationTarget="false" isGoToPreviousNavigationTargetKey="deapplicationorderconstraints.isOccurrenceGoToPreviousNavigationTarget" isGoToPreviousNavigationTarget="false" textStylePreferenceKey="deapplicationorderconstraints.occurrenceTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+		<specification annotationType="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.occurences.declaration" label="Declarations (in .deapplicationorderconstraints files)" textPreferenceKey="deapplicationorderconstraints.declarationIndication" textPreferenceValue="false" highlightPreferenceKey="deapplicationorderconstraints.declarationHighlighting" highlightPreferenceValue="true" overviewRulerPreferenceKey="deapplicationorderconstraints.declarationIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="deapplicationorderconstraints.declarationIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="deapplicationorderconstraints.declarationIndicationColor" colorPreferenceValue="240,216,168" presentationLayer="4" textStylePreferenceKey="deapplicationorderconstraints.declarationTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+	</extension>
+	
+	<extension point="org.eclipse.ui.commands">
+		<category description="All commands belonging to Deapplicationorderconstraints" id="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.command.category" name="Deapplicationorderconstraints">
+		</category>
+		<command categoryId="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.command.category" description="Toggle comment of the selected lines" id="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.command.togglecomment" name="Toggle Comment">
+		</command>
+	</extension>
+	
+	<extension point="org.eclipse.ui.handlers">
+		<handler class="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.DeapplicationorderconstraintsToggleCommentHandler" commandId="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.command.togglecomment">
+		</handler>
+	</extension>
+	
+	<extension point="org.eclipse.ui.contexts">
+		<context name="Editing Deapplicationorderconstraints Files" description="Editing Deapplicationorderconstraints Files Context" parentId="org.eclipse.ui.textEditorScope" id="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.EditorScope">
+		</context>
+	</extension>
+	
+	<extension point="org.eclipse.ui.bindings">
+		<key sequence="M1+7" commandId="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.ui.command.togglecomment" schemeId="org.eclipse.ui.defaultAcceleratorConfiguration" contextId="org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.EditorScope">
+		</key>
+	</extension>
+	
+</plugin>

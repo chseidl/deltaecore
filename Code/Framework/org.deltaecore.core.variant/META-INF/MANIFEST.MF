@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DeltaEcore Delta Module Interpretation
+Bundle-SymbolicName: org.deltaecore.core.variant;singleton:=true
+Bundle-Version: 0.8.2
+Bundle-Vendor: www.deltaecore.org
+Require-Bundle: org.deltaecore.core.decore,
+ org.deltaecore.core.generation,
+ org.deltaecore.core.applicationorderconstraint;visibility:=reexport,
+ org.deltaecore.core.decoredialect.registry,
+ org.emftext.language.ecoreid.resource.ecoreid,
+ org.deltaecore.core.decore.resource.decore,
+ org.deltaecore.common
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.deltaecore.core.variant,
+ org.deltaecore.core.variant.dependency,
+ org.deltaecore.core.variant.interpretation,
+ org.deltaecore.core.variant.order,
+ org.deltaecore.core.variant.requirements

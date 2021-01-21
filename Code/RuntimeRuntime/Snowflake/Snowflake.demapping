@@ -1,0 +1,192 @@
+//In depth first order of feature model regarding the first feature in the expression
+
+//Features
+External :
+	<deltas/External.decore>
+
+!(UnlimitedFeatures || UnlimitedGroups) :
+	<deltas/NotUnlimited.decore>
+
+!FeatureCardinality :
+	<deltas/NotFeatureCardinality.decore>
+
+//No cardinalities
+!(FeatureCardinality || GroupCardinality) :
+	<deltas/NotCardinalities.decore>
+
+//No optional features
+!FeatureCardinality && !OptionalFeatures :
+	<deltas/EraseOptionalFeatures.decore>
+
+//No mandatory features
+!FeatureCardinality && !MandatoryFeatures :
+	<deltas/EraseMandatoryFeatures.decore>
+
+FeatureVariationType :
+	<deltas/FeatureVariationType.decore>
+	
+OptionalFeatures :
+	<deltas/OptionalFeatures.decore>
+	
+MandatoryFeatures :
+	<deltas/MandatoryFeatures.decore>	
+	
+Resources :
+	<deltas/Resources.decore>
+
+BindingTimes :
+	<deltas/BindingTimes.decore>
+
+
+//Attributes
+Attributes :
+	<deltas/Attributes.decore>
+
+DomainType :
+	<deltas/DomainType.decore>
+
+(Attributes && !DomainType) || Discrete :
+	<deltas/NotDomainTypeOrDiscrete.decore>
+
+Finite :
+	<deltas/Finite.decore>
+
+Infinite :
+	<deltas/Infinite.decore>
+
+(Attributes && !DomainType) || Infinite :
+	<deltas/NotDomainTypeOrInfinite.decore>
+
+Continuous :
+	<deltas/Continuous.decore>
+
+(Attributes && !DomainType) || Continuous :
+	<deltas/NotDomainTypeOrContinuous.decore>
+
+
+//Versions
+//Versions in the sense of Mitschke and Eichberg 2008
+Versions && !Configurable :
+	<deltas/NonConfigurableVersions.decore>
+
+!Configurable :
+	<deltas/NotConfigurable.decore>
+	
+Configurable && !VersionBranching :
+	<deltas/ConfigurableAndNotVersionBranching.decore>
+
+
+//Groups
+!GroupCardinality :
+	<deltas/NotGroupCardinality.decore>
+
+//No or groups
+!GroupCardinality && !OrGroups :
+	<deltas/EraseOrGroups.decore>
+
+//No alternative groups
+!GroupCardinality && !AlternativeGroups :
+	<deltas/EraseAlternativeGroups.decore>
+
+GroupVariationType :
+	<deltas/GroupVariationType.decore>
+	
+OrGroups :
+	<deltas/OrGroups.decore>
+	
+AlternativeGroups :
+	<deltas/AlternativeGroups.decore>
+
+!MultipleGroups :
+	<deltas/NotMultipleGroups.decore>
+
+
+!VersionRestrictions :
+	<deltas/NotVersionRestrictions.decore>
+
+!VersionRangeRestrictions :
+	<deltas/NotVersionRangeRestrictions.decore>
+
+!RelativeVersionRestrictions :
+	<deltas/NotRelativeVersionRestrictions.decore>
+
+!ConditionalVersionRestrictions :
+	<deltas/NotConditionalVersionRestrictions.decore>
+
+
+AttributeRestrictions :
+	<deltas/AttributeRestrictions.decore>
+
+LT :
+	<deltas/LT.decore>
+
+LEQ :
+	<deltas/LEQ.decore>
+
+EQ :
+	<deltas/EQ.decore>
+
+NEQ :
+	<deltas/NEQ.decore>
+
+GEQ :
+	<deltas/GEQ.decore>
+
+GT :
+	<deltas/GT.decore>
+
+SUBS :
+	<deltas/SUBS.decore>
+
+
+!Not :
+	<deltas/NotNot.decore>
+
+Not && Verbal :
+	<deltas/NotAndVerbal.decore>
+
+!Or :
+	<deltas/NotOr.decore>
+
+Or && Verbal:
+	<deltas/OrAndVerbal.decore>
+	
+!And :
+	<deltas/NotAnd.decore>
+
+And && Verbal :
+	<deltas/AndAndVerbal.decore>
+
+Xor :
+	<deltas/Xor.decore>
+
+Xor && Verbal:
+	<deltas/XorAndVerbal.decore>
+
+Xor && Programming:
+	<deltas/XorAndProgramming.decore>
+
+!Implies :
+	<deltas/NotImplies.decore>
+
+Implies && Verbal :
+	<deltas/ImpliesAndVerbal.decore>
+
+Equivalent :
+	<deltas/Equivalent.decore>
+
+Equivalent && Verbal :
+	<deltas/EquivalentAndVerbal.decore>
+
+Equivalent && Programming :
+	<deltas/EquivalentAndProgramming.decore>
+
+Excludes :
+	<deltas/Excludes.decore>
+
+Excludes && Verbal:
+	<deltas/ExcludesAndVerbal.decore>
+
+Excludes && Programming:
+	<deltas/ExcludesAndProgramming.decore>
+

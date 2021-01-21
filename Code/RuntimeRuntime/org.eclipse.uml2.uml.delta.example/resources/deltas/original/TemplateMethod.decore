@@ -1,0 +1,26 @@
+delta "TemplateMethod"
+	dialect <http://www.eclipse.org/uml2/5.0.0/UML>
+	requires <../core/Base.uml>
+{
+	//TODO: Might need different delta modules depending on variability
+	
+	Model model = <model::>;
+	
+	//Packages
+	createPackage("org.example", model);
+	//...
+	
+
+	//Template
+	createClass("Template", <package::org.example>, true);
+	createOperationInClass("templateMethod", <class::org.example.Template>);
+	createCommentInOperation("primitiveOperation1();primitiveOperation2();", <operation::org.example.Template#templateMethod>);
+	createOperationInClass("primitiveOperation1", <class::org.example.Template>);
+	createOperationInClass("primitiveOperation2", <class::org.example.Template>);
+
+
+	//Concrete Hook
+	createClass("ConcreteHook", <package::org.example>, false);
+	createOperationInClass("primitiveOperation1", <class::org.example.ConcreteHook>);
+	createOperationInClass("primitiveOperation2", <class::org.example.ConcreteHook>);
+}

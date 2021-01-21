@@ -1,0 +1,19 @@
+configuration delta "RoleConstraints"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>,
+			 <Constraints.decore>
+{
+	EClass roleConstraintEClass = new EClass(name : "RoleConstraint");
+	addEClass(roleConstraintEClass, <CompartmentRoleObjectModel>);
+	
+	addESuperType(<CompartmentRoleObjectModel.Constraint>, roleConstraintEClass);
+	
+	EClass abstractRoleEClass = <CompartmentRoleObjectModel.AbstractRole>;
+	
+	EReference firstEReference = new EReference(eType: abstractRoleEClass, name : "first", lowerBound : 1, upperBound : 1, containment : false);
+	addEReference(firstEReference, roleConstraintEClass);
+	
+	EReference secondEReference = new EReference(eType: abstractRoleEClass, name : "second", lowerBound : 1, upperBound : 1, containment : false);
+	addEReference(secondEReference, roleConstraintEClass);
+}

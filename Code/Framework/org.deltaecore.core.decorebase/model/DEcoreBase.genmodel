@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.deltaecore.core.decorebase/src-gen" editDirectory="/org.deltaecore.core.decorebase.edit/src-gen"
+    editorDirectory="/org.deltaecore.core.decorebase.editor/src-gen" modelPluginID="org.deltaecore.core.decorebase"
+    modelName="DeltaEcore Common Base Delta Language" testsDirectory="/org.deltaecore.core.decorebase.tests/src-gen"
+    importerID="org.eclipse.emf.importer.ecore" bundleManifest="false" complianceLevel="7.0"
+    copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore">
+  <foreignModel>DEcoreBase.ecore</foreignModel>
+  <genPackages prefix="DEcoreBase" basePackage="org.deltaecore.core" disposableProviderFactory="true"
+      ecorePackage="DEcoreBase.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="DEcoreBase.ecore#//DEModificationType">
+      <genEnumLiterals ecoreEnumLiteral="DEcoreBase.ecore#//DEModificationType/CONFIGURATION"/>
+      <genEnumLiterals ecoreEnumLiteral="DEcoreBase.ecore#//DEModificationType/EVOLUTION"/>
+      <genEnumLiterals ecoreEnumLiteral="DEcoreBase.ecore#//DEModificationType/CUSTOMIZATION"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="DEcoreBase.ecore#//DEType">
+      <genOperations ecoreOperation="DEcoreBase.ecore#//DEType/getValueType"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DEcoreBase.ecore#//DEBuiltInType"/>
+    <genClasses ecoreClass="DEcoreBase.ecore#//DEBoolean"/>
+    <genClasses ecoreClass="DEcoreBase.ecore#//DEInteger"/>
+    <genClasses ecoreClass="DEcoreBase.ecore#//DEDouble"/>
+    <genClasses ecoreClass="DEcoreBase.ecore#//DEString"/>
+    <genClasses ecoreClass="DEcoreBase.ecore#//DEMetaModelClassifierReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DEcoreBase.ecore#//DEMetaModelClassifierReference/classifier"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DEcoreBase.ecore#//DEElementWithDomainPackage">
+      <genOperations ecoreOperation="DEcoreBase.ecore#//DEElementWithDomainPackage/getDomainPackage"/>
+    </genClasses>
+    <genClasses ecoreClass="DEcoreBase.ecore#//DEJavaClassReference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DEcoreBase.ecore#//DEJavaClassReference/packageNameFragments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute DEcoreBase.ecore#//DEJavaClassReference/classNameFragment"/>
+      <genOperations ecoreOperation="DEcoreBase.ecore#//DEJavaClassReference/getReferencedJavaClass"/>
+      <genOperations ecoreOperation="DEcoreBase.ecore#//DEJavaClassReference/getQualifiedNameOfReferencedJavaClass"/>
+    </genClasses>
+    <genClasses ecoreClass="DEcoreBase.ecore#//DERelativeFilePath">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DEcoreBase.ecore#//DERelativeFilePath/rawRelativeFilePath"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

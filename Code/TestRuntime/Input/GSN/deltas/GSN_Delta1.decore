@@ -1,0 +1,19 @@
+delta "GSN_Delta1"
+	dialect <http://vicci.eu/gsn/1.0>
+	modifies <../core/IndustrialPressSafetyArgument.gsn>
+{
+	GSNModel model = <>;
+	
+	//Remove Sn1 and its connection(s).
+	GSNConcreteElement solution1 = <Sn1>; 
+	disconnect(<G2>, solution1, model);
+	detachElement(solution1);
+	
+	//Add a new element Sn3 and connect it.
+	GSNConcreteElement solution3 = new GSNConcreteElement(id: "Sn3", description: "A new and innovative solution");
+	addElementToElementsOfModel(solution3, model);
+	connect(GSNConnectionType.SOLVED_BY, <G7>, solution3, model);
+	
+	//Modify graphical representation.
+	relocateElement(solution3, 600, 480);
+}

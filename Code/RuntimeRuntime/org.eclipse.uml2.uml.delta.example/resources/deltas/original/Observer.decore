@@ -1,0 +1,42 @@
+delta "Observer"
+	dialect <http://www.eclipse.org/uml2/5.0.0/UML>
+	requires <../core/Base.uml>
+{
+	//TODO: Might need different delta modules depending on variability
+	
+	Model model = <model::>;
+	
+	//Packages
+	createPackage("org.example", model);
+	//...
+	
+
+	//Observer
+	createInterface("Observer", <package::org.example>);
+	createOperationInInterface("update", <interface::org.example.Observer>);
+
+
+	//Observable
+	createClass("Observable", <package::org.example>, true);
+	createProperty("observers", <interface::org.example.Observer>, 0, -1, <class::org.example.Observable>);
+
+	createOperationInClass("addObserver", <class::org.example.Observable>);
+	createParameter("observer", <interface::org.example.Observer>, 1, 1, <operation::org.example.Observable#addObserver>);
+	createCommentInOperation("observers.add(observer)", <operation::org.example.Observable#addObserver>);
+	
+	createOperationInClass("removeObserver", <class::org.example.Observable>);
+	createParameter("observer", <interface::org.example.Observer>, 1, 1, <operation::org.example.Observable#removeObserver>);
+	createOperationInClass("notifyObservers", <class::org.example.Observable>);
+	
+	
+	//Subject
+	createClass("Subject", <package::org.example>, false);
+	createGeneralization(<class::org.example.Subject>, <class::org.example.Observable>);
+	
+	
+	//Concrete Observer
+	createClass("ConcreteObserver", <package::org.example>, false);
+	createInterfaceRealization(<class::org.example.ConcreteObserver>, <interface::org.example.Observer>);
+	
+	createOperationInClass("update", <class::org.example.ConcreteObserver>);
+}

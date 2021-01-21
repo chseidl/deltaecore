@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.deltaecore.feature.configuration/src-gen"
+    editDirectory="/org.deltaecore.feature.configuration.edit/src-gen" editorDirectory="/org.deltaecore.feature.configuration.editor/src-gen"
+    modelPluginID="org.deltaecore.feature.configuration" modelName="Configuration Model"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testsDirectory="/org.deltaecore.feature.configuration.tests/src-gen"
+    importerID="org.eclipse.emf.importer.ecore" bundleManifest="false" complianceLevel="7.0"
+    copyrightFields="false" usedGenPackages="../../org.deltaecore.feature/model/Feature.genmodel#//feature"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>Configuration.ecore</foreignModel>
+  <genPackages prefix="DEConfiguration" basePackage="org.deltaecore.feature" disposableProviderFactory="true"
+      fileExtensions="configuration" ecorePackage="Configuration.ecore#/">
+    <genClasses ecoreClass="Configuration.ecore#//DEConfiguration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Configuration.ecore#//DEConfiguration/configurationArtifacts"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Configuration.ecore#//DEConfiguration/featureModel"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Configuration.ecore#//DEConfigurationArtifact"/>
+    <genClasses ecoreClass="Configuration.ecore#//DEFeatureSelection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Configuration.ecore#//DEFeatureSelection/feature"/>
+    </genClasses>
+    <genClasses ecoreClass="Configuration.ecore#//DEVersionSelection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Configuration.ecore#//DEVersionSelection/feature"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Configuration.ecore#//DEVersionSelection/version"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

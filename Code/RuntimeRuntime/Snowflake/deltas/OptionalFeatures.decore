@@ -1,0 +1,13 @@
+configuration delta "OptionalFeatures"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <FeatureVariationType.decore>
+	modifies <../model/Feature.ecore>
+{
+	String implementation = "return (getVariationType() == SFeatureVariationType.OPTIONAL);";
+
+	setEOperationImplementation(<SFeature.isOptional>, implementation);
+	
+	EEnumLiteral optionalEEnumLiteral = new EEnumLiteral(name : "OPTIONAL", literal : "OPTIONAL", value : 1);
+	addEEnumLiteral(optionalEEnumLiteral, <SFeatureVariationType>);
+}

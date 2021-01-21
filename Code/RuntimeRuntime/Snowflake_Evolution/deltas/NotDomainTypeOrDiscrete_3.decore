@@ -1,0 +1,10 @@
+evolution delta "NotDomainTypeOrDiscrete_3"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <NotDomainTypeOrDiscrete.decore>
+	modifies <../model/Feature.ecore>
+{
+	//Enable setting of actual value.
+	EAttribute rawValueEAttribute = new EAttribute(eType: <EInt>, name : "rawValue", lowerBound : 1, upperBound : 1);
+	addEAttribute(rawValueEAttribute, <SIntegerValue>);
+}

@@ -1,0 +1,8 @@
+configuration delta "NotCompartmentsAndNotRoles"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>
+{
+	EReference fillerEReference = new EReference(eType: <CompartmentRoleObjectModel.NaturalType>, name : "filler", lowerBound: 1, upperBound : 1, containment : false);
+	addEReference(fillerEReference, <CompartmentRoleObjectModel.Fulfillment>);
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sft" nsURI="http://vicci.eu/sft/1.0" nsPrefix="sft">
+  <eClassifiers xsi:type="ecore:EClass" name="SFTSoftwareFaultTree">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootFault" lowerBound="1"
+        eType="#//SFTFault" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SFTFault" abstract="true" eSuperTypes="#//SFTIdentifiable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//SFTGate"
+        eOpposite="#//SFTGate/faults"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SFTGate" eSuperTypes="#//SFTIdentifiable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="faults" lowerBound="2"
+        upperBound="-1" eType="#//SFTFault" containment="true" eOpposite="#//SFTFault/parent"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gateType" lowerBound="1"
+        eType="#//SFTGateType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
+        eType="#//SFTIntermediateFault" eOpposite="#//SFTIntermediateFault/gate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SFTGateType">
+    <eLiterals name="AND"/>
+    <eLiterals name="OR" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SFTIntermediateFault" eSuperTypes="#//SFTFault">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gate" lowerBound="1" eType="#//SFTGate"
+        containment="true" eOpposite="#//SFTGate/parent"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SFTBasicFault" eSuperTypes="#//SFTFault">
+    <eOperations name="isLikely" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="probability" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SFTIdentifiable" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+  </eClassifiers>
+</ecore:EPackage>

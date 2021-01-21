@@ -1,0 +1,7 @@
+delta "SFT_Delta1"
+	dialect <http://vicci.eu/sft/1.0>
+	modifies <../core/Example.sft_text>
+{
+	detachFault(<BF2>);
+	modifyGateTypeOfGate(SFTGateType.OR, <G1>);
+}

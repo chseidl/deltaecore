@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Source Code Installer
+Bundle-SymbolicName: org.deltaecore.installer;singleton:=true
+Bundle-Version: 0.8.2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.eclipse.core.resources;bundle-version="3.0.0";visibility:=reexport,
+ org.eclipse.core.runtime;bundle-version="3.0.0";visibility:=reexport,
+ org.eclipse.jdt.core;bundle-version="3.0.0",
+ org.eclipse.text;bundle-version="3.0.0",
+ org.eclipse.emf.mwe2.lib,
+ org.eclipse.emf.mwe2.launch,
+ org.eclipse.emf.mwe2.runtime,
+ org.emftext.sdk.ui,
+ org.eclipse.emf.codegen.ecore,
+ org.apache.log4j,
+ org.eclipse.xtext.xbase,
+ org.emftext.sdk.concretesyntax,
+ org.emftext.sdk.concretesyntax.resource.cs,
+ de.christophseidl.util.eclipse,
+ org.emftext.sdk.codegen,
+ org.emftext.sdk.codegen.resource,
+ org.emftext.sdk.codegen.resource.ui
+Bundle-Vendor: www.deltaecore.org

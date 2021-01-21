@@ -1,0 +1,18 @@
+configuration delta "RoleInheritance"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>
+{
+	EClass roleInheritanceEClass = new EClass(name : "RoleInheritance");
+	addEClass(roleInheritanceEClass, <CompartmentRoleObjectModel>);
+	
+	addESuperType(<CompartmentRoleObjectModel.Inheritance>, roleInheritanceEClass);
+	
+	EClass roleTypeEClass = <CompartmentRoleObjectModel.RoleType>;
+	
+	EReference superEReference = new EReference(eType: roleInheritanceEClass, name : "super", lowerBound : 1, upperBound : 1, containment : false);
+	addEReference(superEReference, roleTypeEClass);
+	
+	EReference subEReference = new EReference(eType: roleInheritanceEClass, name : "sub", lowerBound : 1, upperBound : 1, containment : false);
+	addEReference(subEReference, roleTypeEClass);
+}

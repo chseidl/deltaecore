@@ -1,0 +1,17 @@
+configuration delta "BindingTimes"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	modifies <../model/Feature.ecore>
+{
+	EEnum featureBindingTimeEEnum = new EEnum(name: "SFeatureBindingTime");
+	addEEnum(featureBindingTimeEEnum, <feature>);
+	
+	EEnumLiteral compileTimeEEnumLiteral = new EEnumLiteral(name : "COMPILE_TIME", literal : "COMPILE_TIME", value : 0);
+	addEEnumLiteral(compileTimeEEnumLiteral, featureBindingTimeEEnum);
+	
+	EEnumLiteral runTimeEEnumLiteral = new EEnumLiteral(name : "RUN_TIME", literal : "RUN_TIME", value : 1);
+	addEEnumLiteral(runTimeEEnumLiteral, featureBindingTimeEEnum);
+	
+	EAttribute bindingTimeEAttribute = new EAttribute(name : "bindingTime", eType : featureBindingTimeEEnum, lowerBound : 0, upperBound : 1);
+	addEAttribute(bindingTimeEAttribute, <SFeature>);
+}

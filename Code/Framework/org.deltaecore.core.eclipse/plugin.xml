@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="DeltaEcore"
+            id="org.deltaecore.eclipse.views.variantcreation">
+      </category>
+      <view
+            name="Variant Creation"
+            icon="icons/VariantCreationView.gif"
+            category="org.deltaecore.eclipse.views.variantcreation"
+            class="org.deltaecore.core.eclipse.views.DEVariantCreationView"
+            id="org.deltaecore.eclipse.views.DEVariantCreationView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               ratio="0.5"
+               relative="org.eclipse.ui.views.ContentOutline"
+               relationship="stack"
+               id="org.deltaecore.eclipse.views.DEVariantCreationView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="org.deltaecore.core.eclipse.perspectives.DEPerspective"
+            icon="icons/Perspective.gif"
+            id="org.deltaecore.eclipse.perspective"
+            name="DeltaEcore">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="org.deltaecore.core.eclipse.commands.DEGenerateDeltaDialectInterpreterCodeHandler"
+            id="org.deltaecore.eclipse.commands.DEGenerateDeltaDialectInterpreterCode"
+            name="Generate interpreter code">
+      </command>
+      <command
+            defaultHandler="org.deltaecore.core.eclipse.commands.DERegisterDynamicDeltaDialectHandler"
+            id="org.deltaecore.eclipse.commands.DERegisterDynamicDeltaDialect"
+            name="Register dynamic delta dialect (*.decoredialect)">
+      </command>
+      <command
+            defaultHandler="org.deltaecore.core.eclipse.commands.DEUnregisterDynamicDeltaDialectHandler"
+            id="org.deltaecore.eclipse.commands.DEUnregisterDynamicDeltaDialect"
+            name="Unregister dynamic delta dialect (*.decoredialect)">
+      </command>
+      <command
+            defaultHandler="org.deltaecore.core.eclipse.commands.DEPrintDeltaModuleHandler"
+            id="org.deltaecore.eclipse.commands.DEPrintDeltaModule"
+            name="Print delta module (*.decore_plain)">
+      </command>
+   </extension>
+ <extension
+       point="org.eclipse.core.expressions.definitions">
+  <definition
+        id="org.deltaecore.eclipse.expressions.isDeltaModuleSelected">
+     <with
+           variable="selection">
+        <iterate
+              ifEmpty="false"
+              operator="or">
+           <adapt
+                 type="org.eclipse.core.resources.IResource">
+              <test
+                    property="org.eclipse.core.resources.extension"
+                    value="decore">
+              </test>
+           </adapt>
+        </iterate>
+     </with>
+  </definition>
+  <definition
+        id="org.deltaecore.eclipse.expressions.isDeltaModulePlainSelected">
+     <with
+           variable="selection">
+        <iterate
+              ifEmpty="false"
+              operator="or">
+           <adapt
+                 type="org.eclipse.core.resources.IResource">
+              <test
+                    property="org.eclipse.core.resources.extension"
+                    value="decore_plain">
+              </test>
+           </adapt>
+        </iterate>
+     </with>
+  </definition>
+  <definition
+        id="org.deltaecore.eclipse.expressions.isDeltaDialectSelected">
+     <with
+           variable="selection">
+        <iterate
+              ifEmpty="false"
+              operator="or">
+           <adapt
+                 type="org.eclipse.core.resources.IResource">
+              <test
+                    property="org.eclipse.core.resources.extension"
+                    value="decoredialect">
+              </test>
+           </adapt>
+        </iterate>
+     </with>
+  </definition>
+ </extension>
+<extension
+         point="org.eclipse.ui.menus">
+      <menuContribution locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <menu
+               id="org.deltaecore.eclipse.menu"
+               label="DeltaEcore">
+            <menu
+                  label="Delta Dialect (*.decoredialect)">
+               <visibleWhen
+                     checkEnabled="false">
+                  <reference
+                        definitionId="org.deltaecore.eclipse.expressions.isDeltaDialectSelected">
+                  </reference>
+               </visibleWhen>
+               <command
+                     commandId="org.deltaecore.eclipse.commands.DEGenerateDeltaDialectInterpreterCode"
+                     label="Generate interpreter code">
+               </command>
+               <command
+                     commandId="org.deltaecore.eclipse.commands.DERegisterDynamicDeltaDialect"
+                     label="Register dynamic delta dialect">
+               </command>
+               <command
+                     commandId="org.deltaecore.eclipse.commands.DEUnregisterDynamicDeltaDialect"
+                     label="Unregister dynamic delta dialect">
+               </command>
+            </menu>
+            <command
+                  commandId="org.deltaecore.eclipse.commands.DEPrintDeltaModule"
+                  label="Print delta module (*.decore_plain)">
+               <visibleWhen
+                     checkEnabled="false">
+                  <reference
+                        definitionId="org.deltaecore.eclipse.expressions.isDeltaModulePlainSelected">
+                  </reference>
+               </visibleWhen>
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+</plugin>

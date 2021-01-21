@@ -1,0 +1,9 @@
+//Alternative version of <SFT_Delta1> that targets regular
+//(non textual) SFT model for demonstration purposes
+delta "SFT_Delta1b"
+	dialect <http://vicci.eu/sft/1.0>
+	modifies <../core/Example.sft>
+{
+	detachFault(<BF2>);
+	modifyGateTypeOfGate(SFTGateType.OR, <G1>);
+}

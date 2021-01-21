@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.deltaecore.feature.variant.generator">
+         <variant_generator
+               generator="org.deltaecore.suite.variant.DEConfigurationDeltaModuleVariantGenerator"
+               id="org.deltaecore.suite.variant.DEConfigurationDeltaModuleVariantGenerator"
+               name="DeltaEcore Variant Generator"/>
+   </extension>
+
+</plugin>

@@ -1,0 +1,11 @@
+configuration delta "RoleBehaviorAndRoleProperties"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>
+{
+	EClass antiRigidTypeEClass = new EClass(name : "AntiRigidType");
+	addEClass(antiRigidTypeEClass, <CompartmentRoleObjectModel>);
+	
+	addESuperType(<CompartmentRoleObjectModel.Type>, antiRigidTypeEClass);
+	addESuperType(antiRigidTypeEClass, <CompartmentRoleObjectModel.RoleType>);
+}

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="decoredialect" nsURI="http://deltaecore.org/decoredialect/1.0"
+    nsPrefix="decoredialect">
+  <eClassifiers xsi:type="ecore:EClass" name="DEDeltaDialect" eSuperTypes="../../org.deltaecore.core.decorebase/model/DEcoreBase.ecore#//DEElementWithDomainPackage">
+    <eOperations name="getDomainFactory" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EFactory"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deltaOperationDefinitions"
+        upperBound="-1" eType="#//DEDeltaOperationDefinition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domainPackage" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EPackage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domainModelElementIdentifierResolverClassReference"
+        eType="ecore:EClass ../../org.deltaecore.core.decorebase/model/DEcoreBase.ecore#//DEJavaClassReference"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DEDeltaOperationDefinition" abstract="true">
+    <eOperations name="getParameters" upperBound="-1" eType="#//DEParameter"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modificationType" eType="ecore:EEnum ../../org.deltaecore.core.decorebase/model/DEcoreBase.ecore#//DEModificationType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DEParameter" abstract="true">
+    <eOperations name="getType" lowerBound="1" eType="ecore:EClass ../../org.deltaecore.core.decorebase/model/DEcoreBase.ecore#//DEType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DEAddDeltaOperationDefinition" eSuperTypes="#//DEMultiValuedReferenceDeltaOperationDefinition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DERemoveDeltaOperationDefinition" eSuperTypes="#//DEMultiValuedReferenceDeltaOperationDefinition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DEModifyDeltaOperationDefinition" eSuperTypes="#//DEAttributeDeltaOperationDefinition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DECustomDeltaOperationDefinition" eSuperTypes="#//DEDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declaredParameters" upperBound="-1"
+        eType="#//DENamedParameter" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DEStandardDeltaOperationDefinition"
+      abstract="true" eSuperTypes="#//DEDeltaOperationDefinition">
+    <eOperations name="getElement" lowerBound="1" eType="#//DEAbstractModelElementParameter"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DENamedParameter" eSuperTypes="#//DEParameter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../org.deltaecore.core.decorebase/model/DEcoreBase.ecore#//DEType"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DEModelElementWithReferenceParameter"
+      eSuperTypes="#//DEAbstractModelElementParameter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EReference"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DEInsertDeltaOperationDefinition" eSuperTypes="#//DEMultiValuedReferenceDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="index" lowerBound="1" eType="#//DENamedParameter"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DESetDeltaOperationDefinition" eSuperTypes="#//DESingleValuedReferenceDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="#//DENamedParameter"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DEUnsetDeltaOperationDefinition" eSuperTypes="#//DESingleValuedReferenceDeltaOperationDefinition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DESingleValuedReferenceDeltaOperationDefinition"
+      abstract="true" eSuperTypes="#//DEStandardDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" lowerBound="1"
+        eType="#//DEModelElementWithReferenceParameter" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DEMultiValuedReferenceDeltaOperationDefinition"
+      abstract="true" eSuperTypes="#//DEStandardDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="#//DENamedParameter"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" lowerBound="1"
+        eType="#//DEModelElementWithReferenceParameter" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DEAttributeDeltaOperationDefinition"
+      abstract="true" eSuperTypes="#//DEStandardDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="#//DENamedParameter"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" lowerBound="1"
+        eType="#//DEModelElementWithAttributeParameter" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DEDetachDeltaOperationDefinition" eSuperTypes="#//DEModelElementDeltaOperationDefinition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DEModelElementDeltaOperationDefinition"
+      abstract="true" eSuperTypes="#//DEStandardDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" lowerBound="1"
+        eType="#//DEModelElementParameter" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DEAbstractModelElementParameter" abstract="true"
+      eSuperTypes="#//DEParameter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../org.deltaecore.core.decorebase/model/DEcoreBase.ecore#//DEMetaModelClassifierReference"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DEModelElementWithAttributeParameter"
+      eSuperTypes="#//DEAbstractModelElementParameter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAttribute"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DEModelElementParameter" eSuperTypes="#//DEAbstractModelElementParameter"/>
+</ecore:EPackage>

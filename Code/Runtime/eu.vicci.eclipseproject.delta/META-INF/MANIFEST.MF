@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Eclipse Project Delta Dialect
+Bundle-SymbolicName: eu.vicci.eclipseproject.delta;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: eu.vicci.eclipseproject;visibility:=reexport,
+ org.deltaecore;visibility:=reexport,
+ org.deltaecore.core;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="gsn" nsURI="http://vicci.eu/gsn/1.0" nsPrefix="gsn">
+  <eClassifiers xsi:type="ecore:EClass" name="GSNModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//GSNElement" containment="true" eOpposite="#//GSNElement/model"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connections" upperBound="-1"
+        eType="#//GSNConnection" containment="true" eOpposite="#//GSNConnection/model"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GSNElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//GSNModel"
+        eOpposite="#//GSNModel/elements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingConnections" upperBound="-1"
+        eType="#//GSNConnection" eOpposite="#//GSNConnection/sourceElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingConnections" upperBound="-1"
+        eType="#//GSNConnection" eOpposite="#//GSNConnection/targetElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraints" lowerBound="1"
+        eType="#//Rectangle"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GSNConnection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//GSNModel"
+        eOpposite="#//GSNModel/connections"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceElement" lowerBound="1"
+        eType="#//GSNElement" eOpposite="#//GSNElement/outgoingConnections"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//GSNConnectionType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetElement" lowerBound="1"
+        eType="#//GSNElement" eOpposite="#//GSNElement/incomingConnections"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Rectangle" instanceClassName="org.eclipse.draw2d.geometry.Rectangle"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="GSNConnectionType">
+    <eLiterals name="SOLVED_BY" literal="SolvedBy"/>
+    <eLiterals name="IN_CONTEXT_OF" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="GSNElementType">
+    <eLiterals name="CONTEXT"/>
+    <eLiterals name="GOAL" value="1"/>
+    <eLiterals name="SOLUTION" value="2"/>
+    <eLiterals name="STRATEGY" value="3"/>
+    <eLiterals name="ASSUMPTION" value="4"/>
+    <eLiterals name="JUSTIFICATION" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GSNConcreteElement" eSuperTypes="#//GSNElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//GSNElementType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="away" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

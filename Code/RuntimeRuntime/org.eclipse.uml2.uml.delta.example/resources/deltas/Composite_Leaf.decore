@@ -1,0 +1,24 @@
+delta "Composite_Leaf"
+	dialect <http://www.eclipse.org/uml2/5.0.0/UML>
+	requires <../core/Base.uml>, <Composite_Component.decore>
+{
+	Model model = <model::>;
+	
+	//Package
+	createPackage("org.example", model);
+	
+	//Leaf
+	createClass("Leaf", <package::org.example>, false);
+	createInterfaceRealization(<class::org.example.Leaf>, <interface::org.example.Component>);
+	
+	createOperationInClass("getChildren", <class::org.example.Leaf>);
+	createCommentInOperation("return java.util.Collections.emptyList();", <operation::org.example.Leaf#getChildren>);
+	
+	createOperationInClass("addChild", <class::org.example.Leaf>);
+	createParameter("child", <interface::org.example.Component>, 1, 1, <operation::org.example.Leaf#addChild>);
+
+	createOperationInClass("removeChild", <class::org.example.Leaf>);
+	createParameter("child", <interface::org.example.Component>, 1, 1, <operation::org.example.Leaf#removeChild>);
+	
+	createOperationInClass("operation", <class::org.example.Leaf>);
+}

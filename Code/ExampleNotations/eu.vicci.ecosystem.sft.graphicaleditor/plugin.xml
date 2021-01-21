@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="eu.vicci.ecosystem.sft.gef.editor.SFTGraphicalEditor"
+            default="false"
+            extensions="sft"
+            id="eu.vicci.ecosystem.softwarefaulttree.editor.editorID"
+            name="SFT GEF Editor">
+      </editor>
+   </extension>
+
+</plugin>

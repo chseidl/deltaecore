@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+    <command
+          defaultHandler="org.deltaecore.feature.eclipse.CheckFeatureModelSatisfiabilityCommandHandler"
+          id="org.deltaecore.feature.analysis.checkFeatureModelSatisfiabilityCommand"
+          name="Check Feature Model Satisfiability">
+    </command>
+ </extension>
+ <extension
+       point="org.eclipse.core.expressions.definitions">
+ 	<definition id="org.deltaecore.eclipse.expressions.isFeatureModelSelected">
+          <with
+                variable="selection">
+             <iterate
+                   ifEmpty="false"
+                   operator="or">
+                <adapt
+                      type="org.eclipse.core.resources.IResource">
+                	<or>
+						<test
+							property="org.eclipse.core.resources.extension"
+	                        value="defeaturemodel">
+	                    </test>
+						<test
+							property="org.eclipse.core.resources.extension"
+	                        value="feature">
+	                    </test>
+                	</or>
+	            </adapt>
+             </iterate>
+          </with>
+   </definition>
+  <definition
+        id="org.deltaecore.eclipse.expressions.isConfigurationResourceSelected">
+	   <adapt
+	         type="org.eclipse.core.resources.IResource">
+	      <or>
+		      <test
+		            property="org.eclipse.core.resources.extension"
+		            value="deconfiguration">
+		      </test>
+		      <test
+		            property="org.eclipse.core.resources.extension"
+		            value="configuration">
+		      </test>
+	      </or>
+	   </adapt>
+  </definition>
+  <definition
+        id="org.deltaecore.eclipse.expressions.isConfigurationSelected">
+     <or>
+	     <with
+	           variable="selection">
+	        <iterate
+	              ifEmpty="false"
+	              operator="or">
+	           <reference
+	                 definitionId="org.deltaecore.eclipse.expressions.isConfigurationResourceSelected">
+	           </reference>
+	        </iterate>
+	     </with>
+	      <with variable="activeEditorInput">
+	        <reference definitionId="org.deltaecore.eclipse.expressions.isConfigurationResourceSelected"/>
+	      </with>
+     </or>
+  </definition>
+</extension>
+<extension
+   point="org.eclipse.ui.menus">
+    <menuContribution
+          allPopups="false"
+          locationURI="popup:org.deltaecore.eclipse.menu">
+       <command
+             commandId="org.deltaecore.feature.analysis.checkFeatureModelSatisfiabilityCommand"
+             label="Check Feature Model Satisfiability"
+             style="push">
+          <visibleWhen
+                 checkEnabled="false">
+              <reference definitionId="org.deltaecore.eclipse.expressions.isFeatureModelSelected"/>
+           </visibleWhen>
+       </command>
+    </menuContribution>
+</extension>
+</plugin>

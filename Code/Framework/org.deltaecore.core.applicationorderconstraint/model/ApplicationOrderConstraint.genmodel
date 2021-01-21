@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.deltaecore.core.applicationorderconstraint/src-gen"
+    editDirectory="/org.deltaecore.core.applicationorderconstraint.edit/src-gen" editorDirectory="/org.deltaecore.core.applicationorderconstraint.editor/src-gen"
+    modelPluginID="org.deltaecore.core.applicationorderconstraint" modelName="DeltaEcore Application Order Constraint"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testsDirectory="/org.deltaecore.core.applicationorderconstraint.tests/src-gen"
+    importerID="org.eclipse.emf.importer.ecore" bundleManifest="false" complianceLevel="7.0"
+    copyrightFields="false" language="" usedGenPackages="../../org.deltaecore.core.decorebase/model/DEcoreBase.genmodel#//decorebase platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>ApplicationOrderConstraint.ecore</foreignModel>
+  <genPackages prefix="DEApplicationOrderConstraint" basePackage="org.deltaecore.core"
+      disposableProviderFactory="true" ecorePackage="ApplicationOrderConstraint.ecore#/">
+    <genClasses ecoreClass="ApplicationOrderConstraint.ecore#//DEApplicationOrderConstraintModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ApplicationOrderConstraint.ecore#//DEApplicationOrderConstraintModel/constrainedGroups"/>
+    </genClasses>
+    <genClasses ecoreClass="ApplicationOrderConstraint.ecore#//DEConstrainedGroup">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ApplicationOrderConstraint.ecore#//DEConstrainedGroup/constrainedDeltaPaths"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,9 @@
+configuration delta "ContainsCompartmentsAndOnCompartments"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>,
+			 <OnCompartments.decore>
+{
+	//CompartmentType only inherits from AbstractRole if Contains_Compartments is selected.
+	addESuperType(<CompartmentRoleObjectModel.AbstractRole>, <CompartmentRoleObjectModel.CompartmentType>);
+}

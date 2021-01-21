@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ASCII"?>
+<feature:DEFeatureModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:feature="http://deltaecore.org/feature/1.0">
+  <rootFeature minCardinality="1" maxCardinality="1" name="TurtleBot">
+    <versions number="1.0"/>
+    <groups minCardinality="2" maxCardinality="4">
+      <features minCardinality="1" maxCardinality="1" name="Engine">
+        <versions number="1.0"/>
+      </features>
+      <features minCardinality="1" maxCardinality="1" name="Movement">
+        <versions number="1.0"/>
+        <groups minCardinality="1" maxCardinality="1">
+          <features maxCardinality="1" name="Autonomous">
+            <versions number="1.0"/>
+          </features>
+          <features maxCardinality="1" name="Keyboard">
+            <versions number="1.0"/>
+          </features>
+        </groups>
+      </features>
+      <features maxCardinality="1" name="Detection">
+        <versions number="1.0"/>
+        <groups minCardinality="1" maxCardinality="3">
+          <features maxCardinality="1" name="Bump">
+            <versions number="1.0"/>
+          </features>
+          <features maxCardinality="1" name="Infrared">
+            <versions number="1.0"/>
+          </features>
+        </groups>
+      </features>
+      <features maxCardinality="1" name="Webservice">
+        <versions number="1.0"/>
+      </features>
+    </groups>
+  </rootFeature>
+</feature:DEFeatureModel>

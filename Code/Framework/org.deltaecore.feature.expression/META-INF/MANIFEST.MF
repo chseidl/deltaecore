@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DeltaEcore Expression Model
+Bundle-SymbolicName: org.deltaecore.feature.expression;singleton:=true
+Bundle-Version: 0.8.2
+Bundle-Vendor: www.deltaecore.org
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.deltaecore.feature;visibility:=reexport
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.deltaecore.feature.expression,
+ org.deltaecore.feature.expression.impl,
+ org.deltaecore.feature.expression.util
+Bundle-ClassPath: .,
+ .

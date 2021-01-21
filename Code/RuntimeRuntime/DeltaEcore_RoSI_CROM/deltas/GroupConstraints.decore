@@ -1,0 +1,20 @@
+configuration delta "GroupConstraints"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>
+{
+	EClass roleGroupEClass = new EClass(name : "RoleGroup");
+	addEClass(roleGroupEClass, <CompartmentRoleObjectModel>);
+	
+	addESuperType(<CompartmentRoleObjectModel.AbstractRole>, roleGroupEClass);
+	addESuperType(<CompartmentRoleObjectModel.RelationTarget>, roleGroupEClass);
+	
+	EAttribute lowerEAttribute = new EAttribute(eType: <EInt>, name : "lower", lowerBound : 1, upperBound : 1);
+	addEAttribute(lowerEAttribute, roleGroupEClass);
+	
+	EAttribute upperEAttribute = new EAttribute(eType: <EInt>, name : "upper", lowerBound : 1, upperBound : 1);
+	addEAttribute(upperEAttribute, roleGroupEClass);
+	
+	EReference elementsEReference = new EReference(eType : <CompartmentRoleObjectModel.AbstractRole>, name : "elements", lowerBound : 1, upperBound : -1, containment: false);
+	addEReference(elementsEReference, roleGroupEClass);
+}

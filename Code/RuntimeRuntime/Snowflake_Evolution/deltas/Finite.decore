@@ -1,0 +1,62 @@
+configuration delta "Finite"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <DomainType.decore>,
+			 <NotDomainTypeOrDiscrete.decore>
+	modifies <../model/Feature.ecore>
+{
+	//SEnumeration
+	EClass enumerationEClass = new EClass(name: "SEnumeration");
+	addESuperType(<STypeDeclaration>, enumerationEClass);
+	addEClass(enumerationEClass, <feature>);
+	
+	EClass enumerationLiteralEClass = new EClass(name: "SEnumerationLiteral");
+	addESuperType(<SAttributeValue>, enumerationLiteralEClass);
+	addEClass(enumerationLiteralEClass, <feature>);
+	
+	EAttribute nameEAttribute = new EAttribute(name : "name", eType: <EString>, lowerBound : 1, upperBound : 1);
+	addEAttribute(nameEAttribute, enumerationLiteralEClass);
+	
+	
+	//enumerationLiterals: SEnumeration <>->* SEnumerationLiteral
+	EReference enumerationLiteralsEReference = new EReference(eType : enumerationLiteralEClass, name : "enumerationLiterals", lowerBound : 1, upperBound : -1, containment : true);
+	addEReference(enumerationLiteralsEReference, enumerationEClass);
+	
+	//enumeration: SEnumerationLiteral --> SEnumeration
+	EReference enumerationEReference = new EReference(eType : enumerationEClass, name : "enumeration", lowerBound : 1, upperBound : 1, containment : false);
+	addEReference(enumerationEReference, enumerationLiteralEClass);
+	
+	makeEReferencesOpposite(enumerationLiteralsEReference, enumerationEReference);
+	
+	
+	//SIntegerSubrange
+	EClass integerSubrangeEClass = new EClass(name: "SIntegerSubrange");
+	addESuperType(<STypeDeclaration>, integerSubrangeEClass);
+	addEClass(integerSubrangeEClass, <feature>);
+	
+	EClass integerSubrangeElementEClass = new EClass(name: "SIntegerSubrangeElement");
+	setEClassInterface(true, integerSubrangeElementEClass);
+	setEClassAbstract(true, integerSubrangeElementEClass);
+	addEClass(integerSubrangeElementEClass, <feature>);
+	
+	//subrangeElements: SIntegerSubrange <>->* SIntegerSubrangeElement
+	EReference subrangeElementsEReference = new EReference(eType : integerSubrangeElementEClass, name : "subrangeElements", lowerBound : 1, upperBound : -1, containment : true);
+	addEReference(subrangeElementsEReference, integerSubrangeEClass);
+	
+	
+	EClass integerIntervalEClass = new EClass(name: "SIntegerInterval");
+	addESuperType(integerSubrangeElementEClass, integerIntervalEClass);
+	addEClass(integerIntervalEClass, <feature>);
+	
+	//lowerBound: SIntegerInterval <>-> SIntegerValue
+	EReference lowerBoundEReference = new EReference(eType : <SIntegerValue>, name : "lowerBound", lowerBound : 1, upperBound : 1, containment : true);
+	addEReference(lowerBoundEReference, integerIntervalEClass);
+	
+	//upperBound: SIntegerInterval <>-> SIntegerValue
+	EReference upperBoundEReference = new EReference(eType : <SIntegerValue>, name : "upperBound", lowerBound : 1, upperBound : 1, containment : true);
+	addEReference(upperBoundEReference, integerIntervalEClass);
+	
+	
+	//SIntegerValue can be used as part of an integer subrange in this case.
+	addESuperType(integerSubrangeElementEClass, <SIntegerValue>);
+}

@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DeltaEcore Splot Importer/Exporter
+Bundle-SymbolicName: org.deltaecore.integration.ie.feature.splot
+Bundle-Version: 0.8.2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.deltaecore.integration.ie.feature;visibility:=reexport
+Export-Package: constraints,
+ fm,
+ org.deltaecore.integration.ie.feature.splot,
+ org.deltaecore.integration.ie.feature.splot.data,
+ org.deltaecore.integration.ie.feature.splot.util
+Bundle-ClassPath: lib/sxfm.jar,
+ .

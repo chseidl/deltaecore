@@ -1,0 +1,18 @@
+evolution delta "Engine_1.1_Java"
+	dialect <http://www.emftext.org/java>
+	modifies <../src/eu/vicci/turtlebot/Engine.java>
+{
+	Class c = <class::eu.vicci.turtlebot.Engine>;
+	
+	createInternalEnumeration("public enum DrivingStates {
+								   Stopped, Endless, DriveToTicksForward, DriveToTicksBackward, SpinToTicksLeft, SpinLeft, SpinToTicksRight, SpinRight
+						       }", c);
+	
+	createField("private DrivingStates drivingState;", c);
+		       
+	createMethod("public DrivingStates getDrivingState() {
+				  	  return drivingState;
+				  }", c);
+	
+	//...
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="configurationmigration" nsURI="http://deltaecore.org/feature/configurationmigration/1.0"
+    nsPrefix="configurationmigration">
+  <eClassifiers xsi:type="ecore:EClass" name="DEConfigurationMigration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="changes" upperBound="-1"
+        eType="#//DEConfigurationChange" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DEConfigurationChange" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DEVersionMigration" eSuperTypes="#//DEConfigurationChange">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oldVersion" lowerBound="1"
+        eType="ecore:EClass ../../org.deltaecore.feature/model/Feature.ecore#//DEVersion"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newVersion" lowerBound="1"
+        eType="ecore:EClass ../../org.deltaecore.feature/model/Feature.ecore#//DEVersion"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
+        eType="ecore:EClass ../../org.deltaecore.feature/model/Feature.ecore#//DEFeature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DEFeatureActivation" eSuperTypes="#//DEConfigurationChange">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
+        eType="ecore:EClass ../../org.deltaecore.feature/model/Feature.ecore#//DEFeature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="version" lowerBound="1"
+        eType="ecore:EClass ../../org.deltaecore.feature/model/Feature.ecore#//DEVersion"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DEFeatureDeactivation" eSuperTypes="#//DEConfigurationChange">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
+        eType="ecore:EClass ../../org.deltaecore.feature/model/Feature.ecore#//DEFeature"/>
+  </eClassifiers>
+</ecore:EPackage>

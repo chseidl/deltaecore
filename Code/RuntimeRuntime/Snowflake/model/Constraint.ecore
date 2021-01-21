@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="constraint" nsURI="http://www.tu-bs.de/snowflake/constraint/1.0"
+    nsPrefix="constraint">
+  <eClassifiers xsi:type="ecore:EClass" name="SAndExpression" eSuperTypes="#//SBinaryExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SOrExpression" eSuperTypes="#//SBinaryExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SNotExpression" eSuperTypes="#//SUnaryExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SImpliesExpression" eSuperTypes="#//SBinaryExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SExpression" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SBinaryExpression" abstract="true" eSuperTypes="#//SExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operand1" lowerBound="1"
+        eType="#//SExpression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operand2" lowerBound="1"
+        eType="#//SExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SUnaryExpression" abstract="true" eSuperTypes="#//SExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operand" lowerBound="1"
+        eType="#//SExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SAtomicExpression" abstract="true" eSuperTypes="#//SExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SNestedExpression" eSuperTypes="#//SUnaryExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SFeatureReferenceExpression" eSuperTypes="#//SAtomicExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
+        eType="ecore:EClass Feature.ecore#//SFeature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SVersionRestriction" abstract="true"
+      eSuperTypes="#//SAtomicExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="conditional" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
+        eType="ecore:EClass Feature.ecore#//SFeature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SVersionRangeRestriction" eSuperTypes="#//SVersionRestriction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowerIncluded" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperIncluded" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lowerVersion" lowerBound="1"
+        eType="ecore:EClass Feature.ecore#//SVersion"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="upperVersion" lowerBound="1"
+        eType="ecore:EClass Feature.ecore#//SVersion"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SRelativeVersionRestriction" eSuperTypes="#//SVersionRestriction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
+        eType="#//SRelativeVersionRestrictionOperator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="version" lowerBound="1"
+        eType="ecore:EClass Feature.ecore#//SVersion"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SRelativeVersionRestrictionOperator">
+    <eLiterals name="lessThan" value="-2"/>
+    <eLiterals name="lessThanOrEqual" value="-1" literal="lessThanOrEqual"/>
+    <eLiterals name="equal"/>
+    <eLiterals name="implicitEqual" value="3"/>
+    <eLiterals name="greaterThanOrEqual" value="1"/>
+    <eLiterals name="greaterThan" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SConstraintModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" upperBound="-1"
+        eType="#//SConstraint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="featureModel" lowerBound="1"
+        eType="ecore:EClass Feature.ecore#//SFeatureModel"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SConstraint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootExpression" lowerBound="1"
+        eType="#//SExpression" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

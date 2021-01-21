@@ -1,0 +1,11 @@
+//Remove bump sensor
+abstract delta "CFD_Delta1"
+	dialect <http://vicci.eu/cfd/1.0>
+	modifies <../core/Example.cfd>
+{
+	disconnect(<BuS:CollisionDetected>, <CD:Collision>);
+	disconnect(<CD:Obstacle>, <BuS:Obstacle>);
+	disconnect(<CD:Moving>, <BuS:Moving>);
+	
+	detachComponent(<BuS>);
+}

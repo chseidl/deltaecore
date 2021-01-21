@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CL Delta
+Bundle-SymbolicName: eu.vicci.ecosystem.cl.delta;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.deltaecore;visibility:=reexport,
+ eu.vicci.ecosystem.cl,
+ org.deltaecore.core;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6, JavaSE-1.7

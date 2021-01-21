@@ -1,0 +1,10 @@
+configuration delta "OnCompartmentsAndOnRelationships"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>,
+			 <OnCompartments.decore>,
+			 <OnRelationships.decore>
+{
+	EReference relationshipsEReference = new EReference(eType : <CompartmentRoleObjectModel.Relationship>, name : "relationships", lowerBound : 0, upperBound : -1, containment : true);
+	addEReference(relationshipsEReference, <CompartmentRoleObjectModel.CompartmentType>);
+}

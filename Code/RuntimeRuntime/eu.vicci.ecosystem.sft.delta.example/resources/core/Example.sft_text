@@ -1,0 +1,24 @@
+softwareFaultTree "Example" {
+	intermediateFault {
+		id: IF1
+		name: "Intermediate Fault 1"
+		
+		gate {
+			id: G1
+			gateType: AND
+	
+			basicFault {
+				id: BF1
+				name: "Basic Fault 1"
+				probability: 0.0004
+			}
+			
+			basicFault {
+				id: BF2
+				name: "Basic Fault 2"
+				probability: 0.0000007
+			}
+		}	
+	}
+}
+

@@ -1,0 +1,6 @@
+evolution delta "Detection_1.0_Java"
+	dialect <http://www.emftext.org/java>
+	modifies <../src/eu/vicci/turtlebot/Detection.java>
+{
+	//...
+}

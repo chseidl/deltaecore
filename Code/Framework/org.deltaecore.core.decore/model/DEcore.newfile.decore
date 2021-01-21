@@ -1,0 +1,7 @@
+delta "UniqueDeltaName"
+	dialect <http://uri/of/domain/meta/model>
+	//requires <optional/relative/path/to/required/delta1>, <optional/relative/path/to/required/delta2>
+	//modifies <relative/path/to/core/model1>, <relative/path/to/core/model2>
+{
+	//TODO: Call delta operations defined in dialect
+}

@@ -1,0 +1,9 @@
+configuration delta "EquivalentAndProgramming"
+
+dialect <http://www.emftext.org/sdk/concretesyntax>
+	modifies <../model/Constraint.cs>
+{
+	String ruleText = "@Operator(type=\"binary_left_associative\",  weight=\"1\", superclass=\"SExpression\")
+					   SEquivalentExpression ::= operand1 \"<->\" operand2;";
+	addRule(ruleText, <ConcreteSyntax:constraints>);
+}

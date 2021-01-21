@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EMFText Parser Plugin: sft_text
+Bundle-SymbolicName: eu.vicci.ecosystem.sft.resource.sft_text;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Vendor: Software Technology Group - TU Dresden Germany
+Require-Bundle: org.eclipse.core.runtime;resolution:=optional,
+  org.eclipse.core.resources;resolution:=optional,
+  org.eclipse.emf.ecore,
+  org.eclipse.emf.ecore.change,
+  org.eclipse.emf.validation;resolution:=optional,
+  org.emftext.access;resolution:=optional,
+  org.emftext.commons.antlr3_4_0,
+  eu.vicci.ecosystem.sft
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: eu.vicci.ecosystem.sft.resource.sft_text,
+  eu.vicci.ecosystem.sft.resource.sft_text.analysis,
+  eu.vicci.ecosystem.sft.resource.sft_text.mopp,
+  eu.vicci.ecosystem.sft.resource.sft_text.debug,
+  eu.vicci.ecosystem.sft.resource.sft_text.launch,
+  eu.vicci.ecosystem.sft.resource.sft_text.grammar,
+  eu.vicci.ecosystem.sft.resource.sft_text.util
+Bundle-Activator: eu.vicci.ecosystem.sft.resource.sft_text.mopp.Sft_textPlugin

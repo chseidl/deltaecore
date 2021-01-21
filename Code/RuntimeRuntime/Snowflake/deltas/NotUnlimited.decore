@@ -1,0 +1,7 @@
+configuration delta "NotUnlimited"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	modifies <../model/Feature.ecore>
+{
+	removeEAttribute(<SCardinalityBasedElement.UNLIMITED_MAX_CARDINALITY>);
+}

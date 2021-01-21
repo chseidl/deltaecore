@@ -1,0 +1,27 @@
+deltaDialect
+{
+	configuration:
+		metaModel: <http://vicci.eu/gsn/1.0>;
+		identifierResolver: eu.vicci.ecosystem.goalstructuringnotation.gsn.delta.resolver.GsnDomainModelElementIdentifierResolver;
+
+	deltaOperations:
+		//Model
+		addOperation addElementToElementsOfModel(GSNElement value, GSNModel [elements] element);
+		removeOperation removeElementFromElementsOfModel(GSNElement value, GSNModel [elements] element);
+		
+		//Concrete Element
+		evolution modifyOperation modifyIdOfConcreteElement(String id, GSNConcreteElement [id] element);
+		modifyOperation modifyTypeOfConcreteElement(GSNElementType value, GSNConcreteElement [type] element);
+		modifyOperation modifyAwayOfConcreteElement(Boolean value, GSNConcreteElement [away] element);
+		modifyOperation modifyDescriptionOfConcreteElement(String value, GSNConcreteElement [description] element);
+		detachOperation detachElement(GSNConcreteElement element);
+		
+		//Connection
+		modifyOperation modifyTypeOfConnection(GSNConnectionType value, GSNConnection [type] element);
+		customOperation connect(GSNConnectionType type, GSNConcreteElement source, GSNConcreteElement target, GSNModel parentModel);
+		customOperation disconnect(GSNConcreteElement source, GSNConcreteElement target, GSNModel parentModel);
+
+		customOperation relocateElement(GSNConcreteElement concreteElement, Integer x, Integer y);
+		customOperation resizeElement(GSNConcreteElement concreteElement, Integer width, Integer height);
+}
+

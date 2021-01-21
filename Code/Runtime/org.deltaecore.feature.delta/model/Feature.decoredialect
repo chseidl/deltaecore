@@ -1,0 +1,14 @@
+deltaDialect
+{
+	configuration:
+		metaModel: <http://deltaecore.org/feature/1.0>;
+		identifierResolver: org.deltaecore.feature.delta.resolver.FeatureDomainModelElementIdentifierResolver;
+		
+	deltaOperations:
+		//Hyper Feature Models (HFMs) cannot be configured, they can only be evolved.
+		evolution customOperation createFeature(String name, Integer minCardinality, DEGroup parentGroup, String initialVersionNumber);
+		evolution customOperation createGroup(Integer minCardinality, Integer maxCardinality, DEFeature parentFeature);
+		evolution customOperation createVersion(String number, DEVersion predecessorVersion);
+		
+		//TODO: Restrained modification of cardinalities
+}

@@ -1,0 +1,14 @@
+configuration delta "Infinite"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <DomainType.decore>
+	modifies <../model/Feature.ecore>
+{
+	EClass integerTypeEClass = new EClass(name: "SIntegerType");
+	addESuperType(<SBuiltInType>, integerTypeEClass);
+	addEClass(integerTypeEClass, <feature>);
+
+	EClass stringTypeEClass = new EClass(name: "SStringType");
+	addESuperType(<SBuiltInType>, stringTypeEClass);
+	addEClass(stringTypeEClass, <feature>);
+}

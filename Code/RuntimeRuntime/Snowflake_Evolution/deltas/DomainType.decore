@@ -1,0 +1,42 @@
+configuration delta "DomainType"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <Attributes.decore>
+	modifies <../model/Feature.ecore>
+{
+	//STypeDeclaration
+	EClass typeDeclarationEClass = new EClass(name: "STypeDeclaration");
+	setEClassAbstract(true, typeDeclarationEClass);
+	addEClass(typeDeclarationEClass, <feature>);
+	
+	EAttribute nameEAttribute = new EAttribute(name : "name", eType: <EString>, lowerBound : 1, upperBound : 1);
+	addEAttribute(nameEAttribute, typeDeclarationEClass);
+
+	//typeDeclarations: SFeatureModel <>->* STypeDeclaration
+	EReference typeDeclarationsEReference = new EReference(eType : typeDeclarationEClass, name : "typeDeclarations", lowerBound : 1, upperBound : -1, containment : true);
+	addEReference(typeDeclarationsEReference, <SFeatureModel>);
+
+
+	EClass typeEClass = new EClass(name: "SType");
+	setEClassInterface(true, typeEClass);
+	setEClassAbstract(true, typeEClass);
+	addEClass(typeEClass, <feature>);
+
+	EClass builtInTypeEClass = new EClass(name: "SBuiltInType");
+	setEClassInterface(true, builtInTypeEClass);
+	setEClassAbstract(true, builtInTypeEClass);
+	addESuperType(typeEClass, builtInTypeEClass);
+	addEClass(builtInTypeEClass, <feature>);
+	
+	EClass declaredTypeEClass = new EClass(name: "SDeclaredType");
+	addESuperType(typeEClass, declaredTypeEClass);
+	addEClass(declaredTypeEClass, <feature>);
+	
+	//typeDeclaration: SDeclaredType --> STypeDeclaration
+	EReference typeDeclarationEReference = new EReference(eType : typeDeclarationEClass, name : "typeDeclarations", lowerBound : 1, upperBound : 1, containment : false);
+	addEReference(typeDeclarationEReference, declaredTypeEClass);
+	
+	//type: SAttribute <>-> SType
+	EReference typeEReference = new EReference(eType : typeEClass, name : "type", lowerBound : 1, upperBound : 1, containment : true);
+	addEReference(typeEReference, <SAttribute>);
+}

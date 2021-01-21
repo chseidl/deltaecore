@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DeltaEcore Delta Dialect Language
+Bundle-SymbolicName: org.deltaecore.core.decoredialect;singleton:=true
+Bundle-Version: 0.8.2
+Bundle-Vendor: www.deltaecore.org
+Require-Bundle: org.deltaecore.common;visibility:=reexport,
+ org.eclipse.emf.codegen.ecore;visibility:=reexport,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.deltaecore.core.decorebase;visibility:=reexport
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.deltaecore.core.decoredialect,
+ org.deltaecore.core.decoredialect.impl,
+ org.deltaecore.core.decoredialect.impl.custom,
+ org.deltaecore.core.decoredialect.util,
+ org.deltaecore.extension.resolution
+Bundle-ClassPath: .,
+ .

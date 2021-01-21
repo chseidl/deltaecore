@@ -1,0 +1,19 @@
+evolution delta "RMLFeatureModel_2014_06_17"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>
+{
+	//Reverse references by removing existing and then adding new references.
+	removeEReference(<CompartmentRoleObjectModel.NaturalType.super>);
+	removeEReference(<CompartmentRoleObjectModel.NaturalType.sub>);
+	
+	
+	EClass naturalTypeEClass = <CompartmentRoleObjectModel.NaturalType>;
+	EClass naturalInheritance = <CompartmentRoleObjectModel.NaturalInheritance>;
+	
+	EReference superEReference = new EReference(eType : naturalTypeEClass, name : "super", lowerBound : 1, upperBound : 1, containment : false);
+	addEReference(superEReference, naturalInheritance);
+
+	EReference subEReference = new EReference(eType : naturalTypeEClass, name : "sub", lowerBound : 1, upperBound : 1, containment : false);
+	addEReference(subEReference, naturalInheritance);
+}

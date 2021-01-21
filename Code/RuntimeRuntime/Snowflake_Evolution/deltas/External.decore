@@ -1,0 +1,14 @@
+configuration delta "External"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <FeatureModelingFamily_2.decore>
+	modifies <../model/Feature.ecore>
+{
+	EClass externalFeatureReferenceEClass = new EClass(name: "SExternalFeatureReference");
+	addESuperType(<SGroupArtifact>, externalFeatureReferenceEClass);
+	addEClass(externalFeatureReferenceEClass, <feature>);
+	
+	//feature: SExternalFeatureReference --> SFeature
+	EReference featureReference = new EReference(eType : <SFeature>, name : "feature", lowerBound : 1, upperBound : 1, containment : false);
+	addEReference(featureReference, externalFeatureReferenceEClass);
+}

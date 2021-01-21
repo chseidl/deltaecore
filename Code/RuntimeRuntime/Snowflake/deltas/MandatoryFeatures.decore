@@ -1,0 +1,13 @@
+configuration delta "MandatoryFeatures"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <FeatureVariationType.decore>
+	modifies <../model/Feature.ecore>
+{
+	String implementation = "return (getVariationType() == SFeatureVariationType.MANDATORY);";
+
+	setEOperationImplementation(<SFeature.isMandatory>, implementation);
+	
+	EEnumLiteral mandatoryEEnumLiteral = new EEnumLiteral(name : "MANDATORY", literal : "MANDATORY", value : 0);
+	addEEnumLiteral(mandatoryEEnumLiteral, <SFeatureVariationType>);
+}

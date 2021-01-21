@@ -1,0 +1,11 @@
+configuration delta "NotAndVerbal"
+
+dialect <http://www.emftext.org/sdk/concretesyntax>
+	modifies <../model/Constraint.cs>
+{
+	removeRule(<Rule:SNotExpression>);
+	
+	String ruleText = "@Operator(type=\"unary_prefix\", weight=\"7\", superclass=\"SExpression\")
+					   SNotExpression ::= \"not\" operand;";
+	addRule(ruleText, <ConcreteSyntax:constraints>);
+}

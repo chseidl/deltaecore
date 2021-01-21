@@ -1,0 +1,23 @@
+UnlimitedFeatures -> ClonedFeatures
+VersionBranching -> Configurable
+
+AttributeRestrictions -> Attributes
+VersionRestrictions -> Configurable
+Graphical -> (!Or && !And && !Xor && !Equivalent && !Not)
+
+
+
+//Version deprecated as it contains bug
+!Attributes [="0"]
+
+//Version deprecated as it contains bug
+!Resources [="1"]
+
+//Version deprecated as it contains bug
+!Attributes [="2"] && !Discrete [>="0"]
+
+//Version deprecated as it contains bug
+!BindingTimes [="2"]
+
+//Needs SGroupArtifact interface
+External [>="2"] -> FeatureModelingFamily [>="2"]

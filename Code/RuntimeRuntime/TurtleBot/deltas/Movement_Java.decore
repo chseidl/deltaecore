@@ -1,0 +1,6 @@
+configuration delta "Movement_Java"
+	dialect <http://www.emftext.org/java>
+	modifies <../src/eu/vicci/turtlebot/Movement.java>
+{
+	//...
+}

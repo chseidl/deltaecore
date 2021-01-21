@@ -1,0 +1,16 @@
+deltaDialect
+{
+	configuration:
+		metaModel: <http://vicci.eu/eclipseproject/1.0>;
+	
+	deltaOperations:
+		//SSA14c
+		customOperation addRequiredLibrary(String pathToLibrary);
+		customOperation removeRequiredLibrary(String pathToLibrary);
+		
+		customOperation addRequiredProject(String projectName);
+		customOperation removeRequiredProject(String projectName);
+		
+		//SoSyM
+		customOperation addRequiredLib(String pathToLibrary);
+}

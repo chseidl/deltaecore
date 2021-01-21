@@ -1,0 +1,6 @@
+configuration delta "Engine"
+	dialect <http://www.emftext.org/java>
+	modifies <../src/eu/vicci/turtlebot/Engine.java>
+{
+	//...
+}

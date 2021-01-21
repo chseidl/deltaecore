@@ -1,0 +1,6 @@
+Autonomous -> Detection
+Keyboard || Gamepad -> Webservice
+Infrared [>= "1.0"] || Ultrasound -> Detection[>= "1.1"]
+TurtleBot [>= "2.0"] -> Engine [>= "Kobuki 1.0"]
+TurtleBot ["1.0" - "1.1"] -> Engine [<= "Create 1.2"]
+TurtleBot [>= "2.0"] -> ? Webservice[>= "1.1"]

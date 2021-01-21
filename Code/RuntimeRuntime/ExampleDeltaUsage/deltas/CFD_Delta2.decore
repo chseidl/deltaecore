@@ -1,0 +1,34 @@
+//Add distance sensor
+delta "CFD_Delta2"
+	dialect <http://vicci.eu/cfd/1.0>
+	modifies <../core/Example.cfd>
+{
+	//Create distance sensor
+	CFDComponent distanceSensorComponent = new CFDComponent(id: "DS", name: "DistanceSensor");
+	CFDInPort distanceSensorObstacleInPort = new CFDInPort(name: "Obstacle");
+	CFDInPort distanceSensorMovingInPort = new CFDInPort(name: "Moving");
+	CFDOutPort distanceSensorObstacleTooCloseOutPort = new CFDOutPort(name: "ObstacleTooClose");
+	
+	addInPortToInPortsOfElement(distanceSensorObstacleInPort, distanceSensorComponent);
+	addInPortToInPortsOfElement(distanceSensorMovingInPort, distanceSensorComponent);
+	addOutPortToOutPortsOfElement(distanceSensorObstacleTooCloseOutPort, distanceSensorComponent);
+	
+	addComponentToElementsOfComponent(distanceSensorComponent, <CD>);
+
+	connect(<CD:Obstacle>, distanceSensorObstacleInPort);
+	connect(<CD:Moving>, distanceSensorMovingInPort);
+	
+	//Add distance sensor
+	CFDGate gate3 = new CFDGate(id: "G3", gateType: CFDGateType.OR);
+	CFDInPort gate3InPort = new CFDInPort(name: "In");
+	CFDOutPort gate3OutPort = new CFDOutPort(name: "Out");
+	addInPortToInPortsOfElement(gate3InPort, gate3);
+	addOutPortToOutPortsOfElement(gate3OutPort, gate3);
+	addGateToElementsOfComponent(gate3, <CD>);
+	
+	disconnect(<BuS:CollisionDetected>, <CD:Collision>);
+	
+	connect(<BuS:CollisionDetected>, gate3InPort);
+	connect(distanceSensorObstacleTooCloseOutPort, gate3InPort);
+	connect(gate3OutPort, <CD:Collision>);
+}

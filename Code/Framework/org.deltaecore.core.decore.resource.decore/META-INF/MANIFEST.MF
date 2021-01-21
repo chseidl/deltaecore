@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EMFText Parser Plugin: decore
+Bundle-SymbolicName: org.deltaecore.core.decore.resource.decore;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Vendor: Software Technology Group - TU Dresden Germany
+Require-Bundle: org.eclipse.core.runtime;resolution:=optional,
+  org.eclipse.core.resources;resolution:=optional,
+  org.eclipse.emf.ecore,
+  org.eclipse.emf.ecore.change,
+  org.eclipse.emf.validation;resolution:=optional,
+  org.emftext.access;resolution:=optional,
+  org.eclipse.debug.core;resolution:=optional,
+  org.deltaecore.core.decoredialect.registry,
+  org.emftext.commons.antlr3_4_0,
+  org.deltaecore.core.decore,
+  org.deltaecore.core.decoredialect,
+  org.deltaecore.core.decorebase,
+  org.deltaecore.core.decorebase.resource.decorebase
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.deltaecore.core.decore.resource.decore,
+  org.deltaecore.core.decore.resource.decore.analysis,
+  org.deltaecore.core.decore.resource.decore.mopp,
+  org.deltaecore.core.decore.resource.decore.debug,
+  org.deltaecore.core.decore.resource.decore.launch,
+  org.deltaecore.core.decore.resource.decore.grammar,
+  org.deltaecore.core.decore.resource.decore.util
+Bundle-Activator: org.deltaecore.core.decore.resource.decore.mopp.DecorePlugin

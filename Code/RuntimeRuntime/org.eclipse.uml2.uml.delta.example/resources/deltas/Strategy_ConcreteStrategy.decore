@@ -1,0 +1,14 @@
+delta "Strategy_ConcreteStrategy"
+	dialect <http://www.eclipse.org/uml2/5.0.0/UML>
+	requires <../core/Base.uml>, <Strategy_Strategy.decore>
+{
+	Model model = <model::>;
+	
+	//Package
+	createPackage("org.example", model);
+	
+	//Concrete Strategy
+	createClass("ConcreteStrategy", <package::org.example>, false);
+	createInterfaceRealization(<class::org.example.ConcreteStrategy>, <interface::org.example.Strategy>);
+	createOperationInClass("strategyOperation", <class::org.example.ConcreteStrategy>);
+}

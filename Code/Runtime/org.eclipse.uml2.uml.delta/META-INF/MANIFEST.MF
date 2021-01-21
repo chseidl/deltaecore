@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: UML Delta Language
+Bundle-SymbolicName: org.eclipse.uml2.uml.delta;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.deltaecore;visibility:=reexport,
+ org.eclipse.uml2.uml;visibility:=reexport,
+ org.emftext.language.umlid;visibility:=reexport,
+ org.emftext.language.umlid.resource.umlid,
+ org.deltaecore.core;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.eclipse.uml2.uml.delta.resolver

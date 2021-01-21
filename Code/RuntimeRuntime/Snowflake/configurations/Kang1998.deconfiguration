@@ -1,0 +1,30 @@
+configuration <../Snowflake.defeaturemodel> {
+	AlternativeGroups,
+	AtomicConstructs,
+	BinaryConstructs,
+	CLRepresentations,
+	ConstraintLanguage,
+	EFDashedBox,				//<-- ?
+	Excludes,
+	External,				//<-- ?
+	FBox,
+	FCircle,
+	FContent,
+	FMRepresentation,
+	FRepresentation,
+	FType,
+	FeatureModel,
+	FeatureModelingFamily,
+	FeaturePresence,
+	FeatureVariationType,
+	Features,
+	GArcs,
+	GRepresentation,
+	GroupVariationType,
+	Groups,
+	Implies,
+	MandatoryFeatures,
+	OptionalFeatures,
+	OrGroups,
+	Verbal
+}

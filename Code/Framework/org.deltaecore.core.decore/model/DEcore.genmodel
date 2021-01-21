@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.deltaecore.core.decore/src-gen" editDirectory="/org.deltaecore.core.decore.edit/src-gen"
+    editorDirectory="/org.deltaecore.core.decore.editor/src-gen" modelPluginID="org.deltaecore.core.decore"
+    modelName="DeltaEcore Delta Module Language" testsDirectory="/org.deltaecore.core.decore.tests/src-gen"
+    importerID="org.eclipse.emf.importer.ecore" bundleManifest="false" complianceLevel="7.0"
+    copyrightFields="false" usedGenPackages="../../org.deltaecore.core.decoredialect/model/DEcoreDialect.genmodel#//decoredialect platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.deltaecore.core.decorebase/model/DEcoreBase.genmodel#//decorebase">
+  <foreignModel>DEcore.ecore</foreignModel>
+  <genPackages prefix="DEcore" basePackage="org.deltaecore.core" disposableProviderFactory="true"
+      fileExtensions="decore_plain" ecorePackage="DEcore.ecore#/">
+    <genClasses ecoreClass="DEcore.ecore#//DEDelta">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DEcore.ecore#//DEDelta/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DEcore.ecore#//DEDelta/abstract"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DEcore.ecore#//DEDelta/modificationType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DEcore.ecore#//DEDelta/blocks"/>
+    </genClasses>
+    <genClasses ecoreClass="DEcore.ecore#//DEDeltaBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DEcore.ecore#//DEDeltaBlock/statements"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DEcore.ecore#//DEDeltaBlock/deltaDialect"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference DEcore.ecore#//DEDeltaBlock/delta"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DEcore.ecore#//DEDeltaBlock/requiredElementRelativeFilePaths"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DEcore.ecore#//DEDeltaBlock/modifiedElementRelativeFilePaths"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DEcore.ecore#//DEDeltaBlock/createdElementRelativeFilePaths"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DEcore.ecore#//DEStatement"/>
+    <genClasses ecoreClass="DEcore.ecore#//DEDeltaOperationCall">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DEcore.ecore#//DEDeltaOperationCall/arguments"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DEcore.ecore#//DEDeltaOperationCall/operationDefinition"/>
+    </genClasses>
+    <genClasses ecoreClass="DEcore.ecore#//DEValue"/>
+    <genClasses ecoreClass="DEcore.ecore#//DEIntegerLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DEcore.ecore#//DEIntegerLiteral/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DEcore.ecore#//DELiteral"/>
+    <genClasses ecoreClass="DEcore.ecore#//DEBooleanLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DEcore.ecore#//DEBooleanLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="DEcore.ecore#//DEDoubleLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DEcore.ecore#//DEDoubleLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="DEcore.ecore#//DEStringLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DEcore.ecore#//DEStringLiteral/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DEcore.ecore#//DEExpression2">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference DEcore.ecore#//DEExpression2/expressionContainer"/>
+    </genClasses>
+    <genClasses ecoreClass="DEcore.ecore#//DEVirtualConstructorCall">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DEcore.ecore#//DEVirtualConstructorCall/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DEcore.ecore#//DEVirtualConstructorCall/namedArguments"/>
+    </genClasses>
+    <genClasses ecoreClass="DEcore.ecore#//DEVariableReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DEcore.ecore#//DEVariableReference/variable"/>
+    </genClasses>
+    <genClasses ecoreClass="DEcore.ecore#//DEStandaloneExpressionStatement"/>
+    <genClasses ecoreClass="DEcore.ecore#//DEVariableDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DEcore.ecore#//DEVariableDeclaration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DEcore.ecore#//DEVariableDeclaration/type"/>
+    </genClasses>
+    <genClasses ecoreClass="DEcore.ecore#//DEStructuralFeatureReference">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference DEcore.ecore#//DEStructuralFeatureReference/virtualConstructorCall"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DEcore.ecore#//DEStructuralFeatureReference/structuralFeature"/>
+    </genClasses>
+    <genClasses ecoreClass="DEcore.ecore#//DEEEnumLiteral">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DEcore.ecore#//DEEEnumLiteral/enumLiteral"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DEcore.ecore#//DEEEnumLiteral/enum"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DEcore.ecore#//DEExpressionContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DEcore.ecore#//DEExpressionContainer/expression"/>
+      <genOperations ecoreOperation="DEcore.ecore#//DEExpressionContainer/getExpectedJavaClass"/>
+    </genClasses>
+    <genClasses ecoreClass="DEcore.ecore#//DEArgument">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference DEcore.ecore#//DEArgument/deltaOperationCall"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DEcore.ecore#//DEValuedElement">
+      <genOperations ecoreOperation="DEcore.ecore#//DEValuedElement/getValueJavaClass"/>
+      <genOperations ecoreOperation="DEcore.ecore#//DEValuedElement/getValue"/>
+    </genClasses>
+    <genClasses ecoreClass="DEcore.ecore#//DEDataTypeInitializer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DEcore.ecore#//DEDataTypeInitializer/initializingValue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DEcore.ecore#//DEDataTypeInitializer/dataType"/>
+    </genClasses>
+    <genClasses ecoreClass="DEcore.ecore#//DEModelElementIdentifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DEcore.ecore#//DEModelElementIdentifier/rawIdentifier"/>
+    </genClasses>
+    <genClasses ecoreClass="DEcore.ecore#//DEDeltaInvokation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DEcore.ecore#//DEDeltaInvokation/delta"/>
+    </genClasses>
+    <genClasses ecoreClass="DEcore.ecore#//DENullLiteral"/>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,60 @@
+delta "Composite"
+	dialect <http://www.eclipse.org/uml2/5.0.0/UML>
+	requires <../core/Base.uml>
+{
+	//TODO: Might need different delta modules depending on variability
+	
+	Model model = <model::>;
+	
+	//Packages
+	createPackage("org.example", model);
+	//...
+	
+
+	//Component
+	createInterface("Component", <package::org.example>);
+	createOperationInInterface("getChildren", <interface::org.example.Component>);
+	
+	createOperationInInterface("addChild", <interface::org.example.Component>);
+	createParameter("child", <interface::org.example.Component>, 1, 1, <operation::org.example.Component#addChild>);
+
+	createOperationInInterface("removeChild", <interface::org.example.Component>);
+	createParameter("child", <interface::org.example.Component>, 1, 1, <operation::org.example.Component#removeChild>);
+
+	createOperationInInterface("operation", <interface::org.example.Component>);
+	
+	
+	//Composite
+	createClass("Composite", <package::org.example>, false);
+	createInterfaceRealization(<class::org.example.Composite>, <interface::org.example.Component>);
+	createProperty("children", <interface::org.example.Component>, 0, -1, <class::org.example.Composite>);
+	
+	createOperationInClass("getChildren", <class::org.example.Composite>);
+	createCommentInOperation("return children;", <operation::org.example.Composite#getChildren>);
+	
+	createOperationInClass("addChild", <class::org.example.Composite>);
+	createParameter("child", <interface::org.example.Component>, 1, 1, <operation::org.example.Component#addChild>);
+	createCommentInOperation("children.add(child);", <operation::org.example.Component#addChild>);
+
+	createOperationInClass("removeChild", <class::org.example.Composite>);
+	createParameter("child", <interface::org.example.Component>, 1, 1, <operation::org.example.Component#removeChild>);
+	createCommentInOperation("children.remove(child);", <operation::org.example.Component#removeChild>);
+	
+	createOperationInClass("operation", <class::org.example.Composite>);
+	
+	
+	//Leaf
+	createClass("Leaf", <package::org.example>, false);
+	createInterfaceRealization(<class::org.example.Leaf>, <interface::org.example.Component>);
+	
+	createOperationInClass("getChildren", <class::org.example.Leaf>);
+	createCommentInOperation("return java.util.Collections.emptyList();", <operation::org.example.Leaf#getChildren>);
+	
+	createOperationInClass("addChild", <class::org.example.Leaf>);
+	createParameter("child", <interface::org.example.Component>, 1, 1, <operation::org.example.Leaf#addChild>);
+
+	createOperationInClass("removeChild", <class::org.example.Leaf>);
+	createParameter("child", <interface::org.example.Component>, 1, 1, <operation::org.example.Leaf#removeChild>);
+	
+	createOperationInClass("operation", <class::org.example.Leaf>);
+}

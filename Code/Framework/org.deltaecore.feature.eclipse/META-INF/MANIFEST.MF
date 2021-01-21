@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DeltaEcore Feature Eclipse Integration
+Bundle-SymbolicName: org.deltaecore.feature.eclipse;singleton:=true
+Bundle-Version: 0.8.2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-Vendor: www.deltaecore.org
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.deltaecore.feature.analysis,
+ org.deltaecore.feature.configuration,
+ de.christophseidl.util.eclipse.ui,
+ de.christophseidl.util.swt
+Export-Package: org.deltaecore.feature.eclipse

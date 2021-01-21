@@ -1,0 +1,11 @@
+configuration delta "OrAndVerbal"
+
+dialect <http://www.emftext.org/sdk/concretesyntax>
+	modifies <../model/Constraint.cs>
+{
+	removeRule(<Rule:SOrExpression>);
+	
+	String ruleText = "@Operator(type=\"binary_left_associative\", weight=\"4\", superclass=\"SExpression\")
+					   SOrExpression ::= operand1 \"or\" operand2;";
+	addRule(ruleText, <ConcreteSyntax:constraints>);
+}

@@ -1,0 +1,15 @@
+delta "Strategy_Client"
+	dialect <http://www.eclipse.org/uml2/5.0.0/UML>
+	requires <../core/Base.uml>, <Strategy_Strategy.decore>
+{
+	Model model = <model::>;
+	
+	//Package
+	createPackage("org.example", model);
+	
+	//Client
+	createClass("Client", <package::org.example>, false);
+	createProperty("strategy", <interface::org.example.Strategy>, 0, 1, <class::org.example.Client>);
+	createOperationInClass("strategyCall", <class::org.example.Client>);
+	createCommentInOperation("strategy.strategyOperation()", <operation::org.example.Client#strategyCall>);
+}

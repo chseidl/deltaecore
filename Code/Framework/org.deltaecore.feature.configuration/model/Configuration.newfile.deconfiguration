@@ -1,0 +1,4 @@
+configuration <FeatureModel.defeaturemodel> {
+	FeatureA@"Version1",
+	"FeatureB"@"Version2"
+}

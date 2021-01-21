@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<extension point="org.emftext.access.syntax.ui">
+		<metaInformationProvider class="org.deltaecore.suite.mapping.resource.demapping.ui.DemappingUIMetaInformation" id="org.deltaecore.suite.mapping.resource.demapping.ui.DemappingUIMetaInformation">
+		</metaInformationProvider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors">
+		<editor class="org.deltaecore.suite.mapping.resource.demapping.ui.DemappingEditor" contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor" extensions="demapping,mapping" icon="icons/editor_icon.gif" id="org.deltaecore.suite.mapping.resource.demapping.ui.DemappingEditor" name="Feature Mapping Editor (DeltaEcore)">
+			<contentTypeBinding contentTypeId="org.deltaecore.suite.mapping.resource.demapping">
+			</contentTypeBinding>
+		</editor>
+	</extension>
+	
+	<extension point="org.eclipse.core.runtime.preferences">
+		<initializer class="org.deltaecore.suite.mapping.resource.demapping.ui.DemappingPreferenceInitializer">
+		</initializer>
+	</extension>
+	
+	<extension point="org.eclipse.ui.preferencePages">
+		<page name="Feature Mapping Editor (DeltaEcore)" id="org.deltaecore.suite.mapping.resource.demapping.ui.DemappingPreferencePage" class="org.deltaecore.suite.mapping.resource.demapping.ui.DemappingPreferencePage" category="org.eclipse.ui.preferencePages.GeneralTextEditor">
+		</page>
+		<page name="Syntax Coloring" id="org.deltaecore.suite.mapping.resource.demapping.ui.DemappingSyntaxColoringPreferencePage" class="org.deltaecore.suite.mapping.resource.demapping.ui.DemappingSyntaxColoringPreferencePage" category="org.deltaecore.suite.mapping.resource.demapping.ui.DemappingPreferencePage">
+		</page>
+		<page name="Brackets" id="org.deltaecore.suite.mapping.resource.demapping.ui.DemappingBracketPreferencePage" class="org.deltaecore.suite.mapping.resource.demapping.ui.DemappingBracketPreferencePage" category="org.deltaecore.suite.mapping.resource.demapping.ui.DemappingPreferencePage">
+		</page>
+		<page name="Content Assist" id="org.deltaecore.suite.mapping.resource.demapping.ui.DemappingContentAssistPreferencePage" class="org.deltaecore.suite.mapping.resource.demapping.ui.DemappingContentAssistPreferencePage" category="org.deltaecore.suite.mapping.resource.demapping.ui.DemappingPreferencePage">
+		</page>
+	</extension>
+	
+	<extension point="org.eclipse.ui.newWizards">
+		<wizard category="org.deltaecore.newwizards.Category" icon="/icons/default_new_icon.gif" class="org.deltaecore.suite.mapping.resource.demapping.ui.DemappingNewFileWizard" id="org.deltaecore.suite.mapping.resource.demapping.ui.DemappingNewFileWizard" name="DeltaEcore Feature Mapping (*.demapping)">
+		</wizard>
+	</extension>
+	
+	<extension point="org.eclipse.ui.ide.markerResolution">
+		<markerResolutionGenerator class="org.deltaecore.suite.mapping.resource.demapping.ui.DemappingMarkerResolutionGenerator" markerType="org.deltaecore.suite.mapping.resource.demapping.problem">
+		</markerResolutionGenerator>
+	</extension>
+	
+	<extension point="org.eclipse.core.filebuffers.annotationModelCreation">
+		<factory class="org.deltaecore.suite.mapping.resource.demapping.ui.DemappingAnnotationModelFactory" extensions="demapping,mapping">
+		</factory>
+	</extension>
+	
+	<extension point="org.eclipse.core.contenttype.contentTypes">
+		<content-type id="org.deltaecore.suite.mapping.resource.demapping" name=".demapping File" base-type="org.eclipse.core.runtime.text" file-extensions="demapping,mapping">
+		</content-type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.documentProviders">
+		<provider class="org.eclipse.ui.editors.text.TextFileDocumentProvider" extensions="demapping,mapping" id="org.deltaecore.suite.mapping.resource.demapping.ui.provider">
+		</provider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.annotationTypes">
+		<type name="org.deltaecore.suite.mapping.resource.demapping.ui.occurences">
+		</type>
+		<type name="org.deltaecore.suite.mapping.resource.demapping.ui.occurences.declaration" super="org.deltaecore.suite.mapping.resource.demapping.ui.occurences">
+		</type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
+		<specification annotationType="org.deltaecore.suite.mapping.resource.demapping.ui.occurences" label="Occurrences (in .demapping files)" icon="/icons/occurrence_icon.gif" textPreferenceKey="demapping.occurrenceIndication" textPreferenceValue="false" highlightPreferenceKey="demapping.occurrenceHighlighting" highlightPreferenceValue="true" contributesToHeader="false" overviewRulerPreferenceKey="demapping.occurrenceIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="demapping.occurrenceIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="demapping.occurrenceIndicationColor" colorPreferenceValue="212,212,212" presentationLayer="4" showInNextPrevDropdownToolbarActionKey="demapping.showOccurrenceInNextPrevDropdownToolbarAction" showInNextPrevDropdownToolbarAction="true" isGoToNextNavigationTargetKey="demapping.isOccurrenceGoToNextNavigationTarget" isGoToNextNavigationTarget="false" isGoToPreviousNavigationTargetKey="demapping.isOccurrenceGoToPreviousNavigationTarget" isGoToPreviousNavigationTarget="false" textStylePreferenceKey="demapping.occurrenceTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+		<specification annotationType="org.deltaecore.suite.mapping.resource.demapping.ui.occurences.declaration" label="Declarations (in .demapping files)" textPreferenceKey="demapping.declarationIndication" textPreferenceValue="false" highlightPreferenceKey="demapping.declarationHighlighting" highlightPreferenceValue="true" overviewRulerPreferenceKey="demapping.declarationIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="demapping.declarationIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="demapping.declarationIndicationColor" colorPreferenceValue="240,216,168" presentationLayer="4" textStylePreferenceKey="demapping.declarationTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+	</extension>
+	
+	<extension point="org.eclipse.ui.commands">
+		<category description="All commands belonging to Demapping" id="org.deltaecore.suite.mapping.resource.demapping.ui.command.category" name="Demapping">
+		</category>
+		<command categoryId="org.deltaecore.suite.mapping.resource.demapping.ui.command.category" description="Toggle comment of the selected lines" id="org.deltaecore.suite.mapping.resource.demapping.ui.command.togglecomment" name="Toggle Comment">
+		</command>
+	</extension>
+	
+	<extension point="org.eclipse.ui.handlers">
+		<handler class="org.deltaecore.suite.mapping.resource.demapping.ui.DemappingToggleCommentHandler" commandId="org.deltaecore.suite.mapping.resource.demapping.ui.command.togglecomment">
+		</handler>
+	</extension>
+	
+	<extension point="org.eclipse.ui.contexts">
+		<context name="Editing Demapping Files" description="Editing Demapping Files Context" parentId="org.eclipse.ui.textEditorScope" id="org.deltaecore.suite.mapping.resource.demapping.EditorScope">
+		</context>
+	</extension>
+	
+	<extension point="org.eclipse.ui.bindings">
+		<key sequence="M1+7" commandId="org.deltaecore.suite.mapping.resource.demapping.ui.command.togglecomment" schemeId="org.eclipse.ui.defaultAcceleratorConfiguration" contextId="org.deltaecore.suite.mapping.resource.demapping.EditorScope">
+		</key>
+	</extension>
+	
+</plugin>

@@ -1,0 +1,111 @@
+High priority
+-------------
+
+- need to unload feature mapping after variant derivation or at least load fresh one with next derivation!!!
+
+- delta operations with return types??
+
+
+
+- .decoredialect wizard
+	- add special parameters for containment and optional
+	- some concurrency issue with dialect creation wizard - fix
+	- don't include opposite references of containment references in the list of modify parameters
+	- modify expand item: respect order of parameters when adding/removing them using the checkboxes
+	
+- create roadmap for decore
+- resolve tangled dependencies for extension plugin - gathering too much dirt and destroying project structure
+- URI resolution not working properly for local resources with registered epackages - fix
+- have a mechanism for genmodel in decoredialect similar to that of EMFText
+	- specifying genmodel is optional
+	- if gen model not specified, try to 
+		- a) get it from the registry
+		- b) derive it from a file with the same name in the same directory as the model but with extensions.genmodel
+	- create getter for genmodel in DEcoreDialect that implements this behavior to have central place to retrieve gen model 
+
+
+	//TODO: Collections with generics (lists), String concatenation
+	
+	//TODO: partial variant up until line before operation
+	
+	//TODO: Concrete syntax merge of textual language to create elements (can now parse strings for partial models!)
+	- String concatenation
+
+Feature Model:
+- have evaluation of configuration respect order of mapped deltas imposed by feature model by returning a partial order instead of a set
+- need variable strength connections in partial order mechanism (user selection may be soft, feature model and delta requirements are hard)
+
+
+
+Medium priority
+-------------
+- add a progress monitor to variant derivation as it takes some time and you get no feedback right now.
+- find a way to automatically generate replace delta operations
+- in generation: add dependency on domain plugin to meta inf (unless it is in the same project - see bug).
+(- realize identifiers via marker interface for using classes getIdentifiers() : List<String>)
+- complete determining the class of custom domain model element identifier resolver in constraint
+- handle EDataTypes
+
+- constructors: use information about changeable, id etc to determine which parameters are required and which are disallowed
+- constructors: seriously think about disallowing setting of references (any kind, have too many side effects, containment/opposite, even if done temporarily: set reference in constructor text then remove it again and it may have lost its container or inverse reference from someone else)
+
+(- introduce "Omitted" data type (_) how to map to Java? - only if I want to change the named parameters in the constructor - NO, this is for modify operations)
+
+Low priority
+-------------
+- protocol of applied delta operations (how to deal with changed model references? copy?)
+- see how well everything works when domain notation is bundled in a jar file
+- license text for generated classes
+- make file open dialogs nicer some time (hide closed projects, allow only single selection where needed etc)
+
+- Constraints to be implemented
+	- decorebase
+		- disallow reserved keywords as declared (!) identifiers such as "true", "false" etc (propagates to decore) (need a meta class for identifiers to not go insane with validation - only check those declared by user in textual syntax, references are not checked)
+	- decore
+		- DEDataTypeInitializer.dataType must not be an EEnum 
+		- the value of datatypeinitializers must not be null
+	- decoredialect
+		- complete and re-enable check of custom domain .. resolver class
+		- add error marker if domain model element identifier resolver is ambiguous
+		
+		- type of DEStructuralFeatureParameter needs to reference an EClass
+		- structural feature in DEStructuralFeatureParameter of add operation definition needs to have containment type
+		- structural features of structural feature parameter need to be writable (what about ids?)
+		
+		- object of DEStandardDeltaOperationDefinition needs to have type of meta model reference and needs to reference an EClass
+		- for structural feature parameters, the provided type has to be a reference to the respective type declared by the structural feature
+		
+- extract an actually working ScrolledComposite
+	- problem is that content is resized to fit scrolled composite but minimum size of scrolled composite should be that of the preferred size of the content
+	- listening for size change of content does not work because event is fired only after content was resized to fit scroll pane
+	- solution: find a way to detect _intended_ size changes of the content, get _that_ size and set it as minimum size for the scrolled pane before it resizes content (no idea how to do this).  
+
+
+Perspective (Mid):
+------------------
+- Beautification
+  - documentation
+
+
+Perspective (Far):
+------------------
+- tracing rules (SFTBasicFault -> SFTBasicFault.gate, SFTGate -> SFTGate.parentFault)
+  (CFDInPort -> CFDConnection.target, CFDConnection.target -> CFDConnection.source, CFDConnection.source ...)
+
+
+BUGS:
+-----
+- when having deltas in invalid order in the input, the auto sorter cannot resolve order - intended but warning could be better and offer to resolve problems when modifying original order.
+- manifest handler cannot properly load from plugins
+- when referencing non existent deltas in "requires" block of .decore, EMFText does not notice but resovles them to a (seemingly random) genmodel (e.g., QVT's genmodel), which is then included in the variant!
+- finishing the decoredialect wizard is not possible if no method is to be created - allow this!
+- EObject is not known as type in decoredialect - fix
+
+
+
+
+
+
+Small Stuff:
+------------
+- Replace "run as" for delta dialects with a menu action

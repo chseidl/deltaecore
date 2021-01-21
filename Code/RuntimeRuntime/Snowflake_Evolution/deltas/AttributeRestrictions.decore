@@ -1,0 +1,53 @@
+configuration delta "AttributeRestrictions"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <Attributes.decore>
+	modifies <../model/Constraint.ecore>,
+			 <../model/Feature.ecore>
+{
+	EClass attributeValueComparisonOperandEClass = new EClass(name: "SAttributeValueComparisonOperand");
+	setEClassInterface(true, attributeValueComparisonOperandEClass);
+	setEClassAbstract(true, attributeValueComparisonOperandEClass);
+	addEClass(attributeValueComparisonOperandEClass, <constraint>);
+	
+	
+	EClass attributeReferenceEClass = new EClass(name: "SAttributeReference");
+	addESuperType(attributeValueComparisonOperandEClass, attributeReferenceEClass);
+	addEClass(attributeReferenceEClass, <constraint>);
+	
+	//attribute: SAttributeReference --> SAttribute
+	EReference attributeEReference = new EReference(eType : <SAttribute>, name : "attribute", lowerBound : 1, upperBound : 1, containment : false);
+	addEReference(attributeEReference, attributeReferenceEClass);
+
+
+	EClass attributeLiteralValueEClass = new EClass(name: "SAttributeLiteralValue");
+	addESuperType(attributeValueComparisonOperandEClass, attributeLiteralValueEClass);
+	addEClass(attributeLiteralValueEClass, <constraint>);
+	
+	//value: SAttributeLiteralValue <>-> SAttributeValue
+	EReference valueEReference = new EReference(eType : <SAttributeValue>, name : "value", lowerBound : 1, upperBound : 1, containment : true);
+	addEReference(valueEReference, attributeReferenceEClass);
+	
+	
+	
+	EClass attributeValueComparisonEClass = new EClass(name: "SAttributeValueComparison");
+	addESuperType(<SAtomicExpression>, attributeValueComparisonEClass);
+	addEClass(attributeValueComparisonEClass, <constraint>);
+	
+	//operand1: SAttributeValueComparison <>-> SAttributeValueComparisonOperand
+	EReference operand1EReference = new EReference(eType : attributeValueComparisonOperandEClass, name : "operand1", lowerBound : 1, upperBound : 1, containment : true);
+	addEReference(operand1EReference, attributeValueComparisonEClass);
+	
+	//operand2: SAttributeValueComparison <>-> SAttributeValueComparisonOperand
+	EReference operand2EReference = new EReference(eType : attributeValueComparisonOperandEClass, name : "operand2", lowerBound : 1, upperBound : 1, containment : true);
+	addEReference(operand2EReference, attributeValueComparisonEClass);	
+}
+
+dialect <http://www.emftext.org/sdk/concretesyntax>
+	modifies <../model/Constraint.cs>
+{
+	ConcreteSyntax concreteSyntax = <ConcreteSyntax:constraints>;
+	
+	addRule("SAttributeReference ::= attribute[QUALIFIED_IDENTIFIER_TOKEN]", concreteSyntax);
+	addRule("SAttributeLiteralValue ::= value;", concreteSyntax);
+}

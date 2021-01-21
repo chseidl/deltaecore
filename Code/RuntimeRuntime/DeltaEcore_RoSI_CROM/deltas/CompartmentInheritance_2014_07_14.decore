@@ -1,0 +1,9 @@
+evolution delta "CompartmentInheritance_2014_07_14"
+	
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>,
+			 <CompartmentInheritance.decore>
+{
+	EClass compartmentInheritanceEClass = <CompartmentRoleObjectModel.CompartmentInheritance>;
+	setEClassifierPackage(<crom_l1>, compartmentInheritanceEClass);
+}

@@ -1,0 +1,13 @@
+evolution delta "EvolutionIteration1"
+	dialect <http://deltaecore.org/feature/1.0>
+	modifies <../core/TurtleBotDriver.defeaturemodel>
+{
+	DEGroup movementGroup = <Movement:0>;
+	createFeature("Keyboard", 0, movementGroup, "1.0");
+	
+	DEGroup detectionGroup = <Detection:0>;
+	createFeature("Infrared", 0, detectionGroup, "1.0");
+		
+	DEGroup turtleBotGroup = <TurtleBot:0>;
+	createFeature("Webservice", 0, turtleBotGroup, "1.0");
+}

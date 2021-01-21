@@ -1,0 +1,14 @@
+evolution delta "EvolutionIteration3"
+	dialect <http://deltaecore.org/feature/1.0>
+	requires <EvolutionIteration2.decore>
+	modifies <../core/TurtleBotDriver.defeaturemodel>
+{
+	createVersion("2.0", <TurtleBot@1.0>);
+	
+	createVersion("Kobuki 1.0", <Engine@1.1>);
+	
+	createVersion("1.2", <Movement@1.1>);
+	createVersion("2.0", <Gamepad@1.0>);
+	
+	createVersion("0.9", <Ultrasound@0.8>);
+}

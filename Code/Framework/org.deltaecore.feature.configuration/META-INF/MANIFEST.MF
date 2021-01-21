@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DeltaEcore Configuration Model
+Bundle-SymbolicName: org.deltaecore.feature.configuration;singleton:=true
+Bundle-Version: 0.8.2
+Bundle-Vendor: www.deltaecore.org
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.deltaecore.feature;visibility:=reexport,
+ org.deltaecore.feature.constraint,
+ org.deltaecore.feature.constraint.resource.deconstraints
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.deltaecore.feature.configuration,
+ org.deltaecore.feature.configuration.impl,
+ org.deltaecore.feature.configuration.impl.custom,
+ org.deltaecore.feature.configuration.util
+Bundle-ClassPath: .,
+ .
+Bundle-ActivationPolicy: lazy

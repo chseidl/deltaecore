@@ -1,0 +1,13 @@
+configuration delta "NotNot"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	modifies <../model/Constraint.ecore>
+{
+	removeEClass(<SNotExpression>);
+}
+
+dialect <http://www.emftext.org/sdk/concretesyntax>
+	modifies <../model/Constraint.cs>
+{
+	removeRule(<Rule:SNotExpression>);
+}

@@ -1,0 +1,6 @@
+delta "Java_Delta1"
+	dialect <http://www.emftext.org/java>
+	modifies <../core/ExampleClass.java>
+{
+	detachMethod(<ExampleClass#main>);
+}

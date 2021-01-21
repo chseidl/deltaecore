@@ -1,0 +1,15 @@
+delta "TemplateMethod_ConcreteHook"
+	dialect <http://www.eclipse.org/uml2/5.0.0/UML>
+	requires <../core/Base.uml>, <TemplateMethod_Template.decore>
+{
+	Model model = <model::>;
+	
+	//Package
+	createPackage("org.example", model);
+
+	//Concrete Hook
+	createClass("ConcreteHook", <package::org.example>, false);
+	createGeneralization(<class::org.example.ConcreteHook>, <class::org.example.Template>);
+	createOperationInClass("primitiveOperation1", <class::org.example.ConcreteHook>);
+	createOperationInClass("primitiveOperation2", <class::org.example.ConcreteHook>);
+}

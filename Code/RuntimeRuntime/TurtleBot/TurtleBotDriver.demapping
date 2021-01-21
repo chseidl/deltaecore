@@ -1,0 +1,141 @@
+TurtleBot:
+	<deltas/TurtleBot_Java.decore>
+
+TurtleBot ["1.0"]:
+	<deltas/TurtleBot_1.0_Java.decore>
+
+TurtleBot ["1.1"]:
+	<deltas/TurtleBot_Bugfix14_Java.decore>
+
+TurtleBot ["2.0"]:
+	<deltas/TurtleBot_2.0_Java.decore>,
+	<deltas/TurtleBot_2.0_Project.decore>
+
+TurtleBot ["2.1"]:
+	<deltas/TurtleBot_Bugfix14_Java.decore>
+	
+
+Engine:
+	<deltas/Engine.decore>
+
+Engine ["1.0"]:
+	<deltas/Engine_1.0_Java.decore>
+
+Engine ["1.1"]:
+	<deltas/Engine_1.1_Java.decore>
+
+Engine ["Create 1.2"]:
+	<deltas/Engine_Create 1.2_Java.decore>
+
+Engine ["Kobuki 1.0"]:
+	<deltas/Engine_Kobuki 1.0_Java.decore>
+
+
+Movement :
+	<deltas/Movement_Java.decore>
+
+Movement ["1.0"]:
+	<deltas/Movement_1.0_Java.decore>
+
+Movement ["1.1"]:
+	<deltas/Movement_1.1_Java.decore>
+
+Movement ["1.2"]:
+	<deltas/Movement_1.2_Java.decore>
+
+Movement ["2.0"]:
+	<deltas/Movement_2.0_Java.decore>
+
+
+Keyboard:
+	<deltas/Keyboard_Java.decore>
+
+Keyboard ["1.0"]:
+	<deltas/Keyboard_1.0_Java.decore>
+
+
+Gamepad:
+	<deltas/Gamepad_Java.decore>,
+	<deltas/Gamepad_Project.decore>
+
+Gamepad ["1.0"]:
+	<deltas/Gamepad_1.0_Java.decore>
+
+Gamepad ["2.0"]:
+	<deltas/Gamepad_2.0_Java.decore>,
+	<deltas/Gamepad_2.0_Project.decore>
+
+
+Autonomous:
+	<deltas/Autonomous_Java.decore>
+
+Autonomous ["1.0"]:
+	<deltas/Autonomous_1.0_Java.decore>
+
+Autonomous ["1.1"]:
+	<deltas/Autonomous_1.1_Java.decore>
+
+Autonomous ["2.0"]:
+	<deltas/Autonomous_2.0_Java.decore>
+
+
+Webservice:
+	<deltas/Webservice_Java.decore>,
+	<deltas/Webservice_Project.decore> //Apache WS-Commons, XmlRPC etc. libraries
+
+Webservice ["1.0"]:
+	<deltas/Webservice_1.0_Java.decore>
+
+Webservice ["1.1"]:
+	<deltas/Webservice_1.1_Java.decore>
+
+
+Detection:
+	<deltas/Detection_Java.decore>
+
+Detection ["1.0"]:
+	<deltas/Detection_1.0_Java.decore>
+
+Detection ["1.1"]:
+	<deltas/Detection_1.1_Java.decore>
+
+
+Bump:
+	<deltas/Bump_Java.decore>
+
+Bump ["1.0"]:
+	<deltas/Bump_1.0_Java.decore>
+
+
+Infrared:
+	<deltas/Infrared_Java.decore>,
+	<deltas/Infrared_Project.decore> //TinkerForge libraries
+
+Infrared ["1.0"]:
+	<deltas/Infrared_1.0_Java.decore>
+
+Infrared ["2.0"]:
+	<deltas/Infrared_2.0_Java.decore>
+
+Infrared ["2.2"]:
+	<deltas/Infrared_2.2_Java.decore>
+
+
+//Compatibility of bump and infrared sensors
+Bump && Infrared [>= "2.0"]:
+	<deltas/BumpAndInfraredLargerThanOrEqualTo2.0_Java.decore>
+
+
+Ultrasound:
+	<deltas/Ultrasound_Java.decore>,
+	<deltas/Ultrasound_Project.decore> //Driver libraries
+
+Ultrasound ["0.8"]:
+	<deltas/Ultrasound_0.8_Java.decore>
+
+Ultrasound ["0.9"]:
+	<deltas/Ultrasound_0.9_Java.decore>
+
+Ultrasound ["1.0"]:
+	<deltas/Ultrasound_1.0_Java.decore>
+

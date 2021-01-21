@@ -1,0 +1,19 @@
+configuration delta "NotOnCompartments"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>
+{
+	EClass roleModelEClass = <CompartmentRoleObjectModel.RoleModel>;
+	addESuperType(<CompartmentRoleObjectModel.ModelElement>, roleModelEClass);
+	
+	
+	EClass abstractRoleEClass = <CompartmentRoleObjectModel.AbstractRole>;
+	
+	EReference rolesEReference = new EReference(eType: abstractRoleEClass, name : "roles", lowerBound : 0, upperBound : -1, containment : true);
+	addEReference(rolesEReference, roleModelEClass);
+	
+	EReference modelEReference = new EReference(eType: roleModelEClass, name : "model", lowerBound : 1, upperBound : 1, containment : false);
+	addEReference(modelEReference, abstractRoleEClass);
+	
+	makeEReferencesOpposite(rolesEReference, modelEReference);
+}

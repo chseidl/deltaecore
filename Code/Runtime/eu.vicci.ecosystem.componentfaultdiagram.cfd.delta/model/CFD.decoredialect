@@ -1,0 +1,76 @@
+deltaDialect
+{
+	configuration:
+		metaModel: <http://vicci.eu/cfd/1.0>;
+		identifierResolver: eu.vicci.ecosystem.componentfaultdiagram.cfd.delta.resolver.CfdDomainModelElementIdentifierResolver;
+
+	deltaOperations:
+	
+		//Basic Event
+		addOperation addBasicEventToElementsOfComponent(CFDBasicEvent value, CFDComponent [elements] element);
+		removeOperation removeBasicEventFromElementsOfComponent(CFDBasicEvent value, CFDComponent [elements] element);
+		
+		evolution modifyOperation modifyIdOfBasicEvent(String id, CFDBasicEvent [id] element);
+		modifyOperation modifyNameOfBasicEvent(String name, CFDBasicEvent [name] element);
+		modifyOperation modifyDescriptionOfBasicEvent(String description, CFDBasicEvent [description] element);
+		modifyOperation modifyProbabilityOfBasicEvent(Double probability, CFDBasicEvent [probability] element);
+		 
+		detachOperation detachBasicEvent(CFDBasicEvent basicEvent);
+		
+		
+		//Intermediate Event
+		addOperation addIntermediateEventToElementsOfComponent(CFDIntermediateEvent value, CFDComponent [elements] element);
+		removeOperation removeIntermediateEventFromElementsOfComponent(CFDIntermediateEvent value, CFDComponent [elements] element);
+		
+		evolution modifyOperation modifyIdOfIntermediateEvent(String id, CFDIntermediateEvent [id] element);
+		
+		detachOperation detachIntermediateEvent(CFDIntermediateEvent element);
+
+
+		//Gate
+		addOperation addGateToElementsOfComponent(CFDGate value, CFDComponent [elements] element);
+		removeOperation removeGateFromElementsOfComponent(CFDGate value, CFDComponent [elements] element);
+		
+		evolution modifyOperation modifyIdOfGate(String id, CFDGate [id] element);
+		modifyOperation modifyGateTypeOfGate(CFDGateType gateType, CFDGate [gateType] element);
+		
+		detachOperation detachGate(CFDGate gate);
+		
+		
+		//Component
+		addOperation addComponentToElementsOfComponent(CFDComponent value, CFDComponent [elements] element);
+		removeOperation removeComponentFromElementsOfComponent(CFDComponent value, CFDComponent [elements] element);
+		
+		evolution modifyOperation modifyIdOfComponent(String id, CFDComponent [id] element);
+		modifyOperation modifyNameOfComponent(String name, CFDComponent [name] element);
+		
+		detachOperation detachComponent(CFDComponent component);
+
+
+		//In Port
+		addOperation addInPortToInPortsOfElement(CFDInPort value, CFDElement [inPorts] element);
+		removeOperation removeInPortFromInPortsOfElement(CFDInPort value, CFDElement [inPorts] element);
+		
+		evolution modifyOperation modifyNameOfInPort(String name, CFDInPort [name] element);
+		
+		detachOperation detachInPort(CFDInPort inPort);
+		
+		
+		//Out Port
+		addOperation addOutPortToOutPortsOfElement(CFDOutPort value, CFDElement [outPorts] element);
+		removeOperation removeOutPortFromOutPortsOfElement(CFDOutPort value, CFDElement [outPorts] element);
+		
+		evolution modifyOperation modifyNameOfOutPort(String name, CFDOutPort [name] element);
+		
+		detachOperation detachOutPort(CFDOutPort outPort);
+
+
+		//Connections
+		customOperation connect(CFDPort sourcePort, CFDPort targetPort);
+		customOperation disconnect(CFDPort sourcePort, CFDPort targetPort);
+		
+		
+		//Visual representation
+//		customOperation relocateElement(CFDElement element, Integer x, Integer y);
+//		customOperation resizeComponent(CFDComponent concreteElement, Integer width, Integer height);
+}

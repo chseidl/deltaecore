@@ -1,0 +1,17 @@
+configuration delta "Gamepad_Java"
+	dialect <http://www.emftext.org/java>
+	modifies <../src/eu/vicci/turtlebot/Movement.java>
+{
+	Package p = <package::eu.vicci.turtlebot>;
+	createClass("public class Gamepad {
+					//...
+				 }", p);
+
+	Class gamepad = <class::eu.vicci.turtlebot.Gamepad>;
+	Class movement = <class::eu.vicci.turtlebot.Movement>;
+
+	//Set Movement as super class of Gamepad
+	setSuperClassForClass(movement, gamepad);
+
+	//...
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="org.deltaecore.shell.application"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="singleton-global"
+            thread="main"
+            visible="true">
+         <run
+               class="org.deltaecore.shell.DEShell">
+         </run>
+      </application>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.deltaecore.shell.application"
+            name="DeltaEcore Shell">
+         <property
+               name="appName"
+               value="DeltaEcore Shell">
+         </property>
+      </product>
+   </extension>
+
+</plugin>

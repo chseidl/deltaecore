@@ -1,0 +1,63 @@
+/*RoleTypes.Dependent.*/ OnRelationships <-> Relationships
+/*RoleTypes.Dependent.*/ OnCompartments <-> CompartmentTypes
+RoleImplication -> RoleEquivalence
+/*RoleTypes.Playable.Players*/ Compartments -> CompartmentTypes
+
+
+//TODO: version OnCompartments [="2014_06_17"] seems to be nonsense.
+//TODO: Don't understand these constraints.
+
+//? CompartmentInheritance [>="2014_06_17"] <-> ? OnCompartments [>="2014_06_17"]
+
+//? Compartments [>="2014_06_17"] <-> ? Roles [>="2014_06_17"]
+
+
+//"Baseline" constraint for 2014_07_14 update
+? RMLFeatureModel [>="2014_07_14"] <->
+  ? RoleTypes [>="2014_07_14"] <->
+    ? RoleStructure [>="2014_07_14"] <-> 
+      ? RoleProperties [>="2014_07_14"] <->
+      ? RoleBehavior [>="2014_07_14"] <->
+      ? RoleInheritance [>="2014_07_14"] <->
+    ? Playable [>="2014_07_14"] <->
+      ? Players [>="2014_07_14"] <->
+        ? Objects [>="2014_07_14"] <->
+        ? Roles [>="2014_07_14"] <->
+        ? Compartments [>="2014_07_14"] <-> 
+      ? RoleDependentPlayerFeatures [>="2014_07_14"] <->
+      ? DifferentRolesSimultaneously [>="2014_07_14"] <->
+      ? SameRoleTypeSeveralTimes [>="2014_07_14"] <->
+      ? ByUnrelatedPlayers [>="2014_07_14"] <-> 
+      ? Dynamically [>="2014_07_14"] <->
+        ? TransferableBetweenPlayers [>="2014_07_14"] <->
+        ? RoleDependentPlayerState [>="2014_07_14"] <->
+        ? RestrictAccess [>="2014_07_14"] <-> 
+    ? Dependent [>="2014_07_14"] <->
+      ? OnCompartments [>="2014_07_14"] <->
+      ? OnRelationships [>="2014_07_14"] <-> 
+    ? RoleConstraints [>="2014_07_14"] <->
+      ? RoleImplication [>="2014_07_14"] <->
+      ? RoleProhibition [>="2014_07_14"] <->
+      ? RoleEquivalence [>="2014_07_14"] <->
+      ? GroupConstraints [>="2014_07_14"] <-> 
+    ? RoleIdentity [>="2014_07_14"] <->
+      ? SharedIdentity [>="2014_07_14"] <->
+      ? OwnedRoleIdentity [>="2014_07_14"] <->
+  ? Relationships [>="2014_07_14"] <->
+    ? RelationshipConstraints [>="2014_07_14"] <->
+      ? RelationshipCardinality [>="2014_07_14"] <->
+      ? IntraRelationshipConstraints [>="2014_07_14"] <->
+      ? InterRelationshipConstraints [>="2014_07_14"] <->
+  ? CompartmentTypes [>="2014_07_14"] <->
+    ? CompartmentStructure [>="2014_07_14"] <->
+      ? CompartmentProperties [>="2014_07_14"] <->
+      ? CompartmentBehavior [>="2014_07_14"] <->
+      ? CompartmentInheritance [>="2014_07_14"] <-> 
+    ? Participants [>="2014_07_14"] <->
+      ? ContainsRoles [>="2014_07_14"] <->
+      ? ContainsCompartments [>="2014_07_14"] <->
+      ? CanBelongToManyCompartments [>="2014_07_14"] <->
+      ? PlayableByDefiningCompartment [>="2014_07_14"] <-> 
+    ? CompartmentIdentity [>="2014_07_14"] <->
+      ? CompositeIdentity [>="2014_07_14"] <->
+      ? OwnCompartmentIdentity [>="2014_07_14"]

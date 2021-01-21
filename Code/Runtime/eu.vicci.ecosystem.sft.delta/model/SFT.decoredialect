@@ -1,0 +1,39 @@
+deltaDialect
+{
+	configuration:
+		metaModel: <http://vicci.eu/sft/1.0>;
+		
+	deltaOperations:
+		//Software Fault Tree
+		setOperation setRootFaultOfSoftwareFaultTree(SFTFault value, SFTSoftwareFaultTree [rootFault] element);
+		unsetOperation unsetRootFaultOfSoftwareFaultTree(SFTSoftwareFaultTree [rootFault] element);
+		modifyOperation modifyNameOfSoftwareFaultTree(String value, SFTSoftwareFaultTree [name] element);
+		
+		//Fault
+		detachOperation detachFault(SFTFault fault);
+		
+		//Basic Fault
+		evolution modifyOperation modifyIdOfBasicFault(String value, SFTBasicFault [id] element);
+		modifyOperation modifyNameOfBasicFault(String value, SFTBasicFault [name] element);
+		modifyOperation modifyDescriptionOfBasicFault(String value, SFTBasicFault [description] element);
+		modifyOperation modifyProbabilityOfBasicFault(Double value, SFTBasicFault [probability] element);
+		evolution customOperation refineBasicFault(SFTBasicFault basicFault, String gateId, SFTGateType gateType, SFTFault subFault1, SFTFault subFault2);
+		detachOperation detachBasicFault(SFTBasicFault fault);
+		
+		//Intermediate Fault
+		setOperation setGateOfIntermediateFault(SFTGate value, SFTIntermediateFault [gate] element);
+		unsetOperation unsetGateOfIntermediateFault(SFTIntermediateFault [gate] element);
+		evolution modifyOperation modifyIdOfIntermediateFault(String value, SFTIntermediateFault [id] element);
+		modifyOperation modifyNameOfIntermediateFault(String value, SFTIntermediateFault [name] element);
+		modifyOperation modifyDescriptionOfIntermediateFault(String value, SFTIntermediateFault [description] element);
+		detachOperation detachIntermediateFault(SFTIntermediateFault fault);
+		
+		//Gate
+		addOperation addFaultToFaultsOfGate(SFTFault value, SFTGate [faults] element);
+		removeOperation removeFaultFromFaultsOfGate(SFTFault value, SFTGate [faults] element);
+		evolution modifyOperation modifyIdOfGate(String value, SFTGate [id] element);
+		modifyOperation modifyGateTypeOfGate(SFTGateType value, SFTGate [gateType] element);
+		detachOperation detachGate(SFTGate gate);
+		
+		customOperation deleteWithReferences(SFTFault f);
+}

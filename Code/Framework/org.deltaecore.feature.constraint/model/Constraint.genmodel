@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.deltaecore.feature.constraint/src-gen" editDirectory="/org.deltaecore.feature.constraint.edit/src-gen"
+    editorDirectory="/org.deltaecore.feature.constraint.editor/src-gen" modelPluginID="org.deltaecore.feature.constraint"
+    modelName="DeltaEcore Feature Model Constraint Language" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    testsDirectory="/org.deltaecore.feature.constraint.tests/src-gen" importerID="de.christophseidl.emf.ggimporter"
+    bundleManifest="false" complianceLevel="7.0" copyrightFields="false" usedGenPackages="../../org.deltaecore.feature.expression/model/Expression.genmodel#//expression ../../org.deltaecore.feature/model/Feature.genmodel#//feature"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>Constraint.ecore</foreignModel>
+  <genPackages prefix="DEConstraint" basePackage="org.deltaecore.feature" disposableProviderFactory="true"
+      fileExtensions="constraints_plain" ecorePackage="Constraint.ecore#/">
+    <genClasses ecoreClass="Constraint.ecore#//DEConstraint">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Constraint.ecore#//DEConstraint/rootExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="Constraint.ecore#//DEConstraintModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Constraint.ecore#//DEConstraintModel/constraints"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

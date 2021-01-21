@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.christophseidl.batcheditmanifests.BatchEditManifestsCommandHandler"
+            id="de.christophseidl.batcheditmanifests.command"
+            name="Batch Edit Manifests...">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.pde.ui.tools?after=org.eclipse.pde.ui.organizeManifest">
+         <command
+               commandId="de.christophseidl.batcheditmanifests.command"
+               label="Batch Edit Manifests..."
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>

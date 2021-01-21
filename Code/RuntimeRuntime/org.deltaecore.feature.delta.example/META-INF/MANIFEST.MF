@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Feature Delta Example
+Bundle-SymbolicName: org.deltaecore.feature.delta.example
+Bundle-Version: 1.0.0
+Bundle-Vendor: www.deltaecore.org
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6, JavaSE-1.7

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Configuration -->
+      <package
+            uri="http://deltaecore.org/feature/configuration/1.0"
+            class="org.deltaecore.feature.configuration.DEConfigurationPackage"
+            genModel="model/Configuration.genmodel"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.factory_override">
+      <factory
+            class="org.deltaecore.feature.configuration.impl.custom.DEConfigurationFactoryImplCustom"
+            uri="http://deltaecore.org/feature/configuration/1.0">
+      </factory>
+   </extension>
+
+</plugin>

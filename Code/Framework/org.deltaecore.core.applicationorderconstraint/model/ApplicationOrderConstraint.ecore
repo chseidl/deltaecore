@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="applicationorderconstraint" nsURI="http://deltaecore.org/applicationorderconstraint/1.0"
+    nsPrefix="applicationorderconstraint">
+  <eClassifiers xsi:type="ecore:EClass" name="DEApplicationOrderConstraintModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constrainedGroups" lowerBound="2"
+        upperBound="-1" eType="#//DEConstrainedGroup" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DEConstrainedGroup">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constrainedDeltaPaths"
+        lowerBound="1" upperBound="-1" eType="ecore:EClass ../../org.deltaecore.core.decorebase/model/DEcoreBase.ecore#//DERelativeFilePath"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

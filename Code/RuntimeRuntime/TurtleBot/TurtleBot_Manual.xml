@@ -1,0 +1,28 @@
+<book>
+	<title>TurtleBot Driver Developer's Manual</title>
+	<chapter>
+		<title>The Engine Component</title>
+	</chapter>
+	<chapter>
+		<title>Detecting Obstacles</title>
+		<para>Using the TurtleBot driver software, it is possible to detect obstacles blocking
+			the way of the robot in order to navigate around them. The following lines elaborate
+			on the obstacle detection components and their usage.
+			...
+		</para>
+		<section id="BumpSensor">
+			<title>The Bump Sensor</title>
+			<para>TODO: Content</para>
+		</section>
+		
+		<section id="InfraredSensor">
+			<title>The Infrared Sensor</title>
+			<para>TODO: Content</para>
+		</section>
+		
+		<section id="UltrasoundSensor">
+			<title>The Ultrasound Sensor</title>
+			<para>TODO: Content</para>
+		</section>
+	</chapter>
+</book>

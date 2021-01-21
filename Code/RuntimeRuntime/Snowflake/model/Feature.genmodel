@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.tu-bs.snowflake/src-gen" editDirectory="/de.tu-bs.snowflake.edit/src-gen"
+    editorDirectory="/de.tu-bs.snowflake.editor/src-gen" modelPluginID="de.tu-bs.snowflake"
+    modelName="Feature" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    testsDirectory="/de.tu-bs.snowflake.tests/src-gen" importerID="de.christophseidl.emf.ggimporter"
+    complianceLevel="7.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>Feature.ecore</foreignModel>
+  <genPackages prefix="SFeature" basePackage="de.tu_bs.snowflake" disposableProviderFactory="true"
+      ecorePackage="Feature.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Feature.ecore#//SGroupVariationType">
+      <genEnumLiterals ecoreEnumLiteral="Feature.ecore#//SGroupVariationType/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="Feature.ecore#//SGroupVariationType/OR"/>
+      <genEnumLiterals ecoreEnumLiteral="Feature.ecore#//SGroupVariationType/XOR"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Feature.ecore#//SFeatureVariationType">
+      <genEnumLiterals ecoreEnumLiteral="Feature.ecore#//SFeatureVariationType/OPTIONAL"/>
+      <genEnumLiterals ecoreEnumLiteral="Feature.ecore#//SFeatureVariationType/MANDATORY"/>
+    </genEnums>
+    <genClasses ecoreClass="Feature.ecore#//SFeatureModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Feature.ecore#//SFeatureModel/rootFeature"/>
+    </genClasses>
+    <genClasses ecoreClass="Feature.ecore#//SFeature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Feature.ecore#//SFeature/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Feature.ecore#//SFeature/versions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Feature.ecore#//SFeature/groups"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Feature.ecore#//SFeature/variationType"/>
+      <genOperations ecoreOperation="Feature.ecore#//SFeature/isOptional"/>
+      <genOperations ecoreOperation="Feature.ecore#//SFeature/isMandatory"/>
+      <genOperations ecoreOperation="Feature.ecore#//SFeature/getParentGroup"/>
+      <genOperations ecoreOperation="Feature.ecore#//SFeature/getParentFeature"/>
+    </genClasses>
+    <genClasses ecoreClass="Feature.ecore#//SGroup">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Feature.ecore#//SGroup/features"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Feature.ecore#//SGroup/variationType"/>
+      <genOperations ecoreOperation="Feature.ecore#//SGroup/isAnd"/>
+      <genOperations ecoreOperation="Feature.ecore#//SGroup/isOr"/>
+      <genOperations ecoreOperation="Feature.ecore#//SGroup/isXor"/>
+      <genOperations ecoreOperation="Feature.ecore#//SGroup/getParentFeature"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Feature.ecore#//SCardinalityBasedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Feature.ecore#//SCardinalityBasedElement/minCardinality"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Feature.ecore#//SCardinalityBasedElement/maxCardinality"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute Feature.ecore#//SCardinalityBasedElement/UNLIMITED_MAX_CARDINALITY"/>
+    </genClasses>
+    <genClasses ecoreClass="Feature.ecore#//SVersion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Feature.ecore#//SVersion/number"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Feature.ecore#//SVersion/feature"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Feature.ecore#//SVersion/supersedingVersions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Feature.ecore#//SVersion/supersededVersion"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Feature.ecore#//SConfigurationArtifact"/>
+  </genPackages>
+</genmodel:GenModel>

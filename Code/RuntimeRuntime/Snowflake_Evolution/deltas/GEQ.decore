@@ -1,0 +1,18 @@
+configuration delta "GEQ"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <AttributeRestrictions.decore>
+	modifies <../model/Constraint.ecore>
+{
+	EClass greaterThanOrEqualAttributeValueComparisonEClass = new EClass(name: "SGreaterThanOrEqualAttributeValueComparison");
+	addESuperType(<SAttributeValueComparison>, greaterThanOrEqualAttributeValueComparisonEClass);
+	addEClass(greaterThanOrEqualAttributeValueComparisonEClass, <constraint>);
+}
+
+dialect <http://www.emftext.org/sdk/concretesyntax>
+	modifies <../model/Constraint.cs>
+{
+	String ruleText = "@Operator(type=\"primitive\", weight=\"8\", superclass=\"SExpression\")
+					   SGreaterThanOrEqualAttributeValueComparison ::= operand1 \">=\" operand2;";
+	addRule(ruleText, <ConcreteSyntax:constraints>);
+}

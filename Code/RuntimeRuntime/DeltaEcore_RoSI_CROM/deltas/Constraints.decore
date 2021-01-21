@@ -1,0 +1,8 @@
+abstract configuration delta "Constraints"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>
+{
+	EClass constraintEClass = new EClass(name: "Constraint");
+	addEClass(constraintEClass, <CompartmentRoleObjectModel>);
+}

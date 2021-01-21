@@ -1,0 +1,9 @@
+evolution delta "ContainsCompartmentsAndOnCompartments_2014_07_14"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>,
+			 <ContainsCompartmentsAndOnCompartments_2014_07_14.decore>,
+			 <OnCompartments_2014_07_14.decore>
+{
+	//Just here for the requirements
+}

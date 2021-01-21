@@ -1,0 +1,40 @@
+softwareFaultTree "RobotCollision" {
+	intermediateFault {
+		id: RC
+		name: "RobotCollision"
+		
+		gate {
+			id: G1
+			gateType: AND
+	
+			basicFault {
+				id: ODF
+				name: "Obstacle Detection Fails"
+				probability: 0.003
+			}
+			
+			intermediateFault {
+				id: BF
+				name: "Braking Fails"
+			
+				gate {
+					id: G2
+					gateType: OR
+					
+					basicFault {
+						id: RIM
+						name: "Robot in Motion"
+						probability: 0.8
+					}
+					
+					basicFault {
+						id: LFS
+						name: "Low Friction Surface"
+						probability: 0.02
+					}
+				}
+			}
+		}	
+	}
+}
+

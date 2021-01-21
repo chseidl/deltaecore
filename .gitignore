@@ -1,3 +1,14 @@
+# Eclipse
+.eclipse
+.metadata
+**/bin/**
+!**/bin/
+
+#EMF Ecore
+#src-gen/
+**/src-gen/**
+!**/src-gen/.gitkeep
+
 # Compiled class file
 *.class
 

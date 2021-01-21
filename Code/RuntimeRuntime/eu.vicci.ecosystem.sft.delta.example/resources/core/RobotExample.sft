@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sft:SFTSoftwareFaultTree xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sft="http://vicci.eu/sft/1.0" name="RobotCollision">
+  <rootFault xsi:type="sft:SFTIntermediateFault" id="RC" name="RobotCollision">
+    <gate id="G1">
+      <faults xsi:type="sft:SFTBasicFault" id="ODF" name="Obstacle Detection Fails" probability="0.003"/>
+      <faults xsi:type="sft:SFTIntermediateFault" id="BF" name="Braking Fails">
+        <gate id="G2" gateType="OR">
+          <faults xsi:type="sft:SFTBasicFault" id="RIM" name="Robot in Motion" probability="0.8"/>
+          <faults xsi:type="sft:SFTBasicFault" id="LFS" name="Low Friction Surface" probability="0.02"/>
+        </gate>
+      </faults>
+    </gate>
+  </rootFault>
+</sft:SFTSoftwareFaultTree>

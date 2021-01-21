@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SFT Graphical Editor
+Bundle-SymbolicName: eu.vicci.ecosystem.sft.graphicaleditor;singleton:=true
+Bundle-Version: 1.0.0
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.gef;bundle-version="3.8.2",
+ org.eclipse.ui.ide;bundle-version="3.8.0",
+ org.eclipse.core.resources;bundle-version="3.8.0",
+ eu.vicci.ecosystem.sft;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ClassPath: .,
+ lib/log4j-api-2.0-beta7.jar,
+ lib/log4j-core-2.0-beta7.jar,
+ properties/,
+ lib/org.abego.treelayout.core.jar

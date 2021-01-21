@@ -1,0 +1,18 @@
+configuration delta "LEQ"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <AttributeRestrictions.decore>
+	modifies <../model/Constraint.ecore>
+{
+	EClass lessThanOrEqualAttributeValueComparisonEClass = new EClass(name: "SLessThanOrEqualAttributeValueComparison");
+	addESuperType(<SAttributeValueComparison>, lessThanOrEqualAttributeValueComparisonEClass);
+	addEClass(lessThanOrEqualAttributeValueComparisonEClass, <constraint>);
+}
+
+dialect <http://www.emftext.org/sdk/concretesyntax>
+	modifies <../model/Constraint.cs>
+{
+	String ruleText = "@Operator(type=\"primitive\", weight=\"8\", superclass=\"SExpression\")
+					   SLessThanOrEqualAttributeValueComparison ::= operand1 \"<=\" operand2;";
+	addRule(ruleText, <ConcreteSyntax:constraints>);
+}

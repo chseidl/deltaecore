@@ -1,0 +1,22 @@
+[
+	<deltas/NotUnlimited.decore>,
+	<deltas/NotFeatureCardinality.decore>,
+	<deltas/NotGroupCardinality.decore>
+]
+[
+	<deltas/NotCardinalities.decore>
+]
+// TODO: The following should be obsolete as it is prohibited by the feature model
+[
+	<deltas/ConfigurableAndNotVersionBranching.decore>
+]
+[
+	<deltas/NotConfigurable.decore>
+]
+// the first removes an attribute, the second the containing class
+[
+	<deltas/NotConditionalVersionRestrictions.decore>
+]
+[
+	<deltas/NotVersionRestrictions.decore>
+]

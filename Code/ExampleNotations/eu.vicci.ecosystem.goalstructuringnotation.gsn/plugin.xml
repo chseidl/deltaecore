@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://vicci.eu/gsn/1.0"
+            class="eu.vicci.ecosystem.goalstructuringnotation.gsn.GSNPackage"
+            genModel="model/GSN.genmodel"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.factory_override">
+      <factory
+            class="eu.vicci.ecosystem.goalstructuringnotation.gsn.GSNFactoryImplCustom"
+            uri="http://vicci.eu/gsn/1.0">
+      </factory>
+   </extension>
+
+</plugin>

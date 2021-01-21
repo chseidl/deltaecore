@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<extension point="org.emftext.access.syntax">
+		<metaInformationProvider class="org.deltaecore.suite.mapping.resource.demapping.mopp.DemappingMetaInformation" id="org.deltaecore.suite.mapping.resource.demapping.mopp.DemappingMetaInformation">
+		</metaInformationProvider>
+	</extension>
+	
+	<extension id="org.deltaecore.suite.mapping.resource.demapping.problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="org.eclipse.core.resources.problemmarker">
+		</super>
+		<super type="org.eclipse.core.resources.textmarker">
+		</super>
+		<super type="org.eclipse.emf.ecore.diagnostic">
+		</super>
+	</extension>
+	
+	<extension id="org.deltaecore.suite.mapping.resource.demapping.problem.syntax_error" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="org.deltaecore.suite.mapping.resource.demapping.problem">
+		</super>
+	</extension>
+	
+	<extension id="org.deltaecore.suite.mapping.resource.demapping.problem.print_problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="org.deltaecore.suite.mapping.resource.demapping.problem">
+		</super>
+	</extension>
+	
+	<extension id="org.deltaecore.suite.mapping.resource.demapping.problem.unresolved_reference" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="org.deltaecore.suite.mapping.resource.demapping.problem">
+		</super>
+	</extension>
+	
+	<extension id="org.deltaecore.suite.mapping.resource.demapping.problem.analysis_problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="org.deltaecore.suite.mapping.resource.demapping.problem">
+		</super>
+	</extension>
+	
+	<extension id="org.deltaecore.suite.mapping.resource.demapping.problem.batch_constraint_problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="org.deltaecore.suite.mapping.resource.demapping.problem">
+		</super>
+	</extension>
+	
+	<extension id="org.deltaecore.suite.mapping.resource.demapping.problem.live_constraint_problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="org.deltaecore.suite.mapping.resource.demapping.problem">
+		</super>
+	</extension>
+	
+	<extension id="org.deltaecore.suite.mapping.resource.demapping.problem.builder_error" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="org.deltaecore.suite.mapping.resource.demapping.problem">
+		</super>
+	</extension>
+	
+	<extension id="org.deltaecore.suite.mapping.resource.demapping.nature" name="demapping nature" point="org.eclipse.core.resources.natures">
+		<runtime>
+			<run class="org.deltaecore.suite.mapping.resource.demapping.mopp.DemappingNature">
+			</run>
+		</runtime>
+		<builder id="org.deltaecore.suite.mapping.resource.demapping.builder">
+		</builder>
+	</extension>
+	
+	<extension point="org.eclipse.core.resources.builders" id="org.deltaecore.suite.mapping.resource.demapping.builder" name="demapping Builder">
+		<builder hasNature="true">
+			<run class="org.deltaecore.suite.mapping.resource.demapping.mopp.DemappingBuilderAdapter">
+			</run>
+		</builder>
+	</extension>
+	
+	<extension-point id="org.deltaecore.suite.mapping.resource.demapping.default_load_options" name="Default Load Options" schema="schema/default_load_options.exsd">
+	</extension-point>
+	
+	<extension point="org.eclipse.emf.ecore.extension_parser">
+		<parser class="org.deltaecore.suite.mapping.resource.demapping.mopp.DemappingResourceFactoryDelegator" type="demapping">
+		</parser>
+	</extension>
+	
+	<extension-point id="org.deltaecore.suite.mapping.resource.demapping.additional_extension_parser" name="Additional Extension Parser" schema="schema/additional_extension_parser.exsd">
+	</extension-point>
+	
+</plugin>

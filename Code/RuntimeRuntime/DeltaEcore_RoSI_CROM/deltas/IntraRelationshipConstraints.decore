@@ -1,0 +1,36 @@
+configuration delta "IntraRelationshipConstraints"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>,
+			 <RelationshipConstraints.decore>,
+			 <OnRelationships.decore>
+{
+	EPackage ePackage = <CompartmentRoleObjectModel>;
+	
+	
+	EClass intraRelationshipConstraints = new EClass(name : "IntraRelationshipConstraints");
+	addEClass(intraRelationshipConstraints, ePackage);
+	
+	addESuperType(<CompartmentRoleObjectModel.RelationshipConstraint>, intraRelationshipConstraints);
+	
+	EReference relationEReference = new EReference(eType: <CompartmentRoleObjectModel.Relationship>, name : "relation", lowerBound : 1, upperBound : 1, containment : false);
+	addEReference(relationEReference, intraRelationshipConstraints);
+	
+	
+	EClass cyclicEClass = new EClass(name : "Cyclic");
+	addEClass(cyclicEClass, ePackage);
+	
+	addESuperType(intraRelationshipConstraints, cyclicEClass);
+
+
+	EClass totalEClass = new EClass(name : "Total");
+	addEClass(totalEClass, ePackage);
+	
+	addESuperType(intraRelationshipConstraints, totalEClass);
+
+
+	EClass irreflexivEClass = new EClass(name : "Irreflexiv");
+	addEClass(irreflexivEClass, ePackage);
+	
+	addESuperType(intraRelationshipConstraints, irreflexivEClass);
+}

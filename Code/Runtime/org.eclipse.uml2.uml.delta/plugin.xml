@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension point="org.deltaecore.deltadialect">
+      <dialect domainModelElementIdentifierResolver="org.eclipse.uml2.uml.delta.resolver.UmlIDResolver" interpreter="org.eclipse.uml2.uml.delta.UmlDeltaDialectInterpreter" model="model/UML.decoredialect"/>
+   </extension>
+</plugin>

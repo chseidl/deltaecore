@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension point="org.eclipse.ui.editors">
+       <editor
+             class="eu.vicci.ecosystem.componentfaultdiagram.cfd.graphicaleditor.CFDGraphicalEditor"
+             default="true"
+             extensions="cfd"
+             contributorClass="eu.vicci.ecosystem.componentfaultdiagram.cfd.graphicaleditor.CFDGraphicalEditorActionBarContributor"
+             icon="icons/Editor.gif"
+             id="eu.vicci.ecosystem.componentfaultdiagram.cfd.graphicaleditor.CFDGraphicalEditor"
+             name="Graphical CFD Editor"/>
+	</extension>
+</plugin>

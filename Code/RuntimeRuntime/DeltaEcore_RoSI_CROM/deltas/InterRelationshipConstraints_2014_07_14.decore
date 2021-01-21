@@ -1,0 +1,14 @@
+evolution delta "InterRelationshipConstraints_2014_07_14"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>,
+			 <InterRelationshipConstraints.decore>,
+			 <RelationshipConstraints_2014_07_14.decore>,
+			 <OnRelationships_2014_07_14.decore>
+{
+	EClass interRelationshipConstraints = <CompartmentRoleObjectModel.InterRelationshipConstraint>;
+	setEClassifierPackage(<crom_l1>, interRelationshipConstraints);
+
+	EClass relationshipImplicationEClass = <CompartmentRoleObjectModel.RelationshipImplication>;
+	setEClassifierPackage(<crom_l1>, relationshipImplicationEClass);
+}

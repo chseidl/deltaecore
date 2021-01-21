@@ -1,0 +1,6 @@
+evolution delta "Webservice_1.1_Java"
+	dialect <http://www.emftext.org/java>
+	modifies <../src/eu/vicci/turtlebot/Webservice.java>
+{
+	//...
+}

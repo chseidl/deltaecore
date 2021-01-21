@@ -1,0 +1,8 @@
+configuration delta "CompartmentBehaviorOrCompartmentProperties"
+	
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>,
+			 <OnCompartments.decore>
+{
+	addESuperType(<CompartmentRoleObjectModel.RigidType>, <CompartmentRoleObjectModel.CompartmentType>);
+}

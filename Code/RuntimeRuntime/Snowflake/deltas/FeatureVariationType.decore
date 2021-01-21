@@ -1,0 +1,11 @@
+configuration delta "FeatureVariationType"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	modifies <../model/Feature.ecore>
+{
+	EEnum featureVariationTypeEEnum = new EEnum(name : "SFeatureVariationType");
+	addEEnum(featureVariationTypeEEnum, <feature>);
+	
+	EAttribute variationTypeAttribute = new EAttribute(name : "variationType", eType: featureVariationTypeEEnum, lowerBound : 1, upperBound : 1);
+	addEAttribute(variationTypeAttribute, <SFeature>);
+}

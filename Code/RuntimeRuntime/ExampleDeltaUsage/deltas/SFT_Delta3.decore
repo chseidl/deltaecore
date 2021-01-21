@@ -1,0 +1,14 @@
+delta "SFT_Delta3"
+	dialect <http://vicci.eu/sft/1.0>
+	requires <SFT_Delta2.decore>
+	modifies <../core/Example.sft_text>
+{
+	//Reference an element that is created in SFT_Delta2
+	detachIntermediateFault(<IF2>);
+//	addBasicFaultToFaultsOfGate(new SFTBasicFault(id: "BF5", name: "Basic Fault 5", probability: 0.0003), <G1>);
+
+	//BF2 is removed in SFT_Delta1 and is no longer recognized
+	//even though it is in the original model.
+	//SFTBasicFault bf = <BF2>;
+}
+

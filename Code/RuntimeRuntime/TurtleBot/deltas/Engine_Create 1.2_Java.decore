@@ -1,0 +1,38 @@
+evolution delta "Engine_Create 1.2_Java"
+	dialect <http://www.emftext.org/java>
+	modifies <../src/eu/vicci/turtlebot/Engine.java>
+{
+	Class engine = <class::eu.vicci.turtlebot.Engine>;
+	Method driveMethod = <method::eu.vicci.turtlebot.Engine#drive()>;
+
+	//Rename Engine to CreateEngine
+	renameNamedElement("CreateEngine", engine);
+	
+	//Extract super class Engine from CreateEngine
+	extractSuperClass("Engine", engine, driveMethod);
+	
+	//Make new Engine abstract
+	Class newEngine = <class::eu.vicci.turtlebot.Engine>;
+	setAbstractModifier(true, newEngine);
+	
+	
+	//Add additional components
+	Class createEngine = <class::eu.vicci.turtlebot.CreateEngine>;
+	
+	createImport("import eu.vicci.turtlebot.components.Led;", createEngine);
+	createImport("import eu.vicci.turtlebot.components.Sound;", createEngine);
+	
+	createField("private Led led;", createEngine);
+	createField("private Sound sound;", createEngine);
+	
+	Constructor constructor = <constructor::eu.vicci.turtlebot.CreateEngine#CreateEngine()>;
+	implementConstructor(constructor, "original(); led = new Led(); sound = new Sound();");
+	
+	ClassMethod connectMethod = <method::eu.vicci.turtlebot.CreateEngine#connect(..)>;
+	implementMethod(connectMethod, "original(); led.enable(); sound.enable();");
+	
+	ClassMethod disconnectMethod = <method::eu.vicci.turtlebot.CreateEngine#disconnect()>;
+	implementMethod(disconnectMethod, "led.disable(); sound.disable(); original();");
+	
+	//... 
+}

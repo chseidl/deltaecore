@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cfd" nsURI="http://vicci.eu/cfd/1.0" nsPrefix="cfd">
+  <eClassifiers xsi:type="ecore:EClass" name="CFDDiagram" eSuperTypes="#//CFDObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootComponent" lowerBound="1"
+        eType="#//CFDComponent" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CFDComponent" eSuperTypes="#//CFDNamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//CFDElement" containment="true" eOpposite="#//CFDElement/component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connections" upperBound="-1"
+        eType="#//CFDConnection" containment="true" eOpposite="#//CFDConnection/component"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CFDEvent" abstract="true" eSuperTypes="#//CFDNamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CFDBasicEvent" eSuperTypes="#//CFDEvent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="probability" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CFDIntermediateEvent" eSuperTypes="#//CFDEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CFDGate" eSuperTypes="#//CFDElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gateType" lowerBound="1"
+        eType="#//CFDGateType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="CFDGateType">
+    <eLiterals name="AND"/>
+    <eLiterals name="OR" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CFDPort" abstract="true" eSuperTypes="#//CFDObject">
+    <eOperations name="getElement" eType="#//CFDElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CFDInPort" eSuperTypes="#//CFDPort">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="#//CFDElement"
+        eOpposite="#//CFDElement/inPorts"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CFDOutPort" eSuperTypes="#//CFDPort">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="#//CFDElement"
+        eOpposite="#//CFDElement/outPorts"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CFDConnection" eSuperTypes="#//CFDObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//CFDComponent"
+        eOpposite="#//CFDComponent/connections"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetPort" lowerBound="1"
+        eType="#//CFDPort"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourcePort" lowerBound="1"
+        eType="#//CFDPort"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CFDElement" abstract="true" eSuperTypes="#//CFDObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraints" lowerBound="1"
+        eType="#//Rectangle"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inPorts" upperBound="-1"
+        eType="#//CFDInPort" containment="true" eOpposite="#//CFDInPort/element"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outPorts" lowerBound="1"
+        upperBound="-1" eType="#//CFDOutPort" containment="true" eOpposite="#//CFDOutPort/element"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//CFDComponent"
+        eOpposite="#//CFDComponent/elements"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Rectangle" instanceClassName="org.eclipse.draw2d.geometry.Rectangle"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CFDNamedElement" abstract="true" eSuperTypes="#//CFDElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CFDObject" abstract="true" interface="true"/>
+</ecore:EPackage>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/eu.vicci.ecosystem.sft/src-gen" editDirectory="/eu.vicci.ecosystem.sft.edit/src-gen"
+    editorDirectory="/eu.vicci.ecosystem.sft.editor/src-gen" modelPluginID="eu.vicci.ecosystem.sft"
+    templateDirectory="" modelName="SFT" editPluginClass="eu.vicci.ecosystem.sft.provider.SFTEditPlugin"
+    editorPluginClass="eu.vicci.ecosystem.sft.presentation.SFTEditorPlugin" testsDirectory="/eu.vicci.ecosystem.sft.tests/src-gen"
+    testSuiteClass="eu.vicci.ecosystem.sft.tests.SFTAllTests" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="7.0" copyrightFields="false" editPluginID="eu.vicci.ecosystem.sft.edit"
+    editorPluginID="eu.vicci.ecosystem.sft.editor">
+  <foreignModel>SFT.ecore</foreignModel>
+  <genPackages prefix="SFT" basePackage="eu.vicci.ecosystem" disposableProviderFactory="true"
+      ecorePackage="SFT.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SFT.ecore#//SFTGateType">
+      <genEnumLiterals ecoreEnumLiteral="SFT.ecore#//SFTGateType/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="SFT.ecore#//SFTGateType/OR"/>
+    </genEnums>
+    <genClasses ecoreClass="SFT.ecore#//SFTSoftwareFaultTree">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SFT.ecore#//SFTSoftwareFaultTree/rootFault"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SFT.ecore#//SFTSoftwareFaultTree/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SFT.ecore#//SFTFault">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SFT.ecore#//SFTFault/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SFT.ecore#//SFTFault/description"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SFT.ecore#//SFTFault/parent"/>
+    </genClasses>
+    <genClasses ecoreClass="SFT.ecore#//SFTGate">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SFT.ecore#//SFTGate/faults"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SFT.ecore#//SFTGate/gateType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SFT.ecore#//SFTGate/parent"/>
+    </genClasses>
+    <genClasses ecoreClass="SFT.ecore#//SFTIntermediateFault">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SFT.ecore#//SFTIntermediateFault/gate"/>
+    </genClasses>
+    <genClasses ecoreClass="SFT.ecore#//SFTBasicFault">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SFT.ecore#//SFTBasicFault/probability"/>
+      <genOperations ecoreOperation="SFT.ecore#//SFTBasicFault/isLikely"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SFT.ecore#//SFTIdentifiable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SFT.ecore#//SFTIdentifiable/id"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

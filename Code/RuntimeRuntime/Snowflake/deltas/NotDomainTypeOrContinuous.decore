@@ -1,0 +1,19 @@
+configuration delta "NotDomainTypeOrContinuous"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <Attributes.decore>
+	modifies <../model/Feature.ecore>
+{
+	EClass doubleValueEClass = new EClass(name: "SDoubleValue");
+	addESuperType(<SAttributeValue>, doubleValueEClass);
+	addEClass(doubleValueEClass, <feature>);
+
+	EAttribute rawValueEAttribute = new EAttribute(name : "rawValue", eType: <EDouble>, lowerBound : 1, upperBound : 1);
+	addEAttribute(rawValueEAttribute, doubleValueEClass);
+}
+
+dialect <http://www.emftext.org/sdk/concretesyntax>
+	modifies <../model/Constraint.cs>
+{
+	addRule("SDoubleValue ::= rawValue[DOUBLE_TOKEN];", <ConcreteSyntax:constraints>);
+}

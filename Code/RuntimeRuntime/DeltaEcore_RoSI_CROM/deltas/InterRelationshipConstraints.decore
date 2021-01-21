@@ -1,0 +1,30 @@
+configuration delta "InterRelationshipConstraints"
+
+dialect <http://www.eclipse.org/emf/2002/Ecore>
+	requires <../model/crom_l1.ecore>,
+			 <RelationshipConstraints.decore>,
+			 <OnRelationships.decore>
+{
+	EPackage ePackage = <CompartmentRoleObjectModel>;
+	
+	
+	EClass interRelationshipConstraints = new EClass(name : "InterRelationshipConstraint");
+	addEClass(interRelationshipConstraints, ePackage);
+	
+	
+	addESuperType(<CompartmentRoleObjectModel.RelationshipConstraint>, interRelationshipConstraints);
+	
+	EClass relationshipEClass = <CompartmentRoleObjectModel.Relationship>;
+	
+	EReference firstEReference = new EReference(eType : relationshipEClass, name : "first", lowerBound : 1, upperBound : 1, containment : false);
+	addEReference(firstEReference, interRelationshipConstraints);
+	
+	EReference secondEReference = new EReference(eType : relationshipEClass, name : "second", lowerBound : 1, upperBound : 1, containment : false);
+	addEReference(secondEReference, interRelationshipConstraints);
+	
+
+	EClass relationshipImplicationEClass = new EClass(name : "RelationshipImplication");
+	addEClass(relationshipImplicationEClass, ePackage);
+	
+	addESuperType(interRelationshipConstraints, relationshipImplicationEClass);
+}

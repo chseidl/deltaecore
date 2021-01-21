@@ -1,0 +1,5 @@
+//WiFi: HLF_0704 and HLF_1401 or HLF_1402 related?
+
+//Configurations: Update of Configs in HLF_0501-HLF_0510 should depend on the respective features being present
+
+//Drivers: HLF_0101-HLF_0105 have to depend on hardware components being present/enabled 

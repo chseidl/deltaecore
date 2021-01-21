@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gsn:GSNModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gsn="http://vicci.eu/gsn/1.0">
+  <elements xsi:type="gsn:GSNConcreteElement" constraints="369,260,100,70" id="-1" away="true" description="sdfsdf"/>
+  <elements xsi:type="gsn:GSNConcreteElement" outgoingConnections="//@connections.0 //@connections.1 //@connections.2" constraints="741,519,100,70" id="-1" type="JUSTIFICATION" description="sdef"/>
+  <elements xsi:type="gsn:GSNConcreteElement" outgoingConnections="//@connections.4" incomingConnections="//@connections.3" constraints="75,259,110,50" id="-1" type="STRATEGY" description=""/>
+  <elements xsi:type="gsn:GSNConcreteElement" incomingConnections="//@connections.0" constraints="640,64,142,91" id="-1" type="GOAL" description=""/>
+  <elements xsi:type="gsn:GSNConcreteElement" outgoingConnections="//@connections.3" incomingConnections="//@connections.2" constraints="436,477,121,72" id="-1" type="SOLUTION" description=""/>
+  <elements xsi:type="gsn:GSNConcreteElement" incomingConnections="//@connections.1 //@connections.4" constraints="353,87,167,70" id="-1" type="SOLUTION" description="dsfsdf asdfsadfasdfasdfsd fsdfsdfasdf"/>
+  <connections sourceElement="//@elements.1" type="IN_CONTEXT_OF" targetElement="//@elements.3"/>
+  <connections sourceElement="//@elements.1" targetElement="//@elements.5"/>
+  <connections sourceElement="//@elements.1" type="IN_CONTEXT_OF" targetElement="//@elements.4"/>
+  <connections sourceElement="//@elements.4" type="IN_CONTEXT_OF" targetElement="//@elements.2"/>
+  <connections sourceElement="//@elements.2" type="IN_CONTEXT_OF" targetElement="//@elements.5"/>
+</gsn:GSNModel>

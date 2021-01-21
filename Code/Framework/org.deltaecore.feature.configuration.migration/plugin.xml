@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated ConfigurationMigration -->
+      <package
+            uri="http://deltaecore.org/feature/configurationmigration/1.0"
+            class="org.deltaecore.feature.configuration.configurationmigration.DEConfigurationMigrationPackage"
+            genModel="model/ConfigurationMigration.genmodel"/>
+   </extension>
+
+</plugin>

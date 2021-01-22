@@ -72,7 +72,8 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference DEcore.ecore#//DEArgument/deltaOperationCall"/>
     </genClasses>
     <genClasses image="false" ecoreClass="DEcore.ecore#//DEValuedElement">
-      <genOperations ecoreOperation="DEcore.ecore#//DEValuedElement/getValueJavaClass"/>
+      <genOperations ecoreOperation="DEcore.ecore#//DEValuedElement/getValueJavaClass"
+          body="//Default implementation that retrieves the value and then returns its type.&#xD;&#xA;//Override for performance reasons with sub classes that can determine the value type statically.&#xD;&#xA;Object value = getValue();&#xD;&#xA;&#xD;&#xA;if (value != null) {&#xD;&#xA;&#x9;return value.getClass();&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;return Object.class;"/>
       <genOperations ecoreOperation="DEcore.ecore#//DEValuedElement/getValue"/>
     </genClasses>
     <genClasses ecoreClass="DEcore.ecore#//DEDataTypeInitializer">

@@ -17,15 +17,15 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Feature.ecore#//DEFeature/versions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Feature.ecore#//DEFeature/groups"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Feature.ecore#//DEFeature/parentOfFeature"/>
-      <genOperations ecoreOperation="Feature.ecore#//DEFeature/isOptional"/>
-      <genOperations ecoreOperation="Feature.ecore#//DEFeature/isMandatory"/>
+      <genOperations ecoreOperation="Feature.ecore#//DEFeature/isOptional" body="return (getMinCardinality() == 0 &amp;&amp; getMaxCardinality() == 1);"/>
+      <genOperations ecoreOperation="Feature.ecore#//DEFeature/isMandatory" body="return (getMinCardinality() == 1 &amp;&amp; getMaxCardinality() == 1);"/>
     </genClasses>
     <genClasses ecoreClass="Feature.ecore#//DEGroup">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Feature.ecore#//DEGroup/features"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Feature.ecore#//DEGroup/parentOfGroup"/>
-      <genOperations ecoreOperation="Feature.ecore#//DEGroup/isAlternative"/>
-      <genOperations ecoreOperation="Feature.ecore#//DEGroup/isOr"/>
-      <genOperations ecoreOperation="Feature.ecore#//DEGroup/isAnd"/>
+      <genOperations ecoreOperation="Feature.ecore#//DEGroup/isAlternative" body="return (getMinCardinality() == 1 &amp;&amp; getMaxCardinality() == 1);"/>
+      <genOperations ecoreOperation="Feature.ecore#//DEGroup/isOr" body="if (getMinCardinality() != 1 || getMaxCardinality() != getFeatures().size()) {&#xD;&#xA;&#x9;return false;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;for (DEFeature feature : getFeatures()) {&#xD;&#xA;&#x9;//If a feature of the group is mandatory, then it is really&#xD;&#xA;&#x9;//not a special group but the cardinality is coincidence.&#xD;&#xA;&#x9;if (feature.isMandatory()) {&#xD;&#xA;&#x9;&#x9;return false;&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;return true;"/>
+      <genOperations ecoreOperation="Feature.ecore#//DEGroup/isAnd" body="int optionalFeatures = 0;&#xD;&#xA;int mandatoryFeatures = 0;&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;for (DEFeature feature : getFeatures()) {&#xD;&#xA;&#x9;if (feature.isOptional()) {&#xD;&#xA;&#x9;&#x9;optionalFeatures++;&#xD;&#xA;&#x9;} else if (feature.isMandatory()) {&#xD;&#xA;&#x9;&#x9;mandatoryFeatures++;&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;return (getMinCardinality() &lt;= mandatoryFeatures &amp;&amp; getMaxCardinality() >= (mandatoryFeatures + optionalFeatures));"/>
     </genClasses>
     <genClasses image="false" ecoreClass="Feature.ecore#//DECardinalityBasedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Feature.ecore#//DECardinalityBasedElement/minCardinality"/>

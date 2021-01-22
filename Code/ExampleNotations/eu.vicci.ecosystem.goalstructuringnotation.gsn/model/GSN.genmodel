@@ -8,35 +8,40 @@
   <foreignModel>GSN.ecore</foreignModel>
   <genPackages prefix="GSN" basePackage="eu.vicci.ecosystem.goalstructuringnotation"
       disposableProviderFactory="true" ecorePackage="GSN.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="GSN.ecore#//GSNConnectionType">
+      <genEnumLiterals ecoreEnumLiteral="GSN.ecore#//GSNConnectionType/SOLVED_BY"/>
+      <genEnumLiterals ecoreEnumLiteral="GSN.ecore#//GSNConnectionType/IN_CONTEXT_OF"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="GSN.ecore#//GSNElementType">
+      <genEnumLiterals ecoreEnumLiteral="GSN.ecore#//GSNElementType/CONTEXT"/>
+      <genEnumLiterals ecoreEnumLiteral="GSN.ecore#//GSNElementType/GOAL"/>
+      <genEnumLiterals ecoreEnumLiteral="GSN.ecore#//GSNElementType/SOLUTION"/>
+      <genEnumLiterals ecoreEnumLiteral="GSN.ecore#//GSNElementType/STRATEGY"/>
+      <genEnumLiterals ecoreEnumLiteral="GSN.ecore#//GSNElementType/ASSUMPTION"/>
+      <genEnumLiterals ecoreEnumLiteral="GSN.ecore#//GSNElementType/JUSTIFICATION"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="GSN.ecore#//Rectangle"/>
     <genClasses ecoreClass="GSN.ecore#//GSNModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GSN.ecore#//GSNModel/elements"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GSN.ecore#//GSNModel/connections"/>
     </genClasses>
     <genClasses image="false" ecoreClass="GSN.ecore#//GSNElement">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference GSN.ecore#//GSNElement/model"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GSN.ecore#//GSNElement/id"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GSN.ecore#//GSNElement/description"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GSN.ecore#//GSNElement/outgoingConnections"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GSN.ecore#//GSNElement/incomingSolvedByConnections"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GSN.ecore#//GSNElement/incomingConnections"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GSN.ecore#//GSNElement/constraints"/>
     </genClasses>
     <genClasses image="false" ecoreClass="GSN.ecore#//GSNConnection">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference GSN.ecore#//GSNConnection/model"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GSN.ecore#//GSNConnection/sourceElement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GSN.ecore#//GSNConnection/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GSN.ecore#//GSNConnection/targetElement"/>
     </genClasses>
-    <genClasses ecoreClass="GSN.ecore#//GSNGoal"/>
-    <genClasses ecoreClass="GSN.ecore#//GSNSolution"/>
-    <genClasses ecoreClass="GSN.ecore#//GSNStrategy"/>
-    <genClasses image="false" ecoreClass="GSN.ecore#//GSNRationale"/>
-    <genClasses ecoreClass="GSN.ecore#//GSNAssumption"/>
-    <genClasses ecoreClass="GSN.ecore#//GSNJustification"/>
-    <genClasses ecoreClass="GSN.ecore#//GSNContext">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GSN.ecore#//GSNContext/incomingInContextOfConnections"/>
-    </genClasses>
-    <genClasses ecoreClass="GSN.ecore#//GSNSolvedByConnection">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GSN.ecore#//GSNSolvedByConnection/targetElement"/>
-    </genClasses>
-    <genClasses ecoreClass="GSN.ecore#//GSNInContextOfConnection">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GSN.ecore#//GSNInContextOfConnection/targetContext"/>
+    <genClasses ecoreClass="GSN.ecore#//GSNConcreteElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GSN.ecore#//GSNConcreteElement/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GSN.ecore#//GSNConcreteElement/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GSN.ecore#//GSNConcreteElement/away"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GSN.ecore#//GSNConcreteElement/description"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

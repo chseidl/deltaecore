@@ -4,5 +4,23 @@
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="src-gen"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_181/lib/resources.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_181/lib/rt.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_181/lib/jsse.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_181/lib/jce.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_181/lib/charsets.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_181/lib/jfr.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_181/lib/ext/access-bridge-64.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_181/lib/ext/cldrdata.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_181/lib/ext/dnsns.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_181/lib/ext/jaccess.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_181/lib/ext/jfxrt.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_181/lib/ext/localedata.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_181/lib/ext/nashorn.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_181/lib/ext/sunec.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_181/lib/ext/sunjce_provider.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_181/lib/ext/sunmscapi.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_181/lib/ext/sunpkcs11.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_181/lib/ext/zipfs.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

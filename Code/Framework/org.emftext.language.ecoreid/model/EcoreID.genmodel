@@ -13,10 +13,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EcoreID.ecore#//EcoreID/names"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EcoreID.ecore#//EcoreID/parameterTypeNames"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EcoreID.ecore#//EcoreID/explicitlyNoParametersSpecified"/>
-      <genOperations ecoreOperation="EcoreID.ecore#//EcoreID/getEModelElement">
+      <genOperations ecoreOperation="EcoreID.ecore#//EcoreID/getEModelElement" body="return org.emftext.language.ecoreid.util.EcoreIDResolverUtil.resolveEcoreID(this, ePackage);">
         <genParameters ecoreParameter="EcoreID.ecore#//EcoreID/getEModelElement/ePackage"/>
       </genOperations>
-      <genOperations ecoreOperation="EcoreID.ecore#//EcoreID/isQualified"/>
+      <genOperations ecoreOperation="EcoreID.ecore#//EcoreID/isQualified" body="return (names.size() > 1);"/>
     </genClasses>
     <genClasses ecoreClass="EcoreID.ecore#//EcoreIDList">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EcoreID.ecore#//EcoreIDList/ecoreIDs"/>

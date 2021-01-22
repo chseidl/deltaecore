@@ -70,6 +70,11 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+		<buildCommand>
+			<name>org.deltaecore.suite.mapping.resource.demapping.builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
@@ -85,5 +90,6 @@
 		<nature>org.deltaecore.feature.constraint.resource.deconstraints.nature</nature>
 		<nature>org.deltaecore.feature.mapping.resource.demapping.nature</nature>
 		<nature>org.deltaecore.core.applicationorderconstraint.resource.deapplicationorderconstraints.nature</nature>
+		<nature>org.deltaecore.suite.mapping.resource.demapping.nature</nature>
 	</natures>
 </projectDescription>

@@ -8,6 +8,7 @@ import org.deltaecore.feature.configuration.configurationmigration.DEConfigurati
 import org.deltaecore.feature.configuration.configurationmigration.DEConfigurationMigrationFactory;
 import org.deltaecore.feature.configuration.migration.util.DEConfigurationMigrationCreator;
 import org.deltaecore.feature.configuration.util.DEConfigurationChecker;
+import org.deltaecore.feature.configuration.util.DEConfigurationIOUtil;
 import org.deltaecore.feature.configuration.util.DEConfigurationUtil;
 import org.deltaecore.feature.configure.DEVersionAutoConfigurer;
 import org.deltaecore.feature.constraint.DEConstraintModel;
@@ -21,6 +22,7 @@ import org.deltaecore.feature.graphical.configurator.components.DESelectedConfig
 import org.deltaecore.feature.graphical.configurator.components.DEVariantGeneratorsComposite;
 import org.deltaecore.feature.graphical.configurator.factories.DEConfiguratorEditPartFactory;
 import org.deltaecore.feature.variant.DEVariantGenerator;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.common.notify.Notification;
@@ -41,6 +43,9 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Shell;
+
+import de.christophseidl.util.eclipse.ResourceUtil;
+import de.christophseidl.util.ecore.EcoreIOUtil;
 
 public class DEConfiguratorGraphicalEditor extends DEGraphicalEditor {
 	private DEConfiguration runningConfiguration;
@@ -192,6 +197,13 @@ public class DEConfiguratorGraphicalEditor extends DEGraphicalEditor {
 			}
 		});
 
+		selectedConfigurationComposite.getSaveConfigurationButton().addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				saveSelectedConfiguration();
+			}
+		});
+		
 		selectedConfigurationComposite.getGenerateVariantButton().addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
@@ -368,5 +380,13 @@ public class DEConfiguratorGraphicalEditor extends DEGraphicalEditor {
 	public void useSelectedConfigurationAsRunningConfiguration() {
 		// Keep the configuration instances stable so that listeners on them keep working
 		DEConfigurationUtil.transferAndReplaceConfigurationArtifacts(selectedConfiguration, runningConfiguration);
+	}
+	
+	public void saveSelectedConfiguration() {
+		IFile inputFeatureModelFile = getInputFile();
+		
+		String configurationFileExtension = DEConfigurationIOUtil.getCurrentFileExtension();
+		IFile configurationFile = ResourceUtil.deriveFile(inputFeatureModelFile, configurationFileExtension);
+		EcoreIOUtil.saveModelAs(selectedConfiguration, configurationFile);
 	}
 }

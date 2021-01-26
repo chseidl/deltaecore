@@ -14,6 +14,7 @@ public class DESelectedConfigurationComposite extends Group {
 	private Text textArea;
 	private Button completeButton;
 	private Button useButton;
+	private Button saveConfigurationButton;
 	private Button generateVariantButton;
 	
 	public DESelectedConfigurationComposite(Composite parent) {
@@ -41,6 +42,10 @@ public class DESelectedConfigurationComposite extends Group {
 		useButton.setText("Use as Running Configuration");
 		useButton.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
 		
+		saveConfigurationButton = new Button(this, SWT.PUSH);
+		saveConfigurationButton.setText("Save Configuration");
+		saveConfigurationButton.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
+		
 		generateVariantButton = new Button(this, SWT.PUSH);
 		generateVariantButton.setText("Generate Variant");
 		generateVariantButton.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
@@ -64,6 +69,10 @@ public class DESelectedConfigurationComposite extends Group {
 		return useButton;
 	}
 
+	public Button getSaveConfigurationButton() {
+		return saveConfigurationButton;
+	}
+	
 	public Button getGenerateVariantButton() {
 		return generateVariantButton;
 	}

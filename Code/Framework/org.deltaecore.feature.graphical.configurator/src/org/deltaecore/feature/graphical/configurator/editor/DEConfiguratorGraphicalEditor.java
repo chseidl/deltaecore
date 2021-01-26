@@ -91,7 +91,7 @@ public class DEConfiguratorGraphicalEditor extends DEGraphicalEditor {
 		createConfigurationPanel(sashForm);
 		
 		sashForm.setWeights(new int[] { 4, 1 });
-		registerListeners();
+		registerLocalListeners();
 	}
 	
 	@Override
@@ -136,7 +136,14 @@ public class DEConfiguratorGraphicalEditor extends DEGraphicalEditor {
 	
 	@Override
 	protected void registerListeners() {
-		
+		//See issue below why this is not used here!
+	}
+	
+	//NOTE: This is a workaround for the following issue (as I don't have time for architectural changes right now):
+	//Super class define _protected_ registerListeners() method, which is called after creation of super classes controls.
+	//As this class wraps the super classes control (i.e., creates it before creating this class' controls), registering listeners
+	//for local controls via overriding the protected method faces null pointer exceptions.
+	private void registerLocalListeners() {
 		runningConfiguration.eAdapters().add(new EContentAdapter() {
 			@Override
 			public void notifyChanged(Notification notification) {

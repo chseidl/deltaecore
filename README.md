@@ -299,39 +299,39 @@ Below is a (partial) list of further publications pertaining DeltaEcore.
 
 ## Extended Publications
 
-- *DeltaEcore as Influence on a Unified Model for Managing Variability in Space and Time*
-  S. Ananieva, S. Greiner, T. Kühn, J. Krüger, L. Linsbauer, S. Grüner, T. Kehrer, H. Klare, A. Koziolek, H. Lönn, S. Krieter, C. Seidl, S. Ramesh, R. Reussner, B. Westfechtel
-  **A Conceptual Model for Unifying Variability in Space and Time**
+- *DeltaEcore as Influence on a Unified Model for Managing Variability in Space and Time*<br>
+  S. Ananieva, S. Greiner, T. Kühn, J. Krüger, L. Linsbauer, S. Grüner, T. Kehrer, H. Klare, A. Koziolek, H. Lönn, S. Krieter, C. Seidl, S. Ramesh, R. Reussner, B. Westfechtel<br>
+  **A Conceptual Model for Unifying Variability in Space and Time**<br>
   Proceedings of the 24th International Systems and Software Product Line Conference (SPLC), 2020
-- *Book Chapter on DeltaEcore's Capacities in Context of Software Product Line Construction*
-  C. Pietsch, C. Seidl, M. Nieke, T. Kehrer
-  **Delta-Oriented Development of Model-Based Software Product Lines with DeltaEcore and SiPL: A Comparison**
+- *Book Chapter on DeltaEcore's Capacities in Context of Software Product Line Construction*<br>
+  C. Pietsch, C. Seidl, M. Nieke, T. Kehrer<br>
+  **Delta-Oriented Development of Model-Based Software Product Lines with DeltaEcore and SiPL: A Comparison**<br>
   in Model Management and Analytics for Large Scale Systems, 2019
-- *Book Chapter on DeltaEcore's Capacities in Context of Software Product Line Reverse Engineering*
-  C. Seidl, D.Wille, I. Schaefer
-  **Software Reuse – From Cloned Variants to Managed Software Product Lines**
+- *Book Chapter on DeltaEcore's Capacities in Context of Software Product Line Reverse Engineering*<br>
+  C. Seidl, D.Wille, I. Schaefer<br>
+  **Software Reuse – From Cloned Variants to Managed Software Product Lines**<br>
   in Automotive Software Engineering – M. v. d. Brand, Y. Dajsuren (Eds.), 2018
-- *DeltaEcore as Technological Backbone of the EU Project HyVar*
-  T. B. Røst, C. Seidl, I. C. Yu, F. Damiani, E. B. Johnsen, C. Chesta
-  **HyVar – Scalable Hybrid Variability for Distributed Evolving Software Systems**
+- *DeltaEcore as Technological Backbone of the EU Project HyVar*<br>
+  T. B. Røst, C. Seidl, I. C. Yu, F. Damiani, E. B. Johnsen, C. Chesta<br>
+  **HyVar – Scalable Hybrid Variability for Distributed Evolving Software Systems**<br>
   Proceedings of European Conference on Service-Oriented and Cloud Computing (ESOCC) Workshops, 2017
-- *Reverse Engineer Product Portfolio to Software Product Line and Generate DeltaEcore Languages/Delta Modules*
-  D. Wille, T. Runge, C. Seidl, S. Schulze
-  **Extractive Software Product Line Engineering using Model-Based Delta Module Generation**
+- *Reverse Engineer Product Portfolio to Software Product Line and Generate DeltaEcore Languages/Delta Modules*<br>
+  D. Wille, T. Runge, C. Seidl, S. Schulze<br>
+  **Extractive Software Product Line Engineering using Model-Based Delta Module Generation**<br>
   Proceedings of the 11th International Workshop on Variability Modelling of Software-Intensive Systems (VaMoS), 2017
-- *DeltaEcore as Basis for Tool DarwinSPL*
-  M. Nieke, G. Engel, C. Seidl
-  **DarwinSPL: An Integrated Tool Suite for Modeling Evolving Context-Aware Software Product Lines**
+- *DeltaEcore as Basis for Tool DarwinSPL*<br>
+  M. Nieke, G. Engel, C. Seidl<br>
+  **DarwinSPL: An Integrated Tool Suite for Modeling Evolving Context-Aware Software Product Lines**<br>
   Proceedings of the 11th International Workshop on Variability Modelling of Software-Intensive Systems (VaMoS), 2017
-- *Delta Language for Ecore Meta Models and Case Study on Family of Feature-Modeling Notations*
-  C. Seidl, T. Winkelmann, I. Schaefer
-  **A Software Product Line of Feature Modeling Notations and Cross-Tree Constraint Languages**
+- *Delta Language for Ecore Meta Models and Case Study on Family of Feature-Modeling Notations*<br>
+  C. Seidl, T. Winkelmann, I. Schaefer<br>
+  **A Software Product Line of Feature Modeling Notations and Cross-Tree Constraint Languages**<br>
   Proceedings of Modellierung'16, 2016
-- *Delta Language for Ecore Meta Models and Case Study on Family of Role-Based Modeling and Programming Languages*
-  T. Kühn, M. Leuthäuser, S. Götz, C. Seidl, U. Aßmann
-  **A Metamodel Family for Role-Based Modeling and Programming Languages**
+- *Delta Language for Ecore Meta Models and Case Study on Family of Role-Based Modeling and Programming Languages*<br>
+  T. Kühn, M. Leuthäuser, S. Götz, C. Seidl, U. Aßmann<br>
+  **A Metamodel Family for Role-Based Modeling and Programming Languages**<br>
   Proceedings of the 7th International Conference on Software Language Engineering (SLE), 2014
-- *Delta Language and Analyses for Component Fault Diagrams (CFDs) - A Safety Notation*
-  C. Seidl, I. Schaefer, U. Aßmann
-  **Variability-Aware Safety Analysis using Delta Component Fault Diagrams**
+- *Delta Language and Analyses for Component Fault Diagrams (CFDs) - A Safety Notation*<br>
+  C. Seidl, I. Schaefer, U. Aßmann<br>
+  **Variability-Aware Safety Analysis using Delta Component Fault Diagrams**<br>
   Proceedings of the 4th International Workshop on Formal Methods and Analysis in Software Product Line Engineering (FMSPLE), 2013

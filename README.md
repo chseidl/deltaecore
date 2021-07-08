@@ -6,8 +6,6 @@
 
 This document describes how to set up the tool suite from source code and, for that purpose, also briefly touches upon some of DeltaEcore's core concepts. To read more on the tool suite's concepts, visit [DeltaEcore's homepage at deltaecore.org](http://deltaecore.org/). If you want to cite this work in a paper, please head to the [Publications section](#publications). If you want to get in contact, please write an e-mail to **christoph** **[dot] seidl [at] deltaecore [dot] org**.
 
-[toc]
-
 # General Concepts
 
 Below is a brief overview of the general concepts of DeltaEcore with the sole purpose of making installation/usage of the tool suite easier to understand. For a more comprehensive explanation of essential concepts, visit [DeltaEcore's homepage at deltaecore.org](http://deltaecore.org/) or refer to one of the papers in the [Publications section](#publications).
@@ -284,19 +282,19 @@ Below is a (partial) list of further publications pertaining DeltaEcore.
 
 ## Core Publications
 
-- *DeltaEcore Framework*
-  C. Seidl, I. Schaefer, U. Aßmann
-  **DeltaEcore – A Model-Based Delta Language Generation Framework**
-  Proceedings of Modellierung’14, 2014
+- *DeltaEcore Framework*<br>
+  C. Seidl, I. Schaefer, U. Aßmann<br>
+  **DeltaEcore – A Model-Based Delta Language Generation Framework**<br>
+  Proceedings of Modellierung’14, 2014<br>
   [Paper](http://subs.emis.de/LNI/Proceedings/Proceedings225/article2.html) | [Slides (*.pdf)](http://www.deltaecore.org/wp-content/uploads/2014_03_19-DeltaEcore-Christoph-Seidl-Modellierung14.pdf)
-- *Hyper Feature Models (HFMs)*
-  C. Seidl, I. Schaefer, U. Aßmann
-  **Capturing Variability in Space and Time with Hyper Feature Models**
+- *Hyper Feature Models (HFMs)*<br>
+  C. Seidl, I. Schaefer, U. Aßmann<br>
+  **Capturing Variability in Space and Time with Hyper Feature Models**<br>
   Proceedings of the 8th International Workshop on Variability Modelling of Software-Intensive Systems (VaMoS), 2014
-- *Using Hyper Feature Models (HFMs) with DeltaEcore*
-  C. Seidl, I. Schaefer, U. Aßmann
-  **Integrated Management of Variability in Space and Time in Software Families**
-  Proceedings of the 18th International Software Product Line Conference (SPLC), 2014
+- *Using Hyper Feature Models (HFMs) with DeltaEcore*<br>
+  C. Seidl, I. Schaefer, U. Aßmann<br>
+  **Integrated Management of Variability in Space and Time in Software Families**<br>
+  Proceedings of the 18th International Software Product Line Conference (SPLC), 2014<br>
   [Paper](http://doi.acm.org/10.1145/2556624.2556625) | [Slides (*.pdf)](http://www.deltaecore.org/wp-content/uploads/2014_01_22-Capturing-Variability-in-Space-and-Time-with-Hyper-Feature-Models-Christoph-Seidl-VaMoS14.pdf)
 
 ## Extended Publications
